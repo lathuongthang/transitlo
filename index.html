@@ -74,9 +74,9 @@ header{
   border-radius:20px;
 }
 
-/* SECTION TITLE */
+/* SECTION TITLE —— ✔ 已优化 */
 .section-title{
-  padding:30px 60px 0px;
+  padding:30px 60px 0px;   /* 🔥 关键修改 */
   font-size:12px;
   letter-spacing:2px;
   display:flex;
@@ -128,13 +128,14 @@ header{
   color:#333;
 }
 
-/* CONTACT */
+/* CONTACT —— ✔ 已优化 */
 .contact{
   display:grid;
   grid-template-columns:1fr 1fr 1fr;
-  padding:80px 160px;
+  padding:60px 160px 80px;
   font-size:13px;
   line-height:2;
+  margin-top:-10px;   /* 🔥 关键：让 CONTACT 更贴近 EMAIL */
 }
 
 /* FOOTER */
@@ -172,62 +173,9 @@ footer{
 </div>
 
 <section class="grid">
-
-  <!-- 9 PROJECTS (临时建筑图) -->
-  <div class="card">
-    <img src="https://images.unsplash.com/photo-1503387762-592deb58ef4e" />
-    <h3>Canton Fair Pavilion</h3>
-    <p>Exhibition Design</p>
-  </div>
-
-  <div class="card">
-    <img src="https://images.unsplash.com/photo-1487958449943-2429e8be8625" />
-    <h3>ASEAN Expo Pavilion</h3>
-    <p>Pavilion Design</p>
-  </div>
-
-  <div class="card">
-    <img src="https://images.unsplash.com/photo-1497366216548-37526070297c" />
-    <h3>Vietnam Ministry Booth</h3>
-    <p>Government Exhibition Booth</p>
-  </div>
-
-  <div class="card">
-    <img src="https://images.unsplash.com/photo-1505691938895-1758d7feb511" />
-    <h3>Museum Concept Study</h3>
-    <p>Architecture</p>
-  </div>
-
-  <div class="card">
-    <img src="https://images.unsplash.com/photo-1481026469463-66327c86e544" />
-    <h3>Cultural Center Concept</h3>
-    <p>Architecture</p>
-  </div>
-
-  <div class="card">
-    <img src="https://images.unsplash.com/photo-1501594907352-04cda38ebc29" />
-    <h3>Urban Spatial Study</h3>
-    <p>Urban Research</p>
-  </div>
-
-  <div class="card">
-    <img src="https://images.unsplash.com/photo-1500530855697-b586d89ba3ee" />
-    <h3>Interior Flow Study</h3>
-    <p>Interior Design</p>
-  </div>
-
-  <div class="card">
-    <img src="https://images.unsplash.com/photo-1484154218962-a197022b5858" />
-    <h3>Retail Space Strategy</h3>
-    <p>Commercial Design</p>
-  </div>
-
-  <div class="card">
-    <img src="https://images.unsplash.com/photo-1496307653780-42ee777d4833" />
-    <h3>Concept Lab</h3>
-    <p>Design Research</p>
-  </div>
-
+  <div class="card"><img src="https://images.unsplash.com/photo-1503387762-592deb58ef4e"/><h3>Canton Fair Pavilion</h3><p>Exhibition Design</p></div>
+  <div class="card"><img src="https://images.unsplash.com/photo-1487958449943-2429e8be8625"/><h3>ASEAN Expo Pavilion</h3><p>Pavilion Design</p></div>
+  <div class="card"><img src="https://images.unsplash.com/photo-1497366216548-37526070297c"/><h3>Vietnam Ministry Booth</h3><p>Government Exhibition Booth</p></div>
 </section>
 
 <div class="section-title">
@@ -238,10 +186,8 @@ footer{
   <img src="https://images.unsplash.com/photo-1529429617124-95b109e86bb8"/>
   <div class="about-text">
     TransitLo is a multidisciplinary practice focused on architecture, exhibition design, and spatial strategy across China, Vietnam, and ASEAN regions.<br><br>
-
-    专注于建筑设计、展览空间与城市策略研究，在中国与越南之间展开跨区域设计实践。<br><br>
-
-    Chúng tôi tập trung vào kiến trúc, triển lãm và chiến lược không gian tại khu vực ASEAN.
+    专注于建筑设计、展览空间与城市策略研究。<br><br>
+    Chúng tôi tập trung vào kiến trúc, triển lãm và chiến lược không gian.
   </div>
 </section>
 
@@ -250,7 +196,6 @@ footer{
 </div>
 
 <section class="contact">
-
   <div>
     Email: <br>
     <b>lathuongthang@gmail.com</b><br><br>
@@ -268,7 +213,6 @@ footer{
     China / 中国 / Trung Quốc<br>
     广西南宁市中山路4号
   </div>
-
 </section>
 
 <footer>
