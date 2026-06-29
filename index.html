@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-<title>TRANSITLO</title>
+<title>TransitLo | Portfolio</title>
 
 <style>
 body{
@@ -13,219 +13,205 @@ body{
     color:#111;
 }
 
-/* NAV */
-.nav{
-    position:fixed;
-    top:0;
-    width:100%;
-    background:#fff;
-    display:flex;
-    justify-content:space-between;
-    padding:18px 40px;
-    font-size:12px;
-    letter-spacing:1px;
-    z-index:10;
-}
-
 /* HERO */
 .hero{
-    padding:120px 20px 40px;
+    height:85vh;
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+    align-items:center;
     text-align:center;
+    padding:0 20px;
 }
 
 .hero h1{
-    font-size:90px;
-    letter-spacing:18px;
+    font-size:72px;
+    letter-spacing:10px;
     margin:0;
-    font-weight:600;
+    text-transform:uppercase;
 }
 
 .hero p{
     margin:8px 0;
-    font-size:13px;
-    letter-spacing:1px;
+    font-size:14px;
+    opacity:0.75;
 }
 
-/* SECTION TITLE */
+/* SECTION */
+.section{
+    padding:90px 8%;
+}
+
 .section-title{
-    display:flex;
-    justify-content:space-between;
-    padding:40px 40px 10px;
-    font-size:12px;
-    letter-spacing:1px;
+    font-size:18px;
+    margin-bottom:40px;
+    letter-spacing:2px;
 }
 
-/* GRID 9 PROJECTS */
+/* GRID */
 .grid{
     display:grid;
     grid-template-columns:repeat(3,1fr);
-    gap:2px;
-    padding:0 40px;
+    gap:40px;
 }
 
-/* IMAGE SPRITE STYLE (核心) */
-.card{
-    height:260px;
-    background-image:url("/mnt/data/image(19).png");
-    background-repeat:no-repeat;
-    background-size:300% 300%;
-    position:relative;
-    overflow:hidden;
+/* CARD */
+.card img{
+    width:100%;
+    height:240px;
+    object-fit:cover;
+    transition:0.3s;
 }
 
-/* 9宫格切片 */
-.c1{background-position:0% 0%;}
-.c2{background-position:50% 0%;}
-.c3{background-position:100% 0%;}
+.card img:hover{
+    transform:scale(1.02);
+}
 
-.c4{background-position:0% 50%;}
-.c5{background-position:50% 50%;}
-.c6{background-position:100% 50%;}
+.card h3{
+    margin:12px 0 4px;
+    font-size:15px;
+}
 
-.c7{background-position:0% 100%;}
-.c8{background-position:50% 100%;}
-.c9{background-position:100% 100%;}
-
-/* LABEL */
-.label{
-    position:absolute;
-    bottom:10px;
-    left:10px;
-    color:#fff;
-    font-size:11px;
-    background:rgba(0,0,0,0.35);
-    padding:6px 8px;
+.card p{
+    font-size:13px;
+    opacity:0.7;
 }
 
 /* ABOUT */
 .about{
-    display:grid;
-    grid-template-columns:1fr 1fr;
-    gap:40px;
-    padding:60px 40px;
-    align-items:start;
-}
-
-.about img{
-    width:100%;
-}
-
-.about p{
-    font-size:12px;
+    max-width:900px;
     line-height:1.8;
+    font-size:14px;
     opacity:0.85;
 }
 
 /* CONTACT */
 .contact{
-    display:grid;
-    grid-template-columns:repeat(3,1fr);
-    gap:40px;
-    padding:40px;
-    font-size:12px;
-    line-height:1.8;
+    line-height:2;
+    font-size:14px;
+    opacity:0.85;
 }
 
+/* FOOTER */
 footer{
     text-align:center;
-    font-size:11px;
-    padding:30px;
-    opacity:0.6;
+    padding:40px;
+    font-size:12px;
+    opacity:0.5;
 }
 
 /* RESPONSIVE */
 @media(max-width:900px){
-    .grid{grid-template-columns:1fr;}
-    .hero h1{font-size:40px;}
-    .about{grid-template-columns:1fr;}
-    .contact{grid-template-columns:1fr;}
+    .grid{
+        grid-template-columns:1fr;
+    }
+    .hero h1{
+        font-size:38px;
+    }
 }
 </style>
 </head>
 
 <body>
 
-<!-- NAV -->
-<div class="nav">
-    <div>TRANSITLO</div>
-    <div>WORKS / ABOUT / CONTACT</div>
-    <div>中文 | EN | VI</div>
-</div>
-
 <!-- HERO -->
 <div class="hero">
     <h1>TRANSITLO</h1>
-    <p>ARCHITECT & SPATIAL STRATEGY DESIGNER</p>
+    <p>Architect & Spatial Strategy Designer</p>
     <p>建筑 · 展览 · 空间策略设计</p>
-    <p>CHINA · VIETNAM · ASEAN PROJECTS</p>
+    <p>China · Vietnam · ASEAN</p>
 </div>
 
-<!-- PROJECT TITLE -->
-<div class="section-title">
-    <div>SELECTED PROJECTS / 作品展示</div>
-    <div>VIEW ALL WORKS →</div>
-</div>
+<!-- PROJECTS -->
+<div class="section">
+    <div class="section-title">Selected Projects / 作品展示</div>
 
-<!-- GRID -->
-<div class="grid">
+    <div class="grid">
 
-    <div class="card c1"><div class="label">01 CANTON FAIR PAVILION</div></div>
-    <div class="card c2"><div class="label">02 ASEAN EXPO PAVILION</div></div>
-    <div class="card c3"><div class="label">03 VIETNAM AGRICULTURE MINISTRY</div></div>
+        <div class="card">
+            <img src="https://images.unsplash.com/photo-1503387762-592deb58ef4e">
+            <h3>Canton Fair Pavilion</h3>
+            <p>Exhibition & spatial design</p>
+        </div>
 
-    <div class="card c4"><div class="label">04 MUSEUM CONCEPT STUDY</div></div>
-    <div class="card c5"><div class="label">05 CULTURAL CENTER</div></div>
-    <div class="card c6"><div class="label">06 URBAN SPATIAL STUDY</div></div>
+        <div class="card">
+            <img src="https://images.unsplash.com/photo-1529421308418-3a9c0b3a3a7a">
+            <h3>ASEAN Expo Pavilion</h3>
+            <p>Architectural exhibition space</p>
+        </div>
 
-    <div class="card c7"><div class="label">07 INTERIOR FLOW STUDY</div></div>
-    <div class="card c8"><div class="label">08 RETAIL SPACE STRATEGY</div></div>
-    <div class="card c9"><div class="label">09 CONCEPT LAB</div></div>
+        <div class="card">
+            <img src="https://images.unsplash.com/photo-1487958449943-2429e8be8625">
+            <h3>Urban Spatial Study</h3>
+            <p>Research & analysis</p>
+        </div>
 
+        <div class="card">
+            <img src="https://images.unsplash.com/photo-1505693416388-ac5ce068fe85">
+            <h3>Museum Concept</h3>
+            <p>Architecture design study</p>
+        </div>
+
+        <div class="card">
+            <img src="https://images.unsplash.com/photo-1497366216548-37526070297c">
+            <h3>Cultural Center</h3>
+            <p>Public space design</p>
+        </div>
+
+        <div class="card">
+            <img src="https://images.unsplash.com/photo-1481277542470-605612bd2d61">
+            <h3>Retail Space Strategy</h3>
+            <p>Commercial design system</p>
+        </div>
+
+        <div class="card">
+            <img src="https://images.unsplash.com/photo-1500530855697-b586d89ba3ee">
+            <h3>Interior Flow Study</h3>
+            <p>Spatial behavior research</p>
+        </div>
+
+        <div class="card">
+            <img src="https://images.unsplash.com/photo-1469474968028-56623f02e42e">
+            <h3>Concept Lab</h3>
+            <p>Experimental architecture</p>
+        </div>
+
+        <div class="card">
+            <img src="https://images.unsplash.com/photo-1449157291145-7efd050a4d0e">
+            <h3>Future Housing Study</h3>
+            <p>Residential strategy design</p>
+        </div>
+
+    </div>
 </div>
 
 <!-- ABOUT -->
-<div class="about">
+<div class="section">
+    <div class="section-title">About / 关于</div>
 
-    <img src="/mnt/data/image(19).png"/>
+    <div class="about">
+        TransitLo is a multidisciplinary architecture practice focusing on spatial strategy,
+        exhibition design, and urban research across China, Vietnam, and ASEAN regions.<br><br>
 
-    <p>
-        TransitLo is a multidisciplinary practice focused on architecture,
-        exhibition design, and spatial strategy across China, Vietnam, and ASEAN regions.<br><br>
-
-        TransitLo là một thực hành thiết kế đa ngành, tập trung vào kiến trúc,
-        triển lãm và chiến lược không gian tại khu vực ASEAN.<br><br>
-
-        TransitLo 是一个跨领域设计实践，专注建筑、展览与空间策略研究。
-    </p>
-
+        TransitLo 是一个跨领域建筑与空间策略实践，专注展览设计、城市研究与空间系统设计。
+    </div>
 </div>
 
 <!-- CONTACT -->
-<div class="contact">
+<div class="section">
+    <div class="section-title">Contact / 联系方式</div>
 
-    <div>
-        EMAIL<br>
-        lathuongthang@gmail.com<br><br>
+    <div class="contact">
+        Email: lathuongthang@gmail.com<br>
+        WeChat: 13481183494<br><br>
 
-        WECHAT<br>
-        13481183494
+        Vietnam: 18 Louis XVI, Khu đô thị Louis City Hoàng Mai, Hà Nội<br>
+        China: 中国广西南宁市中山路4号
     </div>
-
-    <div>
-        VIETNAM ADDRESS<br>
-        18 Louis XVI, Khu đô thị Louis City<br>
-        Hoàng Mai, Hà Nội
-    </div>
-
-    <div>
-        CHINA ADDRESS<br>
-        中国广西南宁市中山路4号
-    </div>
-
 </div>
 
 <footer>
-© TRANSITLO
+© TransitLo | Architectural Portfolio
 </footer>
 
 </body>
