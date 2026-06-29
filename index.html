@@ -1,108 +1,203 @@
 <!DOCTYPE html>
 <html lang="zh">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>TransitLo | 罗常胜</title>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>TransitLo | 罗常胜</title>
 
-  <style>
-    body {
-      margin: 0;
-      font-family: Arial, Helvetica, sans-serif;
-      background: #ffffff;
-      color: #111;
-    }
+<style>
+body {
+  margin: 0;
+  font-family: Arial, Helvetica, sans-serif;
+  background: #fff;
+  color: #111;
+}
 
-    .wrap {
-      height: 100vh;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      text-align: center;
-      padding: 40px;
-    }
+/* HERO */
+.hero {
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  flex-direction: column;
+  padding: 40px;
+}
 
-    h1 {
-      font-size: 64px;
-      margin: 0;
-      letter-spacing: 2px;
-    }
+h1 {
+  font-size: 64px;
+  margin: 0;
+}
 
-    .name {
-      margin-top: 10px;
-      font-size: 20px;
-      color: #333;
-      font-weight: 500;
-    }
+.subtitle {
+  margin-top: 15px;
+  font-size: 16px;
+  color: #555;
+  max-width: 700px;
+  line-height: 1.8;
+}
 
-    .subtitle {
-      margin-top: 20px;
-      font-size: 16px;
-      color: #444;
-      max-width: 700px;
-      line-height: 1.8;
-    }
+.tag {
+  margin-top: 25px;
+  padding: 8px 14px;
+  border: 1px solid #000;
+  border-radius: 20px;
+  font-size: 12px;
+}
 
-    .lang {
-      margin-top: 18px;
-      font-size: 14px;
-      color: #666;
-      line-height: 1.8;
-    }
+/* SECTION */
+.section {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 80px 20px;
+}
 
-    .tag {
-      margin-top: 30px;
-      display: inline-block;
-      padding: 10px 18px;
-      border: 1px solid #000;
-      border-radius: 30px;
-      font-size: 13px;
-    }
+.section h2 {
+  font-size: 22px;
+  margin-bottom: 30px;
+}
 
-    .fade {
-      animation: fadeIn 1.2s ease-in-out;
-    }
+/* IMAGE GRID */
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 20px;
+}
 
-    @keyframes fadeIn {
-      from { opacity: 0; transform: translateY(20px); }
-      to { opacity: 1; transform: translateY(0); }
-    }
-  </style>
+.card {
+  overflow: hidden;
+  border: 1px solid #eee;
+  transition: 0.3s;
+  background: #fff;
+}
+
+.card:hover {
+  transform: translateY(-5px);
+  border-color: #000;
+}
+
+.card img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+}
+
+.card .content {
+  padding: 15px;
+}
+
+.card h3 {
+  margin: 0 0 8px;
+  font-size: 16px;
+}
+
+.card p {
+  font-size: 13px;
+  color: #555;
+  line-height: 1.6;
+}
+
+/* ABOUT */
+.about {
+  font-size: 14px;
+  color: #444;
+  line-height: 1.8;
+  max-width: 800px;
+}
+
+/* CONTACT */
+.contact {
+  font-size: 14px;
+  line-height: 1.8;
+  color: #333;
+}
+
+/* FOOTER */
+.footer {
+  text-align: center;
+  padding: 40px;
+  font-size: 12px;
+  color: #888;
+}
+</style>
 </head>
 
 <body>
-  <div class="wrap fade">
-    <div>
 
-      <!-- 国际品牌 -->
-      <h1>TransitLo</h1>
+<!-- HERO -->
+<div class="hero">
+  <h1>TransitLo</h1>
 
-      <!-- 中文身份 -->
-      <div class="name">罗常胜</div>
-
-      <!-- 中文 -->
-      <div class="subtitle">
-        建筑师 & 空间策略设计师<br/>
-        我们设计建筑与展览空间，创造新的空间体验。
-      </div>
-
-      <!-- 英文 -->
-      <div class="lang">
-        Architect & Spatial Strategy Designer<br/>
-        We design architecture and exhibition spaces that transform spatial experience.
-      </div>
-
-      <!-- 越南语 -->
-      <div class="lang">
-        Kiến trúc sư & Thiết kế chiến lược không gian<br/>
-        Chúng tôi thiết kế kiến trúc và không gian triển lãm tạo ra trải nghiệm không gian mới.
-      </div>
-
-      <div class="tag">
-        Architecture · Exhibition · Spatial Design
-      </div>
-
-    </div>
+  <div class="subtitle">
+    Architect & Spatial Strategy Designer<br/>
+    建筑 · 展览 · 空间策略设计
   </div>
+
+  <div class="tag">
+    China · Vietnam · ASEAN Projects
+  </div>
+</div>
+
+<!-- ABOUT -->
+<div class="section">
+  <h2>About / 关于 / Giới thiệu</h2>
+
+  <div class="about">
+    中文：建筑师 & 空间策略设计师，专注展览空间、城市空间与展馆设计实践。<br><br>
+
+    English: Architect & spatial strategist focusing on exhibition and architectural spatial design.<br><br>
+
+    Tiếng Việt: Kiến trúc sư & thiết kế chiến lược không gian, tập trung vào triển lãm và kiến trúc không gian.
+  </div>
+</div>
+
+<!-- PROJECTS -->
+<div class="section">
+  <h2>Selected Projects / 作品展示</h2>
+
+  <div class="grid">
+
+    <div class="card">
+      <img src="https://images.unsplash.com/photo-1503387762-592deb58ef4e" />
+      <div class="content">
+        <h3>Canton Fair Pavilion</h3>
+        <p>Exhibition booth design and spatial strategy execution.</p>
+      </div>
+    </div>
+
+    <div class="card">
+      <img src="https://images.unsplash.com/photo-1497366754035-f200968a6e72" />
+      <div class="content">
+        <h3>ASEAN Expo Pavilion</h3>
+        <p>National pavilion design for international exhibition.</p>
+      </div>
+    </div>
+
+    <div class="card">
+      <img src="https://images.unsplash.com/photo-1505693416388-ac5ce068fe85" />
+      <div class="content">
+        <h3>Urban Spatial Study</h3>
+        <p>Research on architectural spatial behavior and flow.</p>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<!-- CONTACT -->
+<div class="section">
+  <h2>Contact / 联系方式</h2>
+
+  <div class="contact">
+    Email: yourname@email.com<br>
+    WhatsApp: +86 XXXXXXXX<br>
+    Location: China / Vietnam / ASEAN<br>
+  </div>
+</div>
+
+<div class="footer">
+  © TransitLo | 罗常胜
+</div>
+
 </body>
 </html>
