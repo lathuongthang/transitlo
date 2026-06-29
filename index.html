@@ -1,11 +1,75 @@
 <!DOCTYPE html>
-<html>
+<html lang="zh">
 <head>
-  <meta charset="UTF-8">
-  <title>我的第一个网页</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>TransitLo</title>
+
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, Helvetica, sans-serif;
+      background: #ffffff;
+      color: #111;
+    }
+
+    .wrap {
+      height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      padding: 40px;
+    }
+
+    h1 {
+      font-size: 64px;
+      letter-spacing: 2px;
+      margin: 0;
+    }
+
+    .subtitle {
+      margin-top: 20px;
+      font-size: 18px;
+      color: #555;
+      max-width: 600px;
+      line-height: 1.6;
+    }
+
+    .tag {
+      margin-top: 30px;
+      display: inline-block;
+      padding: 10px 18px;
+      border: 1px solid #000;
+      border-radius: 30px;
+      font-size: 14px;
+    }
+
+    .fade {
+      animation: fadeIn 1.2s ease-in-out;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+  </style>
 </head>
-<body style="font-family: Arial; text-align: center; margin-top: 100px;">
-  <h1>Hello GitHub 👋</h1>
-  <p>这是我做的第一个网页！</p>
+
+<body>
+  <div class="wrap fade">
+    <div>
+      <h1>TransitLo</h1>
+
+      <div class="subtitle">
+        Architect & Spatial Strategy Designer<br/>
+        We design architecture and exhibition spaces that transform spatial experience.
+      </div>
+
+      <div class="tag">
+        Architecture · Exhibition · Spatial Design
+      </div>
+    </div>
+  </div>
 </body>
 </html>
