@@ -1,115 +1,87 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>TransitLo</title>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>TransitLo | Portfolio</title>
 
 <style>
-
-/* RESET */
 body{
     margin:0;
-    font-family: Arial, Helvetica, sans-serif;
-    background:#ffffff;
-    color:#111;
-}
-
-/* NAV */
-.nav{
-    position:fixed;
-    top:0;
-    width:100%;
-    display:flex;
-    justify-content:space-between;
-    padding:20px 40px;
-    background:rgba(255,255,255,0.9);
-    backdrop-filter: blur(10px);
-    font-size:14px;
-}
-
-.nav a{
-    margin:0 15px;
-    text-decoration:none;
+    font-family: Arial, sans-serif;
+    background:#fff;
     color:#111;
 }
 
 /* HERO */
 .hero{
-    height:100vh;
+    height:90vh;
     display:flex;
     flex-direction:column;
     justify-content:center;
     align-items:center;
     text-align:center;
+    padding:0 20px;
 }
 
 .hero h1{
-    font-size:96px;
+    font-size:64px;
     letter-spacing:6px;
+    text-transform:uppercase;
     margin:0;
-    font-weight:500;
 }
 
 .hero p{
     margin:10px 0;
-    color:#444;
-    font-size:16px;
+    font-size:18px;
+    opacity:0.7;
 }
 
 /* SECTION */
 .section{
-    padding:120px 8%;
+    padding:100px 10%;
+}
+
+.section-title{
+    font-size:28px;
+    margin-bottom:50px;
+    letter-spacing:2px;
 }
 
 /* PROJECT GRID */
 .grid{
     display:grid;
     grid-template-columns:repeat(3,1fr);
-    gap:35px;
+    gap:50px;
 }
 
 .card img{
     width:100%;
-    height:260px;
+    height:240px;
     object-fit:cover;
-    transition:0.4s;
-}
-
-.card img:hover{
-    transform:scale(1.03);
 }
 
 .card h3{
-    font-size:15px;
-    margin:10px 0 5px;
+    margin:15px 0 5px;
 }
 
 .card p{
-    font-size:13px;
-    color:#666;
+    font-size:14px;
+    opacity:0.7;
 }
 
 /* ABOUT */
 .about{
-    display:grid;
-    grid-template-columns:1fr 1fr;
-    gap:60px;
-    align-items:center;
-}
-
-.about img{
-    width:100%;
-    height:420px;
-    object-fit:cover;
+    max-width:800px;
+    line-height:1.8;
+    opacity:0.85;
 }
 
 /* CONTACT */
 .contact{
-    display:grid;
-    grid-template-columns:1fr 1fr 1fr;
-    gap:40px;
-    font-size:14px;
+    line-height:2;
+    font-size:15px;
+    opacity:0.85;
 }
 
 /* FOOTER */
@@ -117,130 +89,134 @@ footer{
     text-align:center;
     padding:40px;
     font-size:12px;
-    color:#999;
+    opacity:0.5;
 }
 
 /* RESPONSIVE */
 @media(max-width:900px){
-    .grid{grid-template-columns:1fr;}
-    .about{grid-template-columns:1fr;}
-    .contact{grid-template-columns:1fr;}
-    .hero h1{font-size:54px;}
+    .grid{
+        grid-template-columns:1fr;
+    }
+    .hero h1{
+        font-size:36px;
+    }
 }
-
 </style>
 </head>
 
 <body>
 
-<!-- NAV -->
-<div class="nav">
-    <div><b>TRANSITLO</b></div>
-    <div>
-        <a href="#work">WORK</a>
-        <a href="#about">ABOUT</a>
-        <a href="#contact">CONTACT</a>
-    </div>
-</div>
-
 <!-- HERO -->
 <div class="hero">
     <h1>TRANSITLO</h1>
     <p>Architect & Spatial Strategy Designer</p>
-    <p>建筑 · 展览 · 空间策略设计 · 越南 / 中国 / ASEAN</p>
+    <p>建筑 · 空间 · 策略设计 | 建筑 · 展览 · 研究</p>
+    <p>Architecture · Exhibition · Spatial Strategy (CN / EN / VN)</p>
 </div>
 
 <!-- PROJECTS -->
-<div class="section" id="work">
-
-    <h2>Selected Works</h2>
+<div class="section">
+    <div class="section-title">Selected Projects / 作品展示</div>
 
     <div class="grid">
 
-        <div class="card"><img src="images/project1.jpg"><h3>Canton Pavilion</h3><p>Exhibition Design</p></div>
-        <div class="card"><img src="images/project2.jpg"><h3>ASEAN Expo</h3><p>Spatial Strategy</p></div>
-        <div class="card"><img src="images/project3.jpg"><h3>Urban Study</h3><p>Research</p></div>
+        <div class="card">
+            <img src="https://picsum.photos/600/400?random=1">
+            <h3>Canton Fair Pavilion</h3>
+            <p>Exhibition booth & spatial design</p>
+        </div>
 
-        <div class="card"><img src="images/project4.jpg"><h3>Commercial Space</h3><p>Interior</p></div>
-        <div class="card"><img src="images/project5.jpg"><h3>Office System</h3><p>Architecture</p></div>
-        <div class="card"><img src="images/project6.jpg"><h3>Residential Study</h3><p>Design</p></div>
+        <div class="card">
+            <img src="https://picsum.photos/600/400?random=2">
+            <h3>ASEAN Expo Pavilion</h3>
+            <p>International exhibition architecture</p>
+        </div>
 
-        <div class="card"><img src="images/project7.jpg"><h3>Urban Renewal</h3><p>Planning</p></div>
-        <div class="card"><img src="images/project8.jpg"><h3>Installation</h3><p>Space Art</p></div>
-        <div class="card"><img src="images/project9.jpg"><h3>Future Hub</h3><p>Concept</p></div>
+        <div class="card">
+            <img src="https://picsum.photos/600/400?random=3">
+            <h3>Urban Spatial Study</h3>
+            <p>Research on spatial behavior</p>
+        </div>
+
+        <div class="card">
+            <img src="https://picsum.photos/600/400?random=4">
+            <h3>Retail Space Concept</h3>
+            <p>Commercial spatial design exploration</p>
+        </div>
+
+        <div class="card">
+            <img src="https://picsum.photos/600/400?random=5">
+            <h3>Hotel Interior System</h3>
+            <p>Luxury spatial layout study</p>
+        </div>
+
+        <div class="card">
+            <img src="https://picsum.photos/600/400?random=6">
+            <h3>Office Design Strategy</h3>
+            <p>Modern workspace system design</p>
+        </div>
+
+        <div class="card">
+            <img src="https://picsum.photos/600/400?random=7">
+            <h3>Public Space Renewal</h3>
+            <p>Urban regeneration concept</p>
+        </div>
+
+        <div class="card">
+            <img src="https://picsum.photos/600/400?random=8">
+            <h3>Material Research</h3>
+            <p>Architecture material experiment</p>
+        </div>
+
+        <div class="card">
+            <img src="https://picsum.photos/600/400?random=9">
+            <h3>Future Living Study</h3>
+            <p>Residential system exploration</p>
+        </div>
 
     </div>
 </div>
 
 <!-- ABOUT -->
-<div class="section" id="about">
-
-    <h2>About</h2>
+<div class="section">
+    <div class="section-title">About / 关于</div>
 
     <div class="about">
+        TransitLo is a multidisciplinary practice focusing on architecture,
+        exhibition space, and spatial strategy design across China, Vietnam,
+        and ASEAN regions.
 
-        <img src="images/about.jpg">
+        <br><br>
 
-        <div>
-            <p>
-                TransitLo is a multidisciplinary studio focusing on architecture,
-                exhibition design, and spatial strategy across China, Vietnam and ASEAN.
-            </p>
+        TransitLo 是一个跨领域设计实践，专注于建筑、展览空间与空间策略研究，
+        服务中国、越南及东盟区域项目。
 
-            <p>
-                专注建筑设计、展览空间与城市策略研究，在中国与越南之间开展实践。
-            </p>
+        <br><br>
 
-            <p>
-                Thiết kế kiến trúc, triển lãm và chiến lược không gian tại Trung Quốc và Việt Nam.
-            </p>
-        </div>
-
+        TransitLo là một thực hành thiết kế đa ngành, tập trung vào kiến trúc,
+        không gian triển lãm và chiến lược không gian tại Trung Quốc, Việt Nam và ASEAN.
     </div>
 </div>
 
 <!-- CONTACT -->
-<div class="section" id="contact">
-
-    <h2>Contact</h2>
-
-    <div class="contact">
-
-        <div>
-            <b>Email</b><br>
-            lathuongthang@gmail.com
-        </div>
-
-        <div>
-            <b>WeChat</b><br>
-            13481183494
-        </div>
-
-        <div>
-            <b>Location</b><br>
-            Vietnam / China / ASEAN
-        </div>
-
-    </div>
-
-    <br><br>
+<div class="section">
+    <div class="section-title">Contact / 联系方式</div>
 
     <div class="contact">
-        <div>
-            Vietnam:<br>
-            18 Louis XVI, Hanoi
-        </div>
 
-        <div>
-            China:<br>
-            Nanning, Guangxi
-        </div>
+        <b>Email:</b> lathuongthang@gmail.com<br>
+        <b>WeChat:</b> 13481183494<br><br>
+
+        <b>Address (CN):</b> 中国广西南宁市中山路4号<br>
+        <b>Address (VN):</b> 18 Louis XVI, Khu đô thị Louis City Hoàng Mai, Hà Nội<br><br>
+
+        <b>Location:</b> China / Vietnam / ASEAN
+
     </div>
-
 </div>
 
 <footer>
-© TransitLo
+    © TransitLo | Architectural Portfolio
 </footer>
 
 </body>
