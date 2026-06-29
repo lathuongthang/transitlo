@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-<title>TransitLo Portfolio</title>
+<title>TransitLo</title>
 
 <style>
 *{
@@ -22,81 +22,97 @@ body{
 nav{
   display:flex;
   justify-content:space-between;
-  padding:24px 60px;
-  font-size:13px;
-  letter-spacing:1px;
+  padding:28px 64px;
+  font-size:12px;
+  letter-spacing:2px;
 }
 
 .nav-right span{
-  margin-left:20px;
-  opacity:.8;
+  margin-left:18px;
+}
+
+.nav-right span.divider{
+  opacity:.3;
 }
 
 /* HERO */
 .hero{
   text-align:center;
-  padding:120px 20px 80px;
+  padding:140px 20px 90px;
 }
 
 .hero h1{
-  font-size:110px;
-  letter-spacing:18px;
+  font-size:140px;
+  letter-spacing:26px;
   font-weight:700;
 }
 
 .hero p{
-  margin-top:20px;
-  font-size:14px;
-  letter-spacing:2px;
-  opacity:.8;
+  margin-top:18px;
+  font-size:13px;
+  letter-spacing:3px;
+  opacity:.85;
 }
 
-.hero .sub{
-  margin-top:10px;
+/* 三语结构 + 竖线 */
+.lang-block{
+  margin-top:18px;
   font-size:12px;
-  opacity:.6;
+  letter-spacing:2px;
+  opacity:.65;
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  gap:14px;
+}
+
+.lang-block .line{
+  width:1px;
+  height:12px;
+  background:#aaa;
 }
 
 /* SECTION TITLE */
 .section-title{
   display:flex;
   justify-content:space-between;
-  padding:60px 60px 20px;
-  font-size:13px;
-  letter-spacing:1px;
+  padding:70px 64px 20px;
+  font-size:12px;
+  letter-spacing:2px;
 }
 
-/* PROJECT GRID */
+/* GRID */
 .grid{
   display:grid;
   grid-template-columns:repeat(3,1fr);
-  gap:24px;
-  padding:0 60px 80px;
+  gap:30px;
+  padding:0 64px 90px;
 }
 
 .card img{
   width:100%;
-  height:240px;
+  height:260px;
   object-fit:cover;
 }
 
 .card h3{
-  font-size:14px;
-  margin-top:10px;
+  font-size:13px;
+  margin-top:12px;
+  letter-spacing:.5px;
 }
 
 .card p{
-  font-size:12px;
+  font-size:11px;
   opacity:.7;
   margin-top:4px;
 }
 
 /* ABOUT */
 .about{
-  padding:80px 60px;
+  padding:90px 64px;
   display:grid;
   grid-template-columns:1fr 1fr;
-  gap:40px;
+  gap:50px;
   align-items:center;
 }
 
@@ -108,23 +124,35 @@ nav{
 
 /* CONTACT */
 .contact{
-  padding:60px;
+  padding:70px 64px;
   display:grid;
   grid-template-columns:repeat(3,1fr);
-  gap:40px;
+  gap:50px;
   font-size:13px;
-  line-height:1.8;
+  line-height:1.9;
 }
 
-footer{
-  text-align:center;
-  padding:40px;
-  font-size:12px;
+.contact-title{
+  font-weight:bold;
+  margin-bottom:12px;
+  letter-spacing:1px;
+}
+
+.label{
   opacity:.6;
 }
 
+/* FOOTER */
+footer{
+  text-align:center;
+  padding:40px;
+  font-size:11px;
+  opacity:.6;
+}
+
+/* RESPONSIVE */
 @media(max-width:900px){
-  .hero h1{font-size:60px;}
+  .hero h1{font-size:70px;}
   .grid{grid-template-columns:1fr;}
   .about{grid-template-columns:1fr;}
   .contact{grid-template-columns:1fr;}
@@ -134,22 +162,36 @@ footer{
 
 <body>
 
+<!-- NAV -->
 <nav>
   <div>TRANSITLO</div>
   <div class="nav-right">
     <span>WORKS</span>
     <span>ABOUT</span>
     <span>CONTACT</span>
-    <span>中文 | EN | VI</span>
+    <span class="divider">|</span>
+    <span>中文</span>
+    <span class="divider">|</span>
+    <span>EN</span>
+    <span class="divider">|</span>
+    <span>VI</span>
   </div>
 </nav>
 
 <!-- HERO -->
 <section class="hero">
   <h1>TRANSITLO</h1>
+
   <p>ARCHITECT & SPATIAL STRATEGY DESIGNER</p>
-  <div class="sub">建筑 · 展览 · 空间策略设计</div>
-  <div class="sub">KIẾN TRÚC · TRIỂN LÃM · CHIẾN LƯỢC KHÔNG GIAN</div>
+
+  <!-- 三语 + 竖线结构 -->
+  <div class="lang-block">
+    <span>建筑 · 展览 · 空间策略设计</span>
+    <div class="line"></div>
+    <span>KIẾN TRÚC · TRIỂN LÃM · CHIẾN LƯỢC KHÔNG GIAN</span>
+    <div class="line"></div>
+    <span>ARCHITECTURE · EXHIBITION · STRATEGY</span>
+  </div>
 </section>
 
 <!-- PROJECTS -->
@@ -160,57 +202,56 @@ footer{
 
 <section class="grid">
 
-  <!-- 9 PROJECTS -->
   <div class="card">
-    <img src="https://images.unsplash.com/photo-1503387762-592deb58ef4e" />
+    <img src="https://images.unsplash.com/photo-1503387762-592deb58ef4e"/>
     <h3>Canton Fair Pavilion</h3>
     <p>Exhibition Design</p>
   </div>
 
   <div class="card">
-    <img src="https://images.unsplash.com/photo-1487958449943-2429e8be8625" />
+    <img src="https://images.unsplash.com/photo-1487958449943-2429e8be8625"/>
     <h3>ASEAN Expo Pavilion</h3>
     <p>Pavilion Design</p>
   </div>
 
   <div class="card">
-    <img src="https://images.unsplash.com/photo-1497366754035-f200968a6e72" />
+    <img src="https://images.unsplash.com/photo-1497366754035-f200968a6e72"/>
     <h3>Vietnam Ministry Booth</h3>
     <p>Government Exhibition</p>
   </div>
 
   <div class="card">
-    <img src="https://images.unsplash.com/photo-1524758631624-e2822e304c36" />
+    <img src="https://images.unsplash.com/photo-1524758631624-e2822e304c36"/>
     <h3>Museum Concept Study</h3>
     <p>Architecture</p>
   </div>
 
   <div class="card">
-    <img src="https://images.unsplash.com/photo-1501594907352-04cda38ebc29" />
+    <img src="https://images.unsplash.com/photo-1501594907352-04cda38ebc29"/>
     <h3>Cultural Center</h3>
     <p>Architecture</p>
   </div>
 
   <div class="card">
-    <img src="https://images.unsplash.com/photo-1505692794403-34d4982b8b27" />
-    <h3>Urban Spatial Study</h3>
-    <p>Urban Research</p>
+    <img src="https://images.unsplash.com/photo-1505692794403-34d4982b8b27"/>
+    <h3>Urban Study</h3>
+    <p>Research</p>
   </div>
 
   <div class="card">
-    <img src="https://images.unsplash.com/photo-1502005229762-cf1b2da7c5d6" />
-    <h3>Interior Flow Study</h3>
-    <p>Interior Design</p>
+    <img src="https://images.unsplash.com/photo-1502005229762-cf1b2da7c5d6"/>
+    <h3>Interior Flow</h3>
+    <p>Interior</p>
   </div>
 
   <div class="card">
-    <img src="https://images.unsplash.com/photo-1496307653780-42ee777d4833" />
+    <img src="https://images.unsplash.com/photo-1496307653780-42ee777d4833"/>
     <h3>Retail Strategy</h3>
-    <p>Commercial Design</p>
+    <p>Commercial</p>
   </div>
 
   <div class="card">
-    <img src="https://images.unsplash.com/photo-1483058712412-4245e9b90334" />
+    <img src="https://images.unsplash.com/photo-1483058712412-4245e9b90334"/>
     <h3>Concept Lab</h3>
     <p>Design Research</p>
   </div>
@@ -225,16 +266,17 @@ footer{
 
   <div>
     <h3>ABOUT / 关于 / GIỚI THIỆU</h3>
+
     <p style="margin-top:20px;">
-TransitLo is a multidisciplinary practice focused on architecture, exhibition design, and spatial strategy across China, Vietnam, and ASEAN regions.
+TransitLo focuses on architecture, exhibition, and spatial strategy across China, Vietnam and ASEAN.
     </p>
 
     <p style="margin-top:20px;">
-专注于建筑设计、展览空间与城市策略研究，在中国与越南之间展开跨区域设计实践。
+专注建筑设计、展览空间与城市策略研究。
     </p>
 
     <p style="margin-top:20px;">
-Chúng tôi tập trung vào kiến trúc, triển lãm và chiến lược không gian tại khu vực ASEAN.
+Tập trung vào kiến trúc và chiến lược không gian.
     </p>
   </div>
 </section>
@@ -243,19 +285,21 @@ Chúng tôi tập trung vào kiến trúc, triển lãm và chiến lược khô
 <section class="contact">
 
   <div>
-    <b>Contact</b><br><br>
-    Email: lathuongthang@gmail.com<br>
-    WeChat: 13481183494
+    <div class="contact-title">Contact</div>
+    <span class="label">Email:</span> <br>
+    lathuongthang@gmail.com <br><br>
+    <span class="label">WeChat:</span> <br>
+    13481183494
   </div>
 
   <div>
-    <b>Vietnam / Việt Nam</b><br><br>
+    <div class="contact-title">Vietnam / Việt Nam</div>
     18 Louis XVI, Khu đô thị Louis City Hoàng Mai,<br>
     Hà Nội
   </div>
 
   <div>
-    <b>China / 中国</b><br><br>
+    <div class="contact-title">China / 中国</div>
     广西南宁市中山路4号
   </div>
 
