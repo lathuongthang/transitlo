@@ -1,203 +1,250 @@
 <!DOCTYPE html>
-<html lang="zh">
+<html lang="en">
 <head>
-<meta charset="UTF-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-<title>TransitLo | 罗常胜</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>TransitLo | Architecture & Spatial Strategy</title>
 
 <style>
-body {
-  margin: 0;
-  font-family: Arial, Helvetica, sans-serif;
-  background: #fff;
-  color: #111;
+body{
+    margin:0;
+    font-family: Arial, sans-serif;
+    background:#fff;
+    color:#111;
+}
+
+/* NAV */
+nav{
+    position:fixed;
+    top:0;
+    width:100%;
+    background:white;
+    display:flex;
+    justify-content:space-between;
+    padding:15px 30px;
+    border-bottom:1px solid #eee;
+    z-index:1000;
+}
+
+nav a{
+    margin:0 10px;
+    text-decoration:none;
+    color:#111;
+    font-size:14px;
 }
 
 /* HERO */
-.hero {
-  height: 100vh;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  text-align: center;
-  flex-direction: column;
-  padding: 40px;
+.hero{
+    text-align:center;
+    padding:140px 20px 60px;
 }
 
-h1 {
-  font-size: 64px;
-  margin: 0;
+.hero h1{
+    font-size:60px;
+    margin:0;
+    letter-spacing:2px;
 }
 
-.subtitle {
-  margin-top: 15px;
-  font-size: 16px;
-  color: #555;
-  max-width: 700px;
-  line-height: 1.8;
+.hero p{
+    color:#555;
+    margin:8px 0;
 }
 
-.tag {
-  margin-top: 25px;
-  padding: 8px 14px;
-  border: 1px solid #000;
-  border-radius: 20px;
-  font-size: 12px;
+/* LANGUAGE */
+.lang{
+    margin-top:10px;
+    font-size:13px;
+    color:#777;
 }
 
-/* SECTION */
-.section {
-  max-width: 1100px;
-  margin: 0 auto;
-  padding: 80px 20px;
+/* GRID */
+.grid{
+    column-count:3;
+    column-gap:16px;
+    padding:40px;
 }
 
-.section h2 {
-  font-size: 22px;
-  margin-bottom: 30px;
+.card{
+    break-inside: avoid;
+    margin-bottom:16px;
+    cursor:pointer;
 }
 
-/* IMAGE GRID */
-.grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-  gap: 20px;
+.card img{
+    width:100%;
+    display:block;
+    filter:grayscale(100%);
+    transition:0.3s;
 }
 
-.card {
-  overflow: hidden;
-  border: 1px solid #eee;
-  transition: 0.3s;
-  background: #fff;
+.card:hover img{
+    filter:grayscale(0%);
+    transform:scale(1.02);
 }
 
-.card:hover {
-  transform: translateY(-5px);
-  border-color: #000;
+.card h3{
+    margin:8px 0 2px;
+    font-size:15px;
 }
 
-.card img {
-  width: 100%;
-  height: 200px;
-  object-fit: cover;
+.card p{
+    margin:0;
+    font-size:12px;
+    color:#666;
 }
 
-.card .content {
-  padding: 15px;
-}
-
-.card h3 {
-  margin: 0 0 8px;
-  font-size: 16px;
-}
-
-.card p {
-  font-size: 13px;
-  color: #555;
-  line-height: 1.6;
-}
-
-/* ABOUT */
-.about {
-  font-size: 14px;
-  color: #444;
-  line-height: 1.8;
-  max-width: 800px;
+.tag{
+    font-size:11px;
+    color:#999;
 }
 
 /* CONTACT */
-.contact {
-  font-size: 14px;
-  line-height: 1.8;
-  color: #333;
+.contact{
+    padding:60px 40px;
+    border-top:1px solid #eee;
+    font-size:14px;
 }
 
-/* FOOTER */
-.footer {
-  text-align: center;
-  padding: 40px;
-  font-size: 12px;
-  color: #888;
+/* MODAL */
+.modal{
+    display:none;
+    position:fixed;
+    top:0;
+    left:0;
+    width:100%;
+    height:100%;
+    background:rgba(0,0,0,0.8);
+    justify-content:center;
+    align-items:center;
+    z-index:2000;
+}
+
+.modal-content{
+    background:white;
+    width:70%;
+    padding:30px;
+}
+
+/* RESPONSIVE */
+@media(max-width:900px){
+    .grid{column-count:2;}
+}
+@media(max-width:600px){
+    .grid{column-count:1;}
+    .hero h1{font-size:38px;}
+    .modal-content{width:90%;}
 }
 </style>
 </head>
 
 <body>
 
+<!-- NAV -->
+<nav>
+    <div><b>TransitLo</b></div>
+    <div>
+        <a href="#works">Works</a>
+        <a href="#about">About</a>
+        <a href="#contact">Contact</a>
+    </div>
+</nav>
+
 <!-- HERO -->
 <div class="hero">
-  <h1>TransitLo</h1>
+    <h1>TransitLo</h1>
+    <p>Architect & Spatial Strategy Designer</p>
+    <p>建筑 · 展览 · 空间策略设计</p>
 
-  <div class="subtitle">
-    Architect & Spatial Strategy Designer<br/>
-    建筑 · 展览 · 空间策略设计
-  </div>
+    <div class="lang">
+        中文 / English / Tiếng Việt
+    </div>
+</div>
 
-  <div class="tag">
-    China · Vietnam · ASEAN Projects
-  </div>
+<!-- WORKS -->
+<div id="works" class="grid">
+
+    <div class="card" onclick="openModal('Canton Fair Pavilion')">
+        <img src="images/p1.jpg">
+        <h3>Canton Fair Pavilion</h3>
+        <div class="tag">Exhibition</div>
+        <p>Spatial strategy design</p>
+    </div>
+
+    <div class="card" onclick="openModal('ASEAN Expo Pavilion')">
+        <img src="images/p2.jpg">
+        <h3>ASEAN Expo Pavilion</h3>
+        <div class="tag">Architecture</div>
+        <p>International pavilion system</p>
+    </div>
+
+    <div class="card" onclick="openModal('Urban Study')">
+        <img src="images/p3.jpg">
+        <h3>Urban Spatial Study</h3>
+        <div class="tag">Research</div>
+        <p>Urban behavior mapping</p>
+    </div>
+
+    <div class="card" onclick="openModal('Interior Flow')">
+        <img src="images/p4.jpg">
+        <h3>Interior Flow Study</h3>
+        <div class="tag">Interior</div>
+        <p>Spatial circulation analysis</p>
+    </div>
+
+    <div class="card" onclick="openModal('Retail Strategy')">
+        <img src="images/p5.jpg">
+        <h3>Retail Strategy</h3>
+        <div class="tag">Commercial</div>
+        <p>Retail experience design</p>
+    </div>
+
+    <div class="card" onclick="openModal('Concept Lab')">
+        <img src="images/p6.jpg">
+        <h3>Concept Lab</h3>
+        <div class="tag">Concept</div>
+        <p>Experimental design studies</p>
+    </div>
+
 </div>
 
 <!-- ABOUT -->
-<div class="section">
-  <h2>About / 关于 / Giới thiệu</h2>
-
-  <div class="about">
-    中文：建筑师 & 空间策略设计师，专注展览空间、城市空间与展馆设计实践。<br><br>
-
-    English: Architect & spatial strategist focusing on exhibition and architectural spatial design.<br><br>
-
-    Tiếng Việt: Kiến trúc sư & thiết kế chiến lược không gian, tập trung vào triển lãm và kiến trúc không gian.
-  </div>
-</div>
-
-<!-- PROJECTS -->
-<div class="section">
-  <h2>Selected Projects / 作品展示</h2>
-
-  <div class="grid">
-
-    <div class="card">
-      <img src="https://images.unsplash.com/photo-1503387762-592deb58ef4e" />
-      <div class="content">
-        <h3>Canton Fair Pavilion</h3>
-        <p>Exhibition booth design and spatial strategy execution.</p>
-      </div>
-    </div>
-
-    <div class="card">
-      <img src="https://images.unsplash.com/photo-1497366754035-f200968a6e72" />
-      <div class="content">
-        <h3>ASEAN Expo Pavilion</h3>
-        <p>National pavilion design for international exhibition.</p>
-      </div>
-    </div>
-
-    <div class="card">
-      <img src="https://images.unsplash.com/photo-1505693416388-ac5ce068fe85" />
-      <div class="content">
-        <h3>Urban Spatial Study</h3>
-        <p>Research on architectural spatial behavior and flow.</p>
-      </div>
-    </div>
-
-  </div>
+<div id="about" class="contact">
+    <h2>About</h2>
+    <p>TransitLo focuses on architecture, exhibition design, and spatial strategy across China and Southeast Asia.</p>
 </div>
 
 <!-- CONTACT -->
-<div class="section">
-  <h2>Contact / 联系方式</h2>
+<div id="contact" class="contact">
 
-  <div class="contact">
-    Email: yourname@email.com<br>
-    WhatsApp: +86 XXXXXXXX<br>
-    Location: China / Vietnam / ASEAN<br>
-  </div>
+    <h2>Contact / 联系方式 / Liên hệ</h2>
+
+    <p>Email: <b>lathuongthang@gmail.com</b></p>
+    <p>WeChat: <b>13481183494</b></p>
+
+    <p><b>Vietnam:</b><br>
+    18 Louis XVI, Khu đô thị Louis City Hoàng Mai, Hà Nội</p>
+
+    <p><b>China:</b><br>
+    中国广西南宁市中山路4号</p>
+
 </div>
 
-<div class="footer">
-  © TransitLo | 罗常胜
+<!-- MODAL -->
+<div class="modal" id="modal" onclick="closeModal()">
+    <div class="modal-content" id="modalText"></div>
 </div>
+
+<script>
+function openModal(title){
+    document.getElementById('modal').style.display='flex';
+    document.getElementById('modalText').innerHTML=
+    "<h2>"+title+"</h2><p>Project details coming soon...</p>";
+}
+
+function closeModal(){
+    document.getElementById('modal').style.display='none';
+}
+</script>
 
 </body>
 </html>
