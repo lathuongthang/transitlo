@@ -103,10 +103,7 @@ header{
   line-height:1.8;
 }
 
-/* ========================= */
-/* ⭐ 9宫作品墙 */
-/* ========================= */
-
+/* GRID */
 .grid{
   display:grid;
   grid-template-columns:repeat(3, 1fr);
@@ -208,9 +205,9 @@ footer{
   color:#888;
 }
 
-/* ========================= */
-/* MOBILE LAYOUT */
-/* ========================= */
+/* =========================
+   RESPONSIVE
+========================= */
 @media (max-width: 1100px){
   .grid{
     grid-template-columns:repeat(2, 1fr);
@@ -227,11 +224,28 @@ footer{
 
   .hero{
     height:auto;
-    padding:120px 20px 60px;
+    padding:140px 20px 60px;
+    overflow:visible;
   }
 
   .hero h1{
-    letter-spacing:8px;
+    font-size:clamp(48px, 12vw, 110px);
+    letter-spacing:4px;
+    text-align:center;
+    max-width:100%;
+    overflow-wrap:break-word;
+    word-break:break-word;
+    padding:0 12px;
+  }
+
+  .hero p{
+    font-size:15px;
+    text-align:center;
+  }
+
+  .hero .sub{
+    font-size:13px;
+    text-align:center;
   }
 
   .grid{
@@ -261,56 +275,6 @@ footer{
   .contact{
     padding-left:20px;
     padding-right:20px;
-  }
-}
-
-/* ========================= */
-/* 📱 MOBILE FONT FIX（已合并补丁） */
-/* ========================= */
-
-@media (max-width: 900px){
-
-  body{
-    font-size:15px;
-  }
-
-  .hero p{
-    font-size:15px;
-  }
-
-  .hero .sub{
-    font-size:14px;
-  }
-
-  .section-title{
-    font-size:13px;
-  }
-
-  .services-offer{
-    font-size:14px;
-    line-height:1.9;
-  }
-
-  .services-extra{
-    font-size:14px;
-    line-height:1.9;
-  }
-
-  .card h3{
-    font-size:16px;
-  }
-
-  .card p{
-    font-size:13px;
-  }
-
-  .about-text{
-    font-size:15px;
-  }
-
-  .contact{
-    font-size:14px;
-    line-height:2;
   }
 }
 
