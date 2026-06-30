@@ -15,12 +15,19 @@
   font-family: Inter, sans-serif;
 }
 
+html{
+  scroll-behavior:smooth;
+}
+
 body{
   background:#fff;
   color:#111;
+  padding-top:80px;
 }
 
-/* NAV */
+/* ===================== */
+/* HEADER */
+/* ===================== */
 header{
   position:fixed;
   top:0;
@@ -32,6 +39,11 @@ header{
   font-size:12px;
   letter-spacing:1px;
   background:white;
+  z-index:1000;
+
+  /* 流畅优化（不影响内容） */
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
 }
 
 .nav-right{
@@ -39,7 +51,9 @@ header{
   gap:25px;
 }
 
+/* ===================== */
 /* HERO */
+/* ===================== */
 .hero{
   height:92vh;
   display:flex;
@@ -47,10 +61,13 @@ header{
   justify-content:center;
   align-items:center;
   text-align:center;
+
+  /* 防止视觉被压 */
+  padding-top:20px;
 }
 
 .hero h1{
-  font-size:180px;
+  font-size:clamp(80px, 10vw, 180px);
   letter-spacing:20px;
   font-weight:800;
 }
@@ -68,27 +85,59 @@ header{
   color:#666;
 }
 
+/* ===================== */
 /* SECTION TITLE */
+/* ===================== */
 .section-title{
   padding:60px;
   font-size:12px;
   letter-spacing:2px;
   display:flex;
   justify-content:space-between;
+
+  /* 节奏优化 */
+  margin:20px 0;
 }
 
-/* PROJECT GRID */
+/* ===================== */
+/* SERVICES */
+/* ===================== */
+.services-offer{
+  padding: 10px 60px 40px;
+  font-size:12px;
+  line-height:1.8;
+  max-width:900px;
+}
+
+.services-extra{
+  padding:10px 60px 60px;
+  font-size:12px;
+  color:#444;
+  line-height:1.8;
+}
+
+/* ===================== */
+/* GRID */
+/* ===================== */
 .grid{
   display:grid;
   grid-template-columns:repeat(3,1fr);
   gap:35px;
   padding:0 60px 80px;
+
+  align-items:start;
 }
 
 .card img{
   width:100%;
   height:260px;
   object-fit:cover;
+
+  transition:transform 0.35s ease;
+}
+
+.card:hover img{
+  transform:scale(1.03);
 }
 
 .card h3{
@@ -102,11 +151,15 @@ header{
   margin-top:5px;
 }
 
+/* ===================== */
 /* ABOUT */
+/* ===================== */
 .about{
   display:flex;
   gap:60px;
   padding:80px 60px;
+
+  align-items:center;
 }
 
 .about img{
@@ -122,16 +175,22 @@ header{
   color:#333;
 }
 
+/* ===================== */
 /* CONTACT */
+/* ===================== */
 .contact{
   display:grid;
   grid-template-columns:1fr 1fr 1fr;
   padding:80px 60px;
   font-size:13px;
   line-height:2;
+
+  gap:40px;
 }
 
+/* ===================== */
 /* FOOTER */
+/* ===================== */
 footer{
   text-align:center;
   padding:30px;
@@ -139,12 +198,54 @@ footer{
   color:#888;
 }
 
-/* NEW: services extra */
-.services-extra{
-  padding:10px 60px 60px;
-  font-size:12px;
-  color:#444;
-  line-height:1.8;
+/* ===================== */
+/* RESPONSIVE */
+/* ===================== */
+@media (max-width: 900px){
+
+  header{
+    padding:20px;
+    flex-direction:column;
+    gap:10px;
+  }
+
+  .hero{
+    height:auto;
+    padding:120px 20px 60px;
+  }
+
+  .hero h1{
+    letter-spacing:8px;
+  }
+
+  .grid{
+    grid-template-columns:1fr;
+  }
+
+  .about{
+    flex-direction:column;
+  }
+
+  .about img{
+    width:100%;
+  }
+
+  .contact{
+    grid-template-columns:1fr;
+  }
+
+  .section-title{
+    padding:30px 20px;
+  }
+
+  .services-offer,
+  .services-extra,
+  .grid,
+  .about,
+  .contact{
+    padding-left:20px;
+    padding-right:20px;
+  }
 }
 </style>
 </head>
@@ -168,13 +269,11 @@ footer{
   <div class="sub">CHINA · VIETNAM · ASEAN PROJECTS</div>
 </section>
 
-<!-- SERVICES -->
 <div class="section-title">
   <div>SERVICES / 服务内容</div>
 </div>
 
 <section class="services-offer">
-
   <ul>
     <li>
       Exhibition / Booth / Pavilion Design Service<br>
@@ -194,22 +293,19 @@ footer{
       Dịch vụ thiết kế ý tưởng kiến trúc
     </li>
   </ul>
-
 </section>
 
-<!-- ✔ 已嵌入的三句话（放在services下方最合理位置） -->
 <section class="services-extra">
-
   <p>
     Exhibition design commission<br>
     展览设计 / 展厅设计委托<br>
-    Dịch vụ thiết kế triển lãm / gian hàng / pavilion theo dự án
+    Dịch vụ thiết kế triển lãm / gian hàng theo dự án
   </p>
 
   <p>
     Expo Planning & Exhibition Space Design Consulting<br>
     展会空间策划与展览场景设计支持<br>
-    Hỗ trợ thiết kế không gian triển lãm & quy hoạch hội chợ
+    Hỗ trợ thiết kế không gian triển lãm
   </p>
 
   <p>
@@ -217,7 +313,6 @@ footer{
     建筑概念设计与方案服务<br>
     Dịch vụ thiết kế ý tưởng kiến trúc
   </p>
-
 </section>
 
 <div class="section-title">
@@ -226,7 +321,6 @@ footer{
 </div>
 
 <section class="grid">
-
   <div class="card">
     <img src="https://images.unsplash.com/photo-1503387762-592deb58ef4e" />
     <h3>Canton Fair Pavilion</h3>
@@ -244,43 +338,6 @@ footer{
     <h3>Vietnam Ministry Booth</h3>
     <p>Government Exhibition Booth</p>
   </div>
-
-  <div class="card">
-    <img src="https://images.unsplash.com/photo-1505691938895-1758d7feb511" />
-    <h3>Museum Concept Study</h3>
-    <p>Architecture</p>
-  </div>
-
-  <div class="card">
-    <img src="https://images.unsplash.com/photo-1481026469463-66327c86e544" />
-    <h3>Cultural Center Concept</h3>
-    <p>Architecture</p>
-  </div>
-
-  <div class="card">
-    <img src="https://images.unsplash.com/photo-1501594907352-04cda38ebc29" />
-    <h3>Urban Spatial Study</h3>
-    <p>Urban Research</p>
-  </div>
-
-  <div class="card">
-    <img src="https://images.unsplash.com/photo-1500530855697-b586d89ba3ee" />
-    <h3>Interior Flow Study</h3>
-    <p>Interior Design</p>
-  </div>
-
-  <div class="card">
-    <img src="https://images.unsplash.com/photo-1484154218962-a197022b5858" />
-    <h3>Retail Space Strategy</h3>
-    <p>Commercial Design</p>
-  </div>
-
-  <div class="card">
-    <img src="https://images.unsplash.com/photo-1496307653780-42ee777d4833" />
-    <h3>Concept Lab</h3>
-    <p>Design Research</p>
-  </div>
-
 </section>
 
 <div class="section-title">
@@ -303,9 +360,8 @@ footer{
 </div>
 
 <section class="contact">
-
   <div>
-    Email: <br>
+    Email:<br>
     <b>lathuongthang@gmail.com</b><br><br>
     WeChat:<br>
     <b>13481183494</b>
@@ -321,7 +377,6 @@ footer{
     China / 中国 / Trung Quốc<br>
     中国广西南宁市中山路4号 TransitLo office
   </div>
-
 </section>
 
 <footer>
