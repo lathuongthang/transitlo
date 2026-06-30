@@ -104,7 +104,7 @@ header{
 }
 
 /* ========================= */
-/* ⭐ 9宫作品墙（唯一升级点） */
+/* ⭐ 9宫作品墙 */
 /* ========================= */
 
 .grid{
@@ -145,7 +145,7 @@ header{
   margin-top:4px;
 }
 
-/* hover overlay（不改内容，只视觉增强） */
+/* hover overlay */
 .card::after{
   content:"VIEW PROJECT";
   position:absolute;
@@ -208,7 +208,9 @@ footer{
   color:#888;
 }
 
-/* RESPONSIVE */
+/* ========================= */
+/* MOBILE LAYOUT */
+/* ========================= */
 @media (max-width: 1100px){
   .grid{
     grid-template-columns:repeat(2, 1fr);
@@ -259,6 +261,56 @@ footer{
   .contact{
     padding-left:20px;
     padding-right:20px;
+  }
+}
+
+/* ========================= */
+/* 📱 MOBILE FONT FIX（已合并补丁） */
+/* ========================= */
+
+@media (max-width: 900px){
+
+  body{
+    font-size:15px;
+  }
+
+  .hero p{
+    font-size:15px;
+  }
+
+  .hero .sub{
+    font-size:14px;
+  }
+
+  .section-title{
+    font-size:13px;
+  }
+
+  .services-offer{
+    font-size:14px;
+    line-height:1.9;
+  }
+
+  .services-extra{
+    font-size:14px;
+    line-height:1.9;
+  }
+
+  .card h3{
+    font-size:16px;
+  }
+
+  .card p{
+    font-size:13px;
+  }
+
+  .about-text{
+    font-size:15px;
+  }
+
+  .contact{
+    font-size:14px;
+    line-height:2;
   }
 }
 
