@@ -1,0 +1,81 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>TRANSITLO — Canton Fair Pavilion</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{--w:1171px;--ink:#111;--muted:#6b6b6b;--line:#ddd;--accent:#b68b4d;--section-gap:8px}
+*{box-sizing:border-box}
+html,body{margin:0;padding:0;background:#fff;color:var(--ink);font-family:"Inter","Microsoft YaHei",Arial,sans-serif;-webkit-font-smoothing:antialiased;text-rendering:geometricPrecision}
+body{min-width:320px}
+img{display:block;width:100%;height:100%;object-fit:cover}
+.page{width:min(100%,var(--w));margin:auto;background:#fff;overflow:hidden}
+.page>header,.page>section,.page>footer,.page>section>div,.page>footer>div,.overview-left>div,.strategy-left>div,.gallery-mosaic>div{min-width:0;min-height:0;overflow:hidden}
+.header{height:44px;min-height:44px;max-height:44px;padding:0 61px;display:flex;align-items:center;justify-content:space-between;background:#fff;font-size:8px;font-weight:600;line-height:1;letter-spacing:.45px}
+.brand{font-size:13px;font-weight:600;line-height:1;letter-spacing:3.1px}
+.nav{display:flex;align-items:center;gap:28px}.nav a{color:#111;text-decoration:none;font-weight:600}.langs{display:flex;gap:7px;font-weight:500}.langs span+span:before{content:"|";margin-right:7px;color:#999}
+.hero{height:404px;min-height:404px;max-height:404px;position:relative;color:#fff;background:#222;overflow:hidden}
+.hero>img{filter:brightness(.78)}
+.hero:after{content:"";position:absolute;inset:0;background:linear-gradient(90deg,rgba(0,0,0,.82) 0%,rgba(0,0,0,.45) 29%,rgba(0,0,0,0) 59%)}
+.hero-copy{position:absolute;z-index:2;left:61px;top:96px;width:390px}
+.hero h1{margin:0;font-size:40px;line-height:1.15;font-weight:400;letter-spacing:.45px}.hero h1 strong{display:block;font-weight:700;letter-spacing:.25px}
+.hero h2{margin:13px 0 10px;font-size:18px;line-height:1.25;font-weight:500;letter-spacing:.05px}.hero .cn{font-size:16px;line-height:1.4;font-weight:600;letter-spacing:.1px}
+.hero .place{position:absolute;z-index:2;left:61px;bottom:57px;font-size:9px;line-height:1;font-weight:600;letter-spacing:.7px}.hero .place:after{content:"";display:block;width:56px;border-bottom:1px solid #fff;margin-top:13px}
+.overview{height:294px;min-height:294px;max-height:294px;padding-top:var(--section-gap);display:grid;grid-template-columns:602fr 569fr;grid-template-rows:286px;background:#fff;border-bottom:1px solid #eee}
+.overview-left{height:286px;padding:40px 40px 24px 61px;display:grid;grid-template-columns:225px 1fr;grid-template-rows:222px;gap:31px}
+.overview-photo{height:286px;min-height:0;overflow:hidden}
+.section-title{margin:0 0 10px;font-size:11px;line-height:1.28;font-weight:700;letter-spacing:.08px}.section-title span{display:block;margin-top:2px;font-size:10.5px;line-height:1.35;font-weight:600;letter-spacing:.05px}.section-title:after{content:"";display:block;width:30px;border-bottom:1.5px solid #222;margin-top:8px}
+.sketch{height:175px;margin-top:10px;display:flex;align-items:center;justify-content:center;color:#888}
+.sketch svg{width:100%;height:100%}
+.facts{padding-top:44px;font-size:8.5px;font-weight:400;line-height:1.35;letter-spacing:0}.fact{display:grid;grid-template-columns:104px 1fr;gap:6px;padding:7px 0;border-bottom:1px solid #ddd;line-height:1.35}.fact b{font-weight:600}.fact:last-child{border:0}
+.strategy{height:296px;min-height:296px;max-height:296px;display:grid;grid-template-columns:602fr 569fr;grid-template-rows:296px;border-bottom:1px solid #eee}
+.strategy-left{height:296px;padding:26px 24px 16px 61px;display:grid;grid-template-columns:125px 1fr;grid-template-rows:254px;gap:20px}.legend{font-size:7.5px;line-height:1.4;font-weight:500;letter-spacing:.03px;color:#666;margin-top:12px}.legend-item{display:grid;grid-template-columns:22px 1fr;align-items:center;gap:8px;margin:15px 0}.legend-icon{font-size:16px;color:#888}.diagram{height:245px;align-self:end}.diagram svg{width:100%;height:100%}
+.communication{height:296px;min-height:0;overflow:hidden;padding:28px 58px 20px 34px}.communication-images{height:128px;min-height:0;display:grid;grid-template-columns:1fr 1fr;grid-template-rows:128px;gap:12px;margin-top:12px;overflow:hidden}.communication-images img{min-height:0;overflow:hidden}.communication p{font-size:8.5px;line-height:1.42;font-weight:400;letter-spacing:.01px;margin:13px 0 0}.communication p span{display:block;margin-top:2px;font-weight:600}
+.gallery{height:186px;min-height:186px;max-height:186px;padding:12px 58px 14px 61px;display:grid;grid-template-columns:150px 330px 1fr;grid-template-rows:159px;gap:18px;border-bottom:1px solid #eee}
+.gallery-heading{padding-top:12px}.gallery-main{height:159px;min-height:0;overflow:hidden}.gallery-mosaic{height:159px;min-height:0;display:grid;grid-template-rows:83px 70px;gap:6px;overflow:hidden}.gallery-top{height:83px;min-height:0;display:grid;grid-template-columns:repeat(3,1fr);grid-template-rows:83px;gap:6px;overflow:hidden}.gallery-top img{min-width:0;min-height:0;overflow:hidden}.gallery-bottom{height:70px;min-height:0;overflow:hidden}
+.footer{height:127px;min-height:127px;max-height:127px;display:grid;grid-template-columns:230px 333px 290px 318px;grid-template-rows:127px;overflow:hidden}
+.impact-title{padding:28px 0 0 61px}.impact-copy{padding:27px 20px 0 0;font-size:8.5px;line-height:1.45;font-weight:400;letter-spacing:.01px;color:#3e3e3e}.impact-copy .cn{display:block;margin-top:8px;font-size:8.5px;line-height:1.5;font-weight:600}
+.impact-sketch{padding:22px 20px 0}.impact-sketch svg{width:100%;height:85px}
+.contact{background:#181818;color:#fff;padding:27px 33px}.contact h3{font-size:10.5px;line-height:1.2;font-weight:600;letter-spacing:.12px;margin:0 0 5px}.contact .cn{font-size:8.5px;line-height:1.4;font-weight:500}.contact .rule{width:30px;border-bottom:1px solid #aaa;margin:9px 0}.contact a{display:inline-flex;border:1px solid #aaa;color:#fff;text-decoration:none;padding:8px 24px;font-size:7.5px;line-height:1;font-weight:500;letter-spacing:.2px}
+@media(max-width:700px){.header{padding:0 18px}.nav a{display:none}.hero-copy{left:24px;top:82px}.hero .place{left:24px}.overview,.strategy{height:auto;grid-template-columns:1fr}.overview-left{min-height:286px;padding-left:24px}.overview-photo{height:260px}.strategy-left{min-height:296px;padding-left:24px}.communication{min-height:260px;padding-left:24px}.gallery{height:auto;padding:24px;grid-template-columns:1fr}.gallery-heading{height:75px}.gallery-main,.gallery-mosaic{height:240px}.footer{height:auto;grid-template-columns:1fr 1fr}.impact-title{padding-left:24px}.contact{min-height:127px}}
+</style>
+</head>
+<body>
+<main class="page">
+  <header class="header" data-zone="header">
+    <div class="brand">TRANSITLO</div>
+    <nav class="nav"><a href="#works">◉&nbsp; WORKS</a><a href="#about">ABOUT</a><a href="#contact">CONTACT</a><div class="langs"><span>中文</span><span>EN</span><span>VI</span></div></nav>
+  </header>
+
+  <section class="hero" id="works" data-zone="hero">
+    <img src="https://images.unsplash.com/photo-1540575467063-178a50c2df87?auto=format&fit=crop&w=1800&q=90" alt="Exhibition venue">
+    <div class="hero-copy"><h1>CANTON FAIR <strong>PAVILION</strong></h1><h2>EXHIBITION DESIGN</h2><div class="cn">广交会展览空间设计</div></div>
+    <div class="place">GUANGZHOU, CHINA</div>
+  </section>
+
+  <section class="overview" data-zone="project-overview">
+    <div class="overview-left" data-zone="overview-information">
+      <div><h2 class="section-title">PROJECT OVERVIEW<span>项目概况</span></h2><div class="sketch"><svg viewBox="0 0 240 160" fill="none" stroke="#8d8d8d" stroke-width="1"><path d="M20 122 78 88l88 22 51-30M78 88v-42l55-25 53 18v61M133 21v62M52 108v-49l80 24 54-25M24 124l109 25 84-46M44 133l89-50 76 18M91 31l41 13 29-13M69 101l64 16 53-17"/><path d="m20 122 22 19 91 17 84-40M133 83v66M186 58v42"/></svg></div></div>
+      <div class="facts"><div class="fact"><b>Project</b><span>Canton Fair Pavilion</span></div><div class="fact"><b>Location</b><span>Guangzhou, China</span></div><div class="fact"><b>Client</b><span>Agriculture related organization</span></div><div class="fact"><b>Role</b><span>Exhibition Design<br>Spatial Strategy</span></div><div class="fact"><b>Year</b><span>2023</span></div><div class="fact"><b>Scope</b><span>Concept Design, Space Planning,<br>Exhibition Experience</span></div></div>
+    </div>
+    <div class="overview-photo" data-zone="overview-photo"><img src="https://images.unsplash.com/photo-1505373877841-8d25f7d46678?auto=format&fit=crop&w=1400&q=90" alt="Exhibition pavilion"></div>
+  </section>
+
+  <section class="strategy" data-zone="spatial-strategy">
+    <div class="strategy-left" data-zone="strategy-diagram">
+      <div><h2 class="section-title">SPATIAL STRATEGY<span>空间策略</span></h2><div class="legend"><div class="legend-item"><span class="legend-icon">↥</span><span>ENTRANCE<br>入口引导</span></div><div class="legend-item"><span class="legend-icon">♜</span><span>EXHIBITION<br>展示空间</span></div><div class="legend-item"><span class="legend-icon">♧</span><span>COMMUNICATION<br>交流互动</span></div><div class="legend-item"><span class="legend-icon">♨</span><span>EXPERIENCE<br>体验深化</span></div></div></div>
+      <div class="diagram"><svg viewBox="0 0 360 260" fill="none" stroke="#b9b9b9" stroke-width="1"><path d="m18 174 85-77 145 18 92 60-102 73-151-20Z M103 97v96l135 20 102-38 M238 115v98 M87 228v-92 M18 174l151 24 79-58 92 35 M55 158l113 18 51-38 80 31-67 49-129-18Z"/><path d="M93 148h52v39H93zM184 145h50v46h-50zM252 161h46v36h-46zM129 116h55v42h-55z"/><path d="M46 178c45-29 80-13 121 17 30 21 63 21 110-6" stroke="#b68b4d" stroke-width="3"/><circle cx="153" cy="172" r="33" stroke="#b68b4d" stroke-width="2"/><path d="m148 159 11 12-13 13" stroke="#b68b4d" stroke-width="3"/></svg></div>
+    </div>
+    <div class="communication" data-zone="project-communication"><h2 class="section-title">PROJECT COMMUNICATION<span>项目交流与现场沟通</span></h2><div class="communication-images"><img src="https://images.unsplash.com/photo-1521737711867-e3b97375f902?auto=format&fit=crop&w=800&q=85" alt="Project team"><img src="https://images.unsplash.com/photo-1556761175-b413da4baf72?auto=format&fit=crop&w=800&q=85" alt="Project communication"></div><p>Official communication and project exchange during the exhibition event.<span>展览期间的官方交流与现场沟通。</span></p></div>
+  </section>
+
+  <section class="gallery" data-zone="gallery"><div class="gallery-heading" data-zone="gallery-title"><h2 class="section-title">EXHIBITION EXPERIENCE<span>展览体验</span></h2></div><div class="gallery-main" data-zone="gallery-main"><img src="https://images.unsplash.com/photo-1497366754035-f200968a6e72?auto=format&fit=crop&w=900&q=90" alt="Exhibition experience"></div><div class="gallery-mosaic" data-zone="gallery-mosaic"><div class="gallery-top"><img src="https://images.unsplash.com/photo-1497366811353-6870744d04b2?auto=format&fit=crop&w=500&q=85" alt="Exhibition view"><img src="https://images.unsplash.com/photo-1497366216548-37526070297c?auto=format&fit=crop&w=500&q=85" alt="Exhibition view"><img src="https://images.unsplash.com/photo-1524758631624-e2822e304c36?auto=format&fit=crop&w=500&q=85" alt="Exhibition view"></div><div class="gallery-bottom"><img src="https://images.unsplash.com/photo-1497366754035-f200968a6e72?auto=format&fit=crop&w=1200&q=85" alt="Panoramic exhibition view"></div></div></section>
+
+  <footer class="footer" id="contact" data-zone="footer"><div class="impact-title" data-zone="impact-title"><h2 class="section-title">PROJECT IMPACT<span>项目价值</span></h2></div><div class="impact-copy" data-zone="impact-copy">The exhibition space connects brand communication, spatial experience and international exchange, creating value for both exhibitors and visitors.<span class="cn">展览空间连接品牌展示、交流体验与国际合作，为参展方与参观者创造价值。</span></div><div class="impact-sketch" data-zone="impact-sketch"><svg viewBox="0 0 280 85" fill="none" stroke="#999"><path d="M8 71h263M40 70l70-14 20-27 8-23 8 23 21 27 73 14M111 56h56M127 30h21M122 70l8-41M154 70l-8-41M75 70l34-14M202 70l-35-14"/></svg></div><div class="contact" data-zone="contact"><h3>LET’S WORK TOGETHER</h3><div class="cn">期待与您合作</div><div class="rule"></div><a href="mailto:hello@transitlo.com">CONTACT US</a></div></footer>
+</main>
+</body>
+</html>
