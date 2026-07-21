@@ -12,7 +12,7 @@
 *{box-sizing:border-box}
 html,body{margin:0;padding:0;background:#fff;color:var(--ink);font-family:"Inter","Microsoft YaHei",Arial,sans-serif;-webkit-font-smoothing:antialiased;text-rendering:geometricPrecision}
 body{min-width:320px}
-img{display:block;width:100%;height:100%;object-fit:cover;cursor:zoom-in}
+img{display:block;width:100%;height:100%;object-fit:cover}
 .page{width:min(100%,var(--w));margin:auto;background:#fff;overflow:hidden}
 .page>header,.page>section,.page>footer,.page>section>div,.page>footer>div,.overview-left>div,.strategy-left>div,.gallery-mosaic>div{min-width:0;min-height:0;overflow:hidden}
 .header{height:44px;min-height:44px;max-height:44px;padding:0 61px;display:flex;align-items:center;justify-content:space-between;background:#fff;font-size:8.64px;font-weight:600;line-height:1;letter-spacing:.45px}
@@ -41,7 +41,16 @@ img{display:block;width:100%;height:100%;object-fit:cover;cursor:zoom-in}
 .impact-title{padding:28px 0 0 61px}.impact-copy{padding:27px 20px 0 0;font-size:9.18px;line-height:1.45;font-weight:400;letter-spacing:.01px;color:#3e3e3e}.impact-copy .cn{display:block;margin-top:8px;font-size:9.18px;line-height:1.5;font-weight:600}
 .impact-sketch{padding:22px 20px 0}.impact-sketch img{width:100%;height:85px;object-fit:contain}
 .contact{background:#181818;color:#fff;padding:27px 33px}.contact h3{font-size:10.5px;line-height:1.2;font-weight:600;letter-spacing:.12px;margin:0 0 5px}.contact .cn{font-size:8.5px;line-height:1.4;font-weight:500}.contact .rule{width:30px;border-bottom:1px solid #aaa;margin:9px 0}.contact a{display:inline-flex;border:1px solid #aaa;color:#fff;text-decoration:none;padding:8px 24px;font-size:7.5px;line-height:1;font-weight:500;letter-spacing:.2px}
-@media(max-width:700px){.header{padding:0 18px}.nav a{display:none}.hero-copy{left:24px;top:82px}.hero .place{left:24px}.overview,.strategy{height:auto;grid-template-columns:1fr}.overview-left{min-height:286px;padding-left:24px}.overview-photo{height:260px}.strategy-left{min-height:296px;padding-left:24px}.communication{min-height:260px;padding-left:24px}.gallery{height:auto;padding:24px;grid-template-columns:1fr}.gallery-heading{height:75px}.gallery-main,.gallery-mosaic{height:240px}.footer{height:auto;grid-template-columns:1fr 1fr}.impact-title{padding-left:24px}.contact{min-height:127px}}
+.zoomable{cursor:zoom-in}
+.lightbox{position:fixed;z-index:9999;inset:0;display:none;align-items:center;justify-content:center;padding:42px;background:rgba(0,0,0,.94)}
+.lightbox.open{display:flex}
+.lightbox-image{display:block;width:auto;height:auto;max-width:94vw;max-height:90vh;object-fit:contain;cursor:default;box-shadow:0 0 0 1px rgba(255,255,255,.12)}
+.lightbox-close,.lightbox-prev,.lightbox-next{position:fixed;z-index:2;border:0;background:rgba(0,0,0,.28);color:#fff;cursor:pointer;font-family:Inter,sans-serif}
+.lightbox-close{top:18px;right:24px;width:42px;height:42px;font-size:28px;line-height:42px}
+.lightbox-prev,.lightbox-next{top:50%;width:48px;height:72px;margin-top:-36px;font-size:34px}
+.lightbox-prev{left:18px}.lightbox-next{right:18px}
+.lightbox-count{position:fixed;left:50%;bottom:17px;transform:translateX(-50%);color:#fff;font-size:10px;letter-spacing:1px}
+@media(max-width:700px){.header{padding:0 18px}.nav a{display:none}.hero-copy{left:24px;top:82px}.hero .place{left:24px}.overview,.strategy{height:auto;grid-template-columns:1fr}.overview-left{min-height:286px;padding-left:24px}.overview-photo{height:260px}.strategy-left{min-height:296px;padding-left:24px}.communication{min-height:260px;padding-left:24px}.gallery{height:auto;padding:24px;grid-template-columns:1fr}.gallery-heading{height:75px}.gallery-main,.gallery-mosaic{height:240px}.footer{height:auto;grid-template-columns:1fr 1fr}.impact-title{padding-left:24px}.contact{min-height:127px}.lightbox{padding:16px}.lightbox-prev{left:4px}.lightbox-next{right:4px}}
 </style>
 </head>
 <body>
@@ -70,18 +79,56 @@ img{display:block;width:100%;height:100%;object-fit:cover;cursor:zoom-in}
       <div><h2 class="section-title">SPATIAL STRATEGY<span>空间策略</span></h2><div class="legend"><div class="legend-item"><span class="legend-icon">↥</span><span>ENTRANCE<br>入口引导</span></div><div class="legend-item"><span class="legend-icon">♜</span><span>EXHIBITION<br>展示空间</span></div><div class="legend-item"><span class="legend-icon">♧</span><span>COMMUNICATION<br>交流互动</span></div><div class="legend-item"><span class="legend-icon">♨</span><span>EXPERIENCE<br>体验深化</span></div></div></div>
       <div class="diagram"><img src="cantonfairTR1.png" alt="Spatial strategy diagram"></div>
     </div>
-    <div class="communication" data-zone="project-communication"><h2 class="section-title">PROJECT COMMUNICATION<span>项目交流与现场沟通</span></h2><div class="communication-images"><img src="contonfairtalk.JPG" alt="Project team"><img src="cantonfair all.JPG" alt="Project communication"></div><p>Official communication and project exchange during the exhibition event.<span>展览期间的官方交流与现场沟通。</span></p></div>
+    <div class="communication" data-zone="project-communication"><h2 class="section-title">PROJECT COMMUNICATION<span>项目交流与现场沟通</span></h2><div class="communication-images"><img class="zoomable" src="contonfairtalk.JPG" alt="Project team" title="Click to view original image"><img class="zoomable" src="cantonfair all.JPG" alt="Project communication" title="Click to view original image"></div><p>Official communication and project exchange during the exhibition event.<span>展览期间的官方交流与现场沟通。</span></p></div>
   </section>
 
-  <section class="gallery" data-zone="gallery"><div class="gallery-heading" data-zone="gallery-title"><h2 class="section-title">EXHIBITION EXPERIENCE<span>展览体验</span></h2></div><div class="gallery-main" data-zone="gallery-main"><img src="workL1.JPG" alt="Exhibition experience"></div><div class="gallery-mosaic" data-zone="gallery-mosaic"><div class="gallery-top"><img src="cantonfairL.jpg" alt="Exhibition view"><img src="contonfairF.jpg" alt="Exhibition view"><img src="cantonfairR.jpg" alt="Exhibition view"></div><div class="gallery-bottom"><img src="cantonfairFL.png" alt="Panoramic exhibition view"></div></div></section>
+  <section class="gallery" data-zone="gallery"><div class="gallery-heading" data-zone="gallery-title"><h2 class="section-title">EXHIBITION EXPERIENCE<span>展览体验</span></h2></div><div class="gallery-main" data-zone="gallery-main"><img class="zoomable" src="workL1.JPG" alt="Exhibition experience" title="Click to view original image"></div><div class="gallery-mosaic" data-zone="gallery-mosaic"><div class="gallery-top"><img class="zoomable" src="cantonfairL.jpg" alt="Exhibition view" title="Click to view original image"><img class="zoomable" src="contonfairF.jpg" alt="Exhibition view" title="Click to view original image"><img class="zoomable" src="cantonfairR.jpg" alt="Exhibition view" title="Click to view original image"></div><div class="gallery-bottom"><img class="zoomable" src="cantonfairFL.png" alt="Panoramic exhibition view" title="Click to view original image"></div></div></section>
 
   <footer class="footer" id="contact" data-zone="footer"><div class="impact-title" data-zone="impact-title"><h2 class="section-title">PROJECT IMPACT<span>项目价值</span></h2></div><div class="impact-copy" data-zone="impact-copy">The exhibition space connects brand communication, spatial experience and international exchange, creating value for both exhibitors and visitors.<span class="cn">展览空间连接品牌展示、交流体验与国际合作，为参展方与参观者创造价值。</span></div><div class="impact-sketch" data-zone="impact-sketch"><img src="cantonfairlast1.png" alt="Project impact diagram"></div><div class="contact" data-zone="contact"><h3>LET’S WORK TOGETHER</h3><div class="cn">期待与您合作</div><div class="rule"></div><a href="mailto:hello@transitlo.com">CONTACT US</a></div></footer>
 </main>
+<div class="lightbox" id="lightbox" role="dialog" aria-modal="true" aria-label="Original image viewer">
+  <button class="lightbox-close" type="button" aria-label="Close">×</button>
+  <button class="lightbox-prev" type="button" aria-label="Previous image">‹</button>
+  <img class="lightbox-image" id="lightboxImage" alt="Original project image">
+  <button class="lightbox-next" type="button" aria-label="Next image">›</button>
+  <div class="lightbox-count" id="lightboxCount"></div>
+</div>
 <script>
-document.querySelectorAll('img').forEach(function (image) {
-  image.addEventListener('click', function () {
-    window.open(image.src, '_blank');
-  });
+const zoomImages=[...document.querySelectorAll('img.zoomable')];
+const lightbox=document.querySelector('#lightbox');
+const lightboxImage=document.querySelector('#lightboxImage');
+const lightboxCount=document.querySelector('#lightboxCount');
+let activeImage=0;
+
+function showImage(index){
+  activeImage=(index+zoomImages.length)%zoomImages.length;
+  lightboxImage.src=zoomImages[activeImage].src;
+  lightboxImage.alt=zoomImages[activeImage].alt;
+  lightboxCount.textContent=`${activeImage+1} / ${zoomImages.length}`;
+}
+
+function openLightbox(index){
+  showImage(index);
+  lightbox.classList.add('open');
+  document.body.style.overflow='hidden';
+}
+
+function closeLightbox(){
+  lightbox.classList.remove('open');
+  lightboxImage.removeAttribute('src');
+  document.body.style.overflow='';
+}
+
+zoomImages.forEach((image,index)=>image.addEventListener('click',()=>openLightbox(index)));
+document.querySelector('.lightbox-close').addEventListener('click',closeLightbox);
+document.querySelector('.lightbox-prev').addEventListener('click',event=>{event.stopPropagation();showImage(activeImage-1)});
+document.querySelector('.lightbox-next').addEventListener('click',event=>{event.stopPropagation();showImage(activeImage+1)});
+lightbox.addEventListener('click',event=>{if(event.target===lightbox)closeLightbox()});
+document.addEventListener('keydown',event=>{
+  if(!lightbox.classList.contains('open'))return;
+  if(event.key==='Escape')closeLightbox();
+  if(event.key==='ArrowLeft')showImage(activeImage-1);
+  if(event.key==='ArrowRight')showImage(activeImage+1);
 });
 </script>
 </body>
