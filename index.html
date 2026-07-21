@@ -90,16 +90,22 @@ header{
 }
 
 /* SERVICES */
+.services-title{
+  padding:0 60px;
+  font-size:17.6px;
+  line-height:1.5;
+}
+
 .services-offer{
   padding: 10px 60px 40px;
-  font-size:12px;
+  font-size:13.2px;
   line-height:1.8;
   max-width:900px;
 }
 
 .services-extra{
   padding:10px 60px 60px;
-  font-size:12px;
+  font-size:13.2px;
   color:#444;
   line-height:1.8;
 }
@@ -200,6 +206,7 @@ header{
   object-fit:contain;
   display:block;
   flex-shrink:0;
+  cursor:zoom-in;
 }
 
 .about-text{
@@ -207,6 +214,38 @@ header{
   font-size:13px;
   line-height:1.8;
   color:#333;
+}
+.about-lightbox{
+  position:fixed;
+  z-index:5000;
+  inset:0;
+  display:none;
+  align-items:center;
+  justify-content:center;
+  padding:42px;
+  background:rgba(0,0,0,.94);
+}
+.about-lightbox.open{display:flex}
+.about-lightbox img{
+  display:block;
+  width:auto;
+  height:auto;
+  max-width:94vw;
+  max-height:90vh;
+  object-fit:contain;
+}
+.about-lightbox-close{
+  position:fixed;
+  top:18px;
+  right:24px;
+  z-index:2;
+  width:44px;
+  height:44px;
+  border:0;
+  background:rgba(0,0,0,.3);
+  color:#fff;
+  font:300 30px/44px Inter,sans-serif;
+  cursor:pointer;
 }
 /* CONTACT */
 .contact{
@@ -297,6 +336,15 @@ footer{
     padding-left:20px;
     padding-right:20px;
   }
+
+  .services-title{
+    padding-left:20px;
+    padding-right:20px;
+  }
+
+  .about-lightbox{
+    padding:16px;
+  }
 }
 
 </style>
@@ -333,7 +381,7 @@ footer{
   <div class="sub">CHINA · VIETNAM · ASEAN PROJECTS</div>
 </section>
 
-<div>
+<div class="services-title">
   SERVICES / 服务内容 / DỊCH VỤ
 </div>
 
@@ -419,7 +467,7 @@ footer{
 </div>
 
 <section class="about">
-  <img src="about1.jpg"/>
+  <img id="aboutPhoto" src="about1.jpg" alt="Changsheng Luo — Founder & Architect" title="Click to view original image"/>
   <div class="about-text">
     <div class="about-title">ABOUT TRANSITLO</div>
     <div class="about-headline">Designing Spaces.<br>Connecting People<br>& Places.</div>
@@ -483,6 +531,39 @@ Hà Nội Viet Nam
 <footer>
 © TRANSITLO
 </footer>
+
+<div class="about-lightbox" id="aboutLightbox" role="dialog" aria-modal="true" aria-label="About photo viewer">
+  <button class="about-lightbox-close" id="aboutLightboxClose" type="button" aria-label="Close">×</button>
+  <img id="aboutLightboxImage" alt="Changsheng Luo — original photo">
+</div>
+
+<script>
+const aboutPhoto=document.querySelector('#aboutPhoto');
+const aboutLightbox=document.querySelector('#aboutLightbox');
+const aboutLightboxImage=document.querySelector('#aboutLightboxImage');
+const aboutLightboxClose=document.querySelector('#aboutLightboxClose');
+
+function openAboutLightbox(){
+  aboutLightboxImage.src=aboutPhoto.src;
+  aboutLightbox.classList.add('open');
+  document.body.style.overflow='hidden';
+}
+
+function closeAboutLightbox(){
+  aboutLightbox.classList.remove('open');
+  aboutLightboxImage.removeAttribute('src');
+  document.body.style.overflow='';
+}
+
+aboutPhoto.addEventListener('click',openAboutLightbox);
+aboutLightboxClose.addEventListener('click',closeAboutLightbox);
+aboutLightbox.addEventListener('click',event=>{
+  if(event.target===aboutLightbox)closeAboutLightbox();
+});
+document.addEventListener('keydown',event=>{
+  if(event.key==='Escape'&&aboutLightbox.classList.contains('open'))closeAboutLightbox();
+});
+</script>
 
 </body>
 </html>
