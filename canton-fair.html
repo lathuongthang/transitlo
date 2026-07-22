@@ -16,7 +16,7 @@ img{display:block;width:100%;height:100%;object-fit:cover}
 .page{width:min(100%,var(--w));margin:auto;background:#fff;overflow:hidden}
 .page>header,.page>section,.page>footer,.page>section>div,.page>footer>div,.overview-left>div,.strategy-left>div,.gallery-mosaic>div{min-width:0;min-height:0;overflow:hidden}
 .header{height:44px;min-height:44px;max-height:44px;padding:0 61px;display:flex;align-items:center;justify-content:space-between;background:#fff;font-size:8.64px;font-weight:600;line-height:1;letter-spacing:.45px}
-.brand{font-size:14.04px;font-weight:600;line-height:1;letter-spacing:3.1px}
+.brand{font-size:14.04px;font-weight:600;line-height:1;letter-spacing:3.1px}.brand a{color:#111;text-decoration:none}
 .nav{display:flex;align-items:center;gap:28px}.nav a{color:#111;text-decoration:none;font-weight:600}.langs{display:flex;gap:7px;font-weight:500}.langs span+span:before{content:"|";margin-right:7px;color:#999}
 .hero{height:404px;min-height:404px;max-height:404px;position:relative;color:#fff;background:#222;overflow:hidden}
 .hero>img{filter:brightness(.78)}
@@ -41,7 +41,8 @@ img{display:block;width:100%;height:100%;object-fit:cover}
 .impact-title{padding:28px 0 0 61px}.impact-copy{padding:27px 20px 0 0;font-size:9.18px;line-height:1.45;font-weight:400;letter-spacing:.01px;color:#3e3e3e}.impact-copy .cn{display:block;margin-top:8px;font-size:9.18px;line-height:1.5;font-weight:600}
 .impact-sketch{padding:22px 20px 0}.impact-sketch img{width:100%;height:85px;object-fit:contain}
 .contact{background:#181818;color:#fff;padding:27px 33px}.contact h3{font-size:10.5px;line-height:1.2;font-weight:600;letter-spacing:.12px;margin:0 0 5px}.contact .cn{font-size:8.5px;line-height:1.4;font-weight:500}.contact .rule{width:30px;border-bottom:1px solid #aaa;margin:9px 0}.contact a{display:inline-flex;border:1px solid #aaa;color:#fff;text-decoration:none;padding:8px 24px;font-size:7.5px;line-height:1;font-weight:500;letter-spacing:.2px}
-.zoomable{cursor:zoom-in}
+.zoomable{cursor:zoom-in;filter:saturate(.58) contrast(.9) brightness(.88);transition:filter .25s ease}
+.zoomable:hover{filter:saturate(.72) contrast(.94) brightness(.93)}
 .lightbox{position:fixed;z-index:9999;inset:0;display:none;align-items:center;justify-content:center;padding:42px;background:rgba(0,0,0,.94)}
 .lightbox.open{display:flex}
 .lightbox-image{display:block;width:auto;height:auto;max-width:94vw;max-height:90vh;object-fit:contain;cursor:default;box-shadow:0 0 0 1px rgba(255,255,255,.12)}
@@ -56,7 +57,7 @@ img{display:block;width:100%;height:100%;object-fit:cover}
 <body>
 <main class="page">
   <header class="header" data-zone="header">
-    <div class="brand">TRANSITLO</div>
+    <div class="brand"><a href="index.html" aria-label="Back to homepage">TRANSITLO</a></div>
     <nav class="nav"><a href="#works">◉&nbsp; WORKS</a><a href="#about">ABOUT</a><a href="#contact">CONTACT</a><div class="langs"><span>中文</span><span>EN</span><span>VI</span></div></nav>
   </header>
 
@@ -84,7 +85,7 @@ img{display:block;width:100%;height:100%;object-fit:cover}
 
   <section class="gallery" data-zone="gallery"><div class="gallery-heading" data-zone="gallery-title"><h2 class="section-title">EXHIBITION EXPERIENCE<span>展览体验</span></h2></div><div class="gallery-main" data-zone="gallery-main"><img class="zoomable" src="workL1.JPG" alt="Exhibition experience" title="Click to view original image"></div><div class="gallery-mosaic" data-zone="gallery-mosaic"><div class="gallery-top"><img class="zoomable" src="cantonfairL.jpg" alt="Exhibition view" title="Click to view original image"><img class="zoomable" src="contonfairF.jpg" alt="Exhibition view" title="Click to view original image"><img class="zoomable" src="cantonfairR.jpg" alt="Exhibition view" title="Click to view original image"></div><div class="gallery-bottom"><img class="zoomable" src="cantonfairFL.png" alt="Panoramic exhibition view" title="Click to view original image"></div></div></section>
 
-  <footer class="footer" id="contact" data-zone="footer"><div class="impact-title" data-zone="impact-title"><h2 class="section-title">PROJECT IMPACT<span>项目价值</span></h2></div><div class="impact-copy" data-zone="impact-copy">The exhibition space connects brand communication, spatial experience and international exchange, creating value for both exhibitors and visitors.<span class="cn">展览空间连接品牌展示、交流体验与国际合作，为参展方与参观者创造价值。</span></div><div class="impact-sketch" data-zone="impact-sketch"><img src="cantonfairlast1.png" alt="Project impact diagram"></div><div class="contact" data-zone="contact"><h3>LET’S WORK TOGETHER</h3><div class="cn">期待与您合作</div><div class="rule"></div><a href="mailto:hello@transitlo.com">CONTACT US</a></div></footer>
+  <footer class="footer" id="contact" data-zone="footer"><div class="impact-title" data-zone="impact-title"><h2 class="section-title">PROJECT IMPACT<span>项目价值</span></h2></div><div class="impact-copy" data-zone="impact-copy">The exhibition space connects brand communication, spatial experience and international exchange, creating value for both exhibitors and visitors.<span class="cn">展览空间连接品牌展示、交流体验与国际合作，为参展方与参观者创造价值。</span></div><div class="impact-sketch" data-zone="impact-sketch"><img src="cantonfairlast1.png" alt="Project impact diagram"></div><div class="contact" data-zone="contact"><h3>LET’S WORK TOGETHER</h3><div class="cn">期待与您合作</div><div class="rule"></div><a href="index.html#contact">CONTACT US</a></div></footer>
 </main>
 <div class="lightbox" id="lightbox" role="dialog" aria-modal="true" aria-label="Original image viewer">
   <button class="lightbox-close" type="button" aria-label="Close">×</button>
