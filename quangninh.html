@@ -1,0 +1,307 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="description" content="Quang Ninh Province Pavilion — a 36 m² regional image, tourism and OCOP product exhibition space by TRANSITLO.">
+  <title>Quang Ninh Province Pavilion · TRANSITLO</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <style>
+    :root{
+      --gold:#c7922f;
+      --ink:#101010;
+      --muted:#666;
+      --line:#dedbd5;
+      --paper:#f7f6f3;
+      --max:1440px;
+    }
+    *{box-sizing:border-box}
+    html{scroll-behavior:smooth}
+    body{margin:0;background:#fff;color:var(--ink);font-family:Inter,"Microsoft YaHei",sans-serif;-webkit-font-smoothing:antialiased}
+    a{color:inherit;text-decoration:none}
+    img{display:block;width:100%;height:100%;object-fit:cover}
+    button{font:inherit}
+    .page{width:min(100%,var(--max));margin:auto;overflow:hidden;background:#fff}
+
+    /* HEADER */
+    .header{height:64px;padding:0 74px;display:flex;align-items:center;border-bottom:1px solid #ececec;background:#fff;position:relative;z-index:5}
+    .brand{font-size:14px;font-weight:800;letter-spacing:7px;white-space:nowrap}
+    .back{margin-left:55px;padding-left:28px;border-left:1px solid #ccc;font-size:11px;font-weight:600;color:#a87520;line-height:64px}
+    .back span{margin-right:8px;font-size:17px}
+    .nav{margin-left:auto;display:flex;align-items:center;gap:38px;font-size:10px;font-weight:600}
+    .langs{display:flex;gap:24px;margin-left:10px}
+    .langs .active{color:#9b6e20;border-bottom:2px solid var(--gold);padding:24px 0 18px}
+
+    /* HERO */
+    .hero{height:425px;position:relative;background:#111;color:#fff;overflow:hidden}
+    .hero-bg{position:absolute;inset:0;background:
+      linear-gradient(90deg,rgba(0,0,0,.96) 0%,rgba(0,0,0,.83) 26%,rgba(0,0,0,.28) 55%,rgba(0,0,0,.06) 100%),
+      url("quangninh-assets/quangninh-hero.png") center 48%/cover no-repeat;
+      filter:saturate(.8) contrast(1.03);
+      transform:scale(1.002)
+    }
+    .hero-copy{position:relative;z-index:2;width:52%;padding:58px 0 0 74px}
+    .kicker{font-size:11px;font-weight:700;letter-spacing:.45px;color:#d4a33f;text-transform:uppercase}
+    .hero h1{margin:26px 0 14px;font-size:40px;line-height:1.08;letter-spacing:-1.2px;text-transform:uppercase}
+    .hero-sub{font-size:16px;line-height:1.55}
+    .hero-sub strong{display:block;margin-top:6px;font-size:15px}
+    .hero-sub em{display:block;margin-top:3px;font-size:12px;font-style:normal;color:#d3d3d3}
+    .hero-line{width:54px;border-top:2px solid var(--gold);margin:19px 0 15px}
+    .hero-meta{display:flex;gap:35px;font-size:11px;line-height:1.45}
+    .hero-meta span{display:flex;gap:9px;align-items:center}
+    .hero-meta i{font-style:normal;color:#e1a936;font-size:16px}
+    .services{display:flex;gap:42px;margin-top:28px}
+    .service{display:grid;grid-template-columns:27px 1fr;gap:8px;align-items:center}
+    .service b{color:#d5a13c;font-size:18px;font-weight:500}
+    .service span{font-size:9px;line-height:1.3;font-weight:600;text-transform:uppercase}
+    .service small,.service em{display:block;font-size:8px;color:#bdbdbd;font-weight:500;font-style:normal;text-transform:none}
+
+    /* COMMON */
+    .section{padding:38px 74px}
+    .section-title{display:flex;align-items:center;gap:20px;margin:0 0 27px;font-size:14px;text-transform:uppercase;letter-spacing:.1px}
+    .section-title:after{content:"";height:1px;background:var(--line);flex:1}
+    .section-title i{width:18px;border-top:2px solid var(--gold)}
+
+    /* OVERVIEW */
+    .overview{display:grid;grid-template-columns:1.2fr .8fr;gap:56px;background:linear-gradient(90deg,#fff,#faf9f6)}
+    .overview-copy h2{margin:0 0 25px;font-size:15px;text-transform:uppercase}
+    .overview-text{display:grid;grid-template-columns:1fr 1fr;gap:52px;font-size:11px;line-height:1.75}
+    .overview-text p{margin:0 0 14px}
+    .overview-text .cn{color:#4d4d4d}.overview-text .vi{color:#666;font-style:normal}
+    .facts{border-left:1px solid var(--line);padding-left:55px;display:grid;gap:13px}
+    .fact{display:grid;grid-template-columns:26px 1fr;gap:12px;align-items:start}
+    .fact-icon{color:var(--gold);font-size:20px;line-height:1}
+    .fact strong{display:block;font-size:9px;color:#a67a2e;text-transform:uppercase}
+    .fact span{display:block;margin-top:2px;font-size:10px;line-height:1.38;color:#444}.fact span small{display:block;margin-top:2px;color:#777;font-size:8.5px}
+
+    /* PROCESS */
+    .process{padding-top:22px}
+    .process-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:44px}
+    .process-card{position:relative}
+    .process-head{display:flex;gap:13px;align-items:flex-start;margin-bottom:13px}
+    .process-no{font-size:23px;line-height:1;color:#d0a14e;font-weight:600}
+    .process-head strong{font-size:10px;display:block;text-transform:uppercase}
+    .process-head small,.process-head em{display:block;margin-top:3px;font-size:8px;color:#777;font-style:normal}
+    .process-image{height:177px;overflow:hidden;background:#ddd;cursor:zoom-in}
+    .process-image img{filter:saturate(.78);transition:.45s ease}
+    .process-card:hover img{transform:scale(1.02);filter:saturate(.92)}
+    .process-placeholder{height:177px;display:flex;align-items:center;justify-content:center;text-align:center;background:linear-gradient(135deg,#e8e8e6,#d8d8d5);border:1px solid #d3d0ca;color:#777}
+    .process-placeholder span{font-size:10px;line-height:1.7;letter-spacing:.35px;text-transform:uppercase}
+    .process-placeholder small,.process-placeholder em{display:block;font-size:8.5px;font-style:normal;letter-spacing:0;text-transform:none;color:#929292}
+    .process-card:not(:last-child):after{content:"›";position:absolute;right:-28px;top:125px;color:#9b7129;font-size:30px;font-weight:300}
+
+    /* STORIES */
+    .stories{padding-top:10px;display:grid;grid-template-columns:1fr 1fr;gap:0}
+    .story{padding:25px 32px 15px 0}
+    .story+ .story{border-left:1px solid var(--line);padding-left:32px}
+    .story h2{margin:0 0 4px;font-size:13px;text-transform:uppercase}
+    .story h3{margin:0 0 22px;font-size:10px}
+    .story-body{display:grid;grid-template-columns:1.35fr .65fr;gap:26px;align-items:start}
+    .story-image{height:178px;cursor:zoom-in;overflow:hidden}
+    .story-image img{filter:saturate(.8)}
+    .story p{margin:5px 0;font-size:9.5px;line-height:1.65;color:#444}
+    .story p.cn{margin-top:16px;color:#666}.story p.vi{margin-top:10px;color:#777;font-style:normal}
+
+    /* CLOSING */
+    .closing{height:285px;position:relative;color:#fff;overflow:hidden;background:#171717}
+    .closing:before{content:"";position:absolute;inset:0;background:
+      linear-gradient(90deg,rgba(0,0,0,.94),rgba(0,0,0,.62) 33%,rgba(0,0,0,.08) 68%),
+      url("quangninh-assets/quangninh-hero.png") center 48%/cover no-repeat;
+      filter:saturate(.68)
+    }
+    .closing-copy{position:relative;z-index:2;padding:56px 0 0 74px}
+    .closing h2{margin:0;font-size:28px;line-height:1.12;text-transform:uppercase}
+    .closing-line{width:45px;border-top:2px solid var(--gold);margin:18px 0}
+    .closing p{font-size:12px;line-height:1.65;margin:0}
+    .closing p strong,.closing p em{display:block;font-style:normal}.closing p em{font-size:10px;color:#d0d0d0}
+
+    /* LIGHTBOX */
+    .lightbox{position:fixed;inset:0;z-index:50;background:rgba(0,0,0,.94);display:none;align-items:center;justify-content:center;padding:44px}
+    .lightbox.open{display:flex}
+    .lightbox img{width:auto;height:auto;max-width:92vw;max-height:88vh;object-fit:contain}
+    .lightbox button{position:absolute;border:0;background:transparent;color:#fff;cursor:pointer}
+    .close{right:25px;top:16px;font-size:38px;font-weight:300}
+    .prev,.next{top:50%;transform:translateY(-50%);font-size:54px;font-weight:200;padding:20px}
+    .prev{left:10px}.next{right:10px}
+
+    /* RESPONSIVE */
+    @media(max-width:1024px){
+      .header{padding:0 38px}.back{margin-left:30px}.nav{gap:23px}
+      .hero-copy{padding-left:38px;width:63%}.hero h1{font-size:35px}
+      .section{padding-left:38px;padding-right:38px}
+      .overview{gap:35px}.facts{padding-left:32px}
+      .closing-copy{padding-left:38px}
+    }
+    @media(max-width:760px){
+      .header{height:58px;padding:0 20px}.brand{font-size:12px;letter-spacing:4px}
+      .back{margin-left:18px;padding-left:17px;font-size:9px;line-height:58px}
+      .nav>a{display:none}.nav{gap:10px}.langs{gap:12px;margin:0;font-size:9px}.langs .active{padding:21px 0 16px}
+      .hero{height:650px}.hero-bg{background:
+        linear-gradient(180deg,rgba(0,0,0,.35),rgba(0,0,0,.9) 63%,#050505 100%),
+        url("quangninh-assets/quangninh-hero.png") 58% center/cover no-repeat}
+      .hero-copy{width:100%;padding:250px 22px 0}.hero h1{font-size:32px;margin-top:17px}.hero-sub{font-size:14px}
+      .hero-meta{gap:20px;flex-wrap:wrap}.services{gap:19px;overflow-x:auto;padding-bottom:8px}.service{min-width:145px}
+      .section{padding:32px 22px}.overview{grid-template-columns:1fr;gap:25px}.overview-text{grid-template-columns:1fr;gap:6px}
+      .facts{border-left:0;border-top:1px solid var(--line);padding:25px 0 0;grid-template-columns:1fr 1fr}
+      .process-grid{display:flex;overflow-x:auto;gap:18px;scroll-snap-type:x mandatory;padding-bottom:15px}
+      .process-card{min-width:82vw;scroll-snap-align:start}.process-card:not(:last-child):after{display:none}.process-image{height:210px}
+      .stories{grid-template-columns:1fr}.story{padding:22px 0}.story+.story{border-left:0;border-top:1px solid var(--line);padding:27px 0}
+      .story-body{grid-template-columns:1fr}.story-image{height:220px}
+      .closing{height:320px}.closing-copy{padding:64px 22px 0}.closing h2{font-size:25px}
+      .lightbox{padding:15px}.prev,.next{font-size:38px;padding:10px}
+    }
+    @media(max-width:420px){
+      .back{font-size:0}.back span{font-size:18px;margin:0}
+      .facts{grid-template-columns:1fr}.process-card{min-width:86vw}
+      .story-image{height:195px}
+    }
+  </style>
+</head>
+<body>
+<main class="page">
+  <header class="header">
+    <a class="brand" href="index.html">TRANSITLO</a>
+    <a class="back" href="asean-expo.html"><span>←</span>ASEAN PROJECTS</a>
+    <nav class="nav">
+      <a href="#overview">ABOUT</a>
+      <a href="index.html#contact">CONTACT</a>
+      <div class="langs"><a href="#">中文</a><a class="active" href="#">EN</a><a href="#">VI</a></div>
+    </nav>
+  </header>
+
+  <section class="hero">
+    <div class="hero-bg" aria-hidden="true"></div>
+    <div class="hero-copy">
+      <div class="kicker">ASEAN EXHIBITION PROJECTS · 东盟展览项目 · DỰ ÁN TRIỂN LÃM ASEAN</div>
+      <h1>QUANG NINH<br>PROVINCE PAVILION</h1>
+      <div class="hero-sub">Quang Ninh Provincial Government Exhibition Booth<strong>越南广宁省政府展位</strong><em>Gian hàng Chính quyền tỉnh Quảng Ninh</em></div>
+      <div class="hero-line"></div>
+      <div class="hero-meta">
+        <span><i>▣</i> China–ASEAN Expo 2024</span>
+        <span><i>⌖</i> Nanning, China</span>
+      </div>
+      <div class="services">
+        <div class="service"><b>▦</b><span>REGIONAL BRAND STRATEGY<small>区域品牌策略</small><em>Chiến lược thương hiệu địa phương</em></span></div>
+        <div class="service"><b>⌘</b><span>BOOTH DESIGN<small>展位设计</small><em>Thiết kế gian hàng</em></span></div>
+        <div class="service"><b>♙</b><span>PRODUCT &amp; TOURISM DISPLAY<small>产品与文旅展示</small><em>Trưng bày sản phẩm &amp; du lịch</em></span></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section overview" id="overview">
+    <div class="overview-copy">
+      <h2>PROJECT OVERVIEW · 项目概况 · TỔNG QUAN DỰ ÁN</h2>
+      <div class="overview-text">
+        <div>
+          <p>The Quang Ninh Province Pavilion was developed for the Quang Ninh Provincial Government at the China–ASEAN Expo 2024.</p>
+          <p>Within a compact 36 m² footprint, the pavilion brings together provincial identity, Ha Long Bay tourism imagery, OCOP products and business reception functions. Its blue-and-white architectural language creates a clear regional presence while supporting product presentation and trade communication.</p>
+        </div>
+        <div class="cn">
+          <p>广宁省展馆是为越南广宁省政府参加2024中国—东盟博览会打造的区域形象与产品展示空间。在36平方米的紧凑场地内，展馆整合广宁省形象、下龙湾文旅展示、OCOP地方产品陈列与商务洽谈功能。蓝白建筑语言形成清晰的区域识别，同时支持产品推广与贸易交流。</p>
+          <p class="vi">Gian hàng tỉnh Quảng Ninh được phát triển cho Chính quyền tỉnh Quảng Ninh tại Hội chợ Trung Quốc–ASEAN 2024. Trong diện tích 36 m², không gian kết hợp nhận diện địa phương, hình ảnh du lịch Vịnh Hạ Long, trưng bày sản phẩm OCOP và khu vực giao thương. Ngôn ngữ kiến trúc xanh–trắng tạo dấu ấn rõ ràng, đồng thời hỗ trợ quảng bá sản phẩm và kết nối thương mại.</p>
+        </div>
+      </div>
+    </div>
+    <div class="facts">
+      <div class="fact"><div class="fact-icon">▧</div><div><strong>PROJECT · 项目 · DỰ ÁN</strong><span>Quang Ninh Province Pavilion<small>广宁省展馆 · Gian hàng tỉnh Quảng Ninh</small></span></div></div>
+      <div class="fact"><div class="fact-icon">⌖</div><div><strong>LOCATION · 地点 · ĐỊA ĐIỂM</strong><span>China–ASEAN Expo, Nanning, China<small>中国—东盟博览会，中国南宁 · CAEXPO, Nam Ninh, Trung Quốc</small></span></div></div>
+      <div class="fact"><div class="fact-icon">♙</div><div><strong>CLIENT · 客户 · KHÁCH HÀNG</strong><span>Quang Ninh Provincial Government<small>越南广宁省政府 · Chính quyền tỉnh Quảng Ninh</small></span></div></div>
+      <div class="fact"><div class="fact-icon">▦</div><div><strong>YEAR · 年份 · NĂM</strong><span>2024</span></div></div>
+      <div class="fact"><div class="fact-icon">□</div><div><strong>SCALE · 规模 · QUY MÔ</strong><span>36 m²<small>36平方米 · 36 mét vuông</small></span></div></div>
+      <div class="fact"><div class="fact-icon">◇</div><div><strong>SCOPE · 范围 · PHẠM VI</strong><span>Regional Brand Strategy · Booth Design · Spatial Planning · Product &amp; Tourism Display · Project Coordination<small>区域品牌策略 · 展位设计 · 空间规划 · 产品与文旅展示 · 项目协调<br>Chiến lược thương hiệu địa phương · Thiết kế gian hàng · Quy hoạch không gian · Trưng bày sản phẩm &amp; du lịch · Điều phối dự án</small></span></div></div>
+    </div>
+  </section>
+
+  <section class="section process" id="process">
+    <h2 class="section-title">CONSTRUCTION &amp; COMPLETION PROCESS · 施工与完工过程 · QUÁ TRÌNH THI CÔNG &amp; HOÀN THIỆN <i></i></h2>
+    <div class="process-grid">
+      <article class="process-card">
+        <div class="process-head"><span class="process-no">01</span><div><strong>STRUCTURE CONSTRUCTION</strong><small>主体施工</small><em>Thi công kết cấu</em></div></div>
+        <div class="process-placeholder"><span>CONSTRUCTION PHOTO<small>施工照片待替换</small><em>Ảnh thi công sẽ được bổ sung</em></span></div>
+      </article>
+      <article class="process-card">
+        <div class="process-head"><span class="process-no">02</span><div><strong>INSTALLATION &amp; DISPLAY</strong><small>安装与布展</small><em>Lắp đặt &amp; trưng bày</em></div></div>
+        <div class="process-placeholder"><span>INSTALLATION PHOTO<small>安装布展照片待替换</small><em>Ảnh lắp đặt sẽ được bổ sung</em></span></div>
+      </article>
+      <article class="process-card">
+        <div class="process-head"><span class="process-no">03</span><div><strong>COMPLETED PAVILION</strong><small>展馆完工</small><em>Gian hàng hoàn thiện</em></div></div>
+        <div class="process-image"><img class="zoomable" src="quangninh-assets/quangninh-hero.png" alt="Completed Quang Ninh Province Pavilion"></div>
+      </article>
+    </div>
+  </section>
+
+  <section class="section stories">
+    <article class="story">
+      <h2>HA LONG BAY &amp; REGIONAL IMAGE</h2>
+      <h3>下龙湾与区域形象 · Vịnh Hạ Long &amp; hình ảnh địa phương</h3>
+      <div class="story-body">
+        <div class="story-image"><img class="zoomable" src="quangninh-assets/quangninh-halong.png" alt="Ha Long Bay imagery presented at the Quang Ninh pavilion"></div>
+        <div>
+          <p>Ha Long Bay imagery anchors the pavilion’s regional narrative and gives visitors an immediate visual connection to Quang Ninh.</p>
+          <p class="cn">下龙湾视觉成为展馆区域叙事的核心，使参观者迅速建立对广宁省的直观认知。</p>
+          <p class="vi">Hình ảnh Vịnh Hạ Long là điểm nhấn của câu chuyện địa phương, giúp khách tham quan nhanh chóng nhận diện Quảng Ninh.</p>
+        </div>
+      </div>
+    </article>
+    <article class="story">
+      <h2>OCOP &amp; LOCAL PRODUCTS</h2>
+      <h3>OCOP与地方产品 · OCOP &amp; sản phẩm địa phương</h3>
+      <div class="story-body">
+        <div class="story-image"><img class="zoomable" src="quangninh-assets/quangninh-ocop.png" alt="OCOP and local products displayed in the Quang Ninh pavilion"></div>
+        <div>
+          <p>Dedicated displays introduce Quang Ninh’s OCOP products while the reception area supports trade conversations and partner engagement.</p>
+          <p class="cn">专门的陈列系统集中展示广宁省OCOP地方产品，洽谈区则支持贸易交流与合作伙伴接待。</p>
+          <p class="vi">Hệ trưng bày giới thiệu các sản phẩm OCOP của Quảng Ninh, trong khi khu tiếp khách hỗ trợ giao thương và kết nối đối tác.</p>
+        </div>
+      </div>
+    </article>
+  </section>
+
+  <section class="closing">
+    <div class="closing-copy">
+      <h2>QUANG NINH<br>PROVINCE PAVILION</h2>
+      <div class="closing-line"></div>
+      <p>A compact regional pavilion connecting Quang Ninh’s identity,<br>tourism, local products and cross-border trade.<strong>连接广宁省区域形象、文旅资源、地方产品与跨境贸易的紧凑型展位。</strong><em>Không gian triển lãm nhỏ gọn kết nối hình ảnh Quảng Ninh, du lịch, sản phẩm địa phương và thương mại xuyên biên giới.</em></p>
+    </div>
+  </section>
+</main>
+
+<div class="lightbox" role="dialog" aria-modal="true" aria-label="Image preview">
+  <button class="close" aria-label="Close">×</button>
+  <button class="prev" aria-label="Previous image">‹</button>
+  <img alt="Expanded project image">
+  <button class="next" aria-label="Next image">›</button>
+</div>
+
+<script>
+  const images=[...document.querySelectorAll(".zoomable")];
+  const box=document.querySelector(".lightbox");
+  const large=box.querySelector("img");
+  let current=0;
+  function show(index){
+    current=(index+images.length)%images.length;
+    large.src=images[current].src;
+    large.alt=images[current].alt;
+    box.classList.add("open");
+    document.body.style.overflow="hidden";
+  }
+  function closeBox(){
+    box.classList.remove("open");
+    document.body.style.overflow="";
+  }
+  images.forEach((img,index)=>img.addEventListener("click",()=>show(index)));
+  box.querySelector(".close").addEventListener("click",closeBox);
+  box.querySelector(".prev").addEventListener("click",()=>show(current-1));
+  box.querySelector(".next").addEventListener("click",()=>show(current+1));
+  box.addEventListener("click",event=>{if(event.target===box)closeBox()});
+  document.addEventListener("keydown",event=>{
+    if(!box.classList.contains("open"))return;
+    if(event.key==="Escape")closeBox();
+    if(event.key==="ArrowLeft")show(current-1);
+    if(event.key==="ArrowRight")show(current+1);
+  });
+</script>
+</body>
+</html>
