@@ -46,7 +46,39 @@ header{
 
 .nav-right{
   display:flex;
+  align-items:center;
   gap:25px;
+}
+
+header a{
+  color:inherit;
+  text-decoration:none;
+}
+
+.brand{
+  font-weight:600;
+  letter-spacing:3px;
+}
+
+.nav-right a{
+  position:relative;
+}
+
+.nav-right a::after{
+  content:"";
+  position:absolute;
+  left:0;
+  right:0;
+  bottom:-6px;
+  height:1px;
+  background:#111;
+  transform:scaleX(0);
+  transform-origin:left;
+  transition:transform .25s ease;
+}
+
+.nav-right a:hover::after{
+  transform:scaleX(1);
 }
 
 /* HERO */
@@ -97,17 +129,63 @@ header{
 }
 
 .services-offer{
-  padding: 10px 60px 40px;
+  padding:10px 60px 40px;
   font-size:13.2px;
   line-height:1.8;
-  max-width:900px;
+  max-width:1050px;
+}
+
+.services-offer ul{
+  display:grid;
+  grid-template-columns:repeat(2,minmax(0,1fr));
+  gap:28px 70px;
+  list-style:none;
+}
+
+.services-offer li{
+  padding-top:14px;
+  border-top:1px solid #ddd;
 }
 
 .services-extra{
-  padding:10px 60px 60px;
-  font-size:13.2px;
+  display:grid;
+  grid-template-columns:repeat(4,minmax(0,1fr));
+  gap:0;
+  padding:10px 60px 70px;
   color:#444;
-  line-height:1.8;
+}
+
+.workflow-step{
+  min-height:155px;
+  padding:24px 26px;
+  border-top:1px solid #111;
+  border-right:1px solid #e5e5e5;
+}
+
+.workflow-step:last-child{
+  border-right:none;
+}
+
+.workflow-step strong{
+  display:block;
+  margin-bottom:18px;
+  font-size:11px;
+  letter-spacing:1px;
+  font-weight:500;
+}
+
+.workflow-step b{
+  display:block;
+  margin-bottom:9px;
+  font-size:15px;
+  font-weight:500;
+}
+
+.workflow-step span{
+  display:block;
+  font-size:11px;
+  line-height:1.65;
+  color:#777;
 }
 
 /* GRID */
@@ -121,8 +199,11 @@ header{
 
 .card{
   position:relative;
+  display:block;
   overflow:hidden;
   cursor:pointer;
+  color:inherit;
+  text-decoration:none;
 }
 
 /* PROJECTS FEATURED LAYOUT */
@@ -147,12 +228,13 @@ header{
   width:100%;
   height:280px;
   object-fit:cover;
+  filter:saturate(.50) brightness(.90) contrast(.95);
   transition:transform 0.6s ease, filter 0.6s ease;
 }
 
 .card:hover img{
   transform:scale(1.05);
-  filter:brightness(0.85);
+  filter:saturate(.80) brightness(.92) contrast(.97);
 }
 
 .card h3{
@@ -186,9 +268,17 @@ header{
   transition:all 0.4s ease;
 }
 
+.projects-grid .featured::after{
+  height:420px;
+}
+
 .card:hover::after{
   opacity:1;
   background:rgba(0,0,0,0.25);
+}
+
+#works,#about,#contact{
+  scroll-margin-top:95px;
 }
 
 /* ABOUT */
@@ -342,9 +432,43 @@ footer{
     padding-right:20px;
   }
 
+  .services-offer ul{
+    grid-template-columns:1fr;
+    gap:24px;
+  }
+
+  .services-extra{
+    grid-template-columns:1fr 1fr;
+  }
+
+  .workflow-step:nth-child(2){
+    border-right:none;
+  }
+
+  .workflow-step:nth-child(n+3){
+    border-top-color:#e5e5e5;
+  }
+
+  .projects-grid .featured img{
+    height:320px;
+  }
+
+  .projects-grid .featured::after{
+    height:320px;
+  }
+
   .about-lightbox{
     padding:16px;
   }
+}
+
+@media (max-width:560px){
+  .nav-right{gap:14px;font-size:10px}
+  .services-extra{grid-template-columns:1fr}
+  .workflow-step{border-right:none}
+  .workflow-step:nth-child(n+2){border-top-color:#e5e5e5}
+  .projects-grid .featured img{height:280px}
+  .projects-grid .featured::after{height:280px}
 }
 
 </style>
@@ -352,26 +476,29 @@ footer{
 .about-title{font-size:14px;letter-spacing:3px;margin-bottom:30px}
 .about-headline{font-size:42px;line-height:1.25;font-weight:300;margin-bottom:35px}
 .signature{margin-top:45px;font-size:13px}
-.capabilities{display:grid;grid-template-columns:repeat(4,1fr);padding:40px 60px;border-top:1px solid #eee}
-.capability{padding:25px 35px;border-right:1px solid #eee}
+.capabilities{display:grid;grid-template-columns:repeat(5,1fr);padding:40px 60px;border-top:1px solid #eee}
+.capability{padding:25px 22px;border-right:1px solid #eee}
 .capability:last-child{border-right:none}
-.capability h3{font-size:13px;letter-spacing:1px}
-.capability p{font-size:12px;color:#666;line-height:1.8}
-.metrics{display:grid;grid-template-columns:repeat(4,1fr);padding:50px 60px 80px}
+.capability h3{font-size:12px;letter-spacing:.8px;line-height:1.45}
+.capability p{font-size:11px;color:#666;line-height:1.75;margin-top:12px}
+.metrics{display:grid;grid-template-columns:repeat(4,1fr);gap:28px;padding:50px 60px 80px}
+.metric{border-top:1px solid #111;padding-top:22px}
 .metric strong{font-size:42px;font-weight:300}
-.metric span{display:block;font-size:11px;margin-top:12px}
+.metric span{display:block;font-size:11px;line-height:1.55;margin-top:12px}
+@media(max-width:1000px){.capabilities{grid-template-columns:repeat(2,1fr)}.capability{border-bottom:1px solid #eee}.capability:nth-child(2n){border-right:none}.metrics{grid-template-columns:repeat(2,1fr)}}
+@media(max-width:560px){.capabilities,.metrics{grid-template-columns:1fr;padding-left:20px;padding-right:20px}.capability{border-right:none}.metrics{gap:30px}}
 </style></head>
 
-<body>
+<body id="top">
 
 <header>
-  <div>TRANSITLO</div>
-  <div class="nav-right">
-    <div>WORKS</div>
-    <div>ABOUT</div>
-    <div>CONTACT</div>
+  <a class="brand" href="#top" aria-label="Back to homepage top">TRANSITLO</a>
+  <nav class="nav-right" aria-label="Primary navigation">
+    <a href="#works">WORKS</a>
+    <a href="#about">ABOUT</a>
+    <a href="#contact">CONTACT</a>
     <div>中文 | EN | VI</div>
-  </div>
+  </nav>
 </header>
 
 <section class="hero">
@@ -396,111 +523,112 @@ footer{
     <li>
       Expo Planning & Exhibition Space Design Consulting<br>
       展会策划 / 展览空间设计咨询<br>
-      Tư vấn thiết kế không gian triển lãm & quy hoạch hội chợ
+      Tư vấn quy hoạch hội chợ & thiết kế không gian triển lãm
     </li>
 
     <li>
-      Architecture Concept Design Service<br>
-      建筑概念设计与方案设计<br>
-      Dịch vụ thiết kế ý tưởng kiến trúc
+      Exhibition Organization & Project Management<br>
+      展会组织与项目管理<br>
+      Tổ chức triển lãm & quản lý dự án
+    </li>
+
+    <li>
+      Architecture Concept & Residential Design Service<br>
+      建筑概念与住宅设计服务<br>
+      Dịch vụ thiết kế ý tưởng kiến trúc & nhà ở
     </li>
   </ul>
 </section>
 
-<section class="services-extra">
-  <p>
-    Exhibition design commission<br>
-    展览设计 / 展厅设计委托<br>
-    Dịch vụ thiết kế triển lãm / gian hàng theo dự án
-  </p>
-
-  <p>
-    Expo Planning & Exhibition Space Design Consulting<br>
-    展会空间策划与展览场景设计支持<br>
-    Hỗ trợ thiết kế không gian triển lãm
-  </p>
-
-  <p>
-    Architecture Concept Design Service<br>
-    建筑概念设计与方案服务<br>
-    Dịch vụ thiết kế ý tưởng kiến trúc
-  </p>
+<section class="services-extra" aria-label="Exhibition project workflow">
+  <div class="workflow-step">
+    <strong>01</strong>
+    <b>STRATEGY</b>
+    <span>Expo Planning<br>展会策划<br>Chiến lược triển lãm</span>
+  </div>
+  <div class="workflow-step">
+    <strong>02</strong>
+    <b>DESIGN</b>
+    <span>Spatial Design<br>空间设计<br>Thiết kế không gian</span>
+  </div>
+  <div class="workflow-step">
+    <strong>03</strong>
+    <b>COORDINATION</b>
+    <span>Construction & Supplier Coordination<br>施工与供应商协调<br>Điều phối thi công & nhà cung cấp</span>
+  </div>
+  <div class="workflow-step">
+    <strong>04</strong>
+    <b>DELIVERY</b>
+    <span>On-site Management & Project Delivery<br>现场管理与项目交付<br>Quản lý hiện trường & bàn giao dự án</span>
+  </div>
 </section>
 
 <!-- PROJECTS -->
-<div class="section-title">
+<div class="section-title" id="works">
   <div>SELECTED PROJECTS / 作品展示 / DỰ ÁN TIÊU BIỂU</div>
   <div>VIEW ALL → / 查看全部 → / XEM TẤT CẢ →</div>
 </div>
 
 <section class="grid projects-grid">
 
-  <div class="card featured" onclick="window.location.href='canton-fair.html'">
+  <a class="card featured" href="canton-fair.html">
     <img src="CANTON FAIR card.png" />
     <h3>Canton Fair Pavilion / 广交会展馆 / Gian hàng Hội chợ Quảng Châu</h3>
     <p>Exhibition Design / 展览设计 / Thiết kế triển lãm</p>
-  </div>
+  </a>
 
-  <div class="card" onclick="window.location.href='asean-expo.html'">
+  <a class="card" href="asean-expo.html">
     <img src="ASEAN card.png" />
     <h3>ASEAN Expo Pavilion / 东盟展览馆 / Gian hàng triển lãm ASEAN</h3>
     <p>Pavilion Design / 展馆设计 / Thiết kế pavilion</p>
-  </div>
+  </a>
 
-  <div class="card" onclick="window.location.href='vietnam-exhibition.html'">
+  <a class="card" href="vietnam-exhibition.html">
   <img src="VIETNAMEXHIBITION card.png" />
 <h3>Vietnam Exhibition Booth Design / 越南展位设计 / Thiết kế gian hàng triển lãm Việt Nam</h3>
 <p>Exhibition Space Design / 展览空间设计 / Thiết kế không gian triển lãm</p>
-  </div>
+  </a>
 
-  <div class="card featured" onclick="window.location.href='architectural.html'">
+  <a class="card featured" href="architectural.html">
    <img src="ARCHITECTURAL card.png" />
  <h3>Architectural Space Design / 建筑空间设计 / Thiết kế không gian kiến trúc</h3>
   <p>Architectural Concept & Interior Strategy / 建筑概念与室内策略 / Ý tưởng kiến trúc và chiến lược nội thất</p>
-</div>
+</a>
 
 
 </section>
 
-<div class="section-title">
+<div class="section-title" id="about">
   <div>ABOUT</div>
 </div>
 
 <section class="about">
-  <img id="aboutPhoto" src="about1.jpg" alt="Changsheng Luo — Founder & Architect" title="Click to view original image"/>
+  <img id="aboutPhoto" src="about1.jpg" alt="Changsheng Luo — Founder, Architect and Exhibition Strategist" title="Click to view original image"/>
   <div class="about-text">
     <div class="about-title">ABOUT TRANSITLO</div>
     <div class="about-headline">Designing Spaces.<br>Connecting People<br>& Places.</div>
-    <p>TransitLo is an architecture and exhibition design practice based in China and Vietnam, focusing on spatial strategy and cross-border projects throughout ASEAN.</p>
+    <p>TransitLo is an architecture and exhibition practice based in China and Vietnam, integrating spatial strategy, exhibition organization, project management and cross-border delivery throughout ASEAN.</p>
     <br>
-    <p>TransitLo 是一家跨地域的建筑与展览空间设计事务所，立足中国与越南，服务东盟，专注于空间策略与体验设计。</p>
-    <div class="signature">___________________<br>Changsheng Luo<br>Founder & Architect<br>TransitLo Architecture & Exhibition Design</div>
+    <p>TransitLo 是一家跨地域的建筑与展览空间设计事务所，立足中国与越南、服务东盟，整合空间策略、展会组织、项目管理与跨境交付。</p>
+    <br>
+    <p>TransitLo là đơn vị thiết kế kiến trúc và triển lãm hoạt động tại Trung Quốc và Việt Nam, kết hợp chiến lược không gian, tổ chức triển lãm, quản lý dự án và triển khai xuyên biên giới tại ASEAN.</p>
+    <div class="signature">___________________<br>Changsheng Luo<br>Founder · Architect · Exhibition Strategist<br>TransitLo Architecture & Exhibition Design</div>
   </div>
 </section>
 
 <section class="capabilities">
-<div class="capability"><h3>EXHIBITION DESIGN<br>展览设计</h3><p>Exhibition & pavilion design for trade fairs and events.<br>展会与活动的展览与展馆设计。</p></div>
-<div class="capability"><h3>ARCHITECTURE<br>建筑设计</h3><p>Conceptual architecture and building design.<br>建筑概念与建筑设计。</p></div>
-<div class="capability">
-<h3>
-SPATIAL STRATEGY<br>
-空间策略
-</h3>
-
-<p>
-Exhibition planning, spatial strategy<br>
-and cross-border experience design.<br>
-展会策划、空间策略与跨区域体验设计。
-</p>
-</div>
-<div class="capability"><h3>CHINA · VIETNAM · ASEAN<br>中越 · 东盟</h3><p>Cross-border design practice across Asia.<br>跨区域设计实践。</p></div>
+<div class="capability"><h3>EXHIBITION DESIGN<br>展览设计</h3><p>Exhibition, booth and pavilion design for trade fairs and events.<br>展会、展位与展馆设计。</p></div>
+<div class="capability"><h3>EXHIBITION ORGANIZATION<br>& PROJECT MANAGEMENT<br>展会组织与项目管理</h3><p>Strategy, supplier coordination, on-site management and delivery.<br>策划、供应商协调、现场管理与项目交付。</p></div>
+<div class="capability"><h3>ARCHITECTURE & RESIDENTIAL<br>建筑与住宅设计</h3><p>Architecture concepts, building design and residential projects.<br>建筑概念、建筑方案与住宅项目。</p></div>
+<div class="capability"><h3>SPATIAL STRATEGY<br>空间策略</h3><p>Exhibition planning, spatial strategy and cross-border experience design.<br>展会策划、空间策略与跨区域体验设计。</p></div>
+<div class="capability"><h3>CHINA · VIETNAM · ASEAN<br>中越 · 东盟</h3><p>Cross-border practice across China, Vietnam and ASEAN markets.<br>面向中国、越南与东盟的跨区域实践。</p></div>
 </section>
 
 <section class="metrics">
-<div class="metric"><strong>50+</strong><span>PROJECTS COMPLETED<br>完成项目</span></div>
+<div class="metric"><strong>50+</strong><span>EXHIBITION PROJECTS<br>展装项目</span></div>
+<div class="metric"><strong>300+</strong><span>ARCHITECTURE & RESIDENTIAL PROJECTS<br>建筑与住宅项目</span></div>
 <div class="metric"><strong>10+</strong><span>COUNTRIES & REGIONS<br>项目覆盖国家与地区</span></div>
-<div class="metric"><strong>6</strong><span>YEARS OF PRACTICE<br>行业实践经验</span></div>
-<div class="metric"><strong>100%</strong><span>DEDICATED TO QUALITY<br>专注品质</span></div>
+<div class="metric"><strong>15</strong><span>YEARS OF PRACTICE<br>行业实践经验</span></div>
 </section>
 
 <div class="section-title">
