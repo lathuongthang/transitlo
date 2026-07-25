@@ -3,39 +3,833 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width,initial-scale=1">
-  <meta name="description" content="Vietnam Defense Economic Products Exhibition Area — VIDEX 2024">
-  <title>VIDEX 2024 · TRANSITLO</title>
+  <meta
+    name="description"
+    content="Vietnam Defense Economic Products Exhibition Area — China–ASEAN Expo 2024, Vietnam Pavilion"
+  >
+  <title>China–ASEAN Expo 2024 · Vietnam Defense Economic Products Exhibition Area · TRANSITLO</title>
+
   <style>
-    :root{--gold:#c58b2b;--ink:#101010;--muted:#6b6b6b;--line:#e8e4de;--max:1200px}
-    *{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;color:var(--ink);font-family:Arial,"Noto Sans SC",sans-serif;background:#fff}a{color:inherit;text-decoration:none}img{display:block;width:100%}
-    .nav{height:64px;display:flex;align-items:center;padding:0 4vw;gap:7vw;background:#fff;position:relative;z-index:10}.brand{font-size:13px;font-weight:800;letter-spacing:7px;white-space:nowrap}.crumb{font-size:12px;font-weight:700}.crumb b{color:var(--gold);font-size:17px;margin-right:6px}.navlinks{margin-left:auto;display:flex;align-items:center;gap:38px;font-size:11px}.langs{display:flex;gap:20px}.langs .active{color:var(--gold);border-bottom:1px solid var(--gold);padding-bottom:6px}
-    .hero{min-height:520px;position:relative;display:flex;align-items:center;color:#fff;overflow:hidden;background:#090909}.hero::before{content:"";position:absolute;inset:0;background-image:url('DFBANNER.png');background-size:cover;background-position:center;filter:saturate(.92)}.hero::after{content:"";position:absolute;inset:0;background:linear-gradient(90deg,#050505 0%,rgba(5,5,5,.97) 22%,rgba(5,5,5,.48) 42%,rgba(0,0,0,.05) 72%)}.hero-copy{position:relative;z-index:2;width:min(540px,88vw);margin-left:max(4vw,calc((100vw - var(--max))/2));padding:48px 0}.hero h1{font-size:37px;line-height:1.18;margin:0 0 24px;text-transform:uppercase;max-width:480px;letter-spacing:-.7px}.eyebrow{color:#d39a37;font-size:19px;font-weight:800;letter-spacing:.7px;margin-bottom:7px}.sub{font-size:15px;font-weight:700;margin-bottom:24px}.services{font-size:12px;color:#eee;letter-spacing:.2px}.goldline{width:33px;height:2px;background:var(--gold);margin:20px 0 45px}.back{font-size:11px}.back span{font-size:17px;margin-right:8px}
-    .section{max-width:var(--max);margin:auto;padding:22px 4vw}.title{font-size:17px;text-transform:uppercase;margin:0 0 18px;font-weight:800}.title small{font-weight:400;color:#999}.title::after{content:"";display:block;width:29px;height:2px;background:var(--gold);margin-top:5px}.overview{display:grid;grid-template-columns:38% 62%;gap:34px;padding-top:24px}.overview-copy p{font-size:13px;line-height:1.42;margin:0 0 11px}.portrait{height:365px;object-fit:cover;object-position:center}.facts{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;margin-top:27px}.fact .icon{color:var(--gold);font-size:22px;height:30px}.fact strong{display:block;font-size:10px;margin-bottom:7px}.fact span{display:block;font-size:9px;line-height:1.4}.process{padding-top:6px}.process-grid{display:grid;grid-template-columns:repeat(5,1fr);gap:30px}.step{position:relative}.step:not(:last-child)::after{content:"➜";position:absolute;right:-22px;top:50px;font-weight:800}.step img{height:121px;object-fit:cover}.step p{font-size:10px;line-height:1.35;margin:10px 0}.step b{margin-right:5px}.cn{display:block;font-size:11px}.recognition{padding-top:0;padding-bottom:42px}.recognition-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:26px}.recognition img{height:178px;object-fit:cover}.recognition p{font-size:11px;line-height:1.45;margin:9px 0 0}.footer{border-top:1px solid var(--line);padding:28px 4vw;text-align:center;font-size:10px;color:#777;letter-spacing:1px}
-    .lightbox{position:fixed;inset:0;background:rgba(0,0,0,.93);z-index:50;display:none;align-items:center;justify-content:center;padding:4vw}.lightbox.open{display:flex}.lightbox img{max-width:94vw;max-height:88vh;width:auto}.close{position:absolute;right:24px;top:18px;color:white;background:none;border:0;font-size:36px;cursor:pointer}.prev,.next{position:absolute;top:50%;transform:translateY(-50%);color:white;background:rgba(0,0,0,.35);border:0;font-size:54px;width:60px;height:80px;cursor:pointer}.prev{left:25px}.next{right:25px}
-    @media(max-width:760px){.nav{height:58px;padding:0 18px}.brand{letter-spacing:4px}.crumb,.navlinks>a{display:none}.navlinks{gap:14px}.langs{gap:12px}.hero{min-height:520px}.hero::before{background-position:58% center}.hero::after{background:linear-gradient(90deg,rgba(0,0,0,.9),rgba(0,0,0,.32))}.hero-copy{margin:0;padding:60px 23px}.hero h1{font-size:30px;max-width:360px}.overview{grid-template-columns:1fr;padding:24px 21px}.portrait{height:auto}.facts{grid-template-columns:repeat(2,1fr);row-gap:22px}.section{padding-left:21px;padding-right:21px}.process-grid{display:flex;overflow-x:auto;scroll-snap-type:x mandatory;padding-bottom:12px}.step{min-width:72vw;scroll-snap-align:start}.step:not(:last-child)::after{display:none}.step img{height:auto}.recognition-grid{grid-template-columns:1fr}.recognition img{height:auto}}
+    :root{
+      --gold:#c58b2b;
+      --ink:#101010;
+      --muted:#6b6b6b;
+      --line:#e8e4de;
+      --max:1200px
+    }
+
+    *{
+      box-sizing:border-box
+    }
+
+    html{
+      scroll-behavior:smooth
+    }
+
+    body{
+      margin:0;
+      color:var(--ink);
+      font-family:Arial,"Noto Sans SC",sans-serif;
+      background:#fff
+    }
+
+    a{
+      color:inherit;
+      text-decoration:none
+    }
+
+    img{
+      display:block;
+      width:100%
+    }
+
+    .nav{
+      height:64px;
+      display:flex;
+      align-items:center;
+      padding:0 4vw;
+      gap:7vw;
+      background:#fff;
+      position:relative;
+      z-index:10
+    }
+
+    .brand{
+      font-size:13px;
+      font-weight:800;
+      letter-spacing:7px;
+      white-space:nowrap
+    }
+
+    .crumb{
+      font-size:12px;
+      font-weight:700
+    }
+
+    .crumb b{
+      color:var(--gold);
+      font-size:17px;
+      margin-right:6px
+    }
+
+    .navlinks{
+      margin-left:auto;
+      display:flex;
+      align-items:center;
+      gap:38px;
+      font-size:11px
+    }
+
+    .langs{
+      display:flex;
+      gap:20px
+    }
+
+    .langs .active{
+      color:var(--gold);
+      border-bottom:1px solid var(--gold);
+      padding-bottom:6px
+    }
+
+    .hero{
+      min-height:520px;
+      position:relative;
+      display:flex;
+      align-items:center;
+      color:#fff;
+      overflow:hidden;
+      background:#090909
+    }
+
+    .hero::before{
+      content:"";
+      position:absolute;
+      inset:0;
+      background-image:url('DFBANNER.png');
+      background-size:cover;
+      background-position:center;
+      filter:saturate(.92)
+    }
+
+    .hero::after{
+      content:"";
+      position:absolute;
+      inset:0;
+      background:linear-gradient(
+        90deg,
+        #050505 0%,
+        rgba(5,5,5,.97) 22%,
+        rgba(5,5,5,.48) 42%,
+        rgba(0,0,0,.05) 72%
+      )
+    }
+
+    .hero-copy{
+      position:relative;
+      z-index:2;
+      width:min(540px,88vw);
+      margin-left:max(4vw,calc((100vw - var(--max))/2));
+      padding:48px 0
+    }
+
+    .hero h1{
+      font-size:37px;
+      line-height:1.18;
+      margin:0 0 24px;
+      text-transform:uppercase;
+      max-width:480px;
+      letter-spacing:-.7px
+    }
+
+    .eyebrow{
+      color:#d39a37;
+      font-size:19px;
+      font-weight:800;
+      letter-spacing:.7px;
+      margin-bottom:7px
+    }
+
+    .sub{
+      font-size:15px;
+      font-weight:700;
+      margin-bottom:24px
+    }
+
+    .services{
+      font-size:12px;
+      color:#eee;
+      letter-spacing:.2px
+    }
+
+    .goldline{
+      width:33px;
+      height:2px;
+      background:var(--gold);
+      margin:20px 0 45px
+    }
+
+    .back{
+      font-size:11px
+    }
+
+    .back span{
+      font-size:17px;
+      margin-right:8px
+    }
+
+    .section{
+      max-width:var(--max);
+      margin:auto;
+      padding:22px 4vw
+    }
+
+    .title{
+      font-size:17px;
+      text-transform:uppercase;
+      margin:0 0 18px;
+      font-weight:800
+    }
+
+    .title small{
+      font-weight:400;
+      color:#999
+    }
+
+    .title::after{
+      content:"";
+      display:block;
+      width:29px;
+      height:2px;
+      background:var(--gold);
+      margin-top:5px
+    }
+
+    .overview{
+      display:grid;
+      grid-template-columns:38% 62%;
+      gap:34px;
+      padding-top:24px
+    }
+
+    .overview-copy p{
+      font-size:13px;
+      line-height:1.42;
+      margin:0 0 11px
+    }
+
+    .portrait{
+      height:365px;
+      object-fit:cover;
+      object-position:center
+    }
+
+    .facts{
+      display:grid;
+      grid-template-columns:repeat(4,1fr);
+      gap:12px;
+      margin-top:27px
+    }
+
+    .fact .icon{
+      color:var(--gold);
+      font-size:22px;
+      height:30px
+    }
+
+    .fact strong{
+      display:block;
+      font-size:10px;
+      margin-bottom:7px
+    }
+
+    .fact span{
+      display:block;
+      font-size:9px;
+      line-height:1.4
+    }
+
+    .process{
+      padding-top:6px
+    }
+
+    .process-grid{
+      display:grid;
+      grid-template-columns:repeat(5,1fr);
+      gap:30px
+    }
+
+    .step{
+      position:relative
+    }
+
+    .step:not(:last-child)::after{
+      content:"➜";
+      position:absolute;
+      right:-22px;
+      top:50px;
+      font-weight:800
+    }
+
+    .step img{
+      height:121px;
+      object-fit:cover
+    }
+
+    .step p{
+      font-size:10px;
+      line-height:1.35;
+      margin:10px 0
+    }
+
+    .step b{
+      margin-right:5px
+    }
+
+    .cn{
+      display:block;
+      font-size:11px
+    }
+
+    .recognition{
+      padding-top:0;
+      padding-bottom:42px
+    }
+
+    .recognition-grid{
+      display:grid;
+      grid-template-columns:repeat(3,1fr);
+      gap:26px
+    }
+
+    .recognition img{
+      height:178px;
+      object-fit:cover
+    }
+
+    .recognition p{
+      font-size:11px;
+      line-height:1.45;
+      margin:9px 0 0
+    }
+
+    .footer{
+      border-top:1px solid var(--line);
+      padding:28px 4vw;
+      text-align:center;
+      font-size:10px;
+      color:#777;
+      letter-spacing:1px
+    }
+
+    .lightbox{
+      position:fixed;
+      inset:0;
+      background:rgba(0,0,0,.93);
+      z-index:50;
+      display:none;
+      align-items:center;
+      justify-content:center;
+      padding:4vw
+    }
+
+    .lightbox.open{
+      display:flex
+    }
+
+    .lightbox img{
+      max-width:94vw;
+      max-height:88vh;
+      width:auto
+    }
+
+    .close{
+      position:absolute;
+      right:24px;
+      top:18px;
+      color:white;
+      background:none;
+      border:0;
+      font-size:36px;
+      cursor:pointer
+    }
+
+    .prev,
+    .next{
+      position:absolute;
+      top:50%;
+      transform:translateY(-50%);
+      color:white;
+      background:rgba(0,0,0,.35);
+      border:0;
+      font-size:54px;
+      width:60px;
+      height:80px;
+      cursor:pointer
+    }
+
+    .prev{
+      left:25px
+    }
+
+    .next{
+      right:25px
+    }
+
+    @media(max-width:760px){
+      .nav{
+        height:58px;
+        padding:0 18px
+      }
+
+      .brand{
+        letter-spacing:4px
+      }
+
+      .crumb,
+      .navlinks>a{
+        display:none
+      }
+
+      .navlinks{
+        gap:14px
+      }
+
+      .langs{
+        gap:12px
+      }
+
+      .hero{
+        min-height:520px
+      }
+
+      .hero::before{
+        background-position:58% center
+      }
+
+      .hero::after{
+        background:linear-gradient(
+          90deg,
+          rgba(0,0,0,.9),
+          rgba(0,0,0,.32)
+        )
+      }
+
+      .hero-copy{
+        margin:0;
+        padding:60px 23px
+      }
+
+      .hero h1{
+        font-size:30px;
+        max-width:360px
+      }
+
+      .overview{
+        grid-template-columns:1fr;
+        padding:24px 21px
+      }
+
+      .portrait{
+        height:auto
+      }
+
+      .facts{
+        grid-template-columns:repeat(2,1fr);
+        row-gap:22px
+      }
+
+      .section{
+        padding-left:21px;
+        padding-right:21px
+      }
+
+      .process-grid{
+        display:flex;
+        overflow-x:auto;
+        scroll-snap-type:x mandatory;
+        padding-bottom:12px
+      }
+
+      .step{
+        min-width:72vw;
+        scroll-snap-align:start
+      }
+
+      .step:not(:last-child)::after{
+        display:none
+      }
+
+      .step img{
+        height:auto
+      }
+
+      .recognition-grid{
+        grid-template-columns:1fr
+      }
+
+      .recognition img{
+        height:auto
+      }
+    }
   </style>
 </head>
+
 <body>
-  <header class="nav"><a class="brand" href="index.html">TRANSITLO</a><a class="crumb" href="asean-expo.html"><b>←</b> ASEAN PROJECTS</a><nav class="navlinks"><a href="#overview">ABOUT</a><a href="mailto:contact@transitlo.com">CONTACT</a><div class="langs"><a href="#">中文</a><a class="active" href="#">EN</a><a href="#">VI</a></div></nav></header>
+
+  <header class="nav">
+    <a class="brand" href="index.html">
+      TRANSITLO
+    </a>
+
+    <a class="crumb" href="asean-expo.html">
+      <b>←</b> ASEAN PROJECTS
+    </a>
+
+    <nav class="navlinks">
+      <a href="#overview">ABOUT</a>
+      <a href="index.html#contact">CONTACT</a>
+
+      <div class="langs">
+        <a href="#">中文</a>
+        <a class="active" href="#">EN</a>
+        <a href="#">VI</a>
+      </div>
+    </nav>
+  </header>
+
   <main>
-    <section class="hero"><div class="hero-copy"><h1>Vietnam Defense<br>Economic Products<br>Exhibition Area</h1><div class="eyebrow">VIDEX 2024</div><div class="sub">Vietnam International Defence Exhibition</div><div class="services">Exhibition Design&nbsp; · &nbsp;Spatial Planning&nbsp; · &nbsp;Project Delivery</div><div class="goldline"></div><a class="back" href="asean-expo.html"><span>←</span> BACK TO ASEAN PROJECTS</a></div></section>
-    <section class="section overview" id="overview"><div class="overview-copy"><h2 class="title">Project Overview</h2><p>The Vietnam Economic &amp; Defence Products Exhibition Area was developed as a national-level exhibition space for VIDEX 2024.</p><p>The project integrates exhibition display, brand communication and visitor experience, creating a professional platform for Vietnam’s defence-economic enterprises.</p><p>越南国防经济产品展示区是 VIDEX 2024 国家级展览空间项目，通过展览展示、品牌传播与空间体验，构建越南企业国际交流展示平台。</p><div class="facts"><div class="fact"><div class="icon">⌖</div><strong>LOCATION</strong><span>Nanning, China<br>中国·南宁</span></div><div class="fact"><div class="icon">▣</div><strong>DATE</strong><span>Sept. 2024<br>2024年9月</span></div><div class="fact"><div class="icon">◇</div><strong>ROLE</strong><span>Exhibition Design<br>Spatial Planning<br>Project Delivery<br>展览设计 · 空间规划 · 项目实施</span></div><div class="fact"><div class="icon">▥</div><strong>SCALE</strong><span>144 m²<br>144 平方米</span></div></div></div><img class="portrait zoomable" src="asean12.2.png" alt="Project representative at VIDEX exhibition"></section>
-    <section class="section process"><h2 class="title">Design &amp; Construction Process <small>/ 设计与施工过程</small></h2><div class="process-grid"><article class="step"><img class="zoomable" src="asean3.jpg" alt="Concept design"><p><b>01</b> CONCEPT DESIGN<span class="cn">概念设计</span></p></article><article class="step"><img class="zoomable" src="Asean1.jpg" alt="Design development"><p><b>02</b> DESIGN DEVELOPMENT<span class="cn">深化设计</span></p></article><article class="step"><img class="zoomable" src="asean2.jpg" alt="Material selection"><p><b>03</b> MATERIAL SELECTION<span class="cn">材料与色彩确认</span></p></article><article class="step"><img class="zoomable" src="asean12-1.png" alt="Construction"><p><b>04</b> CONSTRUCTION<span class="cn">现场施工</span></p></article><article class="step"><img class="zoomable" src="asean29-1.jpg" alt="Final delivery"><p><b>05</b> FINAL DELIVERY<span class="cn">完工交付</span></p></article></div></section>
-    <section class="section recognition"><h2 class="title">Project Recognition <small>/ 项目认可</small></h2><div class="recognition-grid"><article><img class="zoomable" src="asen38-1.png" alt="Vietnam Pavilion Opening Ceremony"><p>Vietnam Pavilion Opening Ceremony<br>越南馆开馆仪式</p></article><article><img class="zoomable" src="asean37-1.png" alt="Government delegation visit"><p>Government Delegation Visit<br>政府代表团参观</p></article><article><img class="zoomable" src="asean.png" alt="Completed exhibition space"><p>Completed Exhibition Space<br>完成后的展览空间</p></article></div></section>
+
+    <section class="hero">
+      <div class="hero-copy">
+
+        <h1>
+          Vietnam Defense<br>
+          Economic Products<br>
+          Exhibition Area
+        </h1>
+
+        <div class="eyebrow">
+          CHINA–ASEAN EXPO 2024
+        </div>
+
+        <div class="sub">
+          Vietnam Pavilion · Nanning, China
+        </div>
+
+        <div class="services">
+          Exhibition Design
+          &nbsp; · &nbsp;
+          Spatial Planning
+          &nbsp; · &nbsp;
+          Project Delivery
+        </div>
+
+        <div class="goldline"></div>
+
+        <a class="back" href="asean-expo.html">
+          <span>←</span>
+          BACK TO ASEAN PROJECTS
+        </a>
+
+      </div>
+    </section>
+
+    <section class="section overview" id="overview">
+
+      <div class="overview-copy">
+
+        <h2 class="title">
+          Project Overview
+        </h2>
+
+        <p>
+          The Vietnam Defense Economic Products Exhibition Area
+          was developed as one of four coordinated exhibition
+          spaces within the Vietnam Pavilion at the China–ASEAN
+          Expo 2024 in Nanning.
+        </p>
+
+        <p>
+          The project integrates exhibition display, brand
+          communication and visitor experience, providing a
+          professional platform for Vietnam’s defense-economic
+          products and enterprises within the unified pavilion.
+        </p>
+
+        <p>
+          越南国防经济产品展示区是中国—东盟博览会越南馆内
+          四个协同实施的展示空间之一。项目通过展览展示、
+          品牌传播与空间体验，在统一的越南馆体系中构建
+          国防经济产品与企业的专业交流平台。
+        </p>
+
+        <div class="facts">
+
+          <div class="fact">
+            <div class="icon">⌖</div>
+            <strong>LOCATION</strong>
+
+            <span>
+              Nanning, China<br>
+              中国·南宁
+            </span>
+          </div>
+
+          <div class="fact">
+            <div class="icon">▣</div>
+            <strong>DATE</strong>
+
+            <span>
+              Sept. 2024<br>
+              2024年9月
+            </span>
+          </div>
+
+          <div class="fact">
+            <div class="icon">◇</div>
+            <strong>ROLE</strong>
+
+            <span>
+              Exhibition Design<br>
+              Spatial Planning<br>
+              Project Delivery<br>
+              展览设计 · 空间规划 · 项目实施
+            </span>
+          </div>
+
+          <div class="fact">
+            <div class="icon">▥</div>
+            <strong>SCALE</strong>
+
+            <span>
+              144 m²<br>
+              144 平方米
+            </span>
+          </div>
+
+        </div>
+      </div>
+
+      <img
+        class="portrait zoomable"
+        src="asean12.2.png"
+        alt="Project representative at the China–ASEAN Expo Vietnam Pavilion"
+      >
+
+    </section>
+
+    <section class="section process">
+
+      <h2 class="title">
+        Design &amp; Construction Process
+        <small>/ 设计与施工过程</small>
+      </h2>
+
+      <div class="process-grid">
+
+        <article class="step">
+          <img
+            class="zoomable"
+            src="asean3.jpg"
+            alt="Concept design"
+          >
+
+          <p>
+            <b>01</b>
+            CONCEPT DESIGN
+            <span class="cn">概念设计</span>
+          </p>
+        </article>
+
+        <article class="step">
+          <img
+            class="zoomable"
+            src="Asean1.jpg"
+            alt="Design development"
+          >
+
+          <p>
+            <b>02</b>
+            DESIGN DEVELOPMENT
+            <span class="cn">深化设计</span>
+          </p>
+        </article>
+
+        <article class="step">
+          <img
+            class="zoomable"
+            src="asean2.jpg"
+            alt="Material selection"
+          >
+
+          <p>
+            <b>03</b>
+            MATERIAL SELECTION
+            <span class="cn">材料与色彩确认</span>
+          </p>
+        </article>
+
+        <article class="step">
+          <img
+            class="zoomable"
+            src="asean12-1.png"
+            alt="Construction"
+          >
+
+          <p>
+            <b>04</b>
+            CONSTRUCTION
+            <span class="cn">现场施工</span>
+          </p>
+        </article>
+
+        <article class="step">
+          <img
+            class="zoomable"
+            src="asean29-1.jpg"
+            alt="Final delivery"
+          >
+
+          <p>
+            <b>05</b>
+            FINAL DELIVERY
+            <span class="cn">完工交付</span>
+          </p>
+        </article>
+
+      </div>
+    </section>
+
+    <section class="section recognition">
+
+      <h2 class="title">
+        Project Recognition
+        <small>/ 项目认可</small>
+      </h2>
+
+      <div class="recognition-grid">
+
+        <article>
+          <img
+            class="zoomable"
+            src="asen38-1.png"
+            alt="Vietnam Pavilion Opening Ceremony"
+          >
+
+          <p>
+            Vietnam Pavilion Opening Ceremony<br>
+            越南馆开馆仪式
+          </p>
+        </article>
+
+        <article>
+          <img
+            class="zoomable"
+            src="asean37-1.png"
+            alt="Government delegation visit"
+          >
+
+          <p>
+            Government Delegation Visit<br>
+            政府代表团参观
+          </p>
+        </article>
+
+        <article>
+          <img
+            class="zoomable"
+            src="asean.png"
+            alt="Completed exhibition space"
+          >
+
+          <p>
+            Completed Exhibition Space<br>
+            完成后的展览空间
+          </p>
+        </article>
+
+      </div>
+    </section>
+
   </main>
-  <footer class="footer">TRANSITLO · CHINA · VIETNAM · ASEAN PROJECTS</footer>
-  <div class="lightbox" role="dialog" aria-modal="true" aria-label="Image preview"><button class="close" aria-label="Close">×</button><button class="prev">‹</button><img alt="Expanded project view"><button class="next">›</button></div>
-<script>
-const box=document.querySelector('.lightbox'),preview=box.querySelector('img'),imgs=[...document.querySelectorAll('.zoomable')];
-let current=0;
-function showImage(i){current=(i+imgs.length)%imgs.length;preview.src=imgs[current].src;preview.alt=imgs[current].alt;box.classList.add('open');}
-imgs.forEach((img,i)=>{img.style.cursor='zoom-in';img.onclick=()=>showImage(i);});
-function closeBox(){box.classList.remove('open')}
-box.querySelector('.close').onclick=closeBox;
-box.querySelector('.prev').onclick=e=>{e.stopPropagation();showImage(current-1)};
-box.querySelector('.next').onclick=e=>{e.stopPropagation();showImage(current+1)};
-box.onclick=e=>{if(e.target===box)closeBox()};
-addEventListener('keydown',e=>{if(e.key==='Escape')closeBox();if(box.classList.contains('open')&&e.key==='ArrowLeft')showImage(current-1);if(box.classList.contains('open')&&e.key==='ArrowRight')showImage(current+1);});
-</script>
+
+  <footer class="footer">
+    TRANSITLO · CHINA · VIETNAM · ASEAN PROJECTS
+  </footer>
+
+  <div
+    class="lightbox"
+    role="dialog"
+    aria-modal="true"
+    aria-label="Image preview"
+  >
+    <button class="close" aria-label="Close">×</button>
+    <button class="prev">‹</button>
+    <img alt="Expanded project view">
+    <button class="next">›</button>
+  </div>
+
+  <script>
+    const box = document.querySelector('.lightbox');
+    const preview = box.querySelector('img');
+    const imgs = [...document.querySelectorAll('.zoomable')];
+
+    let current = 0;
+
+    function showImage(i){
+      current = (i + imgs.length) % imgs.length;
+      preview.src = imgs[current].src;
+      preview.alt = imgs[current].alt;
+      box.classList.add('open');
+    }
+
+    imgs.forEach((img,i) => {
+      img.style.cursor = 'zoom-in';
+      img.onclick = () => showImage(i);
+    });
+
+    function closeBox(){
+      box.classList.remove('open');
+    }
+
+    box.querySelector('.close').onclick = closeBox;
+
+    box.querySelector('.prev').onclick = e => {
+      e.stopPropagation();
+      showImage(current - 1);
+    };
+
+    box.querySelector('.next').onclick = e => {
+      e.stopPropagation();
+      showImage(current + 1);
+    };
+
+    box.onclick = e => {
+      if(e.target === box){
+        closeBox();
+      }
+    };
+
+    addEventListener('keydown', e => {
+      if(e.key === 'Escape'){
+        closeBox();
+      }
+
+      if(
+        box.classList.contains('open') &&
+        e.key === 'ArrowLeft'
+      ){
+        showImage(current - 1);
+      }
+
+      if(
+        box.classList.contains('open') &&
+        e.key === 'ArrowRight'
+      ){
+        showImage(current + 1);
+      }
+    });
+  </script>
+
 </body>
 </html>
