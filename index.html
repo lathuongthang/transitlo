@@ -338,13 +338,95 @@ header a{
   cursor:pointer;
 }
 /* CONTACT */
+.contact-title{
+  margin:0;
+  padding-top:38px;
+  padding-bottom:18px;
+}
+
 .contact{
   display:grid;
   grid-template-columns:1fr 1fr 1fr;
-  padding:80px 60px;
+  align-items:start;
+  padding:0 60px 44px;
   font-size:13px;
-  line-height:2;
+  line-height:1.65;
   gap:40px;
+}
+
+.contact-methods{
+  display:flex;
+  flex-direction:column;
+  justify-content:space-between;
+  align-self:stretch;
+  min-width:0;
+  gap:0;
+}
+
+.contact-item{
+  display:grid;
+  grid-template-columns:88px minmax(0,1fr);
+  align-items:baseline;
+  gap:12px;
+  min-width:0;
+}
+
+.contact-item span{
+  white-space:nowrap;
+}
+
+.contact-item a,
+.contact-item button{
+  min-width:0;
+  text-align:left;
+  justify-self:start;
+}
+
+.contact-link{
+  color:inherit;
+  text-decoration:none;
+}
+
+.contact-link:hover{
+  text-decoration:underline;
+  text-underline-offset:4px;
+}
+
+.contact-copy{
+  margin:0;
+  padding:0;
+  border:0;
+  background:none;
+  color:inherit;
+  font:inherit;
+  cursor:pointer;
+}
+
+.contact-copy:hover{
+  text-decoration:underline;
+  text-underline-offset:4px;
+}
+
+.copy-toast{
+  position:fixed;
+  left:50%;
+  bottom:28px;
+  z-index:6000;
+  transform:translate(-50%,18px);
+  padding:10px 16px;
+  border-radius:3px;
+  background:rgba(17,17,17,.92);
+  color:#fff;
+  font-size:11px;
+  letter-spacing:.2px;
+  opacity:0;
+  pointer-events:none;
+  transition:opacity .25s ease,transform .25s ease;
+}
+
+.copy-toast.show{
+  opacity:1;
+  transform:translate(-50%,0);
 }
 
 /* FOOTER */
@@ -410,8 +492,23 @@ footer{
     width:100%;
   }
 
+  .contact-title{
+    padding:28px 20px 16px;
+  }
+
   .contact{
     grid-template-columns:1fr;
+    padding-top:0;
+    padding-bottom:34px;
+    gap:24px;
+  }
+
+  .contact-methods{
+    gap:10px;
+  }
+
+  .contact-item{
+    grid-template-columns:88px minmax(0,1fr);
   }
 
   .section-title{
@@ -631,16 +728,24 @@ footer{
 <div class="metric"><strong>15</strong><span>YEARS OF PRACTICE<br>行业实践经验<br>NĂM KINH NGHIỆM</span></div>
 </section>
 
-<div class="section-title">
+<div class="section-title contact-title">
   <div>CONTACT / 联系方式 / LIÊN HỆ</div>
 </div>
 
 <section class="contact" id="contact">
-  <div>
-    Email:<br>
-    <b>lathuongthang@gmail.com</b><br><br>
-    WeChat:<br>
-    <b>13481183494</b>
+  <div class="contact-methods">
+    <div class="contact-item">
+      <span>Email:</span>
+      <a class="contact-link" href="mailto:lathuongthang@gmail.com"><b>lathuongthang@gmail.com</b></a>
+    </div>
+    <div class="contact-item">
+      <span>WeChat:</span>
+      <button class="contact-copy" id="copyWechat" type="button" data-copy="13481183494" aria-label="Copy WeChat ID 13481183494"><b>13481183494</b></button>
+    </div>
+    <div class="contact-item">
+      <span>WhatsApp:</span>
+      <a class="contact-link" href="https://wa.me/8613481183494" target="_blank" rel="noopener noreferrer"><b>+86 134 8118 3494</b></a>
+    </div>
   </div>
 
   <div>
@@ -660,6 +765,8 @@ Hà Nội Viet Nam
 © TRANSITLO
 </footer>
 
+<div class="copy-toast" id="copyToast" role="status" aria-live="polite">WeChat copied · 微信号已复制 · Đã sao chép WeChat</div>
+
 <div class="about-lightbox" id="aboutLightbox" role="dialog" aria-modal="true" aria-label="About photo viewer">
   <button class="about-lightbox-close" id="aboutLightboxClose" type="button" aria-label="Close">×</button>
   <img id="aboutLightboxImage" alt="Changsheng Luo — original photo">
@@ -670,6 +777,9 @@ const aboutPhoto=document.querySelector('#aboutPhoto');
 const aboutLightbox=document.querySelector('#aboutLightbox');
 const aboutLightboxImage=document.querySelector('#aboutLightboxImage');
 const aboutLightboxClose=document.querySelector('#aboutLightboxClose');
+const copyWechat=document.querySelector('#copyWechat');
+const copyToast=document.querySelector('#copyToast');
+let copyToastTimer;
 
 function openAboutLightbox(){
   aboutLightboxImage.src=aboutPhoto.src;
@@ -690,6 +800,34 @@ aboutLightbox.addEventListener('click',event=>{
 });
 document.addEventListener('keydown',event=>{
   if(event.key==='Escape'&&aboutLightbox.classList.contains('open'))closeAboutLightbox();
+});
+
+async function copyText(text){
+  if(navigator.clipboard&&window.isSecureContext){
+    await navigator.clipboard.writeText(text);
+    return;
+  }
+  const textarea=document.createElement('textarea');
+  textarea.value=text;
+  textarea.setAttribute('readonly','');
+  textarea.style.position='fixed';
+  textarea.style.opacity='0';
+  document.body.appendChild(textarea);
+  textarea.select();
+  document.execCommand('copy');
+  textarea.remove();
+}
+
+copyWechat.addEventListener('click',async()=>{
+  try{
+    await copyText(copyWechat.dataset.copy);
+    copyToast.textContent='WeChat copied · 微信号已复制 · Đã sao chép WeChat';
+  }catch(error){
+    copyToast.textContent='Copy failed · 复制失败 · Sao chép thất bại';
+  }
+  copyToast.classList.add('show');
+  clearTimeout(copyToastTimer);
+  copyToastTimer=setTimeout(()=>copyToast.classList.remove('show'),1800);
 });
 </script>
 
