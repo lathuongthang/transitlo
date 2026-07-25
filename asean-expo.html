@@ -7,57 +7,878 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+
 <style>
-:root{--w:1171px;--ink:#111;--gray:#6c6c6c;--line:#dedede;--gold:#b58a50}
-*{box-sizing:border-box}html,body{margin:0;background:#fff;color:var(--ink);font-family:"Inter","Microsoft YaHei",sans-serif;-webkit-font-smoothing:antialiased}a{color:inherit;text-decoration:none}img{display:block;width:100%;height:100%;object-fit:cover}
-.page{width:min(100%,var(--w));margin:auto;overflow:hidden}.header{height:44px;padding:0 61px;display:flex;align-items:center;justify-content:space-between;font-size:8px;font-weight:600;letter-spacing:.45px}.brand{font-size:13px;letter-spacing:3.1px}.nav{display:flex;align-items:center;gap:28px}.langs{display:flex;gap:7px}.langs span+span:before{content:"|";margin-right:7px;color:#aaa}
-.hero{height:330px;position:relative;overflow:hidden;color:#fff}.hero img{filter:brightness(.63)}.hero:after{content:"";position:absolute;inset:0;background:linear-gradient(90deg,rgba(0,0,0,.75),rgba(0,0,0,.12) 65%)}.hero-copy{position:absolute;z-index:2;left:61px;top:91px}.hero h1{margin:0;font-size:43px;line-height:1.08;font-weight:600;letter-spacing:.1px}.hero h1 span{display:block;font-weight:400}.hero p{margin:17px 0 0;font-size:13px;line-height:1.55;font-weight:500}.hero .place{position:absolute;z-index:2;left:61px;bottom:38px;font-size:9px;font-weight:600;letter-spacing:.7px}.hero .place:after{content:"";display:block;width:56px;border-bottom:1px solid #fff;margin-top:12px}
-.separator{height:8px;background:#fff}.intro{height:178px;padding:36px 61px;display:grid;grid-template-columns:230px 1fr;gap:54px;border-bottom:1px solid var(--line)}.eyebrow{font-size:10px;line-height:1.4;font-weight:700}.eyebrow span{display:block;margin-top:2px;font-size:10px;font-weight:600}.eyebrow:after{content:"";display:block;width:30px;border-bottom:1.5px solid #111;margin-top:9px}.intro-copy{max-width:620px;font-size:11px;line-height:1.65;color:#333}.intro-copy .cn{display:block;margin-top:11px;font-weight:500}
-.projects{padding:42px 61px 54px}.projects-head{display:flex;align-items:end;justify-content:space-between;margin-bottom:22px}.projects-head h2{margin:0;font-size:12px;line-height:1.35;font-weight:700}.projects-head h2 span{display:block;margin-top:2px;font-size:10.5px;font-weight:600}.projects-head p{margin:0;font-size:8px;color:#777;letter-spacing:.45px}.grid{display:grid;grid-template-columns:1fr 1fr;gap:28px 18px}.card{display:block}.image{height:292px;position:relative;overflow:hidden;background:#ddd}.image:after{content:"";position:absolute;inset:0;z-index:1;pointer-events:none;background:linear-gradient(180deg,rgba(20,22,24,.10),rgba(20,22,24,.27));transition:opacity .45s ease}.card img{filter:saturate(.50) brightness(.88) contrast(.94);transition:transform .45s ease,filter .45s ease}.card:hover img{transform:scale(1.018);filter:saturate(.80) brightness(.91) contrast(.96)}.card:hover .image:after{opacity:.82}.meta{padding:13px 0 0;display:grid;grid-template-columns:38px 1fr auto;gap:12px;align-items:start;border-top:1px solid #111}.no{font-size:9px;font-weight:600;color:#777}.title h3{margin:0;font-size:13px;line-height:1.28;font-weight:600;letter-spacing:.03px}.title .cn{margin-top:4px;font-size:10px;line-height:1.35;font-weight:500}.tag{font-size:8px;line-height:1.3;font-weight:500;letter-spacing:.4px;color:#777;text-align:right}.arrow{display:inline-block;margin-left:7px;font-size:13px;color:var(--gold)}
-.footer{height:127px;display:grid;grid-template-columns:230px 333px 290px 318px;border-top:1px solid var(--line)}.footer-title{padding:28px 0 0 61px}.footer-copy{padding:27px 20px 0 0;font-size:8.5px;line-height:1.45;color:#444}.footer-copy span{display:block;margin-top:8px;font-weight:600}.map{display:flex;align-items:center;justify-content:center;color:#999;overflow:hidden}.map img{width:100%;height:100%;object-fit:cover}.contact{display:block;background:#181818;color:#fff;padding:27px 33px}.contact h3{margin:0 0 5px;font-size:10.5px;font-weight:600}.contact .cn{font-size:8.5px}.contact i{display:block;width:30px;border-bottom:1px solid #aaa;margin:9px 0}.contact b{display:inline-block;border:1px solid #888;padding:8px 24px;font-size:7.5px;font-weight:500}
+:root{
+  --w:1171px;
+  --ink:#111;
+  --gray:#6c6c6c;
+  --line:#dedede;
+  --gold:#b58a50
+}
+
+*{
+  box-sizing:border-box
+}
+
+html,
+body{
+  margin:0;
+  background:#fff;
+  color:var(--ink);
+  font-family:"Inter","Microsoft YaHei",sans-serif;
+  -webkit-font-smoothing:antialiased
+}
+
+a{
+  color:inherit;
+  text-decoration:none
+}
+
+img{
+  display:block;
+  width:100%;
+  height:100%;
+  object-fit:cover
+}
+
+.page{
+  width:min(100%,var(--w));
+  margin:auto;
+  overflow:hidden
+}
+
+.header{
+  height:44px;
+  padding:0 61px;
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  font-size:8px;
+  font-weight:600;
+  letter-spacing:.45px
+}
+
+.brand{
+  font-size:13px;
+  letter-spacing:3.1px
+}
+
+.nav{
+  display:flex;
+  align-items:center;
+  gap:28px
+}
+
+.langs{
+  display:flex;
+  gap:7px
+}
+
+.langs span+span:before{
+  content:"|";
+  margin-right:7px;
+  color:#aaa
+}
+
+.hero{
+  height:330px;
+  position:relative;
+  overflow:hidden;
+  color:#fff
+}
+
+.hero img{
+  filter:brightness(.63)
+}
+
+.hero:after{
+  content:"";
+  position:absolute;
+  inset:0;
+  background:linear-gradient(
+    90deg,
+    rgba(0,0,0,.75),
+    rgba(0,0,0,.12) 65%
+  )
+}
+
+.hero-copy{
+  position:absolute;
+  z-index:2;
+  left:61px;
+  top:91px
+}
+
+.hero h1{
+  margin:0;
+  font-size:43px;
+  line-height:1.08;
+  font-weight:600;
+  letter-spacing:.1px
+}
+
+.hero h1 span{
+  display:block;
+  font-weight:400
+}
+
+.hero p{
+  margin:17px 0 0;
+  font-size:13px;
+  line-height:1.55;
+  font-weight:500
+}
+
+.hero .place{
+  position:absolute;
+  z-index:2;
+  left:61px;
+  bottom:38px;
+  font-size:9px;
+  font-weight:600;
+  letter-spacing:.7px
+}
+
+.hero .place:after{
+  content:"";
+  display:block;
+  width:56px;
+  border-bottom:1px solid #fff;
+  margin-top:12px
+}
+
+.separator{
+  height:8px;
+  background:#fff
+}
+
+/* PROJECT SERIES */
+.intro{
+  height:auto;
+  min-height:178px;
+  padding:36px 61px;
+  display:grid;
+  grid-template-columns:230px 1fr;
+  gap:54px;
+  border-bottom:1px solid var(--line)
+}
+
+.eyebrow{
+  font-size:10px;
+  line-height:1.4;
+  font-weight:700
+}
+
+.eyebrow span{
+  display:block;
+  margin-top:2px;
+  font-size:10px;
+  font-weight:600
+}
+
+.eyebrow:after{
+  content:"";
+  display:block;
+  width:30px;
+  border-bottom:1.5px solid #111;
+  margin-top:9px
+}
+
+.intro-copy{
+  max-width:620px;
+  font-size:11px;
+  line-height:1.65;
+  color:#333
+}
+
+.intro-copy .cn{
+  display:block;
+  margin-top:11px;
+  font-weight:500
+}
+
+.intro-copy .vi{
+  display:block;
+  margin-top:8px;
+  color:#666;
+  font-weight:400
+}
+
+/* PROJECTS */
+.projects{
+  padding:42px 61px 54px
+}
+
+.projects-head{
+  display:flex;
+  align-items:end;
+  justify-content:space-between;
+  margin-bottom:22px
+}
+
+.projects-head h2{
+  margin:0;
+  font-size:12px;
+  line-height:1.35;
+  font-weight:700
+}
+
+.projects-head h2 span{
+  display:block;
+  margin-top:2px;
+  font-size:10.5px;
+  font-weight:600
+}
+
+.projects-head p{
+  margin:0;
+  font-size:8px;
+  color:#777;
+  letter-spacing:.45px
+}
+
+.grid{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:28px 18px
+}
+
+.card{
+  display:block
+}
+
+.image{
+  height:292px;
+  position:relative;
+  overflow:hidden;
+  background:#ddd
+}
+
+.image:after{
+  content:"";
+  position:absolute;
+  inset:0;
+  z-index:1;
+  pointer-events:none;
+  background:linear-gradient(
+    180deg,
+    rgba(20,22,24,.10),
+    rgba(20,22,24,.27)
+  );
+  transition:opacity .45s ease
+}
+
+.card img{
+  filter:saturate(.50) brightness(.88) contrast(.94);
+  transition:transform .45s ease,filter .45s ease
+}
+
+.card:hover img{
+  transform:scale(1.018);
+  filter:saturate(.80) brightness(.91) contrast(.96)
+}
+
+.card:hover .image:after{
+  opacity:.82
+}
+
+.meta{
+  padding:13px 0 0;
+  display:grid;
+  grid-template-columns:38px 1fr auto;
+  gap:12px;
+  align-items:start;
+  border-top:1px solid #111
+}
+
+.no{
+  font-size:9px;
+  font-weight:600;
+  color:#777
+}
+
+.title h3{
+  margin:0;
+  font-size:13px;
+  line-height:1.28;
+  font-weight:600;
+  letter-spacing:.03px
+}
+
+.title .cn{
+  margin-top:4px;
+  font-size:10px;
+  line-height:1.35;
+  font-weight:500
+}
+
+.title .vi{
+  margin-top:2px;
+  font-size:9px;
+  line-height:1.38;
+  font-weight:400;
+  color:#666
+}
+
+.tag{
+  font-size:8px;
+  line-height:1.3;
+  font-weight:500;
+  letter-spacing:.4px;
+  color:#777;
+  text-align:right
+}
+
+.arrow{
+  display:inline-block;
+  margin-left:7px;
+  font-size:13px;
+  color:var(--gold)
+}
+
+/* FOOTER */
+.footer{
+  height:127px;
+  display:grid;
+  grid-template-columns:230px 333px 290px 318px;
+  border-top:1px solid var(--line)
+}
+
+.footer-title{
+  padding:28px 0 0 61px
+}
+
+.footer-copy{
+  padding:27px 20px 0 0;
+  font-size:8.5px;
+  line-height:1.45;
+  color:#444
+}
+
+.footer-copy span{
+  display:block;
+  margin-top:8px;
+  font-weight:600
+}
+
+.map{
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  color:#999;
+  overflow:hidden
+}
+
+.map img{
+  width:100%;
+  height:100%;
+  object-fit:cover
+}
+
+.contact{
+  display:block;
+  background:#181818;
+  color:#fff;
+  padding:27px 33px
+}
+
+.contact h3{
+  margin:0 0 5px;
+  font-size:10.5px;
+  font-weight:600
+}
+
+.contact .cn{
+  font-size:8.5px
+}
+
+.contact i{
+  display:block;
+  width:30px;
+  border-bottom:1px solid #aaa;
+  margin:9px 0
+}
+
+.contact b{
+  display:inline-block;
+  border:1px solid #888;
+  padding:8px 24px;
+  font-size:7.5px;
+  font-weight:500
+}
+
+/* TABLET */
 @media(max-width:1024px){
-  :root{--w:100%}
-  .header{padding:0 36px}
-  .hero{height:310px}.hero-copy,.hero .place{left:36px}
-  .hero h1{font-size:38px}
-  .intro{height:auto;min-height:165px;padding:34px 36px;grid-template-columns:190px 1fr;gap:38px}
-  .projects{padding:38px 36px 48px}
-  .image{height:auto;aspect-ratio:16/9}
-  .meta{grid-template-columns:30px 1fr}.tag{display:none}
-  .footer{height:auto;grid-template-columns:1fr 1.45fr 1.1fr 1.2fr}
-  .footer-title{padding-left:36px}.contact{padding-left:25px;padding-right:25px}
+  :root{
+    --w:100%
+  }
+
+  .header{
+    padding:0 36px
+  }
+
+  .hero{
+    height:310px
+  }
+
+  .hero-copy,
+  .hero .place{
+    left:36px
+  }
+
+  .hero h1{
+    font-size:38px
+  }
+
+  .intro{
+    height:auto;
+    min-height:165px;
+    padding:34px 36px;
+    grid-template-columns:190px 1fr;
+    gap:38px
+  }
+
+  .projects{
+    padding:38px 36px 48px
+  }
+
+  .image{
+    height:auto;
+    aspect-ratio:16/9
+  }
+
+  .meta{
+    grid-template-columns:30px 1fr
+  }
+
+  .tag{
+    display:none
+  }
+
+  .footer{
+    height:auto;
+    grid-template-columns:1fr 1.45fr 1.1fr 1.2fr
+  }
+
+  .footer-title{
+    padding-left:36px
+  }
+
+  .contact{
+    padding-left:25px;
+    padding-right:25px
+  }
 }
+
+/* MOBILE */
 @media(max-width:700px){
-  .header{height:54px;padding:0 20px}.brand{font-size:12px;letter-spacing:2.5px}
-  .nav{gap:14px}.nav>a{display:none}.langs{font-size:8px}
-  .hero{height:290px}.hero-copy,.hero .place{left:22px}
-  .hero-copy{top:67px;right:22px}.hero h1{font-size:31px;line-height:1.05}.hero p{font-size:10.5px;line-height:1.6}
-  .hero .place{bottom:28px}.hero img{object-position:center center}
-  .intro{min-height:0;padding:28px 22px;grid-template-columns:1fr;gap:22px}.intro-copy{font-size:10.5px}
-  .projects{padding:32px 22px 42px}.projects-head{align-items:start;gap:18px}.projects-head p{max-width:115px;text-align:right;line-height:1.4}
-  .grid{grid-template-columns:1fr;gap:32px}.image{aspect-ratio:16/10}
-  .meta{padding-top:12px;grid-template-columns:28px 1fr;gap:8px}.title h3{font-size:12.5px}
-  .footer{grid-template-columns:1fr}.footer>div,.footer>a{min-height:105px}
-  .footer-title{padding:27px 22px}.footer-copy{padding:25px 22px}.map{min-height:140px}.map img{object-fit:cover}
-  .contact{padding:27px 22px;min-height:128px}
+  .header{
+    height:54px;
+    padding:0 20px
+  }
+
+  .brand{
+    font-size:12px;
+    letter-spacing:2.5px
+  }
+
+  .nav{
+    gap:14px
+  }
+
+  .nav>a{
+    display:none
+  }
+
+  .langs{
+    font-size:8px
+  }
+
+  .hero{
+    height:290px
+  }
+
+  .hero-copy,
+  .hero .place{
+    left:22px
+  }
+
+  .hero-copy{
+    top:67px;
+    right:22px
+  }
+
+  .hero h1{
+    font-size:31px;
+    line-height:1.05
+  }
+
+  .hero p{
+    font-size:10.5px;
+    line-height:1.6
+  }
+
+  .hero .place{
+    bottom:28px
+  }
+
+  .hero img{
+    object-position:center center
+  }
+
+  .intro{
+    min-height:0;
+    padding:28px 22px;
+    grid-template-columns:1fr;
+    gap:22px
+  }
+
+  .intro-copy{
+    font-size:10.5px
+  }
+
+  .projects{
+    padding:32px 22px 42px
+  }
+
+  .projects-head{
+    align-items:start;
+    gap:18px
+  }
+
+  .projects-head p{
+    max-width:115px;
+    text-align:right;
+    line-height:1.4
+  }
+
+  .grid{
+    grid-template-columns:1fr;
+    gap:32px
+  }
+
+  .image{
+    aspect-ratio:16/10
+  }
+
+  .meta{
+    padding-top:12px;
+    grid-template-columns:28px 1fr;
+    gap:8px
+  }
+
+  .title h3{
+    font-size:12.5px
+  }
+
+  .footer{
+    grid-template-columns:1fr
+  }
+
+  .footer>div,
+  .footer>a{
+    min-height:105px
+  }
+
+  .footer-title{
+    padding:27px 22px
+  }
+
+  .footer-copy{
+    padding:25px 22px
+  }
+
+  .map{
+    min-height:140px
+  }
+
+  .map img{
+    object-fit:cover
+  }
+
+  .contact{
+    padding:27px 22px;
+    min-height:128px
+  }
 }
+
 @media(max-width:390px){
-  .hero h1{font-size:28px}.hero p{font-size:9.5px}
-  .projects-head p{display:none}.image{aspect-ratio:4/3}
+  .hero h1{
+    font-size:28px
+  }
+
+  .hero p{
+    font-size:9.5px
+  }
+
+  .projects-head p{
+    display:none
+  }
+
+  .image{
+    aspect-ratio:4/3
+  }
 }
-.title .vi{margin-top:2px;font-size:9px;line-height:1.38;font-weight:400;color:#666}
 </style>
 </head>
-<body><main class="page">
-<header class="header"><a class="brand" href="index.html" aria-label="Back to homepage">TRANSITLO</a><nav class="nav"><a href="#projects">●&nbsp; WORKS</a><a href="#projects">ABOUT</a><a href="#contact">CONTACT</a><div class="langs"><span>中文</span><span>EN</span><span>VI</span></div></nav></header>
-<section class="hero"><img src="ASEAN card.png" alt="ASEAN exhibition projects"><div class="hero-copy"><h1>ASEAN <span>PROJECTS</span></h1><p>PAVILION · EXHIBITION · SPATIAL STRATEGY<br>东盟展馆 · 展览空间 · 空间策略</p></div><div class="place">CHINA · VIETNAM · ASEAN</div></section>
+
+<body>
+
+<main class="page">
+
+<header class="header">
+  <a class="brand" href="index.html" aria-label="Back to homepage">
+    TRANSITLO
+  </a>
+
+  <nav class="nav">
+    <a href="#projects">●&nbsp; WORKS</a>
+    <a href="#projects">ABOUT</a>
+    <a href="#contact">CONTACT</a>
+
+    <div class="langs">
+      <span>中文</span>
+      <span>EN</span>
+      <span>VI</span>
+    </div>
+  </nav>
+</header>
+
+<section class="hero">
+  <img src="ASEAN card.png" alt="ASEAN exhibition projects">
+
+  <div class="hero-copy">
+    <h1>
+      ASEAN
+      <span>PROJECTS</span>
+    </h1>
+
+    <p>
+      PAVILION · EXHIBITION · SPATIAL STRATEGY<br>
+      东盟展馆 · 展览空间 · 空间策略
+    </p>
+  </div>
+
+  <div class="place">
+    CHINA · VIETNAM · ASEAN
+  </div>
+</section>
+
 <div class="separator" aria-hidden="true"></div>
-<section class="intro"><div class="eyebrow">PROJECT SERIES<span>项目系列</span></div><div class="intro-copy">A collection of four exhibition and spatial projects developed for ASEAN-facing communication, brand presentation and professional exchange. Each project opens as an independent detailed case page.<span class="cn">四个面向东盟交流、品牌展示与专业合作的展览空间项目。每个项目均设独立三级案例页面。</span></div></section>
-<section class="projects" id="projects"><div class="projects-head"><h2>SELECTED ASEAN PROJECTS<span>东盟项目精选</span></h2><p>04 PROJECTS · CLICK TO VIEW DETAILS</p></div><div class="grid">
-<a class="card" href="defense.html"><div class="image"><img src="Defense CARD.png" alt="Vietnam Defense Economic Products Exhibition Area"></div><div class="meta"><div class="no">01</div><div class="title"><h3>VIETNAM DEFENSE ECONOMIC PRODUCTS EXHIBITION AREA</h3><div class="cn">越南国防经济产品展示区</div><div class="vi">Khu trưng bày sản phẩm kinh tế – quốc phòng Việt Nam</div></div><div class="tag">EXHIBITION DESIGN <span class="arrow">↗</span></div></div></a>
-<a class="card" href="viettrade.html"><div class="image"><img src="viettradecard.png" alt="VIETRADE Pavilion"></div><div class="meta"><div class="no">02</div><div class="title"><h3>VIETRADE PAVILION</h3><div class="cn">越南贸易促进局展馆</div><div class="vi">Gian hàng Cục Xúc tiến Thương mại Việt Nam (VIETRADE)</div></div><div class="tag">PAVILION DESIGN <span class="arrow">↗</span></div></div></a>
-<a class="card" href="quangninh.html"><div class="image"><img src="QuangNinhcard.png" alt="Quang Ninh Province Pavilion"></div><div class="meta"><div class="no">03</div><div class="title"><h3>QUANG NINH PROVINCE PAVILION</h3><div class="cn">广宁省展馆</div><div class="vi">Gian hàng tỉnh Quảng Ninh</div></div><div class="tag">EXHIBITION SPACE <span class="arrow">↗</span></div></div></a>
-<a class="card" href="thtruemilk.html"><div class="image"><img src="TH truemilk card.png" alt="TH true MILK Pavilion"></div><div class="meta"><div class="no">04</div><div class="title"><h3>TH TRUE MILK PAVILION</h3><div class="cn">TH true MILK 品牌展馆</div><div class="vi">Gian hàng thương hiệu TH true MILK</div></div><div class="tag">BRAND PAVILION <span class="arrow">↗</span></div></div></a>
-</div></section>
-<footer class="footer" id="contact"><div class="footer-title"><div class="eyebrow">ASEAN PRACTICE<span>东盟实践</span></div></div><div class="footer-copy">Connecting exhibition design, spatial experience and cross-border communication.<span>连接展览设计、空间体验与跨境交流。</span></div><div class="map"><img src="aseanline.png" alt="ASEAN project line graphic"></div><a class="contact" href="index.html#contact"><h3>LET’S WORK TOGETHER</h3><div class="cn">期待与您合作</div><i></i><b>CONTACT US</b></a></footer>
-</main></body></html>
+
+<section class="intro">
+  <div class="eyebrow">
+    PROJECT SERIES
+    <span>项目系列</span>
+  </div>
+
+  <div class="intro-copy">
+    Four coordinated exhibition booths and display areas were
+    delivered at the same time and location within the Vietnam
+    Pavilion at the China–ASEAN Expo in Nanning. Together, they
+    formed a unified Vietnam Pavilion presentation covering trade
+    promotion, regional identity, defense-economic products and
+    brand experience.
+
+    <span class="cn">
+      四个展位与展示区于同一时间、同一地点，在中国—东盟博览会
+      越南馆内协同实施，共同构成完整的越南馆展示体系，涵盖贸易推广、
+      区域形象、国防经济产品与品牌体验。
+    </span>
+
+    <span class="vi">
+      Bốn gian hàng và khu trưng bày được triển khai đồng thời,
+      tại cùng một địa điểm trong Khu gian hàng Việt Nam tại
+      Hội chợ Trung Quốc–ASEAN ở Nam Ninh. Các dự án cùng tạo nên
+      một tổng thể trưng bày thống nhất của Việt Nam, bao gồm xúc
+      tiến thương mại, hình ảnh địa phương, sản phẩm kinh tế–quốc
+      phòng và trải nghiệm thương hiệu.
+    </span>
+  </div>
+</section>
+
+<section class="projects" id="projects">
+
+  <div class="projects-head">
+    <h2>
+      SELECTED ASEAN PROJECTS
+      <span>东盟项目精选</span>
+    </h2>
+
+    <p>
+      04 PROJECTS · CLICK TO VIEW DETAILS
+    </p>
+  </div>
+
+  <div class="grid">
+
+    <a class="card" href="defense.html">
+      <div class="image">
+        <img
+          src="Defense CARD.png"
+          alt="Vietnam Defense Economic Products Exhibition Area"
+        >
+      </div>
+
+      <div class="meta">
+        <div class="no">01</div>
+
+        <div class="title">
+          <h3>
+            VIETNAM DEFENSE ECONOMIC PRODUCTS EXHIBITION AREA
+          </h3>
+
+          <div class="cn">
+            越南国防经济产品展示区
+          </div>
+
+          <div class="vi">
+            Khu trưng bày sản phẩm kinh tế – quốc phòng Việt Nam
+          </div>
+        </div>
+
+        <div class="tag">
+          EXHIBITION DESIGN
+          <span class="arrow">↗</span>
+        </div>
+      </div>
+    </a>
+
+    <a class="card" href="viettrade.html">
+      <div class="image">
+        <img
+          src="viettradecard.png"
+          alt="VIETRADE Pavilion"
+        >
+      </div>
+
+      <div class="meta">
+        <div class="no">02</div>
+
+        <div class="title">
+          <h3>
+            VIETRADE PAVILION
+          </h3>
+
+          <div class="cn">
+            越南贸易促进局展馆
+          </div>
+
+          <div class="vi">
+            Gian hàng Cục Xúc tiến Thương mại Việt Nam (VIETRADE)
+          </div>
+        </div>
+
+        <div class="tag">
+          PAVILION DESIGN
+          <span class="arrow">↗</span>
+        </div>
+      </div>
+    </a>
+
+    <a class="card" href="quangninh.html">
+      <div class="image">
+        <img
+          src="QuangNinhcard.png"
+          alt="Quang Ninh Province Pavilion"
+        >
+      </div>
+
+      <div class="meta">
+        <div class="no">03</div>
+
+        <div class="title">
+          <h3>
+            QUANG NINH PROVINCE PAVILION
+          </h3>
+
+          <div class="cn">
+            广宁省展馆
+          </div>
+
+          <div class="vi">
+            Gian hàng tỉnh Quảng Ninh
+          </div>
+        </div>
+
+        <div class="tag">
+          EXHIBITION SPACE
+          <span class="arrow">↗</span>
+        </div>
+      </div>
+    </a>
+
+    <a class="card" href="thtruemilk.html">
+      <div class="image">
+        <img
+          src="TH truemilk card.png"
+          alt="TH true MILK Pavilion"
+        >
+      </div>
+
+      <div class="meta">
+        <div class="no">04</div>
+
+        <div class="title">
+          <h3>
+            TH TRUE MILK PAVILION
+          </h3>
+
+          <div class="cn">
+            TH true MILK 品牌展馆
+          </div>
+
+          <div class="vi">
+            Gian hàng thương hiệu TH true MILK
+          </div>
+        </div>
+
+        <div class="tag">
+          BRAND PAVILION
+          <span class="arrow">↗</span>
+        </div>
+      </div>
+    </a>
+
+  </div>
+</section>
+
+<footer class="footer" id="contact">
+
+  <div class="footer-title">
+    <div class="eyebrow">
+      ASEAN PRACTICE
+      <span>东盟实践</span>
+    </div>
+  </div>
+
+  <div class="footer-copy">
+    Connecting exhibition design, spatial experience and
+    cross-border communication.
+
+    <span>
+      连接展览设计、空间体验与跨境交流。
+    </span>
+  </div>
+
+  <div class="map">
+    <img
+      src="aseanline.png"
+      alt="ASEAN project line graphic"
+    >
+  </div>
+
+  <a class="contact" href="index.html#contact">
+    <h3>LET’S WORK TOGETHER</h3>
+    <div class="cn">期待与您合作</div>
+    <i></i>
+    <b>CONTACT US</b>
+  </a>
+
+</footer>
+
+</main>
+
+</body>
+</html>
