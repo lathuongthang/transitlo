@@ -1,0 +1,960 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="description" content="TransitLo 建筑与住宅设计：建筑形态、空间策略与居住体验。">
+<title>Architecture & Residential — TRANSITLO</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+
+<style>
+:root{
+  --w:1171px;
+  --ink:#111;
+  --muted:#666;
+  --line:#dedede;
+  --warm:#9b816a;
+  --paper:#f4f2ee;
+}
+
+*{
+  box-sizing:border-box;
+}
+
+html{
+  scroll-behavior:smooth;
+}
+
+html,
+body{
+  margin:0;
+  background:#fff;
+  color:var(--ink);
+  font-family:"Inter","Microsoft YaHei",Arial,sans-serif;
+  -webkit-font-smoothing:antialiased;
+}
+
+body{
+  min-width:320px;
+}
+
+a{
+  color:inherit;
+  text-decoration:none;
+}
+
+img{
+  display:block;
+  width:100%;
+}
+
+.page{
+  width:min(100%,var(--w));
+  margin:auto;
+  overflow:hidden;
+  background:#fff;
+}
+
+.header{
+  height:44px;
+  padding:0 61px;
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  background:#fff;
+  font-size:8.5px;
+  line-height:1;
+  font-weight:600;
+  letter-spacing:.45px;
+}
+
+.brand{
+  font-size:13px;
+  letter-spacing:3.1px;
+}
+
+.nav{
+  display:flex;
+  align-items:center;
+  gap:28px;
+}
+
+.nav a{
+  position:relative;
+}
+
+.nav a:after{
+  content:"";
+  position:absolute;
+  right:0;
+  bottom:-6px;
+  left:0;
+  height:1px;
+  background:#111;
+  transform:scaleX(0);
+  transform-origin:left;
+  transition:transform .25s ease;
+}
+
+.nav a:hover:after{
+  transform:scaleX(1);
+}
+
+.langs{
+  display:flex;
+  gap:7px;
+  font-weight:500;
+}
+
+.langs span+span:before{
+  content:"|";
+  margin-right:7px;
+  color:#aaa;
+}
+
+.hero{
+  position:relative;
+  height:382px;
+  overflow:hidden;
+  background:#242321;
+  color:#fff;
+}
+
+.hero-media{
+  position:absolute;
+  inset:0;
+  overflow:hidden;
+}
+
+.hero-media img{
+  position:absolute;
+  top:50%;
+  left:0;
+  width:100%;
+  max-width:none;
+  height:100%;
+  object-fit:cover;
+  object-position:center 52%;
+  transform:translateY(-50%);
+  filter:saturate(.48) brightness(.72) contrast(.93);
+}
+
+.hero:after{
+  content:"";
+  position:absolute;
+  inset:0;
+  background:linear-gradient(90deg,rgba(15,15,14,.78),rgba(15,15,14,.24) 58%,rgba(15,15,14,.08));
+}
+
+.hero-copy{
+  position:absolute;
+  z-index:2;
+  top:83px;
+  left:61px;
+  width:560px;
+}
+
+.eyebrow{
+  margin-bottom:19px;
+  font-size:9px;
+  font-weight:500;
+  letter-spacing:1.6px;
+}
+
+.hero h1{
+  margin:0;
+  font-size:43px;
+  line-height:1.05;
+  font-weight:300;
+  letter-spacing:.3px;
+}
+
+.hero h1 strong{
+  display:block;
+  font-weight:600;
+}
+
+.hero .cn-title{
+  margin-top:16px;
+  font-size:15px;
+  line-height:1.4;
+  font-weight:500;
+}
+
+.hero .vi-title{
+  margin-top:5px;
+  font-size:9px;
+  line-height:1.45;
+  font-weight:400;
+  letter-spacing:.65px;
+}
+
+.hero .place{
+  position:absolute;
+  z-index:2;
+  left:61px;
+  bottom:36px;
+  font-size:8.5px;
+  font-weight:500;
+  letter-spacing:1px;
+}
+
+.hero .place:after{
+  content:"";
+  display:block;
+  width:56px;
+  margin-top:11px;
+  border-bottom:1px solid rgba(255,255,255,.85);
+}
+
+.intro{
+  min-height:192px;
+  padding:39px 61px 41px;
+  display:grid;
+  grid-template-columns:230px 1fr;
+  gap:54px;
+  border-bottom:1px solid var(--line);
+}
+
+.section-label{
+  font-size:10px;
+  line-height:1.4;
+  font-weight:600;
+  letter-spacing:.2px;
+}
+
+.section-label span{
+  display:block;
+  margin-top:3px;
+  font-weight:500;
+}
+
+.section-label:after{
+  content:"";
+  display:block;
+  width:30px;
+  margin-top:10px;
+  border-bottom:1.5px solid #111;
+}
+
+.tri-copy{
+  max-width:670px;
+  font-size:10.5px;
+  line-height:1.68;
+  color:#303030;
+}
+
+.tri-copy p{
+  margin:0;
+}
+
+.tri-copy p+p{
+  margin-top:9px;
+}
+
+.tri-copy .vi{
+  color:#6a6a6a;
+}
+
+.disciplines{
+  padding:43px 61px 58px;
+}
+
+.disciplines-head{
+  display:flex;
+  align-items:flex-end;
+  justify-content:space-between;
+  margin-bottom:22px;
+}
+
+.disciplines-head h2{
+  margin:0;
+  font-size:12px;
+  line-height:1.35;
+  font-weight:600;
+}
+
+.disciplines-head h2 span{
+  display:block;
+  margin-top:3px;
+  font-size:10.5px;
+  font-weight:500;
+}
+
+.disciplines-head p{
+  margin:0;
+  color:#777;
+  font-size:8px;
+  letter-spacing:.5px;
+}
+
+.discipline-grid{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:18px;
+}
+
+.discipline-card{
+  position:relative;
+  overflow:hidden;
+  min-width:0;
+  border-top:1px solid #111;
+  background:var(--paper);
+}
+
+.card-image{
+  position:relative;
+  height:320px;
+  overflow:hidden;
+  background:#292a28;
+  cursor:zoom-in;
+}
+
+.card-image:after{
+  content:"";
+  position:absolute;
+  inset:0;
+  z-index:1;
+  pointer-events:none;
+  background:linear-gradient(180deg,rgba(24,24,22,.04),rgba(24,24,22,.23));
+  transition:opacity .45s ease;
+}
+
+.card-image img{
+  height:100%;
+  object-fit:cover;
+  filter:saturate(.50) brightness(.86) contrast(.94);
+  transition:transform .6s ease,filter .6s ease;
+}
+
+.architecture .card-image img{
+  object-position:center;
+}
+
+.residential .card-image img{
+  object-position:center;
+}
+
+.discipline-card:hover .card-image img{
+  transform:scale(1.025);
+  filter:saturate(.76) brightness(.9) contrast(.96);
+}
+
+.discipline-card:hover .card-image:after{
+  opacity:.78;
+}
+
+.card-copy{
+  min-height:190px;
+  padding:19px 21px 22px;
+  display:grid;
+  grid-template-columns:37px 1fr;
+  gap:13px;
+  background:#fff;
+}
+
+.card-no{
+  color:#777;
+  font-size:9px;
+  font-weight:500;
+}
+
+.card-title{
+  min-width:0;
+}
+
+.card-title h3{
+  margin:0;
+  font-size:20px;
+  line-height:1.15;
+  font-weight:500;
+  letter-spacing:.2px;
+}
+
+.card-title .cn{
+  margin-top:7px;
+  font-size:12px;
+  line-height:1.35;
+  font-weight:500;
+}
+
+.card-title .vi{
+  margin-top:3px;
+  color:#666;
+  font-size:9px;
+  line-height:1.45;
+  letter-spacing:.25px;
+}
+
+.card-title p{
+  margin:18px 0 0;
+  color:#555;
+  font-size:9.5px;
+  line-height:1.62;
+}
+
+.card-title p span{
+  display:block;
+  margin-top:4px;
+}
+
+.card-title p .vi-copy{
+  color:#777;
+}
+
+.principles{
+  display:grid;
+  grid-template-columns:repeat(4,1fr);
+  border-top:1px solid var(--line);
+  border-bottom:1px solid var(--line);
+}
+
+.principle{
+  min-height:132px;
+  padding:25px 22px;
+  border-right:1px solid var(--line);
+}
+
+.principle:last-child{
+  border-right:0;
+}
+
+.principle small{
+  display:block;
+  color:#888;
+  font-size:8px;
+  letter-spacing:.8px;
+}
+
+.principle b{
+  display:block;
+  margin-top:17px;
+  font-size:10px;
+  line-height:1.35;
+  font-weight:600;
+  letter-spacing:.4px;
+}
+
+.principle span{
+  display:block;
+  margin-top:6px;
+  color:#666;
+  font-size:9px;
+  line-height:1.5;
+}
+
+.footer{
+  min-height:127px;
+  display:grid;
+  grid-template-columns:230px 333px 290px 318px;
+}
+
+.footer-title{
+  padding:28px 0 0 61px;
+}
+
+.footer-copy{
+  padding:27px 20px 22px 0;
+  color:#444;
+  font-size:8.5px;
+  line-height:1.5;
+}
+
+.footer-copy span{
+  display:block;
+  margin-top:8px;
+  font-weight:500;
+}
+
+.footer-mark{
+  position:relative;
+  overflow:hidden;
+  background:#efede8;
+}
+
+.footer-mark:before,
+.footer-mark:after{
+  content:"";
+  position:absolute;
+  border:1px solid rgba(100,88,74,.25);
+  transform:rotate(45deg);
+}
+
+.footer-mark:before{
+  width:170px;
+  height:170px;
+  top:-92px;
+  left:54px;
+}
+
+.footer-mark:after{
+  width:120px;
+  height:120px;
+  right:38px;
+  bottom:-82px;
+}
+
+.contact{
+  display:block;
+  padding:27px 33px;
+  background:#181818;
+  color:#fff;
+}
+
+.contact h3{
+  margin:0 0 5px;
+  font-size:10.5px;
+  font-weight:600;
+}
+
+.contact .cn{
+  font-size:8.5px;
+}
+
+.contact i{
+  display:block;
+  width:30px;
+  margin:9px 0;
+  border-bottom:1px solid #aaa;
+}
+
+.contact b{
+  display:inline-block;
+  padding:8px 24px;
+  border:1px solid #888;
+  font-size:7.5px;
+  font-weight:500;
+}
+
+.lightbox{
+  position:fixed;
+  z-index:5000;
+  inset:0;
+  display:none;
+  align-items:center;
+  justify-content:center;
+  padding:42px;
+  background:rgba(0,0,0,.94);
+}
+
+.lightbox.open{
+  display:flex;
+}
+
+.lightbox img{
+  width:auto;
+  height:auto;
+  max-width:94vw;
+  max-height:90vh;
+  object-fit:contain;
+}
+
+.lightbox-close{
+  position:fixed;
+  top:18px;
+  right:24px;
+  z-index:2;
+  width:44px;
+  height:44px;
+  border:0;
+  background:rgba(0,0,0,.3);
+  color:#fff;
+  font:300 30px/44px "Inter",sans-serif;
+  cursor:pointer;
+}
+
+@media(max-width:1024px){
+  .header{
+    padding:0 36px;
+  }
+
+  .hero-copy,
+  .hero .place{
+    left:36px;
+  }
+
+  .intro{
+    padding-right:36px;
+    padding-left:36px;
+    grid-template-columns:190px 1fr;
+    gap:38px;
+  }
+
+  .disciplines{
+    padding-right:36px;
+    padding-left:36px;
+  }
+
+  .card-image{
+    height:auto;
+    aspect-ratio:16/10;
+  }
+
+  .footer{
+    grid-template-columns:1fr 1.45fr 1.1fr 1.2fr;
+  }
+
+  .footer-title{
+    padding-left:36px;
+  }
+}
+
+@media(max-width:700px){
+  .header{
+    height:54px;
+    padding:0 20px;
+  }
+
+  .brand{
+    font-size:12px;
+    letter-spacing:2.5px;
+  }
+
+  .nav{
+    gap:14px;
+  }
+
+  .nav>a{
+    display:none;
+  }
+
+  .langs{
+    font-size:8px;
+  }
+
+  .hero{
+    height:330px;
+  }
+
+  .hero-media img{
+    left:0;
+    width:100%;
+    object-position:center;
+  }
+
+  .hero-copy,
+  .hero .place{
+    left:22px;
+    right:22px;
+    width:auto;
+  }
+
+  .hero-copy{
+    top:66px;
+  }
+
+  .hero h1{
+    font-size:32px;
+  }
+
+  .hero .cn-title{
+    font-size:13px;
+  }
+
+  .hero .place{
+    bottom:28px;
+  }
+
+  .intro{
+    min-height:0;
+    padding:29px 22px;
+    grid-template-columns:1fr;
+    gap:23px;
+  }
+
+  .disciplines{
+    padding:33px 22px 43px;
+  }
+
+  .disciplines-head{
+    align-items:flex-start;
+    gap:18px;
+  }
+
+  .disciplines-head p{
+    max-width:120px;
+    text-align:right;
+    line-height:1.45;
+  }
+
+  .discipline-grid{
+    grid-template-columns:1fr;
+    gap:35px;
+  }
+
+  .card-image{
+    aspect-ratio:16/10;
+  }
+
+  .card-copy{
+    min-height:0;
+    padding-right:4px;
+    padding-left:4px;
+  }
+
+  .principles{
+    grid-template-columns:1fr 1fr;
+  }
+
+  .principle:nth-child(2){
+    border-right:0;
+  }
+
+  .principle:nth-child(n+3){
+    border-top:1px solid var(--line);
+  }
+
+  .footer{
+    grid-template-columns:1fr;
+  }
+
+  .footer>div,
+  .footer>a{
+    min-height:105px;
+  }
+
+  .footer-title{
+    padding:27px 22px;
+  }
+
+  .footer-copy{
+    padding:25px 22px;
+  }
+
+  .footer-mark{
+    min-height:130px;
+  }
+
+  .contact{
+    min-height:128px;
+    padding:27px 22px;
+  }
+
+  .lightbox{
+    padding:16px;
+  }
+}
+
+@media(max-width:390px){
+  .hero h1{
+    font-size:28px;
+  }
+
+  .disciplines-head p{
+    display:none;
+  }
+
+  .principles{
+    grid-template-columns:1fr;
+  }
+
+  .principle{
+    border-right:0;
+  }
+
+  .principle:nth-child(n+2){
+    border-top:1px solid var(--line);
+  }
+}
+</style>
+</head>
+
+<body>
+<main class="page" id="top">
+  <header class="header">
+    <a class="brand" href="index.html" aria-label="Back to homepage">TRANSITLO</a>
+
+    <nav class="nav" aria-label="Page navigation">
+      <a href="#disciplines">●&nbsp; WORKS</a>
+      <a href="index.html#about">ABOUT</a>
+      <a href="index.html#contact">CONTACT</a>
+
+      <div class="langs">
+        <span>中文</span>
+        <span>EN</span>
+        <span>VI</span>
+      </div>
+    </nav>
+  </header>
+
+  <section class="hero">
+    <div class="hero-media">
+      <img src="architectural-hero-placeholder.webp" alt="Architectural space design">
+    </div>
+
+    <div class="hero-copy">
+      <div class="eyebrow">SELECTED WORKS / ARCHITECTURAL SPACE</div>
+      <h1>ARCHITECTURE <strong>&amp; RESIDENTIAL</strong></h1>
+      <div class="cn-title">建筑与住宅设计</div>
+      <div class="vi-title">THIẾT KẾ KIẾN TRÚC &amp; NHÀ Ở</div>
+    </div>
+
+    <div class="place">CHINA · VIETNAM · ASEAN</div>
+  </section>
+
+  <section class="intro">
+    <div class="section-label">
+      DESIGN APPROACH
+      <span>设计方法</span>
+    </div>
+
+    <div class="tri-copy">
+      <p>TransitLo develops architecture through form, structure, material, light and the relationship between space and place. Residential work extends the same architectural discipline into everyday living.</p>
+      <p>TransitLo 从建筑形态、结构、材料、光线以及空间与场所的关系出发开展设计，并将同一套建筑思考延伸至住宅与日常生活。</p>
+      <p class="vi">TransitLo phát triển thiết kế từ hình thái kiến trúc, kết cấu, vật liệu, ánh sáng và mối quan hệ giữa không gian với địa điểm; đồng thời đưa tư duy kiến trúc ấy vào nhà ở và đời sống hằng ngày.</p>
+    </div>
+  </section>
+
+  <section class="disciplines" id="disciplines">
+    <div class="disciplines-head">
+      <h2>
+        ARCHITECTURE &amp; RESIDENTIAL
+        <span>建筑与住宅</span>
+      </h2>
+
+      <p>02 DESIGN FIELDS · TWO DISTINCT SCALES</p>
+    </div>
+
+    <div class="discipline-grid">
+      <article class="discipline-card architecture">
+        <div class="card-image" tabindex="0" role="button" aria-label="View architecture image">
+          <img class="zoomable" src="architecture-card-placeholder.webp" alt="Architecture design">
+        </div>
+
+        <div class="card-copy">
+          <div class="card-no">01</div>
+
+          <div class="card-title">
+            <h3>ARCHITECTURE</h3>
+            <div class="cn">建筑</div>
+            <div class="vi">KIẾN TRÚC</div>
+
+            <p>
+              Architectural Form · Spatial Strategy · Material &amp; Light
+              <span>建筑形态 · 空间策略 · 材料与光线</span>
+              <span class="vi-copy">Hình thái kiến trúc · Chiến lược không gian · Vật liệu &amp; ánh sáng</span>
+            </p>
+          </div>
+        </div>
+      </article>
+
+      <article class="discipline-card residential">
+        <div class="card-image" tabindex="0" role="button" aria-label="View residential image">
+          <img class="zoomable" src="residential-card-placeholder.webp" alt="Residential design">
+        </div>
+
+        <div class="card-copy">
+          <div class="card-no">02</div>
+
+          <div class="card-title">
+            <h3>RESIDENTIAL</h3>
+            <div class="cn">住宅</div>
+            <div class="vi">NHÀ Ở</div>
+
+            <p>
+              Residential Design · Interior Architecture · Living Experience
+              <span>住宅设计 · 室内建筑 · 居住体验</span>
+              <span class="vi-copy">Thiết kế nhà ở · Kiến trúc nội thất · Trải nghiệm sống</span>
+            </p>
+          </div>
+        </div>
+      </article>
+    </div>
+  </section>
+
+  <section class="principles" aria-label="Design principles">
+    <div class="principle">
+      <small>01</small>
+      <b>CONTEXT</b>
+      <span>场所关系<br>Bối cảnh</span>
+    </div>
+
+    <div class="principle">
+      <small>02</small>
+      <b>FORM</b>
+      <span>建筑形态<br>Hình thái</span>
+    </div>
+
+    <div class="principle">
+      <small>03</small>
+      <b>MATERIAL</b>
+      <span>材料表达<br>Vật liệu</span>
+    </div>
+
+    <div class="principle">
+      <small>04</small>
+      <b>EXPERIENCE</b>
+      <span>空间体验<br>Trải nghiệm</span>
+    </div>
+  </section>
+
+  <footer class="footer" id="contact">
+    <div class="footer-title">
+      <div class="section-label">
+        ARCHITECTURAL PRACTICE
+        <span>建筑实践</span>
+      </div>
+    </div>
+
+    <div class="footer-copy">
+      Architecture shaped through context, material and human experience.
+      <span>以场所、材料与人的体验塑造建筑空间。</span>
+    </div>
+
+    <div class="footer-mark" aria-hidden="true"></div>
+
+    <a class="contact" href="index.html#contact">
+      <h3>LET’S WORK TOGETHER</h3>
+      <div class="cn">期待与您合作</div>
+      <i></i>
+      <b>CONTACT US</b>
+    </a>
+  </footer>
+</main>
+
+<div class="lightbox" id="lightbox" role="dialog" aria-modal="true" aria-label="Original image viewer">
+  <button class="lightbox-close" type="button" aria-label="Close">×</button>
+  <img id="lightboxImage" alt="Original architectural image">
+</div>
+
+<script>
+const zoomAreas=[...document.querySelectorAll('.card-image')];
+const lightbox=document.querySelector('#lightbox');
+const lightboxImage=document.querySelector('#lightboxImage');
+
+function openLightbox(area){
+  const image=area.querySelector('img');
+  lightboxImage.src=image.src;
+  lightboxImage.alt=image.alt;
+  lightbox.classList.add('open');
+  document.body.style.overflow='hidden';
+}
+
+function closeLightbox(){
+  lightbox.classList.remove('open');
+  lightboxImage.removeAttribute('src');
+  document.body.style.overflow='';
+}
+
+zoomAreas.forEach(area=>{
+  area.addEventListener('click',()=>openLightbox(area));
+  area.addEventListener('keydown',event=>{
+    if(event.key==='Enter'||event.key===' '){
+      event.preventDefault();
+      openLightbox(area);
+    }
+  });
+});
+
+document.querySelector('.lightbox-close').addEventListener('click',closeLightbox);
+lightbox.addEventListener('click',event=>{
+  if(event.target===lightbox)closeLightbox();
+});
+document.addEventListener('keydown',event=>{
+  if(event.key==='Escape'&&lightbox.classList.contains('open'))closeLightbox();
+});
+</script>
+</body>
+</html>
