@@ -1,739 +1,196 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="zh-CN">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="River Orchard Park — TransitLo landscape architecture and public-space strategy project." />
-  <title>River Orchard Park | TransitLo</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#151716">
+  <meta name="description" content="TransitLo — River Orchard Park / 河湾果林公园 / Công viên vườn cây bên sông">
+  <title>River Orchard Park — TransitLo</title>
   <style>
-    :root {
-      --bg: #e7e7e2;
-      --paper: #f1f1ed;
-      --ink: #111313;
-      --muted: #696c69;
-      --line: rgba(17, 19, 19, .18);
-      --dark: #101311;
-      --green: #697568;
-      --max: 1720px;
-      --pad: clamp(20px, 4vw, 72px);
-      --gap: clamp(16px, 2vw, 34px);
+    :root{
+      --ink:#161817;
+      --paper:#f1f1ee;
+      --line:rgba(22,24,23,.18);
+      --muted:#676b67;
+      --side:clamp(16px,2.8vw,48px);
+      --max:1600px;
     }
+    *{box-sizing:border-box}
+    html{scroll-behavior:smooth;background:var(--paper)}
+    body{margin:0;background:var(--paper);color:var(--ink);font-family:Arial,"Helvetica Neue","PingFang SC","Microsoft YaHei",sans-serif;-webkit-font-smoothing:antialiased}
+    body.locked{overflow:hidden}
+    img{display:block;max-width:100%}
+    a{color:inherit;text-decoration:none}
+    button{font:inherit}
+    .shell{width:min(100%,var(--max));margin:auto;padding-inline:var(--side)}
 
-    * { box-sizing: border-box; }
-    html { scroll-behavior: smooth; }
-    body {
-      margin: 0;
-      color: var(--ink);
-      background: var(--bg);
-      font-family: Arial, "Helvetica Neue", "PingFang SC", "Microsoft YaHei", sans-serif;
-      font-size: 15px;
-      line-height: 1.68;
-      -webkit-font-smoothing: antialiased;
-    }
-    a { color: inherit; text-decoration: none; }
-    img { display: block; width: 100%; height: 100%; object-fit: cover; }
-    figure { margin: 0; }
+    /* LOCKED HERO CONTENT: deterministic 2x/200ppi derivative. No generative redraw, crop, object, layout or color redesign. Exact source is retained in assets/original-locked/. */
+    .hero{position:relative;background:#151716}
+    .hero img{width:100%;height:auto;object-fit:contain;filter:none;transform:none}
+    .hotspot{position:absolute;display:block;background:transparent;border:0;cursor:pointer;z-index:5}
+    .hotspot-home{left:1.8%;top:2.5%;width:10%;height:7%}
+    .hotspot-language{right:7.5%;top:2%;width:10%;height:7%}
+    .hotspot-menu{right:1.7%;top:2%;width:4.5%;height:7%}
+    .hotspot-scroll{right:1.7%;bottom:4%;width:9%;height:11%}
 
-    .site-header {
-      position: fixed;
-      inset: 0 0 auto 0;
-      z-index: 40;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      padding: 22px var(--pad);
-      color: #fff;
-      mix-blend-mode: difference;
-      pointer-events: none;
+    .board-sections{background:#efefec;border-top:1px solid rgba(255,255,255,.15)}
+    .board-panel{position:relative;margin:0 auto;border-bottom:1px solid var(--line);background:#efefec;cursor:zoom-in}
+    .board-panel img{width:100%;height:auto;filter:none;transform:none}
+    .board-panel::after,.locked-card-media::after{
+      content:"VIEW";position:absolute;right:10px;bottom:10px;padding:6px 8px;background:rgba(15,17,16,.65);color:#fff;
+      font-size:9px;letter-spacing:.14em;opacity:0;transition:.2s ease;pointer-events:none
     }
-    .site-header a { pointer-events: auto; }
-    .brand {
-      font-size: clamp(18px, 1.8vw, 28px);
-      font-weight: 700;
-      letter-spacing: -.04em;
-    }
-    .header-action {
-      font-size: 11px;
-      letter-spacing: .18em;
-      text-transform: uppercase;
-    }
+    .board-panel:hover::after,.locked-card-media:hover::after{opacity:1}
 
-    .hero {
-      position: relative;
-      min-height: 100svh;
-      display: grid;
-      grid-template-rows: 1fr auto;
-      overflow: hidden;
-      background: #556055;
-      color: #fff;
-    }
-    .hero-media,
-    .hero-media::after { position: absolute; inset: 0; }
-    .hero-media img {
-      filter: saturate(.56) contrast(1.03) brightness(.86);
-      object-position: 50% 50%;
-    }
-    .hero-media::after {
-      content: "";
-      background:
-        linear-gradient(90deg, rgba(6, 8, 7, .78) 0%, rgba(6, 8, 7, .22) 56%, rgba(6, 8, 7, .16) 100%),
-        linear-gradient(0deg, rgba(6, 8, 7, .44) 0%, transparent 48%);
-    }
-    .hero-content {
-      position: relative;
-      z-index: 2;
-      width: min(100%, var(--max));
-      margin: 0 auto;
-      padding: clamp(150px, 18vh, 220px) var(--pad) 50px;
-      display: grid;
-      grid-template-columns: minmax(0, 1.38fr) minmax(270px, .62fr);
-      align-items: end;
-      gap: clamp(40px, 8vw, 150px);
-    }
-    .eyebrow {
-      margin: 0 0 18px;
-      font-size: 11px;
-      letter-spacing: .2em;
-      text-transform: uppercase;
-    }
-    .hero h1 {
-      margin: 0;
-      max-width: 1160px;
-      font-size: clamp(54px, 9.6vw, 150px);
-      line-height: .82;
-      letter-spacing: -.072em;
-      font-weight: 500;
-    }
-    .hero-side {
-      border-top: 1px solid rgba(255,255,255,.46);
-      padding-top: 18px;
-      font-size: 13px;
-      color: rgba(255,255,255,.86);
-    }
-    .hero-side p { margin: 0 0 22px; }
-    .hero-side span { font-size: 11px; letter-spacing: .08em; }
-    .hero-index {
-      position: relative;
-      z-index: 2;
-      display: grid;
-      grid-template-columns: repeat(5, 1fr);
-      width: min(100%, var(--max));
-      margin: 0 auto;
-      padding: 0 var(--pad) 28px;
-      gap: 1px;
-    }
-    .hero-index a {
-      border-top: 1px solid rgba(255,255,255,.38);
-      padding-top: 10px;
-      font-size: 9px;
-      letter-spacing: .16em;
-      text-transform: uppercase;
-      color: rgba(255,255,255,.72);
-    }
+    .experience{padding:clamp(30px,4vw,62px) 0 clamp(42px,5vw,78px);background:#efefec}
+    .experience-head{display:grid;grid-template-columns:minmax(145px,.42fr) 1.58fr;gap:clamp(20px,3vw,46px);padding-bottom:18px;border-bottom:1px solid var(--line)}
+    .experience-kicker{font-size:12px;line-height:1.35;text-transform:uppercase}
+    .experience-kicker strong{display:block;font-size:17px;font-weight:500;margin-bottom:3px}
+    .experience-note{font-size:12px;color:var(--muted);align-self:end}
+    .cards{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));border-left:1px solid var(--line)}
+    .card{min-width:0;border-right:1px solid var(--line);border-bottom:1px solid var(--line);background:#f4f4f1}
+    .locked-card-media{position:relative;aspect-ratio:4/3;background:#ddd;cursor:zoom-in;overflow:hidden}
+    /* LOCKED PROJECT PHOTO CONTENT: full uncropped 2x/200ppi deterministic derivatives; composition and objects unchanged. Exact sources retained in assets/original-locked/. */
+    .locked-card-media img{width:100%;height:100%;object-fit:contain;background:#171918;filter:none;transform:none}
+    .card-copy{padding:14px 13px 18px;min-height:180px}
+    .card-index{font-size:26px;line-height:1;font-weight:400;letter-spacing:-.05em;margin-bottom:8px}
+    .card-title{font-size:11px;line-height:1.28;text-transform:uppercase;margin:0 0 7px;font-weight:500}
+    .card-cn,.card-vi{font-size:10px;line-height:1.35;margin:0;color:#3c3f3c}
+    .card-vi{color:var(--muted);margin-top:2px}
+    .card-list{margin:11px 0 0;padding-left:15px;font-size:10px;line-height:1.55;color:#555a55}
 
-    .section {
-      width: min(100%, var(--max));
-      margin: 0 auto;
-      padding: clamp(76px, 10vw, 160px) var(--pad);
-    }
-    .section-label {
-      margin-bottom: 34px;
-      font-size: 10px;
-      letter-spacing: .22em;
-      text-transform: uppercase;
-      color: var(--muted);
-    }
+    footer{background:#171918;color:#fff;padding:24px 0}
+    .footer-grid{display:grid;grid-template-columns:1.3fr .7fr .7fr .7fr auto;gap:26px;align-items:start}
+    .footer-brand{font-size:14px}
+    .footer-grid a,.footer-grid span{font-size:10px;line-height:1.5;letter-spacing:.04em;text-transform:uppercase;opacity:.72}
+    .top-link{width:34px;height:34px;border:1px solid rgba(255,255,255,.5);display:grid;place-items:center;opacity:1!important}
 
-    .manifesto {
-      display: grid;
-      grid-template-columns: minmax(270px, .56fr) minmax(0, 1.44fr);
-      gap: clamp(50px, 9vw, 160px);
-    }
-    .manifesto-meta { margin: 0; border-top: 1px solid var(--line); }
-    .meta-row {
-      display: grid;
-      grid-template-columns: 95px 1fr;
-      gap: 16px;
-      padding: 13px 0;
-      border-bottom: 1px solid var(--line);
-    }
-    .meta-row dt { font-size: 11px; color: var(--muted); }
-    .meta-row dd { margin: 0; }
-    .manifesto h2,
-    .section-heading {
-      margin: 0 0 44px;
-      font-size: clamp(42px, 6.5vw, 100px);
-      line-height: .98;
-      letter-spacing: -.055em;
-      font-weight: 500;
-    }
-    .manifesto-copy {
-      columns: 2;
-      column-gap: clamp(30px, 5vw, 80px);
-      color: #363937;
-      font-size: clamp(15px, 1.3vw, 19px);
-    }
-    .manifesto-copy p { margin: 0 0 22px; break-inside: avoid; }
-    .vi { color: var(--muted); font-size: 13px; }
+    .menu{position:fixed;z-index:80;inset:0;background:#171918;color:#fff;padding:90px var(--side) 30px;display:flex;flex-direction:column;opacity:0;visibility:hidden;transition:.2s ease}
+    .menu.open{opacity:1;visibility:visible}
+    .menu-close{position:absolute;right:var(--side);top:25px;border:0;background:none;color:#fff;font-size:32px;cursor:pointer}
+    .menu nav{display:grid;gap:18px;margin:auto 0}
+    .menu nav a{font-size:clamp(38px,7vw,88px);line-height:.95;letter-spacing:-.05em}
 
-    .site-band {
-      display: grid;
-      grid-template-columns: 1.58fr .42fr;
-      min-height: min(78vw, 1040px);
-      background: #778076;
-    }
-    .site-band figure { overflow: hidden; cursor: zoom-in; }
-    .site-band figure + figure { border-left: 1px solid rgba(255,255,255,.28); }
-    .site-band img {
-      filter: saturate(.62) contrast(1.02);
-      transition: transform .8s cubic-bezier(.2,.7,.2,1), filter .5s ease;
-    }
-    .site-band figure:hover img { transform: scale(1.014); filter: saturate(.8); }
+    .lightbox{position:fixed;z-index:100;inset:0;background:rgba(10,11,10,.97);color:#fff;display:none;grid-template-rows:auto 1fr auto}
+    .lightbox.open{display:grid}
+    .lightbox-top,.lightbox-bottom{display:flex;align-items:center;justify-content:space-between;gap:20px;padding:15px 20px;border-color:rgba(255,255,255,.17);border-style:solid;border-width:0 0 1px}
+    .lightbox-bottom{border-width:1px 0 0;font-size:11px;letter-spacing:.06em;text-transform:uppercase;color:rgba(255,255,255,.72)}
+    .lightbox-close{border:0;background:none;color:#fff;font-size:30px;line-height:1;cursor:pointer}
+    .lightbox-stage{position:relative;min-height:0;display:grid;place-items:center;padding:22px 72px}
+    .lightbox-stage img{max-width:100%;max-height:calc(100vh - 140px);object-fit:contain;filter:none;transform:none}
+    .lightbox-nav{position:absolute;top:50%;transform:translateY(-50%);width:42px;height:42px;border:1px solid rgba(255,255,255,.45);background:rgba(0,0,0,.12);color:#fff;cursor:pointer;font-size:22px}
+    .prev{left:15px}.next{right:15px}
 
-    .context { background: var(--paper); }
-    .context-grid {
-      display: grid;
-      grid-template-columns: minmax(0, .82fr) minmax(0, 1.18fr);
-      gap: clamp(50px, 8vw, 140px);
-      align-items: start;
+    @media(max-width:1050px){
+      .cards{grid-template-columns:repeat(2,minmax(0,1fr))}
+      .experience-head{grid-template-columns:1fr}
+      .footer-grid{grid-template-columns:1fr 1fr 1fr}.footer-grid>:first-child{grid-column:1/-1}
     }
-    .context-copy p {
-      max-width: 700px;
-      margin: 0 0 22px;
-      color: #464a47;
-      font-size: clamp(15px, 1.3vw, 18px);
+    @media(max-width:640px){
+      .hero{overflow-x:auto}.hero img{width:100%;min-width:760px}
+      .hotspot{display:none}
+      .board-panel{overflow-x:auto}.board-panel img{min-width:760px}
+      .cards{grid-template-columns:1fr}
+      .card-copy{min-height:0}
+      .footer-grid{grid-template-columns:1fr 1fr}.footer-grid>:first-child{grid-column:1/-1}
+      .lightbox-stage{padding:16px}.lightbox-nav{top:auto;bottom:12px;transform:none}.prev{left:16px}.next{right:16px}.lightbox-bottom{padding-bottom:66px}
     }
-    .context-copy .vi { font-size: 13px; }
-
-    .condition-list { border-top: 1px solid var(--line); }
-    .condition {
-      display: grid;
-      grid-template-columns: 46px 1fr;
-      gap: 18px;
-      padding: 20px 0;
-      border-bottom: 1px solid var(--line);
-    }
-    .condition strong { font-size: 11px; letter-spacing: .12em; color: var(--muted); font-weight: 400; }
-    .condition h3 { margin: 0 0 8px; font-size: 18px; font-weight: 500; }
-    .condition p { margin: 0; color: var(--muted); font-size: 13px; }
-
-    .strategy {
-      background: var(--dark);
-      color: #f1f1ed;
-    }
-    .strategy .section-label { color: #818781; }
-    .strategy-grid {
-      display: grid;
-      grid-template-columns: minmax(280px, .74fr) minmax(0, 1.26fr);
-      gap: clamp(50px, 8vw, 140px);
-      align-items: start;
-    }
-    .strategy-copy p { max-width: 610px; margin: 0 0 20px; color: #a7ada7; }
-    .strategy-diagram {
-      position: relative;
-      aspect-ratio: 4 / 3;
-      border: 1px solid rgba(255,255,255,.18);
-      background: #151a16;
-      overflow: hidden;
-    }
-    .strategy-diagram svg { width: 100%; height: 100%; display: block; }
-
-    .principles {
-      display: grid;
-      grid-template-columns: repeat(4, 1fr);
-      margin-top: clamp(54px, 7vw, 110px);
-      border-top: 1px solid rgba(255,255,255,.18);
-    }
-    .principle {
-      min-height: 270px;
-      padding: 22px 24px 28px 0;
-      border-bottom: 1px solid rgba(255,255,255,.18);
-    }
-    .principle:not(:last-child) {
-      border-right: 1px solid rgba(255,255,255,.18);
-      padding-left: 24px;
-    }
-    .principle:first-child { padding-left: 0; }
-    .principle b {
-      display: block;
-      margin: 28px 0 16px;
-      font-size: clamp(28px, 3vw, 46px);
-      line-height: 1;
-      letter-spacing: -.04em;
-      font-weight: 400;
-    }
-    .principle span { color: #909790; font-size: 11px; letter-spacing: .12em; }
-    .principle p { margin: 0; color: #a7ada7; font-size: 13px; }
-
-    .gallery {
-      width: min(100%, var(--max));
-      margin: 0 auto;
-      padding: var(--pad);
-      display: grid;
-      grid-template-columns: repeat(12, 1fr);
-      gap: var(--gap);
-    }
-    .gallery figure { overflow: hidden; background: #838b82; cursor: zoom-in; }
-    .gallery figure:nth-child(1) { grid-column: 1 / span 5; aspect-ratio: 4 / 5; }
-    .gallery figure:nth-child(2) { grid-column: 7 / span 6; aspect-ratio: 16 / 10; margin-top: 10%; }
-    .gallery figure:nth-child(3) { grid-column: 2 / span 7; aspect-ratio: 16 / 10; margin-top: 3%; }
-    .gallery figure:nth-child(4) { grid-column: 10 / span 3; aspect-ratio: 3 / 4; margin-top: 32%; }
-    .gallery img {
-      filter: saturate(.58) contrast(1.02);
-      transition: transform .75s cubic-bezier(.2,.7,.2,1), filter .5s ease;
-    }
-    .gallery figure:hover img { transform: scale(1.018); filter: saturate(.78); }
-    .gallery figcaption {
-      padding-top: 10px;
-      font-size: 10px;
-      letter-spacing: .08em;
-      color: var(--muted);
-      cursor: default;
-    }
-
-    .program { background: var(--paper); }
-    .program-intro {
-      display: grid;
-      grid-template-columns: .74fr 1.26fr;
-      gap: clamp(50px, 8vw, 140px);
-      align-items: end;
-      margin-bottom: clamp(50px, 7vw, 100px);
-    }
-    .program-intro p { margin: 0; max-width: 750px; color: var(--muted); font-size: clamp(15px, 1.3vw, 18px); }
-    .program-grid {
-      display: grid;
-      grid-template-columns: repeat(2, 1fr);
-      border-top: 1px solid var(--line);
-    }
-    .program-card {
-      min-height: 340px;
-      padding: 28px clamp(20px, 3vw, 44px) 34px 0;
-      border-bottom: 1px solid var(--line);
-    }
-    .program-card:nth-child(odd) { border-right: 1px solid var(--line); }
-    .program-card:nth-child(even) { padding-left: clamp(20px, 3vw, 44px); }
-    .program-card small { color: var(--muted); letter-spacing: .16em; }
-    .program-card h3 {
-      margin: 52px 0 18px;
-      max-width: 520px;
-      font-size: clamp(30px, 4vw, 60px);
-      line-height: .98;
-      letter-spacing: -.045em;
-      font-weight: 500;
-    }
-    .program-card p { margin: 0; max-width: 590px; color: var(--muted); }
-
-    .experience {
-      display: grid;
-      grid-template-columns: 1.2fr .8fr;
-      min-height: min(72vw, 930px);
-      background: #7a8379;
-    }
-    .experience figure { cursor: zoom-in; overflow: hidden; }
-    .experience img { filter: saturate(.56); }
-    .experience-copy {
-      display: flex;
-      flex-direction: column;
-      justify-content: flex-end;
-      padding: clamp(40px, 6vw, 100px);
-      background: #171b18;
-      color: #eceee9;
-    }
-    .experience-copy small { color: #7f887f; letter-spacing: .18em; text-transform: uppercase; }
-    .experience-copy h2 {
-      margin: 26px 0 30px;
-      font-size: clamp(38px, 5vw, 76px);
-      line-height: .98;
-      letter-spacing: -.05em;
-      font-weight: 500;
-    }
-    .experience-copy p { margin: 0 0 18px; max-width: 560px; color: #aab1aa; }
-
-    .closing {
-      height: min(70vw, 940px);
-      min-height: 520px;
-      background: #747c73;
-      cursor: zoom-in;
-    }
-    .closing img { filter: saturate(.55) contrast(1.02); }
-
-    .next-project {
-      width: min(100%, var(--max));
-      margin: 0 auto;
-      padding: clamp(70px, 10vw, 150px) var(--pad) clamp(40px, 5vw, 72px);
-    }
-    .next-link {
-      display: grid;
-      grid-template-columns: 1fr auto;
-      align-items: end;
-      gap: 30px;
-      border-top: 1px solid var(--line);
-      padding-top: 24px;
-    }
-    .next-link small {
-      display: block;
-      margin-bottom: 22px;
-      color: var(--muted);
-      letter-spacing: .18em;
-      text-transform: uppercase;
-    }
-    .next-link strong {
-      font-size: clamp(42px, 8vw, 120px);
-      line-height: .9;
-      letter-spacing: -.06em;
-      font-weight: 500;
-    }
-    .arrow { font-size: clamp(36px, 5vw, 72px); line-height: 1; }
-
-    footer {
-      display: flex;
-      justify-content: space-between;
-      gap: 24px;
-      padding: 20px var(--pad) 32px;
-      color: var(--muted);
-      font-size: 10px;
-      letter-spacing: .12em;
-      text-transform: uppercase;
-    }
-
-    .lightbox {
-      position: fixed;
-      inset: 0;
-      z-index: 100;
-      display: none;
-      place-items: center;
-      padding: 32px;
-      background: rgba(7,8,8,.95);
-    }
-    .lightbox.open { display: grid; }
-    .lightbox img {
-      width: auto;
-      max-width: 94vw;
-      height: auto;
-      max-height: 92vh;
-      object-fit: contain;
-      filter: none;
-    }
-    .lightbox-close {
-      position: absolute;
-      top: 20px;
-      right: 24px;
-      border: 0;
-      background: transparent;
-      color: #fff;
-      font-size: 30px;
-      cursor: pointer;
-    }
-
-    @media (max-width: 1000px) {
-      .hero-content,
-      .manifesto,
-      .context-grid,
-      .strategy-grid,
-      .program-intro { grid-template-columns: 1fr; }
-      .hero-side { max-width: 560px; }
-      .manifesto-copy { columns: 1; }
-      .site-band { grid-template-columns: 1fr; min-height: 0; }
-      .site-band figure { aspect-ratio: 4 / 3; }
-      .site-band figure + figure { border-left: 0; border-top: 1px solid rgba(255,255,255,.28); aspect-ratio: 16 / 8; }
-      .principles { grid-template-columns: 1fr 1fr; }
-      .principle:nth-child(2) { border-right: 0; }
-      .gallery { grid-template-columns: 1fr 1fr; }
-      .gallery figure:nth-child(n) { grid-column: auto; margin-top: 0; aspect-ratio: 4 / 5; }
-      .gallery figure:nth-child(2),
-      .gallery figure:nth-child(3) { aspect-ratio: 4 / 3; }
-      .experience { grid-template-columns: 1fr; min-height: 0; }
-      .experience figure { aspect-ratio: 16 / 10; }
-    }
-
-    @media (max-width: 650px) {
-      .hero { min-height: 92svh; }
-      .hero h1 { font-size: clamp(52px, 17.5vw, 82px); }
-      .hero-index { grid-template-columns: 1fr 1fr; gap: 12px; }
-      .hero-index a:last-child { grid-column: 1 / -1; }
-      .principles { grid-template-columns: 1fr; }
-      .principle,
-      .principle:not(:last-child),
-      .principle:first-child { border-right: 0; padding-left: 0; }
-      .gallery { grid-template-columns: 1fr; padding-top: 36px; padding-bottom: 36px; }
-      .gallery figure:nth-child(n) { aspect-ratio: 4 / 5; }
-      .program-grid { grid-template-columns: 1fr; }
-      .program-card,
-      .program-card:nth-child(odd),
-      .program-card:nth-child(even) { border-right: 0; padding-left: 0; }
-      .next-link { grid-template-columns: 1fr; }
-      .arrow { justify-self: end; }
-      footer { flex-direction: column; }
-    }
+    @media(prefers-reduced-motion:reduce){*{scroll-behavior:auto!important;transition:none!important}}
   </style>
 </head>
 <body>
-  <!--
-    TransitLo 项目详情页：河湾果林公园
-    当前照片均为基地现状资料。项目名称、地点、面积和委托方可在最终发布前替换。
-  -->
-  <header class="site-header">
-    <a class="brand" href="index.html" aria-label="返回 TransitLo 首页">TransitLo</a>
-    <a class="header-action" href="index.html#contact">Contact us</a>
-  </header>
+  <main id="top">
+    <section class="hero" aria-label="River Orchard Park hero — locked final artwork">
+      <img src="assets/locked/hero-locked.png" data-original="assets/original-locked/hero-locked.png" alt="River Orchard Park 河湾果林公园 hero">
+      <a class="hotspot hotspot-home" href="index.html" aria-label="返回 TransitLo 首页"></a>
+      <button class="hotspot hotspot-language" type="button" aria-label="Language selector"></button>
+      <button class="hotspot hotspot-menu" id="menuOpen" type="button" aria-label="打开菜单"></button>
+      <a class="hotspot hotspot-scroll" href="#overview" aria-label="向下浏览"></a>
+    </section>
 
-  <section class="hero" id="top">
-    <div class="hero-media">
-      <img src="river-orchard-park-assets/01-hero.jpg" alt="河湾果林公园基地与城市天际线" />
-    </div>
-    <div class="hero-content">
-      <div>
-        <p class="eyebrow">Landscape Architecture + Public Realm / 景观建筑与公共空间策略</p>
-        <h1>RIVER<br />ORCHARD</h1>
-      </div>
-      <aside class="hero-side">
-        <p>
-          A landscape-led renewal framework that turns an enclosed orchard, woodland and river edge into an open piece of everyday urban infrastructure.<br /><br />
-          以现有果林、林地与河岸为基础，将封闭绿地转化为城市日常公共基础设施。
-        </p>
-        <span>Nanning, China · Concept Proposal · 2026</span>
-      </aside>
-    </div>
-    <nav class="hero-index" aria-label="页面章节">
-      <a href="#definition">01 Definition</a>
-      <a href="#context">02 Context</a>
-      <a href="#strategy">03 Strategy</a>
-      <a href="#program">04 Program</a>
-      <a href="#experience">05 Experience</a>
-    </nav>
-  </section>
-
-  <main>
-    <section class="section" id="definition">
-      <div class="section-label">01 / Project Definition</div>
-      <div class="manifesto">
-        <dl class="manifesto-meta">
-          <div class="meta-row"><dt>Project</dt><dd>River Orchard Park / 河湾果林公园</dd></div>
-          <div class="meta-row"><dt>Location</dt><dd>Nanning, China / 中国南宁</dd></div>
-          <div class="meta-row"><dt>Typology</dt><dd>Urban Park + Riverfront Public Space</dd></div>
-          <div class="meta-row"><dt>Role</dt><dd>Landscape Architecture + Spatial Strategy</dd></div>
-          <div class="meta-row"><dt>Scope</dt><dd>Concept, Public Realm, Ecological Framework</dd></div>
-          <div class="meta-row"><dt>Year</dt><dd>2026</dd></div>
-          <div class="meta-row"><dt>Area</dt><dd>To be confirmed / 待核</dd></div>
-          <div class="meta-row"><dt>Status</dt><dd>Concept Proposal / 概念方案</dd></div>
-        </dl>
-
-        <div>
-          <h2>The park begins by recognising what is already alive.</h2>
-          <div class="manifesto-copy">
-            <p>The site is not treated as an empty plot waiting to be landscaped. Its mature tree canopy, cultivated clearings, informal paths and river corridor already form a strong spatial identity. The proposal works with these existing systems, opening them carefully to the surrounding neighbourhoods.</p>
-            <p>设计不把场地视为空白用地，而是将成熟树冠、果林耕作、非正式路径与河道视为项目最重要的空间资源。更新从保留与疏通开始，以克制的介入让这片城市绿岛重新向周边社区开放。</p>
-            <p class="vi">Khu đất không được xem như một bề mặt trống cần tạo cảnh quan mới. Tán cây trưởng thành, khoảng trồng trọt, lối đi tự phát và hành lang sông đã tạo nên bản sắc không gian rõ rệt. Đề xuất bảo tồn các hệ thống này và mở chúng một cách có chọn lọc cho cộng đồng xung quanh.</p>
-          </div>
-        </div>
+    <section class="board-sections" id="overview" aria-label="Approved project presentation content">
+      <div class="shell" style="padding-inline:0;max-width:1024px">
+        <figure class="board-panel lightbox-item" data-title="Project Overview / 项目概览 / Tổng quan dự án"><img src="assets/sections/project-overview.png" alt="Project overview"></figure>
+        <figure class="board-panel lightbox-item" data-title="Site Context / 场地背景 / Bối cảnh khu đất"><img src="assets/sections/site-context.png" alt="Site context"></figure>
+        <figure class="board-panel lightbox-item" data-title="Environmental Analysis / 环境分析 / Phân tích hiện trạng"><img src="assets/sections/environmental-analysis.png" alt="Environmental analysis"></figure>
+        <figure class="board-panel lightbox-item" data-title="Master Plan / 总平面图 / Mặt bằng tổng thể"><img src="assets/sections/master-plan.png" alt="Master plan"></figure>
+        <figure class="board-panel lightbox-item" data-title="Section & Environment / 剖面与环境 / Mặt cắt và môi trường"><img src="assets/sections/section-environment.png" alt="Section and environment"></figure>
       </div>
     </section>
 
-    <section class="site-band" aria-label="公园基地现状">
-      <figure class="js-lightbox"><img src="river-orchard-park-assets/02-site-overview.jpg" alt="河湾果林公园基地现状鸟瞰" /></figure>
-      <figure class="js-lightbox"><img src="river-orchard-park-assets/04-river-edge.jpg" alt="场地东侧河岸与绿化廊道" /></figure>
-    </section>
-
-    <section class="context" id="context">
-      <div class="section">
-        <div class="section-label">02 / Site Context + Previous Condition</div>
-        <div class="context-grid">
-          <div class="context-copy">
-            <h2 class="section-heading">A green island inside a dense and fragmented urban field.</h2>
-            <p>The site sits between high-density housing, existing institutional and industrial buildings, local roads and a narrow river corridor. Seen from above, it remains one of the few continuous pieces of mature vegetation within the surrounding built fabric.</p>
-            <p>场地位于高密度住宅、既有公共及工业建筑、城市道路与狭长河道之间，是周边建成环境中少数仍保持连续树冠的绿地。其生态基础良好，但公共属性、可达性与河岸联系尚未形成。</p>
-            <p class="vi">Khu đất nằm giữa các khu nhà ở mật độ cao, công trình hiện hữu, đường đô thị và một hành lang sông hẹp. Đây là một trong số ít mảng cây xanh liên tục còn lại trong cấu trúc xây dựng xung quanh, nhưng khả năng tiếp cận công cộng và kết nối với bờ sông vẫn còn hạn chế.</p>
-          </div>
-
-          <div class="condition-list">
-            <article class="condition">
-              <strong>01</strong>
-              <div><h3>Enclosed landscape / 封闭绿地</h3><p>Existing vegetation is visually prominent but difficult to enter, cross and use as an everyday public space.</p></div>
-            </article>
-            <article class="condition">
-              <strong>02</strong>
-              <div><h3>Fragmented access / 到达路径零散</h3><p>Surrounding neighbourhoods face the site from several directions, yet entrances and continuous pedestrian routes are unclear.</p></div>
-            </article>
-            <article class="condition">
-              <strong>03</strong>
-              <div><h3>Weak river relationship / 河岸联系薄弱</h3><p>The watercourse defines the site edge but is not yet part of a safe, shaded and continuous public experience.</p></div>
-            </article>
-            <article class="condition">
-              <strong>04</strong>
-              <div><h3>Limited shared programs / 公共活动不足</h3><p>The orchard and cultivated plots carry local memory, but lack supporting spaces for children, exercise, rest and community use.</p></div>
-            </article>
-          </div>
+    <section class="experience" id="spatial-experience">
+      <div class="shell">
+        <div class="experience-head">
+          <div class="experience-kicker"><strong>SPATIAL EXPERIENCE</strong>空间体验<br>TRẢI NGHIỆM KHÔNG GIAN</div>
+          <div class="experience-note">五张项目照片锁定：不裁切、不重绘、不改变内容；当前显示为原图的非生成式 2×／200ppi 清晰化版本。</div>
         </div>
-      </div>
-    </section>
-
-    <section class="strategy" id="strategy">
-      <div class="section">
-        <div class="section-label">03 / Renewal Strategy</div>
-        <div class="strategy-grid">
-          <div class="strategy-copy">
-            <h2 class="section-heading">Preserve the core. Open the edges. Connect the river.</h2>
-            <p>The project proposes a continuous slow-mobility loop that follows the existing woodland and river edge. New entrances extend neighbourhood walking routes into the park, while a sequence of clearings introduces public programs without erasing the orchard structure.</p>
-            <p>项目以连续慢行环线组织整体空间：环线顺应现有林地与河岸，多个入口承接周边社区路径；儿童活动、社区花园、林下休憩和河岸平台被布置在现有林间空地中，避免大规模清除与硬化。</p>
-            <p class="vi">Một vòng đi bộ liên tục được bố trí theo cấu trúc rừng hiện hữu và bờ sông. Các lối vào mới nối đường đi của khu dân cư với công viên, trong khi các chương trình công cộng được đặt trong những khoảng trống sẵn có để hạn chế việc chặt cây và bê tông hóa.</p>
-          </div>
-
-          <div class="strategy-diagram" aria-label="公园策略示意图">
-            <svg viewBox="0 0 900 680" role="img" aria-labelledby="diagramTitle diagramDesc">
-              <title id="diagramTitle">River Orchard Park strategy diagram</title>
-              <desc id="diagramDesc">An abstract diagram showing preserved woodland, a continuous loop, public clearings and the river corridor.</desc>
-              <rect width="900" height="680" fill="#151a16"/>
-              <path d="M760,-20 C710,110 815,190 750,310 C685,432 815,510 740,700" fill="none" stroke="#8b9e91" stroke-width="76" opacity=".28"/>
-              <path d="M759,-20 C709,111 814,190 749,310 C684,432 814,510 739,700" fill="none" stroke="#b9c8be" stroke-width="2" opacity=".72"/>
-              <path d="M108,510 C110,270 250,115 480,118 C650,120 708,250 675,417 C644,570 492,616 310,586 C190,565 108,535 108,510 Z" fill="#243025" stroke="#647465" stroke-width="2"/>
-              <path d="M156,490 C150,310 272,170 472,168 C600,166 649,268 627,400 C605,512 488,557 327,537 C228,525 160,511 156,490 Z" fill="none" stroke="#d7ded6" stroke-width="4" stroke-dasharray="10 10" opacity=".9"/>
-              <g fill="#768878" opacity=".78">
-                <circle cx="245" cy="280" r="72"/><circle cx="390" cy="236" r="88"/><circle cx="535" cy="286" r="74"/>
-                <circle cx="275" cy="430" r="84"/><circle cx="445" cy="430" r="98"/><circle cx="570" cy="440" r="58"/>
-              </g>
-              <g fill="#d9ddd4" stroke="#151a16" stroke-width="8">
-                <circle cx="255" cy="380" r="27"/><circle cx="470" cy="314" r="34"/><circle cx="515" cy="488" r="24"/><circle cx="643" cy="359" r="20"/>
-              </g>
-              <g fill="#d9ddd4" font-family="Arial, sans-serif" font-size="18" letter-spacing="2">
-                <text x="76" y="72">URBAN EDGE</text>
-                <text x="596" y="74">RIVER CORRIDOR</text>
-                <text x="224" y="630">CONTINUOUS SLOW-MOBILITY LOOP</text>
-              </g>
-              <g font-family="Arial, sans-serif" font-size="15">
-                <text x="214" y="383" fill="#111313">01</text>
-                <text x="458" y="319" fill="#111313">02</text>
-                <text x="505" y="493" fill="#111313">03</text>
-                <text x="634" y="364" fill="#111313">04</text>
-              </g>
-            </svg>
-          </div>
-        </div>
-
-        <div class="principles">
-          <article class="principle"><span>01 / Preserve</span><b>Existing Canopy</b><p>Retain mature trees and orchard structure as the park's climatic and spatial foundation.</p></article>
-          <article class="principle"><span>02 / Connect</span><b>One Public Loop</b><p>Create an inclusive walking and cycling circuit linking every neighbourhood edge.</p></article>
-          <article class="principle"><span>03 / Activate</span><b>Program Clearings</b><p>Insert play, exercise, rest and community uses into existing open pockets.</p></article>
-          <article class="principle"><span>04 / Adapt</span><b>Living River Edge</b><p>Use permeable surfaces, planted banks and light-touch platforms along the water.</p></article>
-        </div>
-      </div>
-    </section>
-
-    <section class="gallery" aria-label="基地空间特征">
-      <figure class="js-lightbox">
-        <img src="river-orchard-park-assets/03-woodland-core.jpg" alt="基地内部连续林冠" />
-        <figcaption>Woodland core / 连续林冠</figcaption>
-      </figure>
-      <figure class="js-lightbox">
-        <img src="river-orchard-park-assets/05-urban-interface.jpg" alt="基地与周边城市建筑关系" />
-        <figcaption>Urban interface / 城市界面</figcaption>
-      </figure>
-      <figure class="js-lightbox">
-        <img src="river-orchard-park-assets/06-cultivated-clearings.jpg" alt="基地内部果林与耕作空地" />
-        <figcaption>Cultivated clearings / 果林与耕作空地</figcaption>
-      </figure>
-      <figure class="js-lightbox">
-        <img src="river-orchard-park-assets/04-river-edge.jpg" alt="现状河道及岸线" />
-        <figcaption>Existing river edge / 现状河岸</figcaption>
-      </figure>
-    </section>
-
-    <section class="program" id="program">
-      <div class="section">
-        <div class="section-label">04 / Program Framework</div>
-        <div class="program-intro">
-          <h2 class="section-heading">A park of different speeds, ages and daily routines.</h2>
-          <p>The program is distributed as a sequence rather than concentrated in one monumental plaza. Active uses are placed near visible entrances; quiet uses remain under the tree canopy; community cultivation continues within productive clearings; and the river edge becomes a slower linear landscape.</p>
-        </div>
-
-        <div class="program-grid">
-          <article class="program-card">
-            <small>01 / Community Threshold</small>
-            <h3>Neighbourhood forecourt + shared pavilion</h3>
-            <p>清晰的社区入口、遮阴廊架、导览与可举行小型活动的共享前场，形成公园与城市之间开放而安全的过渡。</p>
+        <div class="cards">
+          <article class="card">
+            <div class="locked-card-media lightbox-item" data-title="01 Waterfront Promenade / 河畔步道 / Lối dạo ven sông"><img src="assets/locked/01-waterfront-promenade.png" data-original="assets/original-locked/01-waterfront-promenade.png" alt="Waterfront promenade"></div>
+            <div class="card-copy"><div class="card-index">01</div><h2 class="card-title">Waterfront Promenade</h2><p class="card-cn">河畔步道</p><p class="card-vi">Lối dạo ven sông</p><ul class="card-list"><li>林下滨河慢行体验</li><li>连续步行与观景节点</li><li>保留现状森林与河道氛围</li></ul></div>
           </article>
-          <article class="program-card">
-            <small>02 / Active Clearing</small>
-            <h3>Play, exercise + flexible lawn</h3>
-            <p>将儿童游乐、轻运动和弹性草坪集中在可见度较高的林间空地中，便于照看，也减少对核心林地的干扰。</p>
+          <article class="card">
+            <div class="locked-card-media lightbox-item" data-title="02 Natural Lawn / Family Picnic Zone / 自然草坪与家庭野餐区"><img src="assets/locked/02-natural-lawn-family-picnic.png" data-original="assets/original-locked/02-natural-lawn-family-picnic.png" alt="Natural lawn and family picnic zone"></div>
+            <div class="card-copy"><div class="card-index">02</div><h2 class="card-title">Natural Lawn / Family Picnic Zone</h2><p class="card-cn">自然草坪／家庭野餐区</p><p class="card-vi">Bãi cỏ tự nhiên / Khu dã ngoại gia đình</p><ul class="card-list"><li>大尺度开放平地</li><li>野餐、露营与家庭活动</li><li>草坪边缘设置避雨节点</li></ul></div>
           </article>
-          <article class="program-card">
-            <small>03 / Orchard Commons</small>
-            <h3>Community garden + learning landscape</h3>
-            <p>保留部分果林与耕作纹理，将其转化为可参与、可学习、可持续维护的社区生产性景观。</p>
+          <article class="card">
+            <div class="locked-card-media lightbox-item" data-title="03 Forest Exercise / Activity Zone / 林下健身与活动区"><img src="assets/locked/03-forest-exercise-activity.png" data-original="assets/original-locked/03-forest-exercise-activity.png" alt="Forest exercise and activity zone"></div>
+            <div class="card-copy"><div class="card-index">03</div><h2 class="card-title">Forest Exercise / Activity Zone</h2><p class="card-cn">林下健身／活动区</p><p class="card-vi">Khu vận động dưới tán cây</p><ul class="card-list"><li>林下健身器材与活动场地</li><li>适合儿童、成人及长者</li><li>保持现状林冠和自然遮荫</li></ul></div>
           </article>
-          <article class="program-card">
-            <small>04 / River Walk</small>
-            <h3>Shaded promenade + ecological bank</h3>
-            <p>连续步道、低干预观景平台与生态岸线共同构成慢行河岸，让水体从场地边界转变为公共体验的核心。</p>
+          <article class="card">
+            <div class="locked-card-media lightbox-item" data-title="04 Riverside Cycling Route / 河畔自行车道 / Tuyến đường xe đạp ven sông"><img src="assets/locked/04-riverside-cycling-route.png" data-original="assets/original-locked/04-riverside-cycling-route.png" alt="Riverside cycling route"></div>
+            <div class="card-copy"><div class="card-index">04</div><h2 class="card-title">Riverside Cycling Route</h2><p class="card-cn">河畔自行车道</p><p class="card-vi">Tuyến đường xe đạp ven sông</p><ul class="card-list"><li>加宽连续骑行通道</li><li>连接公园主要功能节点</li><li>沿线设置轻型骑行驿站</li></ul></div>
+          </article>
+          <article class="card">
+            <div class="locked-card-media lightbox-item" data-title="05 Climbing Wall & Sand Play Zone / 攀岩墙与沙池"><img src="assets/locked/05-climbing-wall-sand-play.png" data-original="assets/original-locked/05-climbing-wall-sand-play.png" alt="Climbing wall and sand play zone"></div>
+            <div class="card-copy"><div class="card-index">05</div><h2 class="card-title">Climbing Wall & Sand Play Zone</h2><p class="card-cn">攀岩墙／沙池</p><p class="card-vi">Khu leo trèo và hố cát</p><ul class="card-list"><li>横向延展的儿童攀岩墙</li><li>扩大的自然沙池活动区</li><li>家长看护与亲子互动空间</li></ul></div>
           </article>
         </div>
       </div>
-    </section>
-
-    <section class="experience" id="experience">
-      <figure class="js-lightbox"><img src="river-orchard-park-assets/05-urban-interface.jpg" alt="从城市高处俯瞰公园基地" /></figure>
-      <div class="experience-copy">
-        <small>05 / Public Experience</small>
-        <h2>From city edge to orchard shade, then slowly toward the water.</h2>
-        <p>The experience is organised as a gradual transition: open and visible at the neighbourhood entrances, sheltered beneath the orchard canopy, and quiet along the river. Architecture remains light—pergolas, platforms, signs and service pavilions support use without competing with the landscape.</p>
-        <p>空间体验由城市向自然逐步过渡：入口开放、清晰且具有可见性；果林内部形成浓荫与停留；临水区域则更安静、更缓慢。建筑以廊架、平台、导视和小型服务设施轻触场地，不与景观争夺主体地位。</p>
-        <p class="vi">Trải nghiệm chuyển tiếp dần từ rìa đô thị mở và dễ nhận biết, vào vùng bóng râm của vườn cây, rồi chậm lại bên bờ sông. Các cấu trúc kiến trúc nhẹ chỉ hỗ trợ sử dụng mà không lấn át cảnh quan.</p>
-      </div>
-    </section>
-
-    <figure class="closing js-lightbox">
-      <img src="river-orchard-park-assets/07-closing.jpg" alt="河湾果林公园基地全景" />
-    </figure>
-
-    <section class="next-project">
-      <a class="next-link" href="architectural-space-design.html">
-        <span>
-          <small>Back to category / 返回建筑空间</small>
-          <strong>ARCHITECTURE</strong>
-        </span>
-        <span class="arrow">↗</span>
-      </a>
     </section>
   </main>
 
   <footer>
-    <span>TransitLo — Architect & Spatial Strategy Designer</span>
-    <span>China · Vietnam · ASEAN Projects</span>
+    <div class="shell footer-grid">
+      <a class="footer-brand" href="index.html">TransitLo</a>
+      <a href="index.html">Projects<br>项目<br>Dự án</a>
+      <a href="index.html#about">About<br>关于<br>Về chúng tôi</a>
+      <a href="index.html#contact">Contact Us<br>联系我们<br>Liên hệ</a>
+      <a class="top-link" href="#top" aria-label="返回顶部">↑</a>
+    </div>
   </footer>
 
-  <div class="lightbox" id="lightbox" aria-hidden="true">
-    <button class="lightbox-close" aria-label="关闭大图">×</button>
-    <img src="" alt="项目大图预览" />
+  <aside class="menu" id="menu" aria-hidden="true">
+    <button class="menu-close" id="menuClose" type="button" aria-label="关闭菜单">×</button>
+    <nav><a href="index.html">Projects</a><a href="index.html#about">About</a><a href="index.html#contact">Contact</a></nav>
+  </aside>
+
+  <div class="lightbox" id="lightbox" role="dialog" aria-modal="true" aria-hidden="true">
+    <div class="lightbox-top"><span id="lightboxCount"></span><button class="lightbox-close" id="lightboxClose" type="button" aria-label="关闭">×</button></div>
+    <div class="lightbox-stage"><button class="lightbox-nav prev" id="lightboxPrev" type="button" aria-label="上一张">‹</button><img id="lightboxImage" alt=""><button class="lightbox-nav next" id="lightboxNext" type="button" aria-label="下一张">›</button></div>
+    <div class="lightbox-bottom"><span id="lightboxTitle"></span><span>← → / ESC</span></div>
   </div>
 
   <script>
-    const lightbox = document.getElementById('lightbox');
-    const lightboxImage = lightbox.querySelector('img');
-    const closeButton = lightbox.querySelector('.lightbox-close');
+    const menu=document.getElementById('menu');
+    const openMenu=()=>{menu.classList.add('open');menu.setAttribute('aria-hidden','false');document.body.classList.add('locked')};
+    const closeMenu=()=>{menu.classList.remove('open');menu.setAttribute('aria-hidden','true');document.body.classList.remove('locked')};
+    document.getElementById('menuOpen').addEventListener('click',openMenu);
+    document.getElementById('menuClose').addEventListener('click',closeMenu);
 
-    document.querySelectorAll('.js-lightbox img').forEach((image) => {
-      image.addEventListener('click', () => {
-        lightboxImage.src = image.src;
-        lightboxImage.alt = image.alt;
-        lightbox.classList.add('open');
-        lightbox.setAttribute('aria-hidden', 'false');
-        document.body.style.overflow = 'hidden';
-      });
-    });
-
-    function closeLightbox() {
-      lightbox.classList.remove('open');
-      lightbox.setAttribute('aria-hidden', 'true');
-      document.body.style.overflow = '';
-    }
-
-    closeButton.addEventListener('click', closeLightbox);
-    lightbox.addEventListener('click', (event) => {
-      if (event.target === lightbox) closeLightbox();
-    });
-    document.addEventListener('keydown', (event) => {
-      if (event.key === 'Escape') closeLightbox();
-    });
+    const items=[...document.querySelectorAll('.lightbox-item')];
+    const lb=document.getElementById('lightbox'), lbImg=document.getElementById('lightboxImage'), lbTitle=document.getElementById('lightboxTitle'), lbCount=document.getElementById('lightboxCount');
+    let current=0;
+    function show(index){current=(index+items.length)%items.length;const item=items[current],img=item.querySelector('img');lbImg.src=img.src;lbImg.alt=img.alt;lbTitle.textContent=item.dataset.title||img.alt;lbCount.textContent=`${String(current+1).padStart(2,'0')} / ${String(items.length).padStart(2,'0')}`}
+    function openLightbox(index){show(index);lb.classList.add('open');lb.setAttribute('aria-hidden','false');document.body.classList.add('locked')}
+    function closeLightbox(){lb.classList.remove('open');lb.setAttribute('aria-hidden','true');document.body.classList.remove('locked')}
+    items.forEach((item,i)=>{item.tabIndex=0;item.addEventListener('click',()=>openLightbox(i));item.addEventListener('keydown',e=>{if(e.key==='Enter'||e.key===' '){e.preventDefault();openLightbox(i)}})});
+    document.getElementById('lightboxClose').addEventListener('click',closeLightbox);
+    document.getElementById('lightboxPrev').addEventListener('click',()=>show(current-1));
+    document.getElementById('lightboxNext').addEventListener('click',()=>show(current+1));
+    lb.addEventListener('click',e=>{if(e.target===lb)closeLightbox()});
+    document.addEventListener('keydown',e=>{if(menu.classList.contains('open')&&e.key==='Escape')closeMenu();if(!lb.classList.contains('open'))return;if(e.key==='Escape')closeLightbox();if(e.key==='ArrowLeft')show(current-1);if(e.key==='ArrowRight')show(current+1)});
+    let touchX=0;lb.addEventListener('touchstart',e=>touchX=e.changedTouches[0].clientX,{passive:true});lb.addEventListener('touchend',e=>{const dx=e.changedTouches[0].clientX-touchX;if(Math.abs(dx)>45)show(current+(dx<0?1:-1))},{passive:true});
   </script>
 </body>
 </html>

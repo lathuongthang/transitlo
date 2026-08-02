@@ -297,6 +297,7 @@ img{
 }
 
 .discipline-card{
+  display:block;
   position:relative;
   overflow:hidden;
   min-width:0;
@@ -309,7 +310,7 @@ img{
   height:320px;
   overflow:hidden;
   background:#292a28;
-  cursor:zoom-in;
+  cursor:pointer;
 }
 
 .card-image:after{
@@ -528,43 +529,6 @@ img{
   font-weight:500;
 }
 
-.lightbox{
-  position:fixed;
-  z-index:5000;
-  inset:0;
-  display:none;
-  align-items:center;
-  justify-content:center;
-  padding:42px;
-  background:rgba(0,0,0,.94);
-}
-
-.lightbox.open{
-  display:flex;
-}
-
-.lightbox img{
-  width:auto;
-  height:auto;
-  max-width:94vw;
-  max-height:90vh;
-  object-fit:contain;
-}
-
-.lightbox-close{
-  position:fixed;
-  top:18px;
-  right:24px;
-  z-index:2;
-  width:44px;
-  height:44px;
-  border:0;
-  background:rgba(0,0,0,.3);
-  color:#fff;
-  font:300 30px/44px "Inter",sans-serif;
-  cursor:pointer;
-}
-
 @media(max-width:1024px){
   .header{
     padding:0 36px;
@@ -732,9 +696,6 @@ img{
     padding:27px 22px;
   }
 
-  .lightbox{
-    padding:16px;
-  }
 }
 
 @media(max-width:390px){
@@ -818,9 +779,9 @@ img{
     </div>
 
     <div class="discipline-grid">
-      <article class="discipline-card architecture">
-        <div class="card-image" tabindex="0" role="button" aria-label="View architecture image">
-          <img class="zoomable" src="architecture-card-placeholder.webp" alt="Architecture design">
+      <a class="discipline-card architecture" href="river-orchard-park.html" aria-label="Open River Orchard Park project page">
+        <div class="card-image">
+          <img src="architecture-card-placeholder.webp" alt="Architecture design">
         </div>
 
         <div class="card-copy">
@@ -838,11 +799,11 @@ img{
             </p>
           </div>
         </div>
-      </article>
+      </a>
 
-      <article class="discipline-card residential">
-        <div class="card-image" tabindex="0" role="button" aria-label="View residential image">
-          <img class="zoomable" src="residential-card-placeholder.webp" alt="Residential design">
+      <a class="discipline-card residential" href="residential-project-template.html" aria-label="Open residential project page">
+        <div class="card-image">
+          <img src="residential-card-placeholder.webp" alt="Residential design">
         </div>
 
         <div class="card-copy">
@@ -860,7 +821,7 @@ img{
             </p>
           </div>
         </div>
-      </article>
+      </a>
     </div>
   </section>
 
@@ -914,47 +875,5 @@ img{
   </footer>
 </main>
 
-<div class="lightbox" id="lightbox" role="dialog" aria-modal="true" aria-label="Original image viewer">
-  <button class="lightbox-close" type="button" aria-label="Close">×</button>
-  <img id="lightboxImage" alt="Original architectural image">
-</div>
-
-<script>
-const zoomAreas=[...document.querySelectorAll('.card-image')];
-const lightbox=document.querySelector('#lightbox');
-const lightboxImage=document.querySelector('#lightboxImage');
-
-function openLightbox(area){
-  const image=area.querySelector('img');
-  lightboxImage.src=image.src;
-  lightboxImage.alt=image.alt;
-  lightbox.classList.add('open');
-  document.body.style.overflow='hidden';
-}
-
-function closeLightbox(){
-  lightbox.classList.remove('open');
-  lightboxImage.removeAttribute('src');
-  document.body.style.overflow='';
-}
-
-zoomAreas.forEach(area=>{
-  area.addEventListener('click',()=>openLightbox(area));
-  area.addEventListener('keydown',event=>{
-    if(event.key==='Enter'||event.key===' '){
-      event.preventDefault();
-      openLightbox(area);
-    }
-  });
-});
-
-document.querySelector('.lightbox-close').addEventListener('click',closeLightbox);
-lightbox.addEventListener('click',event=>{
-  if(event.target===lightbox)closeLightbox();
-});
-document.addEventListener('keydown',event=>{
-  if(event.key==='Escape'&&lightbox.classList.contains('open'))closeLightbox();
-});
-</script>
 </body>
 </html>
