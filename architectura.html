@@ -405,6 +405,42 @@ img{
   color:#777;
 }
 
+.exhibition{
+  grid-column:1 / -1;
+  display:grid;
+  grid-template-columns:1.18fr .82fr;
+}
+
+.exhibition .card-image{
+  height:320px;
+}
+
+.exhibition .card-copy{
+  min-height:320px;
+  align-content:center;
+  padding:34px 38px;
+}
+
+.exhibition{
+  grid-column:1 / -1;
+  display:grid;
+  grid-template-columns:1.18fr .82fr;
+}
+
+.exhibition .card-image{
+  height:320px;
+}
+
+.exhibition .card-copy{
+  min-height:320px;
+  align-content:center;
+  padding:34px 38px;
+}
+
+.exhibition .card-image img{
+  object-position:center;
+}
+
 .principles{
   display:grid;
   grid-template-columns:repeat(4,1fr);
@@ -658,6 +694,21 @@ img{
     padding-left:4px;
   }
 
+  .exhibition{
+    display:block;
+    grid-column:auto;
+  }
+
+  .exhibition .card-image{
+    height:auto;
+    aspect-ratio:16/10;
+  }
+
+  .exhibition .card-copy{
+    min-height:0;
+    padding:19px 4px 22px;
+  }
+
   .principles{
     grid-template-columns:1fr 1fr;
   }
@@ -771,11 +822,11 @@ img{
   <section class="disciplines" id="disciplines">
     <div class="disciplines-head">
       <h2>
-        ARCHITECTURE &amp; RESIDENTIAL
-        <span>建筑与住宅</span>
+        ARCHITECTURE · RESIDENTIAL · EXHIBITION
+        <span>建筑 · 住宅 · 常设展陈</span>
       </h2>
 
-      <p>02 DESIGN FIELDS · TWO DISTINCT SCALES</p>
+      <p>03 DESIGN FIELDS · THREE DISTINCT SCALES</p>
     </div>
 
     <div class="discipline-grid">
@@ -818,6 +869,28 @@ img{
               Residential Design · Interior Architecture · Living Experience
               <span>住宅设计 · 室内建筑 · 居住体验</span>
               <span class="vi-copy">Thiết kế nhà ở · Kiến trúc nội thất · Trải nghiệm sống</span>
+            </p>
+          </div>
+        </div>
+      </a>
+
+      <a class="discipline-card exhibition" href="permanent-exhibition.html" aria-label="Open permanent exhibition and experience spaces page">
+        <div class="card-image">
+          <img src="https://images.unsplash.com/photo-1511578314322-379afb476865?auto=format&amp;fit=crop&amp;w=1600&amp;q=80" alt="Permanent exhibition and experience space">
+        </div>
+
+        <div class="card-copy">
+          <div class="card-no">03</div>
+
+          <div class="card-title">
+            <h3>PERMANENT EXHIBITION &amp; EXPERIENCE</h3>
+            <div class="cn">常设展陈与体验空间</div>
+            <div class="vi">TRƯNG BÀY THƯỜNG TRỰC &amp; TRẢI NGHIỆM</div>
+
+            <p>
+              Corporate Showroom · Campus Culture · Educational Exhibition
+              <span>企业展厅 · 校园文化 · 教育展陈</span>
+              <span class="vi-copy">Phòng trưng bày doanh nghiệp · Văn hóa học đường · Triển lãm giáo dục</span>
             </p>
           </div>
         </div>

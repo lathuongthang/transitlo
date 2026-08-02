@@ -1,0 +1,119 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="description" content="TransitLo 常设展陈与体验空间：企业展厅、校园文化与教育展陈。">
+<title>Permanent Exhibition & Experience — TRANSITLO</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{--w:1171px;--ink:#111;--muted:#666;--line:#dedede;--warm:#9b816a;--paper:#f4f2ee}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+html,body{margin:0;background:#fff;color:var(--ink);font-family:"Inter","Microsoft YaHei",Arial,sans-serif;-webkit-font-smoothing:antialiased}
+body{min-width:320px}
+a{color:inherit;text-decoration:none}
+.page{width:min(100%,var(--w));margin:auto;overflow:hidden;background:#fff}
+.header{height:44px;padding:0 61px;display:flex;align-items:center;justify-content:space-between;background:#fff;font-size:8.5px;line-height:1;font-weight:600;letter-spacing:.45px}
+.brand{font-size:13px;letter-spacing:3.1px}
+.nav{display:flex;align-items:center;gap:24px}
+.nav a{position:relative}
+.nav a:after{content:"";position:absolute;right:0;bottom:-6px;left:0;height:1px;background:#111;transform:scaleX(0);transform-origin:left;transition:transform .25s ease}
+.nav a:hover:after{transform:scaleX(1)}
+.langs{display:flex;gap:7px;font-weight:500}
+.langs span+span:before{content:"|";margin-right:7px;color:#aaa}
+.hero{position:relative;min-height:474px;display:grid;grid-template-columns:1fr 1fr;background:#252624;color:#fff;overflow:hidden}
+.hero-copy{padding:86px 58px 54px 61px;position:relative;z-index:2}
+.eyebrow{margin-bottom:23px;font-size:9px;font-weight:500;letter-spacing:1.6px}
+.hero h1{margin:0;font-size:43px;line-height:1.05;font-weight:300;letter-spacing:.2px}
+.hero h1 strong{display:block;font-weight:600}
+.cn-title{margin-top:17px;font-size:15px;font-weight:500;line-height:1.4}
+.vi-title{margin-top:5px;font-size:9px;line-height:1.5;letter-spacing:.5px;color:rgba(255,255,255,.72)}
+.hero-note{position:absolute;left:61px;bottom:35px;font-size:8px;letter-spacing:1px;color:rgba(255,255,255,.72)}
+.hero-note:after{content:"";display:block;width:56px;margin-top:11px;border-bottom:1px solid rgba(255,255,255,.75)}
+.hero-visual{position:relative;min-height:474px;background:linear-gradient(135deg,#393a37,#20211f 68%,#161715)}
+.hero-visual:before{content:"";position:absolute;inset:0;background:linear-gradient(rgba(255,255,255,.055) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.055) 1px,transparent 1px);background-size:52px 52px}
+.hero-visual .panel,.hero-visual .plinth,.hero-visual .line{position:absolute;display:block}
+.hero-visual .panel{border:1px solid rgba(255,255,255,.35);background:rgba(239,237,232,.07);box-shadow:0 22px 48px rgba(0,0,0,.18)}
+.hero-visual .panel-a{top:18%;left:10%;width:32%;height:56%}
+.hero-visual .panel-b{top:11%;right:10%;width:40%;height:40%}
+.hero-visual .plinth{right:18%;bottom:16%;width:34%;height:18%;border-top:1px solid rgba(255,255,255,.64);border-right:1px solid rgba(255,255,255,.2);background:linear-gradient(135deg,rgba(155,129,106,.42),rgba(255,255,255,.05));transform:skewY(-5deg)}
+.hero-visual .line{left:8%;right:8%;bottom:10%;height:1px;background:rgba(255,255,255,.36)}
+.intro{padding:46px 61px 49px;display:grid;grid-template-columns:230px 1fr;gap:54px;border-bottom:1px solid var(--line)}
+.section-label{font-size:10px;line-height:1.4;font-weight:600;letter-spacing:.2px}
+.section-label span{display:block;margin-top:3px;font-weight:500}
+.section-label:after{content:"";display:block;width:30px;margin-top:10px;border-bottom:1.5px solid #111}
+.tri-copy{max-width:700px;font-size:10.5px;line-height:1.72;color:#303030}
+.tri-copy p{margin:0}.tri-copy p+p{margin-top:9px}.tri-copy .vi{color:#6a6a6a}
+.fields{padding:47px 61px 58px}
+.fields-head{display:flex;align-items:flex-end;justify-content:space-between;margin-bottom:25px}
+.fields-head h2{margin:0;font-size:12px;line-height:1.35;font-weight:600}.fields-head h2 span{display:block;margin-top:3px;font-size:10.5px;font-weight:500}.fields-head p{margin:0;color:#777;font-size:8px;letter-spacing:.5px}
+.field-grid{display:grid;grid-template-columns:1fr 1fr;gap:18px}
+.field-card{min-height:300px;padding:29px 30px 31px;border-top:1px solid #111;background:var(--paper);display:flex;flex-direction:column}
+.field-no{font-size:9px;color:#777}
+.field-card h3{margin:43px 0 0;font-size:21px;line-height:1.16;font-weight:500}.field-card .cn{margin-top:8px;font-size:12px;font-weight:500}.field-card .vi{margin-top:4px;color:#666;font-size:9px;line-height:1.5}
+.field-card p{margin:23px 0 0;color:#555;font-size:9.5px;line-height:1.65}.field-card p span{display:block;margin-top:5px}.field-card p .vi-copy{color:#777}
+.scope{display:grid;grid-template-columns:repeat(3,1fr);border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+.scope-item{min-height:142px;padding:27px 25px;border-right:1px solid var(--line)}.scope-item:nth-child(3n){border-right:0}.scope-item:nth-child(n+4){border-top:1px solid var(--line)}
+.scope-item small{display:block;color:#888;font-size:8px;letter-spacing:.8px}.scope-item b{display:block;margin-top:18px;font-size:10px;line-height:1.35;font-weight:600;letter-spacing:.35px}.scope-item span{display:block;margin-top:7px;color:#666;font-size:9px;line-height:1.55}
+.footer{min-height:127px;display:grid;grid-template-columns:230px 333px 290px 318px}.footer-title{padding:28px 0 0 61px}.footer-copy{padding:27px 20px 22px 0;color:#444;font-size:8.5px;line-height:1.5}.footer-copy span{display:block;margin-top:8px;font-weight:500}.footer-mark{position:relative;overflow:hidden;background:#efede8}.footer-mark:before,.footer-mark:after{content:"";position:absolute;border:1px solid rgba(100,88,74,.25);transform:rotate(45deg)}.footer-mark:before{width:170px;height:170px;top:-92px;left:54px}.footer-mark:after{width:120px;height:120px;right:38px;bottom:-82px}.contact{display:block;padding:27px 33px;background:#181818;color:#fff}.contact h3{margin:0 0 5px;font-size:10.5px;font-weight:600}.contact .cn{font-size:8.5px}.contact i{display:block;width:30px;margin:9px 0;border-bottom:1px solid #aaa}.contact b{display:inline-block;padding:8px 24px;border:1px solid #888;font-size:7.5px;font-weight:500}
+@media(max-width:1024px){.header{padding:0 36px}.hero-copy{padding-left:36px}.hero-note{left:36px}.intro{padding-right:36px;padding-left:36px;grid-template-columns:190px 1fr;gap:38px}.fields{padding-right:36px;padding-left:36px}.footer{grid-template-columns:1fr 1.45fr 1.1fr 1.2fr}.footer-title{padding-left:36px}}
+@media(max-width:700px){.header{height:54px;padding:0 20px}.brand{font-size:12px;letter-spacing:2.5px}.nav{gap:14px}.nav>a:not(.back){display:none}.back{font-size:8px}.langs{font-size:8px}.hero{grid-template-columns:1fr;min-height:0}.hero-copy{min-height:344px;padding:67px 22px 78px}.hero h1{font-size:31px}.hero-note{left:22px;bottom:27px}.hero-visual{min-height:270px}.intro{padding:30px 22px;grid-template-columns:1fr;gap:23px}.fields{padding:34px 22px 44px}.fields-head{align-items:flex-start;gap:16px}.fields-head p{max-width:130px;text-align:right;line-height:1.45}.field-grid{grid-template-columns:1fr;gap:34px}.field-card{min-height:0;padding:26px 22px 28px}.field-card h3{margin-top:35px}.scope{grid-template-columns:1fr 1fr}.scope-item:nth-child(3n){border-right:1px solid var(--line)}.scope-item:nth-child(2n){border-right:0}.scope-item:nth-child(n+3){border-top:1px solid var(--line)}.footer{grid-template-columns:1fr}.footer>div,.footer>a{min-height:105px}.footer-title{padding:27px 22px}.footer-copy{padding:25px 22px}.footer-mark{min-height:130px}.contact{min-height:128px;padding:27px 22px}}
+@media(max-width:390px){.hero h1{font-size:27px}.fields-head p{display:none}.scope{grid-template-columns:1fr}.scope-item{border-right:0}.scope-item:nth-child(n+2){border-top:1px solid var(--line)}}
+</style>
+</head>
+<body>
+<main class="page" id="top">
+<header class="header">
+  <a class="brand" href="index.html" aria-label="Back to homepage">TRANSITLO</a>
+  <nav class="nav" aria-label="Page navigation">
+    <a class="back" href="architectura.html">← ARCHITECTURE</a>
+    <a href="#fields">SERVICES</a>
+    <a href="index.html#contact">CONTACT</a>
+    <div class="langs"><span>中文</span><span>EN</span><span>VI</span></div>
+  </nav>
+</header>
+<section class="hero">
+  <div class="hero-copy">
+    <div class="eyebrow">PERMANENT EXHIBITION / SPATIAL EXPERIENCE</div>
+    <h1>EXHIBITION <strong>&amp; EXPERIENCE SPACES</strong></h1>
+    <div class="cn-title">常设展陈与体验空间</div>
+    <div class="vi-title">KHÔNG GIAN TRƯNG BÀY THƯỜNG TRỰC &amp; TRẢI NGHIỆM</div>
+    <div class="hero-note">CORPORATE · CAMPUS · PUBLIC INSTITUTIONS</div>
+  </div>
+  <div class="hero-visual" aria-hidden="true"><span class="panel panel-a"></span><span class="panel panel-b"></span><span class="plinth"></span><span class="line"></span></div>
+</section>
+<section class="intro">
+  <div class="section-label">SERVICE POSITIONING<span>服务定位</span></div>
+  <div class="tri-copy">
+    <p>TransitLo designs permanent exhibition and experience spaces for companies, schools and public institutions. Through content strategy, spatial narrative, visitor circulation and visual communication, organizational identity, history, achievements and educational content are transformed into clear and engaging spatial experiences.</p>
+    <p>TransitLo 为企业、学校及公共机构提供常设展陈与体验空间设计。通过内容策划、空间叙事、参观动线与视觉传播，将机构形象、发展历史、成果展示与教育内容转化为清晰、完整并具有参与感的空间体验。</p>
+    <p class="vi">TransitLo thiết kế không gian trưng bày thường trực và không gian trải nghiệm cho doanh nghiệp, trường học và các tổ chức công cộng. Thông qua chiến lược nội dung, câu chuyện không gian, lộ trình tham quan và truyền thông thị giác, chúng tôi chuyển hóa bản sắc, lịch sử, thành tựu và nội dung giáo dục thành những trải nghiệm không gian rõ ràng và hấp dẫn.</p>
+  </div>
+</section>
+<section class="fields" id="fields">
+  <div class="fields-head"><h2>CORE SERVICE FIELDS<span>核心服务方向</span></h2><p>TWO CLIENT TYPES · ONE INTEGRATED METHOD</p></div>
+  <div class="field-grid">
+    <article class="field-card"><div class="field-no">01</div><h3>CORPORATE BRAND SHOWROOM</h3><div class="cn">企业品牌展示空间</div><div class="vi">KHÔNG GIAN TRƯNG BÀY THƯƠNG HIỆU DOANH NGHIỆP</div><p>Brand history · Product display · Client reception · Experience center<span>品牌历史 · 产品展示 · 客户接待 · 体验中心</span><span class="vi-copy">Lịch sử thương hiệu · Trưng bày sản phẩm · Tiếp đón khách hàng · Trung tâm trải nghiệm</span></p></article>
+    <article class="field-card"><div class="field-no">02</div><h3>CAMPUS CULTURE &amp; EDUCATIONAL EXHIBITION</h3><div class="cn">校园文化与教育展陈</div><div class="vi">VĂN HÓA HỌC ĐƯỜNG &amp; TRIỂN LÃM GIÁO DỤC</div><p>School history · Academic achievement · Science education · Admissions display<span>校史文化 · 学科成果 · 科普教育 · 招生展示</span><span class="vi-copy">Lịch sử nhà trường · Thành tựu học thuật · Giáo dục khoa học · Trưng bày tuyển sinh</span></p></article>
+  </div>
+</section>
+<section class="scope" aria-label="Service scope">
+  <div class="scope-item"><small>01</small><b>CONTENT STRATEGY</b><span>内容策划<br>Chiến lược nội dung</span></div>
+  <div class="scope-item"><small>02</small><b>SPATIAL NARRATIVE</b><span>空间叙事<br>Câu chuyện không gian</span></div>
+  <div class="scope-item"><small>03</small><b>VISITOR CIRCULATION</b><span>参观动线<br>Lộ trình tham quan</span></div>
+  <div class="scope-item"><small>04</small><b>DISPLAY SYSTEM</b><span>展墙展柜<br>Hệ thống trưng bày</span></div>
+  <div class="scope-item"><small>05</small><b>VISUAL &amp; WAYFINDING</b><span>视觉与导视<br>Thị giác &amp; chỉ dẫn</span></div>
+  <div class="scope-item"><small>06</small><b>DELIVERY COORDINATION</b><span>落地协调<br>Điều phối triển khai</span></div>
+</section>
+<footer class="footer" id="contact">
+  <div class="footer-title"><div class="section-label">EXHIBITION PRACTICE<span>展陈实践</span></div></div>
+  <div class="footer-copy">From organizational content to a coherent spatial experience.<span>从机构内容到完整的空间体验。</span></div>
+  <div class="footer-mark" aria-hidden="true"></div>
+  <a class="contact" href="index.html#contact"><h3>LET’S WORK TOGETHER</h3><div class="cn">期待与您合作</div><i></i><b>CONTACT US</b></a>
+</footer>
+</main>
+</body>
+</html>
