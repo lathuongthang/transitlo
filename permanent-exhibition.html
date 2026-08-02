@@ -3,117 +3,542 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
-<meta name="description" content="TransitLo 常设展陈与体验空间：企业展厅、校园文化与教育展陈。">
-<title>Permanent Exhibition & Experience — TRANSITLO</title>
+<meta name="description" content="TransitLo 长河标识体验与快速成交中心：位于工厂车间内的常设展陈、选材、洽谈与快速下单空间。">
+<title>Changhe Signage Experience Centre — TRANSITLO</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;display=swap" rel="stylesheet">
+<link rel="preload" as="image" href="changhe-showroom-exterior.png">
+
 <style>
-:root{--w:1171px;--ink:#111;--muted:#666;--line:#dedede;--warm:#9b816a;--paper:#f4f2ee}
+:root{
+  --paper:#f2efe9;
+  --paper-2:#e7e2da;
+  --ink:#11100e;
+  --muted:#6b6761;
+  --line:#c7c0b7;
+  --red:#a33c47;
+  --red-bright:#e60012;
+  --red-soft:#c78684;
+  --blue:#61747b;
+  --dark:#121212;
+  --white:#fff;
+  --page:1440px;
+}
+
 *{box-sizing:border-box}
 html{scroll-behavior:smooth}
-html,body{margin:0;background:#fff;color:var(--ink);font-family:"Inter","Microsoft YaHei",Arial,sans-serif;-webkit-font-smoothing:antialiased}
+html,body{margin:0;background:#d7d3cc;color:var(--ink);font-family:"Inter","Microsoft YaHei","PingFang SC",Arial,sans-serif;-webkit-font-smoothing:antialiased}
 body{min-width:320px}
 a{color:inherit;text-decoration:none}
-.page{width:min(100%,var(--w));margin:auto;overflow:hidden;background:#fff}
-.header{height:44px;padding:0 61px;display:flex;align-items:center;justify-content:space-between;background:#fff;font-size:8.5px;line-height:1;font-weight:600;letter-spacing:.45px}
-.brand{font-size:13px;letter-spacing:3.1px}
-.nav{display:flex;align-items:center;gap:24px}
+img{display:block;max-width:100%}
+button{font:inherit}
+
+.site{
+  width:min(100%,var(--page));
+  margin:auto;
+  overflow:hidden;
+  background:var(--paper);
+  box-shadow:0 0 70px rgba(0,0,0,.09);
+}
+
+.topbar{
+  position:relative;
+  z-index:20;
+  height:58px;
+  padding:0 5.4%;
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  background:rgba(242,239,233,.96);
+  border-bottom:1px solid rgba(17,16,14,.14);
+  font-size:11px;
+  font-weight:700;
+  letter-spacing:.08em;
+}
+
+.brand{font-size:14px;letter-spacing:.24em}
+.nav{display:flex;align-items:center;gap:28px}
 .nav a{position:relative}
-.nav a:after{content:"";position:absolute;right:0;bottom:-6px;left:0;height:1px;background:#111;transform:scaleX(0);transform-origin:left;transition:transform .25s ease}
-.nav a:hover:after{transform:scaleX(1)}
-.langs{display:flex;gap:7px;font-weight:500}
-.langs span+span:before{content:"|";margin-right:7px;color:#aaa}
-.hero{position:relative;min-height:474px;display:grid;grid-template-columns:1fr 1fr;background:#252624;color:#fff;overflow:hidden}
-.hero-copy{padding:86px 58px 54px 61px;position:relative;z-index:2}
-.eyebrow{margin-bottom:23px;font-size:9px;font-weight:500;letter-spacing:1.6px}
-.hero h1{margin:0;font-size:43px;line-height:1.05;font-weight:300;letter-spacing:.2px}
-.hero h1 strong{display:block;font-weight:600}
-.cn-title{margin-top:17px;font-size:15px;font-weight:500;line-height:1.4}
-.vi-title{margin-top:5px;font-size:9px;line-height:1.5;letter-spacing:.5px;color:rgba(255,255,255,.72)}
-.hero-note{position:absolute;left:61px;bottom:35px;font-size:8px;letter-spacing:1px;color:rgba(255,255,255,.72)}
-.hero-note:after{content:"";display:block;width:56px;margin-top:11px;border-bottom:1px solid rgba(255,255,255,.75)}
-.hero-visual{position:relative;min-height:474px;background:linear-gradient(135deg,#393a37,#20211f 68%,#161715)}
-.hero-visual:before{content:"";position:absolute;inset:0;background:linear-gradient(rgba(255,255,255,.055) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.055) 1px,transparent 1px);background-size:52px 52px}
-.hero-visual .panel,.hero-visual .plinth,.hero-visual .line{position:absolute;display:block}
-.hero-visual .panel{border:1px solid rgba(255,255,255,.35);background:rgba(239,237,232,.07);box-shadow:0 22px 48px rgba(0,0,0,.18)}
-.hero-visual .panel-a{top:18%;left:10%;width:32%;height:56%}
-.hero-visual .panel-b{top:11%;right:10%;width:40%;height:40%}
-.hero-visual .plinth{right:18%;bottom:16%;width:34%;height:18%;border-top:1px solid rgba(255,255,255,.64);border-right:1px solid rgba(255,255,255,.2);background:linear-gradient(135deg,rgba(155,129,106,.42),rgba(255,255,255,.05));transform:skewY(-5deg)}
-.hero-visual .line{left:8%;right:8%;bottom:10%;height:1px;background:rgba(255,255,255,.36)}
-.intro{padding:46px 61px 49px;display:grid;grid-template-columns:230px 1fr;gap:54px;border-bottom:1px solid var(--line)}
-.section-label{font-size:10px;line-height:1.4;font-weight:600;letter-spacing:.2px}
-.section-label span{display:block;margin-top:3px;font-weight:500}
-.section-label:after{content:"";display:block;width:30px;margin-top:10px;border-bottom:1.5px solid #111}
-.tri-copy{max-width:700px;font-size:10.5px;line-height:1.72;color:#303030}
-.tri-copy p{margin:0}.tri-copy p+p{margin-top:9px}.tri-copy .vi{color:#6a6a6a}
-.fields{padding:47px 61px 58px}
-.fields-head{display:flex;align-items:flex-end;justify-content:space-between;margin-bottom:25px}
-.fields-head h2{margin:0;font-size:12px;line-height:1.35;font-weight:600}.fields-head h2 span{display:block;margin-top:3px;font-size:10.5px;font-weight:500}.fields-head p{margin:0;color:#777;font-size:8px;letter-spacing:.5px}
-.field-grid{display:grid;grid-template-columns:1fr 1fr;gap:18px}
-.field-card{min-height:300px;padding:29px 30px 31px;border-top:1px solid #111;background:var(--paper);display:flex;flex-direction:column}
-.field-no{font-size:9px;color:#777}
-.field-card h3{margin:43px 0 0;font-size:21px;line-height:1.16;font-weight:500}.field-card .cn{margin-top:8px;font-size:12px;font-weight:500}.field-card .vi{margin-top:4px;color:#666;font-size:9px;line-height:1.5}
-.field-card p{margin:23px 0 0;color:#555;font-size:9.5px;line-height:1.65}.field-card p span{display:block;margin-top:5px}.field-card p .vi-copy{color:#777}
-.scope{display:grid;grid-template-columns:repeat(3,1fr);border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
-.scope-item{min-height:142px;padding:27px 25px;border-right:1px solid var(--line)}.scope-item:nth-child(3n){border-right:0}.scope-item:nth-child(n+4){border-top:1px solid var(--line)}
-.scope-item small{display:block;color:#888;font-size:8px;letter-spacing:.8px}.scope-item b{display:block;margin-top:18px;font-size:10px;line-height:1.35;font-weight:600;letter-spacing:.35px}.scope-item span{display:block;margin-top:7px;color:#666;font-size:9px;line-height:1.55}
-.footer{min-height:127px;display:grid;grid-template-columns:230px 333px 290px 318px}.footer-title{padding:28px 0 0 61px}.footer-copy{padding:27px 20px 22px 0;color:#444;font-size:8.5px;line-height:1.5}.footer-copy span{display:block;margin-top:8px;font-weight:500}.footer-mark{position:relative;overflow:hidden;background:#efede8}.footer-mark:before,.footer-mark:after{content:"";position:absolute;border:1px solid rgba(100,88,74,.25);transform:rotate(45deg)}.footer-mark:before{width:170px;height:170px;top:-92px;left:54px}.footer-mark:after{width:120px;height:120px;right:38px;bottom:-82px}.contact{display:block;padding:27px 33px;background:#181818;color:#fff}.contact h3{margin:0 0 5px;font-size:10.5px;font-weight:600}.contact .cn{font-size:8.5px}.contact i{display:block;width:30px;margin:9px 0;border-bottom:1px solid #aaa}.contact b{display:inline-block;padding:8px 24px;border:1px solid #888;font-size:7.5px;font-weight:500}
-@media(max-width:1024px){.header{padding:0 36px}.hero-copy{padding-left:36px}.hero-note{left:36px}.intro{padding-right:36px;padding-left:36px;grid-template-columns:190px 1fr;gap:38px}.fields{padding-right:36px;padding-left:36px}.footer{grid-template-columns:1fr 1.45fr 1.1fr 1.2fr}.footer-title{padding-left:36px}}
-@media(max-width:700px){.header{height:54px;padding:0 20px}.brand{font-size:12px;letter-spacing:2.5px}.nav{gap:14px}.nav>a:not(.back){display:none}.back{font-size:8px}.langs{font-size:8px}.hero{grid-template-columns:1fr;min-height:0}.hero-copy{min-height:344px;padding:67px 22px 78px}.hero h1{font-size:31px}.hero-note{left:22px;bottom:27px}.hero-visual{min-height:270px}.intro{padding:30px 22px;grid-template-columns:1fr;gap:23px}.fields{padding:34px 22px 44px}.fields-head{align-items:flex-start;gap:16px}.fields-head p{max-width:130px;text-align:right;line-height:1.45}.field-grid{grid-template-columns:1fr;gap:34px}.field-card{min-height:0;padding:26px 22px 28px}.field-card h3{margin-top:35px}.scope{grid-template-columns:1fr 1fr}.scope-item:nth-child(3n){border-right:1px solid var(--line)}.scope-item:nth-child(2n){border-right:0}.scope-item:nth-child(n+3){border-top:1px solid var(--line)}.footer{grid-template-columns:1fr}.footer>div,.footer>a{min-height:105px}.footer-title{padding:27px 22px}.footer-copy{padding:25px 22px}.footer-mark{min-height:130px}.contact{min-height:128px;padding:27px 22px}}
-@media(max-width:390px){.hero h1{font-size:27px}.fields-head p{display:none}.scope{grid-template-columns:1fr}.scope-item{border-right:0}.scope-item:nth-child(n+2){border-top:1px solid var(--line)}}
+.nav a:after{content:"";position:absolute;right:0;bottom:-8px;left:0;height:2px;background:var(--red);transform:scaleX(0);transform-origin:left;transition:.25s ease}
+.nav a:hover:after,.nav a:focus-visible:after{transform:scaleX(1)}
+.nav .back{color:var(--red)}
+
+.hero{
+  position:relative;
+  min-height:720px;
+  height:calc(100vh - 58px);
+  max-height:900px;
+  color:#fff;
+  background:#161616;
+  isolation:isolate;
+}
+
+.hero-bg,.hero-bg img{position:absolute;inset:0;width:100%;height:100%}
+.hero-bg img{object-fit:cover;object-position:center}
+.hero:before{content:"";position:absolute;inset:0;z-index:1;background:linear-gradient(90deg,rgba(8,7,6,.82) 0%,rgba(8,7,6,.55) 38%,rgba(8,7,6,.14) 74%,rgba(8,7,6,.04) 100%)}
+.hero:after{content:"";position:absolute;z-index:2;left:5.4%;bottom:0;width:5px;height:30%;background:linear-gradient(180deg,rgba(230,0,18,0),var(--red-bright))}
+
+.hero-copy{position:relative;z-index:3;width:min(690px,58%);padding:76px 0 60px 7.8%}
+.hero-glyph{width:225px;height:104px;object-fit:contain;object-position:left center;margin-bottom:38px}
+.eyebrow{font-size:13px;font-weight:700;letter-spacing:.12em;color:#ff2435}
+.hero h1{max-width:680px;margin:23px 0 0;font-size:clamp(48px,5.3vw,82px);line-height:1.02;letter-spacing:-.045em;font-weight:700}
+.hero h1 span{display:block;margin-top:15px;font-size:.56em;line-height:1.1;letter-spacing:-.02em}
+.hero-cn{margin-top:24px;font-size:22px;font-weight:700;letter-spacing:.04em}
+.hero-vi{margin-top:10px;max-width:560px;font-size:12px;line-height:1.6;letter-spacing:.05em;color:#d6d1cb}
+.hero-meta{position:absolute;z-index:3;right:5.4%;bottom:40px;display:grid;grid-template-columns:repeat(3,auto);gap:30px;color:#dfdad4;font-size:11px;letter-spacing:.08em}
+.hero-meta b{display:block;margin-top:7px;color:#fff;font-size:16px;letter-spacing:0}
+
+.facts{display:grid;grid-template-columns:1.35fr repeat(4,1fr);border-bottom:1px solid var(--line);background:var(--paper)}
+.fact{min-height:132px;padding:27px 30px;border-right:1px solid var(--line)}
+.fact:last-child{border-right:0}
+.fact small{display:block;color:var(--red);font-size:11px;font-weight:700;letter-spacing:.1em}
+.fact strong{display:block;margin-top:15px;font-size:20px;line-height:1.25}
+.fact span{display:block;margin-top:6px;color:var(--muted);font-size:12px;line-height:1.45}
+.fact.lead strong{font-size:28px;letter-spacing:-.02em}
+
+.section{padding:92px 7.8%}
+.section-head{display:grid;grid-template-columns:190px minmax(0,1fr);gap:50px;align-items:start;margin-bottom:58px}
+.section-kicker{color:var(--red-bright);font-size:12px;font-weight:700;letter-spacing:.1em}
+.section-kicker span{display:block;margin-top:8px;color:var(--ink);font-size:13px;letter-spacing:.04em}
+.section-title h2{margin:0;max-width:960px;font-size:clamp(38px,4.2vw,62px);line-height:1.08;letter-spacing:-.045em}
+.section-title p{max-width:780px;margin:22px 0 0;color:var(--muted);font-size:17px;line-height:1.8;font-weight:500}
+.section-title .vi{margin-top:12px;font-size:13px;line-height:1.7;color:#8a857e}
+
+.logic{padding:82px 7.8% 94px;background:var(--dark);color:#fff}
+.logic .section-head{margin-bottom:52px}
+.logic .section-kicker span,.logic .section-title h2{color:#fff}
+.logic .section-title p{color:#aaa59e}
+.steps{display:grid;grid-template-columns:repeat(5,1fr);gap:0}
+.step{position:relative;min-height:210px;padding:24px 24px 24px 0;border-top:1px solid #4d4a45}
+.step:not(:last-child){margin-right:26px}
+.step-no{font-size:42px;font-weight:700;color:#65615b}
+.step:last-child .step-no{color:var(--red-bright)}
+.step h3{margin:28px 0 0;font-size:26px}
+.step p{margin:12px 0 0;color:#aaa59e;font-size:13px;line-height:1.6}
+.step:after{content:"";position:absolute;top:-2px;left:0;width:0;height:3px;background:var(--red-bright);transition:width .5s ease}
+.step:hover:after{width:100%}
+
+.site-volume{display:grid;grid-template-columns:minmax(0,1.45fr) minmax(280px,.55fr);gap:56px;align-items:center}
+.axon{position:relative;background:#f8f6f2;overflow:hidden}
+.axon img{width:100%;aspect-ratio:16/9;object-fit:cover}
+.axon-label{position:absolute;left:24px;bottom:22px;color:#6e6962;font-size:12px;font-weight:700;letter-spacing:.08em}
+.opening-art{padding:10px 8px}
+.opening-art img{width:240px;max-height:130px;object-fit:contain;object-position:left center}
+.opening-art h3{margin:20px 0 0;color:var(--red);font-size:14px;letter-spacing:.06em}
+.opening-art dl{margin:27px 0 0;padding-top:26px;border-top:1px solid var(--line)}
+.opening-art dl div{display:grid;grid-template-columns:110px 1fr;gap:20px;padding:11px 0;border-bottom:1px solid #d7d1c9}
+.opening-art dt{font-size:24px;font-weight:700}
+.opening-art dd{margin:4px 0 0;color:var(--muted);font-size:14px;font-weight:700}
+.door-note{margin-top:28px;padding:20px 22px;background:var(--paper-2);font-size:15px;line-height:1.65;font-weight:700}
+
+.image-chapter{position:relative;min-height:760px;color:#fff;background:#191817;isolation:isolate}
+.image-chapter>img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+.image-chapter:before{content:"";position:absolute;inset:0;z-index:1;background:linear-gradient(90deg,rgba(5,5,5,.85),rgba(5,5,5,.32) 48%,rgba(5,5,5,.04) 75%)}
+.chapter-copy{position:relative;z-index:2;width:min(570px,55%);padding:96px 0 90px 7.8%}
+.chapter-copy .option{color:#ff2738;font-size:13px;font-weight:700;letter-spacing:.12em}
+.chapter-glyph{width:340px;height:160px;margin:28px 0 8px;object-fit:contain;object-position:left center}
+.chapter-copy h2{margin:20px 0 0;font-size:52px;line-height:1.03}
+.chapter-copy p{max-width:500px;margin:24px 0 0;font-size:20px;line-height:1.7;font-weight:600}
+.chapter-copy .en{font-size:15px;color:#d2cdc6;letter-spacing:.06em}
+.chapter-line{width:180px;height:7px;margin-top:34px;background:var(--red-bright)}
+
+.system{background:var(--paper)}
+.bands{position:relative;padding:10px 0 45px}
+.band{position:relative;display:grid;grid-template-columns:90px 250px minmax(0,1fr);align-items:center;min-height:126px;padding:20px 36px;color:#fff}
+.band+.band{margin-top:-1px}
+.band:nth-child(1){width:86%;background:#1d1c1a}
+.band:nth-child(2){width:92%;margin-left:3%;background:#6c7d83}
+.band:nth-child(3){width:96%;margin-left:6%;background:var(--red)}
+.band-no{font-size:28px;font-weight:700;color:rgba(255,255,255,.68)}
+.band img{width:200px;height:80px;object-fit:contain;object-position:left center}
+.band h3{margin:0;font-size:18px;letter-spacing:.06em}
+.band p{margin:10px 0 0;color:rgba(255,255,255,.8);font-size:14px;line-height:1.55}
+.band-word{font-size:34px;font-weight:700}
+
+.recommend{position:relative;min-height:720px;color:#fff;background:#111;isolation:isolate}
+.recommend>img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+.recommend:before{content:"";position:absolute;inset:0;z-index:1;background:linear-gradient(90deg,rgba(5,5,5,.84),rgba(5,5,5,.32) 50%,rgba(5,5,5,.04))}
+.recommend-copy{position:relative;z-index:2;width:min(650px,59%);padding:86px 0 80px 7.8%}
+.recommend-copy .option{color:#ff2738;font-size:13px;font-weight:700;letter-spacing:.12em}
+.recommend-copy h2{margin:28px 0 0;font-size:48px}
+.recommend-copy .layer-glyph{width:410px;height:175px;margin-top:10px;object-fit:contain;object-position:left center}
+.recommend-copy>p{max-width:570px;margin:5px 0 0;font-size:20px;line-height:1.65;font-weight:600}
+.layer-list{margin-top:40px;border-top:1px solid rgba(255,255,255,.4)}
+.layer-row{display:grid;grid-template-columns:190px 1fr;gap:24px;padding:18px 0;border-bottom:1px solid rgba(255,255,255,.22)}
+.layer-row b{font-size:18px}.layer-row span{color:#ddd8d1;font-size:16px;font-weight:600}
+
+.plan-section{background:var(--paper)}
+.plan-grid{display:grid;grid-template-columns:minmax(0,1fr) 270px;gap:50px;align-items:start}
+.plan-wrap{position:relative;background:#faf8f5;box-shadow:0 18px 35px rgba(36,30,24,.08)}
+.plan-wrap>img{width:100%;height:auto}
+.marker{position:absolute;width:36px;height:36px;display:grid;place-items:center;border:3px solid var(--paper);border-radius:50%;background:var(--red);color:#fff;font-size:13px;font-weight:700;box-shadow:0 4px 13px rgba(0,0,0,.22)}
+.m1{right:3.2%;bottom:10%}.m2{left:50%;bottom:10%}.m3{left:56%;top:63%}.m4{left:57%;top:34%}.m5{left:56%;top:11%}.m6{right:5%;top:12%}.m7{left:11%;top:46%}
+.legend h3{margin:0 0 24px;font-size:30px}
+.legend ol{list-style:none;margin:0;padding:0;border-top:1px solid var(--line)}
+.legend li{display:grid;grid-template-columns:38px 1fr;gap:10px;padding:14px 0;border-bottom:1px solid var(--line);font-size:14px;font-weight:700;line-height:1.45}
+.legend li b{color:var(--red)}
+.legend-note{margin-top:24px;padding:15px 18px;background:var(--ink);color:#fff;font-size:12px;text-align:center;font-weight:700}
+
+.circulation{background:#e8e3dc}
+.circulation-grid{display:grid;grid-template-columns:minmax(0,1fr) 310px;gap:54px;align-items:start}
+.route-plan{position:relative;background:#f8f6f2;overflow:hidden}
+.route-plan>img{width:100%}
+.route-overlay{position:absolute;inset:0;width:100%;height:100%;pointer-events:none}
+.route-overlay .customer{fill:none;stroke:#d74650;stroke-width:1.15;stroke-linecap:round;stroke-linejoin:round;vector-effect:non-scaling-stroke}
+.route-overlay .staff{fill:none;stroke:#4e93b3;stroke-width:.8;stroke-linecap:round;stroke-linejoin:round;vector-effect:non-scaling-stroke}
+.journey h3{margin:0 0 26px;font-size:30px}
+.journey ol{list-style:none;margin:0;padding:0 0 0 20px;border-left:2px solid rgba(163,60,71,.35)}
+.journey li{position:relative;display:grid;grid-template-columns:64px 1fr;gap:14px;padding:0 0 21px 22px}
+.journey li:before{content:attr(data-no);position:absolute;left:-34px;top:-2px;width:28px;height:28px;display:grid;place-items:center;border:3px solid #e8e3dc;border-radius:50%;background:var(--red);color:#fff;font-size:11px;font-weight:700}
+.journey li:last-child:before{background:var(--red-bright)}
+.journey b{font-size:18px}.journey span{color:var(--muted);font-size:14px;line-height:1.5;font-weight:600}
+.route-key{display:flex;gap:26px;margin-top:26px;font-size:13px;font-weight:700}
+.route-key i{display:inline-block;width:35px;margin-right:9px;border-top:4px solid #d74650;vertical-align:middle}.route-key span+span i{border-color:#4e93b3}
+
+.technical{background:var(--paper)}
+.technical-grid{display:grid;grid-template-columns:minmax(0,.85fr) minmax(0,1.15fr);gap:62px;align-items:start}
+.technical-image{position:sticky;top:20px}
+.technical-image img{width:100%;aspect-ratio:1/1.05;object-fit:cover;object-position:center}
+.technical-list{border-top:1px solid var(--line)}
+.tech{display:grid;grid-template-columns:48px 175px 1fr;gap:20px;padding:23px 0;border-bottom:1px solid var(--line)}
+.tech-no{color:var(--red-bright);font-size:18px;font-weight:700}
+.tech h3{margin:0;font-size:18px}.tech p{margin:0;color:var(--muted);font-size:14px;line-height:1.65}
+
+.closing{position:relative;min-height:610px;color:#fff;background:#111;isolation:isolate}
+.closing>img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+.closing:before{content:"";position:absolute;inset:0;z-index:1;background:linear-gradient(90deg,rgba(94,38,47,.88) 0%,rgba(30,20,20,.75) 44%,rgba(6,6,6,.35) 75%,rgba(6,6,6,.25))}
+.closing-copy{position:relative;z-index:2;padding:76px 7.8%}
+.closing-glyph{width:300px;height:138px;object-fit:contain;object-position:left center}
+.closing h2{max-width:760px;margin:42px 0 0;font-size:clamp(42px,5vw,70px);line-height:1.12;letter-spacing:-.045em}
+.closing p{margin:25px 0 0;color:#ded9d2;font-size:15px;line-height:1.65}
+.cta{display:inline-flex;align-items:center;gap:22px;margin-top:42px;padding:17px 22px;border:1px solid rgba(255,255,255,.58);font-size:12px;font-weight:700;letter-spacing:.08em;transition:.25s ease}
+.cta:after{content:"→";font-size:20px}.cta:hover{background:#fff;color:#111}
+
+.hero-bg:after,
+.axon:after,
+.image-chapter:after,
+.recommend:after,
+.plan-wrap:after,
+.route-plan:after,
+.technical-image:after,
+.closing:after{
+  content:"TRANSITLO  ·  CONCEPT DESIGN";
+  position:absolute;
+  right:22px;
+  bottom:18px;
+  z-index:4;
+  padding:8px 10px 7px 12px;
+  border-left:2px solid rgba(230,0,18,.74);
+  background:rgba(18,18,17,.14);
+  color:rgba(255,255,255,.68);
+  font-size:8px;
+  line-height:1;
+  font-weight:700;
+  letter-spacing:.15em;
+  text-shadow:0 1px 8px rgba(0,0,0,.34);
+  backdrop-filter:blur(2px);
+  pointer-events:none;
+}
+.axon:after,
+.plan-wrap:after,
+.route-plan:after{
+  background:rgba(255,255,255,.35);
+  color:rgba(17,16,14,.52);
+  text-shadow:0 1px 5px rgba(255,255,255,.72);
+}
+.hero-bg:after{top:18px;bottom:auto}
+
+.footer{display:flex;justify-content:space-between;gap:30px;padding:24px 5.4%;background:#111;color:#bdb7b0;font-size:10px;letter-spacing:.06em}
+.footer a{color:#fff}
+
+[data-reveal]{opacity:0;transform:translateY(24px);transition:opacity .7s ease,transform .7s ease}
+[data-reveal].is-visible{opacity:1;transform:none}
+
+@media (max-width:1050px){
+  .hero{min-height:660px;height:76vh}
+  .hero-copy{width:72%;padding-left:6%}
+  .hero-meta{right:4%;gap:18px}
+  .facts{grid-template-columns:1.4fr repeat(2,1fr)}
+  .fact{border-bottom:1px solid var(--line)}
+  .fact:nth-child(3){border-right:0}.fact:nth-child(4){grid-column:2}.fact:nth-child(5){grid-column:3}
+  .section,.logic{padding-left:6%;padding-right:6%}
+  .section-head{grid-template-columns:150px 1fr;gap:32px}
+  .steps{grid-template-columns:repeat(3,1fr);row-gap:28px}.step:nth-child(n+4){grid-column:span 1}
+  .site-volume{grid-template-columns:1fr}.opening-art{display:grid;grid-template-columns:240px 1fr;gap:30px}.opening-art dl{margin-top:0}
+  .band{grid-template-columns:70px 210px 1fr}
+  .plan-grid,.circulation-grid{grid-template-columns:1fr}.legend ol{display:grid;grid-template-columns:1fr 1fr}.legend li:nth-child(odd){padding-right:20px}
+  .journey ol{display:grid;grid-template-columns:1fr 1fr;column-gap:26px}.journey li{padding-bottom:18px}
+  .technical-grid{gap:38px}.tech{grid-template-columns:42px 145px 1fr}
+}
+
+@media (max-width:720px){
+  .site{box-shadow:none}
+  .topbar{height:54px;padding:0 20px}.nav a:not(.back){display:none}.nav{gap:16px}.brand{font-size:12px}
+  .hero{height:720px;min-height:0}.hero:before{background:linear-gradient(180deg,rgba(8,7,6,.45),rgba(8,7,6,.83) 78%,rgba(8,7,6,.92))}.hero-copy{width:auto;padding:48px 24px}.hero-glyph{width:180px;height:82px;margin-bottom:34px}.hero h1{font-size:44px}.hero-cn{font-size:18px}.hero-meta{left:24px;right:24px;bottom:26px;grid-template-columns:repeat(3,1fr);gap:10px}.hero-meta span{font-size:9px}.hero-meta b{font-size:12px}
+  .facts{grid-template-columns:1fr 1fr}.fact{min-height:116px;padding:22px}.fact.lead{grid-column:1/-1}.fact:nth-child(3){border-right:0}.fact:nth-child(4){grid-column:auto}.fact:nth-child(5){grid-column:auto}
+  .section,.logic{padding:68px 24px}.section-head{display:block;margin-bottom:42px}.section-kicker{margin-bottom:24px}.section-title h2{font-size:39px}.section-title p{font-size:15px}
+  .steps{grid-template-columns:1fr 1fr}.step{min-height:170px}.step:last-child{grid-column:1/-1}.step-no{font-size:34px}.step h3{margin-top:18px;font-size:22px}
+  .site-volume{gap:30px}.opening-art{display:block}.opening-art img{width:190px}.opening-art dl{margin-top:24px}
+  .image-chapter{min-height:690px}.image-chapter:before{background:linear-gradient(180deg,rgba(5,5,5,.32),rgba(5,5,5,.82) 72%)}.chapter-copy{width:auto;padding:70px 24px}.chapter-glyph{width:270px;height:130px}.chapter-copy p{font-size:17px}
+  .bands{padding-bottom:10px}.band{width:100%!important;margin:0!important;grid-template-columns:50px 1fr;gap:15px;padding:22px}.band img{width:165px;height:66px}.band>div:last-child{grid-column:2}.band-word{font-size:28px}
+  .recommend{min-height:760px}.recommend:before{background:linear-gradient(180deg,rgba(5,5,5,.32),rgba(5,5,5,.86) 60%)}.recommend-copy{width:auto;padding:64px 24px}.recommend-copy h2{font-size:38px}.recommend-copy .layer-glyph{width:310px;height:140px}.recommend-copy>p{font-size:17px}.layer-row{grid-template-columns:1fr}.layer-row b{font-size:16px}
+  .plan-grid,.circulation-grid{gap:32px}.marker{width:29px;height:29px;border-width:2px;font-size:10px}.legend ol{display:block}.circulation .section-title h2{font-size:36px}.journey ol{display:block}
+  .technical-grid{grid-template-columns:1fr}.technical-image{position:relative;top:auto}.technical-image img{aspect-ratio:16/11}.tech{grid-template-columns:38px 1fr}.tech p{grid-column:2}
+  .closing{min-height:650px}.closing-copy{padding:68px 24px}.closing-glyph{width:230px;height:105px}.closing h2{font-size:44px}.footer{display:block;padding:22px 24px}.footer span{display:block;margin-top:8px}
+  .hero-bg:after,.axon:after,.image-chapter:after,.recommend:after,.plan-wrap:after,.route-plan:after,.technical-image:after,.closing:after{right:12px;bottom:12px;padding:6px 7px 5px 9px;font-size:6.5px}
+  .hero-bg:after{top:12px;bottom:auto}
+}
+
+@media (max-width:420px){
+  .hero h1{font-size:39px}.hero-meta{grid-template-columns:1fr 1fr}.hero-meta span:last-child{display:none}
+  .facts{display:block}.fact{border-right:0}
+  .steps{display:block}.step{margin:0!important;min-height:0;padding:22px 0 30px}
+  .section-title h2{font-size:34px}
+  .opening-art dl div{grid-template-columns:85px 1fr}.opening-art dt{font-size:21px}
+  .plan-wrap{margin:0 -14px}.marker{display:none}
+  .route-plan{margin:0 -14px}
+  .tech{grid-template-columns:34px 1fr;gap:12px}.tech h3{font-size:17px}
+  .closing h2{font-size:38px}
+}
+
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}*,*:before,*:after{transition:none!important}[data-reveal]{opacity:1;transform:none}}
 </style>
 </head>
+
 <body>
-<main class="page" id="top">
-<header class="header">
-  <a class="brand" href="index.html" aria-label="Back to homepage">TRANSITLO</a>
-  <nav class="nav" aria-label="Page navigation">
-    <a class="back" href="architectura.html">← ARCHITECTURE</a>
-    <a href="#fields">SERVICES</a>
-    <a href="index.html#contact">CONTACT</a>
-    <div class="langs"><span>中文</span><span>EN</span><span>VI</span></div>
-  </nav>
-</header>
-<section class="hero">
-  <div class="hero-copy">
-    <div class="eyebrow">PERMANENT EXHIBITION / SPATIAL EXPERIENCE</div>
-    <h1>EXHIBITION <strong>&amp; EXPERIENCE SPACES</strong></h1>
-    <div class="cn-title">常设展陈与体验空间</div>
-    <div class="vi-title">KHÔNG GIAN TRƯNG BÀY THƯỜNG TRỰC &amp; TRẢI NGHIỆM</div>
-    <div class="hero-note">CORPORATE · CAMPUS · PUBLIC INSTITUTIONS</div>
-  </div>
-  <div class="hero-visual" aria-hidden="true"><span class="panel panel-a"></span><span class="panel panel-b"></span><span class="plinth"></span><span class="line"></span></div>
-</section>
-<section class="intro">
-  <div class="section-label">SERVICE POSITIONING<span>服务定位</span></div>
-  <div class="tri-copy">
-    <p>TransitLo designs permanent exhibition and experience spaces for companies, schools and public institutions. Through content strategy, spatial narrative, visitor circulation and visual communication, organizational identity, history, achievements and educational content are transformed into clear and engaging spatial experiences.</p>
-    <p>TransitLo 为企业、学校及公共机构提供常设展陈与体验空间设计。通过内容策划、空间叙事、参观动线与视觉传播，将机构形象、发展历史、成果展示与教育内容转化为清晰、完整并具有参与感的空间体验。</p>
-    <p class="vi">TransitLo thiết kế không gian trưng bày thường trực và không gian trải nghiệm cho doanh nghiệp, trường học và các tổ chức công cộng. Thông qua chiến lược nội dung, câu chuyện không gian, lộ trình tham quan và truyền thông thị giác, chúng tôi chuyển hóa bản sắc, lịch sử, thành tựu và nội dung giáo dục thành những trải nghiệm không gian rõ ràng và hấp dẫn.</p>
-  </div>
-</section>
-<section class="fields" id="fields">
-  <div class="fields-head"><h2>CORE SERVICE FIELDS<span>核心服务方向</span></h2><p>TWO CLIENT TYPES · ONE INTEGRATED METHOD</p></div>
-  <div class="field-grid">
-    <article class="field-card"><div class="field-no">01</div><h3>CORPORATE BRAND SHOWROOM</h3><div class="cn">企业品牌展示空间</div><div class="vi">KHÔNG GIAN TRƯNG BÀY THƯƠNG HIỆU DOANH NGHIỆP</div><p>Brand history · Product display · Client reception · Experience center<span>品牌历史 · 产品展示 · 客户接待 · 体验中心</span><span class="vi-copy">Lịch sử thương hiệu · Trưng bày sản phẩm · Tiếp đón khách hàng · Trung tâm trải nghiệm</span></p></article>
-    <article class="field-card"><div class="field-no">02</div><h3>CAMPUS CULTURE &amp; EDUCATIONAL EXHIBITION</h3><div class="cn">校园文化与教育展陈</div><div class="vi">VĂN HÓA HỌC ĐƯỜNG &amp; TRIỂN LÃM GIÁO DỤC</div><p>School history · Academic achievement · Science education · Admissions display<span>校史文化 · 学科成果 · 科普教育 · 招生展示</span><span class="vi-copy">Lịch sử nhà trường · Thành tựu học thuật · Giáo dục khoa học · Trưng bày tuyển sinh</span></p></article>
-  </div>
-</section>
-<section class="scope" aria-label="Service scope">
-  <div class="scope-item"><small>01</small><b>CONTENT STRATEGY</b><span>内容策划<br>Chiến lược nội dung</span></div>
-  <div class="scope-item"><small>02</small><b>SPATIAL NARRATIVE</b><span>空间叙事<br>Câu chuyện không gian</span></div>
-  <div class="scope-item"><small>03</small><b>VISITOR CIRCULATION</b><span>参观动线<br>Lộ trình tham quan</span></div>
-  <div class="scope-item"><small>04</small><b>DISPLAY SYSTEM</b><span>展墙展柜<br>Hệ thống trưng bày</span></div>
-  <div class="scope-item"><small>05</small><b>VISUAL &amp; WAYFINDING</b><span>视觉与导视<br>Thị giác &amp; chỉ dẫn</span></div>
-  <div class="scope-item"><small>06</small><b>DELIVERY COORDINATION</b><span>落地协调<br>Điều phối triển khai</span></div>
-</section>
-<footer class="footer" id="contact">
-  <div class="footer-title"><div class="section-label">EXHIBITION PRACTICE<span>展陈实践</span></div></div>
-  <div class="footer-copy">From organizational content to a coherent spatial experience.<span>从机构内容到完整的空间体验。</span></div>
-  <div class="footer-mark" aria-hidden="true"></div>
-  <a class="contact" href="index.html#contact"><h3>LET’S WORK TOGETHER</h3><div class="cn">期待与您合作</div><i></i><b>CONTACT US</b></a>
-</footer>
+<main class="site" id="top">
+  <header class="topbar">
+    <a class="brand" href="index.html" aria-label="Back to TransitLo homepage">TRANSITLO</a>
+    <nav class="nav" aria-label="Project navigation">
+      <a class="back" href="architectural.html#disciplines">← ARCHITECTURE</a>
+      <a href="#concept">CONCEPT</a>
+      <a href="#plan">PLAN</a>
+      <a href="index.html#contact">CONTACT</a>
+    </nav>
+  </header>
+
+  <section class="hero" aria-labelledby="project-title">
+    <div class="hero-bg"><img src="changhe-showroom-exterior.png" alt="长河标识体验与快速成交中心车间侧概念图"></div>
+    <div class="hero-copy" data-reveal>
+      <img class="hero-glyph" src="changhe-glyph-white.png" alt="长河定制字形">
+      <div class="eyebrow">PERMANENT EXHIBITION / SIGNAGE EXPERIENCE</div>
+      <h1 id="project-title">SIGNAGE EXPERIENCE <span>&amp; RAPID ORDER CENTRE</span></h1>
+      <div class="hero-cn">长河标识体验与快速成交中心</div>
+      <div class="hero-vi">TRUNG TÂM TRẢI NGHIỆM BIỂN HIỆU &amp; ĐẶT HÀNG NHANH CHANGHE</div>
+    </div>
+    <div class="hero-meta">
+      <span>SPACE<b>104 m²</b></span>
+      <span>VOLUME<b>16 × 6.5 × 4.5 m</b></span>
+      <span>STATUS<b>CONCEPT 2026</b></span>
+    </div>
+  </section>
+
+  <section class="facts" aria-label="Project facts">
+    <div class="fact lead"><small>PROJECT</small><strong>Factory showroom as a fast decision tool</strong><span>把工厂展厅变成快速看样、比较与拍板的成交工具</span></div>
+    <div class="fact"><small>CLIENT</small><strong>CHANGHE</strong><span>长河标识</span></div>
+    <div class="fact"><small>TYPE</small><strong>SHOWROOM</strong><span>常设展陈 · 洽谈 · 会议</span></div>
+    <div class="fact"><small>SCOPE</small><strong>STRATEGY</strong><span>空间策略 · 展示设计 · 动线规划</span></div>
+    <div class="fact"><small>CAPACITY</small><strong>6–10</strong><span>常态接待，可站立交流15–20人</span></div>
+  </section>
+
+  <section class="logic" id="brief">
+    <div class="section-head" data-reveal>
+      <div class="section-kicker">01 / BUSINESS LOGIC<span>成交逻辑</span></div>
+      <div class="section-title">
+        <h2>这不是企业展厅，<br>而是一条被设计过的成交路径</h2>
+        <p>客户通常无需被长篇教育。他们需要快速看见真实样品，在合适的光线下比较材料与工艺，然后当场确认。</p>
+      </div>
+    </div>
+    <div class="steps" data-reveal>
+      <article class="step"><div class="step-no">01</div><h3>看见</h3><p>SEE<br>从车间入口第一眼识别展厅。</p></article>
+      <article class="step"><div class="step-no">02</div><h3>靠近</h3><p>APPROACH<br>看到真实尺寸、材料与工艺。</p></article>
+      <article class="step"><div class="step-no">03</div><h3>比较</h3><p>COMPARE<br>同类产品与色样快速并置。</p></article>
+      <article class="step"><div class="step-no">04</div><h3>确认</h3><p>CONFIRM<br>在中性光线下核对关键参数。</p></article>
+      <article class="step"><div class="step-no">05</div><h3>下单</h3><p>ORDER<br>在洽谈区完成讨论与决定。</p></article>
+    </div>
+  </section>
+
+  <section class="section" id="site">
+    <div class="section-head" data-reveal>
+      <div class="section-kicker">02 / SITE &amp; OPENING<span>场地与开口</span></div>
+      <div class="section-title">
+        <h2>先把开口做对，<br>再让空间开始叙事</h2>
+        <p>空场地位于工厂车间内。右端入口锁定第一眼，主入口门扇开启后贴右墙；内部样品与控制间采用推拉门，减少门扇占位。</p>
+        <p class="vi">Lối vào bên phải xác lập điểm nhìn đầu tiên; cửa phòng mẫu bên trong dùng cửa trượt để tiết kiệm diện tích.</p>
+      </div>
+    </div>
+    <div class="site-volume" data-reveal>
+      <figure class="axon">
+        <img src="changhe-site-axon.png" alt="长河展厅6.5乘16米场地轴测白模">
+        <figcaption class="axon-label">WHITE VOLUME / 104 m²</figcaption>
+      </figure>
+      <div class="opening-art">
+        <img src="kaikou-glyph.png" alt="开口定制字形">
+        <h3>MAIN OPENING</h3>
+        <dl>
+          <div><dt>16.0 m</dt><dd>长 / LENGTH</dd></div>
+          <div><dt>6.5 m</dt><dd>宽 / WIDTH</dd></div>
+          <div><dt>4.5 m</dt><dd>高 / HEIGHT</dd></div>
+        </dl>
+        <div class="door-note">主入口｜右下长边<br>平开门｜门扇开启后贴右墙<br>内部房间｜单扇推拉门</div>
+      </div>
+    </div>
+  </section>
+
+  <section class="image-chapter" id="concept">
+    <img src="changhe-showroom-interior.png" alt="透明色板与标识产品展示概念图">
+    <div class="chapter-copy" data-reveal>
+      <div class="option">OPTION A / CHROMATIC LAYERS</div>
+      <img class="chapter-glyph" src="dieshe-glyph-white.png" alt="叠色定制字形">
+      <div class="chapter-line"></div>
+      <p>透明有机玻璃色板不是产品本身，而是让产品、车间与色彩叠在同一个观看界面里。</p>
+      <p class="en">TRANSPARENT COLOR BECOMES A VIEWING DEVICE — NEVER A SUBSTITUTE FOR THE PRODUCT.</p>
+    </div>
+  </section>
+
+  <section class="section system">
+    <div class="section-head" data-reveal>
+      <div class="section-kicker">03 / DISPLAY SYSTEM<span>展示系统</span></div>
+      <div class="section-title">
+        <h2>空间不是三只方框，<br>而是三层可更新的系统</h2>
+        <p>最耐久的部分成为骨架，最需要变化的部分靠近客户。色板、样品与产品可以独立更换，展厅不因内容更新而失效。</p>
+      </div>
+    </div>
+    <div class="bands" data-reveal>
+      <article class="band"><div class="band-no">01</div><img src="gouzhu-glyph-white.png" alt="构筑"><div><h3>LONG-TERM FRAME</h3><p>玻璃边界 / 金属构筑 / 照明空调 / 基础接口</p></div></article>
+      <article class="band"><div class="band-no">02</div><img src="dieshe-glyph-white.png" alt="叠色"><div><h3>CHANGEABLE LAYER</h3><p>透明有机玻璃 / 色序 / 图形 / 阶段主题</p></div></article>
+      <article class="band"><div class="band-no">03</div><div class="band-word">持续内容</div><div><h3>LIVE CONTENT</h3><p>产品 / 样品 / 案例 / 新工艺 / 客户行业组合</p></div></article>
+    </div>
+  </section>
+
+  <section class="recommend" aria-label="Recommended design combination">
+    <img src="changhe-showroom-exterior.png" alt="A加B推荐组合方案概念图">
+    <div class="recommend-copy" data-reveal>
+      <div class="option">A + B / RECOMMENDED</div>
+      <h2>不是折中</h2>
+      <img class="layer-glyph" src="fenceng-glyph-white.png" alt="分层定制字形">
+      <p>把第一眼与长期使用，分别交给最擅长的系统。</p>
+      <div class="layer-list">
+        <div class="layer-row"><b>A｜透明叠色</b><span>负责第一眼与品牌记忆</span></div>
+        <div class="layer-row"><b>B｜标识构筑</b><span>负责容量、维护与持续更新</span></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section plan-section" id="plan">
+    <div class="section-head" data-reveal>
+      <div class="section-kicker">04 / RENDERED PLAN<span>立体平面总图</span></div>
+      <div class="section-title">
+        <h2>一张总图，看懂展位、<br>选材、洽谈与下单</h2>
+        <p>推荐方案采用一张约4米长的选材台，设置5个坐席。它既是材料比较界面，也是客户与设计人员共同做决定的工作台。</p>
+      </div>
+    </div>
+    <div class="plan-grid" data-reveal>
+      <div class="plan-wrap">
+        <img src="changhe-plan-recommended.png" alt="长河展厅A加B推荐方案俯视立体平面图">
+        <i class="marker m1">01</i><i class="marker m2">02</i><i class="marker m3">03</i><i class="marker m4">04</i><i class="marker m5">05</i><i class="marker m6">06</i><i class="marker m7">07</i>
+      </div>
+      <aside class="legend">
+        <h3>空间关系</h3>
+        <ol>
+          <li><b>01</b><span>主入口 / 平开贴墙</span></li>
+          <li><b>02</b><span>渐进色板 / 产品带</span></li>
+          <li><b>03</b><span>4m选材台 / 5席</span></li>
+          <li><b>04</b><span>双面标识构筑</span></li>
+          <li><b>05</b><span>材料与案例样品墙</span></li>
+          <li><b>06</b><span>样品库 / 推拉门</span></li>
+          <li><b>07</b><span>洽谈会议 / 快速下单</span></li>
+        </ol>
+        <div class="legend-note">16.0 × 6.5 m / 104 m²</div>
+      </aside>
+    </div>
+  </section>
+
+  <section class="section circulation" id="route">
+    <div class="section-head" data-reveal>
+      <div class="section-kicker">05 / CIRCULATION<span>成交动线</span></div>
+      <div class="section-title">
+        <h2>客户走完整体验，<br>员工走最短确认路径</h2>
+        <p>产品带负责吸引，选材台负责比较，洽谈区负责拍板；员工可快速拿样，补货尽量沿展示构筑背线完成。</p>
+      </div>
+    </div>
+    <div class="circulation-grid" data-reveal>
+      <div class="route-plan">
+        <img src="changhe-plan-recommended.png" alt="长河展厅成交动线底图">
+        <svg class="route-overlay" viewBox="0 0 100 60" aria-hidden="true" preserveAspectRatio="none">
+          <path class="customer" d="M96 54 L84 50 L67 41 L59 25 L39 16 L14 38"></path>
+          <path class="staff" d="M96 54 L91 17 L67 41 L14 38"></path>
+        </svg>
+      </div>
+      <aside class="journey">
+        <h3>成交路径</h3>
+        <ol>
+          <li data-no="01"><b>看见</b><span>车间入口第一眼</span></li>
+          <li data-no="02"><b>靠近</b><span>真实尺寸与材料</span></li>
+          <li data-no="03"><b>比较</b><span>产品与色样并置</span></li>
+          <li data-no="04"><b>验证</b><span>结构、节点与工艺</span></li>
+          <li data-no="05"><b>确认</b><span>案例与关键参数</span></li>
+          <li data-no="06"><b>下单</b><span>洽谈区完成拍板</span></li>
+        </ol>
+        <div class="route-key"><span><i></i>客户路线</span><span><i></i>员工捷径</span></div>
+      </aside>
+    </div>
+  </section>
+
+  <section class="section technical" id="technical">
+    <div class="section-head" data-reveal>
+      <div class="section-kicker">06 / DISPLAY &amp; ENVIRONMENT<span>展示与环境</span></div>
+      <div class="section-title">
+        <h2>真正影响下单的是色准、<br>触摸距离与舒适度</h2>
+        <p>视觉概念必须同时解决真实选型、空调、噪声、粉尘与持续维护。</p>
+      </div>
+    </div>
+    <div class="technical-grid" data-reveal>
+      <figure class="technical-image"><img src="changhe-showroom-interior.png" alt="长河展厅玻璃与产品展示概念图"></figure>
+      <div class="technical-list">
+        <article class="tech"><div class="tech-no">01</div><h3>密闭透明边界</h3><p>全高隔音玻璃保留车间视线，同时保证空调、防尘与降噪。</p></article>
+        <article class="tech"><div class="tech-no">02</div><h3>真实色样确认</h3><p>设置中性灰确认面与CRI≥90照明，彩色背景不参与最终色值判断。</p></article>
+        <article class="tech"><div class="tech-no">03</div><h3>可触摸陈列</h3><p>高频样品控制在0.75–1.65m范围；1:1产品留出后退观看距离。</p></article>
+        <article class="tech"><div class="tech-no">04</div><h3>空气与照明</h3><p>4.5m层高建议采用风管机或多联机；轨道灯与线性灯分回路控制。</p></article>
+        <article class="tech"><div class="tech-no">05</div><h3>更换与维护</h3><p>产品骨架机械固定；色板、图形与样品可单独拆换，不破坏玻璃。</p></article>
+      </div>
+    </div>
+  </section>
+
+  <section class="closing">
+    <img src="changhe-showroom-exterior.png" alt="长河标识体验中心概念图">
+    <div class="closing-copy" data-reveal>
+      <img class="closing-glyph" src="changhe-glyph-white.png" alt="长河">
+      <h2>让制造能力<br>成为最快的成交理由</h2>
+      <p>CHANGHE SIGNAGE EXPERIENCE &amp; RAPID ORDER CENTRE<br>长河标识体验与快速成交中心</p>
+      <a class="cta" href="index.html#contact">DISCUSS A PROJECT / 联系项目</a>
+    </div>
+  </section>
+
+  <footer class="footer">
+    <a href="architectural.html#disciplines">← BACK TO ARCHITECTURAL WORKS</a>
+    <span>TRANSITLO · ARCHITECTURE · EXHIBITION · SPATIAL STRATEGY</span>
+  </footer>
 </main>
+
+<script>
+(() => {
+  const items = document.querySelectorAll('[data-reveal]');
+  if (!('IntersectionObserver' in window)) {
+    items.forEach(item => item.classList.add('is-visible'));
+    return;
+  }
+  const observer = new IntersectionObserver(entries => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('is-visible');
+        observer.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.12 });
+  items.forEach(item => observer.observe(item));
+})();
+</script>
 </body>
 </html>
