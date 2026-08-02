@@ -23,8 +23,6 @@
     a{color:inherit;text-decoration:none}
     button{font:inherit}
     .shell{width:min(100%,var(--max));margin:auto;padding-inline:var(--side)}
-
-    /* LOCKED HERO CONTENT: deterministic 2x/200ppi derivative. No generative redraw, crop, object, layout or color redesign. Exact source is retained in assets/original-locked/. */
     .hero{position:relative;background:#151716}
     .hero img{width:100%;height:auto;object-fit:contain;filter:none;transform:none}
     .hotspot{position:absolute;display:block;background:transparent;border:0;cursor:pointer;z-index:5}
@@ -32,6 +30,13 @@
     .hotspot-language{right:7.5%;top:2%;width:10%;height:7%}
     .hotspot-menu{right:1.7%;top:2%;width:4.5%;height:7%}
     .hotspot-scroll{right:1.7%;bottom:4%;width:9%;height:11%}
+    .back-architecture{
+      position:fixed;z-index:65;left:clamp(12px,2vw,28px);top:64px;display:inline-flex;align-items:center;gap:8px;
+      padding:9px 12px;border:1px solid rgba(255,255,255,.34);background:rgba(16,18,17,.76);color:#fff;
+      font-size:10px;line-height:1;letter-spacing:.08em;text-transform:uppercase;backdrop-filter:blur(8px);
+      -webkit-backdrop-filter:blur(8px);transition:background .2s ease,border-color .2s ease
+    }
+    .back-architecture:hover{background:rgba(16,18,17,.94);border-color:rgba(255,255,255,.72)}
 
     .board-sections{background:#efefec;border-top:1px solid rgba(255,255,255,.15)}
     .board-panel{position:relative;margin:0 auto;border-bottom:1px solid var(--line);background:#efefec;cursor:zoom-in}
@@ -50,7 +55,6 @@
     .cards{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));border-left:1px solid var(--line)}
     .card{min-width:0;border-right:1px solid var(--line);border-bottom:1px solid var(--line);background:#f4f4f1}
     .locked-card-media{position:relative;aspect-ratio:4/3;background:#ddd;cursor:zoom-in;overflow:hidden}
-    /* LOCKED PROJECT PHOTO CONTENT: full uncropped 2x/200ppi deterministic derivatives; composition and objects unchanged. Exact sources retained in assets/original-locked/. */
     .locked-card-media img{width:100%;height:100%;object-fit:contain;background:#171918;filter:none;transform:none}
     .card-copy{padding:14px 13px 18px;min-height:180px}
     .card-index{font-size:26px;line-height:1;font-weight:400;letter-spacing:-.05em;margin-bottom:8px}
@@ -89,6 +93,8 @@
     @media(max-width:640px){
       .hero{overflow-x:auto}.hero img{width:100%;min-width:760px}
       .hotspot{display:none}
+      .back-architecture{top:12px;left:12px;padding:9px 10px;font-size:9px}
+      .back-architecture .back-long{display:none}
       .board-panel{overflow-x:auto}.board-panel img{min-width:760px}
       .cards{grid-template-columns:1fr}
       .card-copy{min-height:0}
@@ -99,9 +105,12 @@
   </style>
 </head>
 <body>
+  <a class="back-architecture" href="architectura.html" aria-label="返回建筑与住宅页面">
+    <span aria-hidden="true">←</span><span class="back-long">ARCHITECTURE &amp; RESIDENTIAL / </span><span>建筑页</span>
+  </a>
   <main id="top">
     <section class="hero" aria-label="River Orchard Park hero — locked final artwork">
-      <img src="assets/locked/hero-locked.png" data-original="assets/original-locked/hero-locked.png" alt="River Orchard Park 河湾果林公园 hero">
+      <img src="assets/locked/hero-locked.png" alt="River Orchard Park 河湾果林公园 hero">
       <a class="hotspot hotspot-home" href="index.html" aria-label="返回 TransitLo 首页"></a>
       <button class="hotspot hotspot-language" type="button" aria-label="Language selector"></button>
       <button class="hotspot hotspot-menu" id="menuOpen" type="button" aria-label="打开菜单"></button>
@@ -122,27 +131,27 @@
       <div class="shell">
         <div class="experience-head">
           <div class="experience-kicker"><strong>SPATIAL EXPERIENCE</strong>空间体验<br>TRẢI NGHIỆM KHÔNG GIAN</div>
-          <div class="experience-note"></div>
+          <div class="experience-note" aria-hidden="true"></div>
         </div>
         <div class="cards">
           <article class="card">
-            <div class="locked-card-media lightbox-item" data-title="01 Waterfront Promenade / 河畔步道 / Lối dạo ven sông"><img src="assets/locked/01-waterfront-promenade.png" data-original="assets/original-locked/01-waterfront-promenade.png" alt="Waterfront promenade"></div>
+            <div class="locked-card-media lightbox-item" data-title="01 Waterfront Promenade / 河畔步道 / Lối dạo ven sông"><img src="assets/locked/01-waterfront-promenade.png" alt="Waterfront promenade"></div>
             <div class="card-copy"><div class="card-index">01</div><h2 class="card-title">Waterfront Promenade</h2><p class="card-cn">河畔步道</p><p class="card-vi">Lối dạo ven sông</p><ul class="card-list"><li>林下滨河慢行体验</li><li>连续步行与观景节点</li><li>保留现状森林与河道氛围</li></ul></div>
           </article>
           <article class="card">
-            <div class="locked-card-media lightbox-item" data-title="02 Natural Lawn / Family Picnic Zone / 自然草坪与家庭野餐区"><img src="assets/locked/02-natural-lawn-family-picnic.png" data-original="assets/original-locked/02-natural-lawn-family-picnic.png" alt="Natural lawn and family picnic zone"></div>
+            <div class="locked-card-media lightbox-item" data-title="02 Natural Lawn / Family Picnic Zone / 自然草坪与家庭野餐区"><img src="assets/locked/02-natural-lawn-family-picnic.png" alt="Natural lawn and family picnic zone"></div>
             <div class="card-copy"><div class="card-index">02</div><h2 class="card-title">Natural Lawn / Family Picnic Zone</h2><p class="card-cn">自然草坪／家庭野餐区</p><p class="card-vi">Bãi cỏ tự nhiên / Khu dã ngoại gia đình</p><ul class="card-list"><li>大尺度开放平地</li><li>野餐、露营与家庭活动</li><li>草坪边缘设置避雨节点</li></ul></div>
           </article>
           <article class="card">
-            <div class="locked-card-media lightbox-item" data-title="03 Forest Exercise / Activity Zone / 林下健身与活动区"><img src="assets/locked/03-forest-exercise-activity.png" data-original="assets/original-locked/03-forest-exercise-activity.png" alt="Forest exercise and activity zone"></div>
+            <div class="locked-card-media lightbox-item" data-title="03 Forest Exercise / Activity Zone / 林下健身与活动区"><img src="assets/locked/03-forest-exercise-activity.png" alt="Forest exercise and activity zone"></div>
             <div class="card-copy"><div class="card-index">03</div><h2 class="card-title">Forest Exercise / Activity Zone</h2><p class="card-cn">林下健身／活动区</p><p class="card-vi">Khu vận động dưới tán cây</p><ul class="card-list"><li>林下健身器材与活动场地</li><li>适合儿童、成人及长者</li><li>保持现状林冠和自然遮荫</li></ul></div>
           </article>
           <article class="card">
-            <div class="locked-card-media lightbox-item" data-title="04 Riverside Cycling Route / 河畔自行车道 / Tuyến đường xe đạp ven sông"><img src="assets/locked/04-riverside-cycling-route.png" data-original="assets/original-locked/04-riverside-cycling-route.png" alt="Riverside cycling route"></div>
+            <div class="locked-card-media lightbox-item" data-title="04 Riverside Cycling Route / 河畔自行车道 / Tuyến đường xe đạp ven sông"><img src="assets/locked/04-riverside-cycling-route.png" alt="Riverside cycling route"></div>
             <div class="card-copy"><div class="card-index">04</div><h2 class="card-title">Riverside Cycling Route</h2><p class="card-cn">河畔自行车道</p><p class="card-vi">Tuyến đường xe đạp ven sông</p><ul class="card-list"><li>加宽连续骑行通道</li><li>连接公园主要功能节点</li><li>沿线设置轻型骑行驿站</li></ul></div>
           </article>
           <article class="card">
-            <div class="locked-card-media lightbox-item" data-title="05 Climbing Wall & Sand Play Zone / 攀岩墙与沙池"><img src="assets/locked/05-climbing-wall-sand-play.png" data-original="assets/original-locked/05-climbing-wall-sand-play.png" alt="Climbing wall and sand play zone"></div>
+            <div class="locked-card-media lightbox-item" data-title="05 Climbing Wall & Sand Play Zone / 攀岩墙与沙池"><img src="assets/locked/05-climbing-wall-sand-play.png" alt="Climbing wall and sand play zone"></div>
             <div class="card-copy"><div class="card-index">05</div><h2 class="card-title">Climbing Wall & Sand Play Zone</h2><p class="card-cn">攀岩墙／沙池</p><p class="card-vi">Khu leo trèo và hố cát</p><ul class="card-list"><li>横向延展的儿童攀岩墙</li><li>扩大的自然沙池活动区</li><li>家长看护与亲子互动空间</li></ul></div>
           </article>
         </div>
