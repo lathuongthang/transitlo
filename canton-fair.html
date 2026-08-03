@@ -1,136 +1,118 @@
 <!doctype html>
-<html lang="en">
+<html lang="zh-CN">
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
-<title>TRANSITLO — Canton Fair Pavilion</title>
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<title>Vietnam Agriculture Pavilion — TRANSITLO</title>
 <style>
-:root{--w:1171px;--ink:#111;--muted:#6b6b6b;--line:#ddd;--accent:#b68b4d;--section-gap:8px}
+:root{
+  --w:1171px;
+  --ink:#171817;
+  --charcoal:#252624;
+  --deep:#191a18;
+  --paper:#f4f2ee;
+  --paper2:#e6e4dc;
+  --sage:#e3e8e1;
+  --mist:#e7e9e8;
+  --clay:#c0aa98;
+  --sand:#eee7dd;
+  --warm:#9b816a;
+  --warm-dark:#745f4f;
+  --muted:#6f706c;
+  --line:#d9d6cf;
+}
 *{box-sizing:border-box}
-html,body{margin:0;padding:0;background:#fff;color:var(--ink);font-family:"Inter","Microsoft YaHei",Arial,sans-serif;-webkit-font-smoothing:antialiased;text-rendering:geometricPrecision}
-body{min-width:320px}
+html{scroll-behavior:smooth}
+html,body{margin:0;background:#dad8d3;color:var(--ink);font-family:Inter,"Microsoft YaHei",Arial,sans-serif;-webkit-font-smoothing:antialiased}
+a{color:inherit;text-decoration:none}
 img{display:block;width:100%;height:100%;object-fit:cover}
 .page{width:min(100%,var(--w));margin:auto;background:#fff;overflow:hidden}
-.page>header,.page>section,.page>footer,.page>section>div,.page>footer>div,.overview-left>div,.strategy-left>div,.gallery-mosaic>div{min-width:0;min-height:0;overflow:hidden}
-.header{height:44px;min-height:44px;max-height:44px;padding:0 61px;display:flex;align-items:center;justify-content:space-between;background:#fff;font-size:8.64px;font-weight:600;line-height:1;letter-spacing:.45px}
-.brand{font-size:14.04px;font-weight:600;line-height:1;letter-spacing:3.1px}.brand a{color:#111;text-decoration:none}
-.nav{display:flex;align-items:center;gap:28px}.nav a{color:#111;text-decoration:none;font-weight:600}.langs{display:flex;gap:7px;font-weight:500}.langs span+span:before{content:"|";margin-right:7px;color:#999}
-.hero{height:404px;min-height:404px;max-height:404px;position:relative;color:#fff;background:#222;overflow:hidden}
-.hero>img{filter:brightness(.78)}
-.hero:after{content:"";position:absolute;inset:0;background:linear-gradient(90deg,rgba(0,0,0,.82) 0%,rgba(0,0,0,.45) 29%,rgba(0,0,0,0) 59%)}
-.hero-copy{position:absolute;z-index:2;left:61px;top:96px;width:390px}
-.hero h1{margin:0;font-size:40px;line-height:1.15;font-weight:400;letter-spacing:.45px}.hero h1 strong{display:block;font-weight:700;letter-spacing:.25px}
-.hero h2{margin:13px 0 10px;font-size:18px;line-height:1.25;font-weight:500;letter-spacing:.05px}.hero .cn{font-size:16px;line-height:1.4;font-weight:600;letter-spacing:.1px}
-.hero .place{position:absolute;z-index:2;left:61px;bottom:57px;font-size:9px;line-height:1;font-weight:600;letter-spacing:.7px}.hero .place:after{content:"";display:block;width:56px;border-bottom:1px solid #fff;margin-top:13px}
-.overview{height:294px;min-height:294px;max-height:294px;padding-top:var(--section-gap);display:grid;grid-template-columns:602fr 569fr;grid-template-rows:286px;background:#fff;border-bottom:1px solid #eee}
-.overview-left{height:286px;padding:40px 40px 24px 61px;display:grid;grid-template-columns:225px 1fr;grid-template-rows:222px;gap:31px}
-.overview-photo{height:286px;min-height:0;overflow:hidden}
-.section-title{margin:0 0 10px;font-size:11.88px;line-height:1.28;font-weight:700;letter-spacing:.08px}.section-title span{display:block;margin-top:2px;font-size:11.34px;line-height:1.35;font-weight:600;letter-spacing:.05px}.section-title:after{content:"";display:block;width:30px;border-bottom:1.5px solid #222;margin-top:8px}
-.sketch{height:175px;margin-top:10px;display:flex;align-items:center;justify-content:center;color:#888}
-.sketch img{width:100%;height:100%;object-fit:contain}
-.facts{position:relative;padding-top:44px;font-size:9.18px;font-weight:400;line-height:1.35;letter-spacing:0}.client-badge{position:absolute;top:0;right:0;width:42px;height:42px;object-fit:contain}.fact{display:grid;grid-template-columns:104px 1fr;gap:6px;padding:7px 0;border-bottom:1px solid #ddd;line-height:1.35}.fact b{font-weight:600}.fact:last-child{border:0}
-.strategy{height:296px;min-height:296px;max-height:296px;display:grid;grid-template-columns:602fr 569fr;grid-template-rows:296px;border-bottom:1px solid #eee}
-.strategy-left{height:296px;padding:26px 24px 16px 61px;display:grid;grid-template-columns:125px 1fr;grid-template-rows:254px;gap:20px}.legend{font-size:8.1px;line-height:1.4;font-weight:500;letter-spacing:.03px;color:#666;margin-top:12px}.legend-item{display:grid;grid-template-columns:22px 1fr;align-items:center;gap:8px;margin:15px 0}.legend-icon{font-size:17.28px;color:#888}.diagram{height:245px;align-self:end}.diagram img{width:100%;height:100%;object-fit:contain}
-.communication{height:296px;min-height:0;overflow:hidden;padding:28px 58px 20px 34px}.communication-images{height:128px;min-height:0;display:grid;grid-template-columns:1fr 1fr;grid-template-rows:128px;gap:12px;margin-top:12px;overflow:hidden}.communication-images img{min-height:0;overflow:hidden}.communication p{font-size:9.18px;line-height:1.42;font-weight:400;letter-spacing:.01px;margin:13px 0 0}.communication p span{display:block;margin-top:2px;font-weight:600}
-.gallery{height:186px;min-height:186px;max-height:186px;padding:12px 58px 14px 61px;display:grid;grid-template-columns:150px 330px 1fr;grid-template-rows:159px;gap:18px;border-bottom:1px solid #eee}
-.gallery-heading{padding-top:12px}.gallery-main{height:159px;min-height:0;overflow:hidden}.gallery-mosaic{height:159px;min-height:0;display:grid;grid-template-rows:83px 70px;gap:6px;overflow:hidden}.gallery-top{height:83px;min-height:0;display:grid;grid-template-columns:repeat(3,1fr);grid-template-rows:83px;gap:6px;overflow:hidden}.gallery-top img{min-width:0;min-height:0;overflow:hidden}.gallery-bottom{height:70px;min-height:0;overflow:hidden}
-.footer{height:127px;min-height:127px;max-height:127px;display:grid;grid-template-columns:230px 333px 290px 318px;grid-template-rows:127px;overflow:hidden}
-.impact-title{padding:28px 0 0 61px}.impact-copy{padding:27px 20px 0 0;font-size:9.18px;line-height:1.45;font-weight:400;letter-spacing:.01px;color:#3e3e3e}.impact-copy .cn{display:block;margin-top:8px;font-size:9.18px;line-height:1.5;font-weight:600}
-.impact-sketch{padding:22px 20px 0}.impact-sketch img{width:100%;height:85px;object-fit:contain}
-.contact{background:#181818;color:#fff;padding:27px 33px}.contact h3{font-size:10.5px;line-height:1.2;font-weight:600;letter-spacing:.12px;margin:0 0 5px}.contact .cn{font-size:8.5px;line-height:1.4;font-weight:500}.contact .rule{width:30px;border-bottom:1px solid #aaa;margin:9px 0}.contact a{display:inline-flex;border:1px solid #aaa;color:#fff;text-decoration:none;padding:8px 24px;font-size:7.5px;line-height:1;font-weight:500;letter-spacing:.2px}
-.zoomable{cursor:zoom-in;filter:saturate(.58) contrast(.9) brightness(.88);transition:filter .25s ease}
-.zoomable:hover{filter:saturate(.72) contrast(.94) brightness(.93)}
-.lightbox{position:fixed;z-index:9999;inset:0;display:none;align-items:center;justify-content:center;padding:42px;background:rgba(0,0,0,.94)}
-.lightbox.open{display:flex}
-.lightbox-image{display:block;width:auto;height:auto;max-width:94vw;max-height:90vh;object-fit:contain;cursor:default;box-shadow:0 0 0 1px rgba(255,255,255,.12)}
-.lightbox-close,.lightbox-prev,.lightbox-next{position:fixed;z-index:2;border:0;background:rgba(0,0,0,.28);color:#fff;cursor:pointer;font-family:Inter,sans-serif}
-.lightbox-close{top:18px;right:24px;width:42px;height:42px;font-size:28px;line-height:42px}
-.lightbox-prev,.lightbox-next{top:50%;width:48px;height:72px;margin-top:-36px;font-size:34px}
-.lightbox-prev{left:18px}.lightbox-next{right:18px}
-.lightbox-count{position:fixed;left:50%;bottom:17px;transform:translateX(-50%);color:#fff;font-size:10px;letter-spacing:1px}
-@media(max-width:700px){.header{padding:0 18px}.nav a{display:none}.hero-copy{left:24px;top:82px}.hero .place{left:24px}.overview,.strategy{height:auto;grid-template-columns:1fr}.overview-left{min-height:286px;padding-left:24px}.overview-photo{height:260px}.strategy-left{min-height:296px;padding-left:24px}.communication{min-height:260px;padding-left:24px}.gallery{height:auto;padding:24px;grid-template-columns:1fr}.gallery-heading{height:75px}.gallery-main,.gallery-mosaic{height:240px}.footer{height:auto;grid-template-columns:1fr 1fr}.impact-title{padding-left:24px}.contact{min-height:127px}.lightbox{padding:16px}.lightbox-prev{left:4px}.lightbox-next{right:4px}}
+.header{height:44px;padding:0 61px;display:flex;align-items:center;justify-content:space-between;background:#fff;font-size:8.5px;font-weight:600;letter-spacing:.45px}
+.brand{font-size:13px;letter-spacing:3.1px}.nav{display:flex;align-items:center;gap:24px}.langs{display:flex;gap:7px;font-weight:500}.langs span+span:before{content:"|";margin-right:7px;color:#aaa}
+.hero{display:grid;grid-template-columns:48% 52%;min-height:520px;background:var(--charcoal);color:#fff}
+.hero-copy{position:relative;padding:72px 48px 42px 61px}
+.eyebrow{font-size:8.5px;letter-spacing:1.65px;color:rgba(255,255,255,.72);margin-bottom:25px}
+.hero h1{margin:0;font-size:44px;line-height:1.03;font-weight:300;letter-spacing:-1px}.hero h1 strong{display:block;font-weight:600}
+.hero-cn{margin-top:18px;font-size:14px;font-weight:500}.hero-vi{margin-top:6px;font-size:8.5px;line-height:1.55;letter-spacing:.4px;color:rgba(255,255,255,.65)}
+.hero-note{position:absolute;left:61px;right:48px;bottom:38px;padding-top:15px;border-top:1px solid rgba(255,255,255,.25);display:flex;justify-content:space-between;font-size:8px;letter-spacing:.8px;color:rgba(255,255,255,.66)}
+.hero-visual{position:relative;overflow:hidden}.hero-visual img{object-position:center 56%}
+.hero-visual:after{content:"";position:absolute;inset:0;background:linear-gradient(90deg,rgba(37,38,36,.35),transparent 36%),linear-gradient(0deg,rgba(0,0,0,.2),transparent 40%)}
+.hero-tag{position:absolute;z-index:2;right:23px;top:22px;padding:8px 11px;border:1px solid rgba(255,255,255,.55);font-size:7.5px;letter-spacing:1.1px;color:#fff}
+.hero-accent{position:absolute;z-index:2;right:0;bottom:0;width:42%;height:10px;background:#9a8878}
+.intro{display:grid;grid-template-columns:220px 1fr;padding:49px 61px 54px;border-bottom:1px solid var(--line);background:#efeee9}
+.section-label{font-size:9px;line-height:1.45;font-weight:600;letter-spacing:.25px}.section-label span{display:block;margin-top:4px;font-weight:500}.section-label:after{content:"";display:block;width:31px;margin-top:11px;border-bottom:1.5px solid #111}
+.intro-main{display:grid;grid-template-columns:1.18fr .82fr;gap:52px}.statement{font-size:25px;line-height:1.25;font-weight:300;letter-spacing:-.35px}.statement strong{font-weight:600}.statement-cn{margin-top:20px;color:#4f504d;font-size:10.5px;line-height:1.8}
+.facts{display:grid;grid-template-columns:1fr 1fr;border-top:1px solid var(--ink);position:relative}.client-mark{grid-column:1/3;height:48px;padding:8px 0 9px;border-bottom:1px solid var(--line);background:rgba(227,232,225,.65)}.client-mark img{width:auto;height:100%;object-fit:contain;object-position:left center}.fact{padding:13px 0;border-bottom:1px solid var(--line);background:rgba(255,255,255,.34)}.fact:nth-child(even){padding-right:18px}.fact:nth-child(odd){padding-left:18px;border-left:1px solid var(--line)}.fact b{display:block;margin-bottom:7px;font-size:7.5px;letter-spacing:1px;color:#888}.fact span{font-size:9px;line-height:1.45}
+.context{background:var(--paper);padding:49px 61px 57px;position:relative}.context:before{content:"";position:absolute;right:0;top:0;width:17%;height:7px;background:#a5aca4}.section-head{display:flex;align-items:flex-end;justify-content:space-between;margin-bottom:25px}.section-head h2{margin:0;font-size:12px;line-height:1.35;font-weight:600}.section-head h2 span{display:block;margin-top:3px;font-size:10px;font-weight:500}.section-head p{margin:0;max-width:420px;color:#6f706c;font-size:8px;line-height:1.55;text-align:right;letter-spacing:.25px}
+.context-grid{display:grid;grid-template-columns:1.35fr .65fr;grid-template-rows:318px 154px;gap:16px}
+.context-main{grid-row:1/3;position:relative;overflow:hidden}.context-main img{object-position:center}.context-main:after{content:"01 / CONTEXT";position:absolute;left:18px;bottom:16px;color:#fff;font-size:8px;letter-spacing:1px}
+.context-sketch{background:#fff;padding:30px}.context-sketch img{object-fit:contain;mix-blend-mode:multiply}
+.context-copy{background:#8f8174;color:#fff;padding:23px 25px}.context-copy b{display:block;font-size:14px;font-weight:500;line-height:1.25}.context-copy p{margin:11px 0 0;font-size:8.5px;line-height:1.62;color:rgba(255,255,255,.82)}
+.strategy{background:var(--deep);color:#fff;padding:53px 61px 60px}.strategy .section-head{margin-bottom:30px}.strategy .section-head h2 span,.strategy .section-head p{color:rgba(255,255,255,.58)}
+.strategy-top{display:grid;grid-template-columns:.74fr 1.26fr;gap:18px;margin-bottom:18px}.strategy-copy{position:relative;background:#2b2c29;padding:35px 32px 30px;min-height:292px}.strategy-copy:before{content:"";position:absolute;left:0;top:0;width:8px;height:100%;background:var(--warm)}.strategy-copy h3{margin:0;font-size:27px;line-height:1.08;font-weight:300}.strategy-copy h3 strong{font-weight:600}.strategy-copy p{margin:24px 0 0;color:#bdbbb3;font-size:9.5px;line-height:1.72}.strategy-diagram{height:292px;background:#efede8;padding:21px}.strategy-diagram img{object-fit:contain}
+.strategy-axis{display:grid;grid-template-columns:repeat(4,1fr);border-top:1px solid rgba(255,255,255,.25);border-bottom:1px solid rgba(255,255,255,.25)}.axis-item{padding:19px 17px 21px;border-right:1px solid rgba(255,255,255,.16)}.axis-item:last-child{border-right:0}.axis-item small{font-size:7px;color:#86867f}.axis-item b{display:block;margin-top:11px;font-size:9px;letter-spacing:.45px}.axis-item span{display:block;margin-top:7px;color:#a5a49d;font-size:8px;line-height:1.5}
+.communication{padding:49px 61px 58px;background:var(--sage)}.communication-grid{display:grid;grid-template-columns:1fr 1fr;gap:18px}.photo-card{position:relative;height:316px;overflow:hidden}.photo-card:after{content:"";position:absolute;left:0;right:0;bottom:0;height:31%;background:linear-gradient(transparent,rgba(0,0,0,.58))}.photo-caption{position:absolute;z-index:2;left:18px;right:18px;bottom:15px;display:flex;justify-content:space-between;align-items:flex-end;color:#fff}.photo-caption b{font-size:9px;letter-spacing:.55px}.photo-caption span{font-size:7.5px;color:rgba(255,255,255,.72)}
+.experience{background:var(--paper2);padding:49px 61px 61px}.experience-layout{display:grid;grid-template-columns:1.12fr .88fr;grid-template-rows:245px 150px 180px;gap:16px}.experience-main{grid-row:1/4;position:relative;overflow:hidden}.experience-main img{object-position:center}.experience-main:after{content:"PRIMARY VIEW / 主入口视角";position:absolute;left:18px;bottom:16px;color:#fff;font-size:8px;letter-spacing:.75px}.detail-strip{display:grid;grid-template-columns:repeat(3,1fr);gap:10px}.detail-strip>div{overflow:hidden}.panorama{overflow:hidden}.panorama img{object-position:center}.experience-quote{background:var(--charcoal);color:#fff;padding:27px 28px}.experience-quote b{display:block;font-size:18px;line-height:1.18;font-weight:400}.experience-quote p{margin:12px 0 0;color:#c6c4bd;font-size:8.5px;line-height:1.62}
+.identity{display:grid;grid-template-columns:.82fr 1.18fr;min-height:340px;background:var(--sand)}.identity-art{position:relative;background:var(--paper);padding:53px 60px}.identity-art img{object-fit:contain;mix-blend-mode:multiply}.identity-art:after{content:"04 / IDENTITY";position:absolute;left:30px;top:27px;font-size:8px;letter-spacing:.9px;color:#777}.identity-copy{padding:58px 61px;background:var(--sand)}.identity-copy h3{margin:0;font-size:27px;line-height:1.18;font-weight:300}.identity-copy h3 strong{font-weight:600;color:var(--warm-dark)}.identity-copy p{margin:25px 0 0;color:#595a56;font-size:9.5px;line-height:1.8}.identity-rule{width:36px;margin-top:26px;border-bottom:2px solid var(--warm)}
+.footer{min-height:132px;display:grid;grid-template-columns:220px 1fr 285px;background:#f1f0eb;border-top:1px solid var(--line)}.footer-title{padding:30px 0 0 61px}.footer-copy{padding:29px 35px 25px 0;color:#454641;font-size:9px;line-height:1.55}.footer-copy span{display:block;margin-top:8px;font-weight:500}.contact{padding:29px 32px;background:#181918;color:#fff}.contact h3{margin:0;font-size:11px}.contact div{margin-top:6px;font-size:8.5px;color:#aaa}.contact i{display:block;width:31px;margin:11px 0;border-bottom:1px solid #777}.contact b{display:inline-block;padding:8px 22px;border:1px solid #777;font-size:7.5px;font-weight:500}
+.lock-note{position:fixed;right:14px;bottom:14px;z-index:8;background:rgba(23,24,23,.87);color:#fff;padding:8px 11px;font-size:7px;letter-spacing:.7px}
+@media(max-width:700px){
+ .header{height:54px;padding:0 20px}.nav>a{display:none}.hero{grid-template-columns:1fr}.hero-copy{min-height:340px;padding:63px 22px 88px}.hero h1{font-size:31px}.hero-note{left:22px;right:22px}.hero-visual{height:300px}.intro{padding:31px 22px;grid-template-columns:1fr;gap:24px}.intro-main{grid-template-columns:1fr;gap:28px}.context,.strategy,.communication,.experience{padding:35px 22px 42px}.section-head{align-items:flex-start;gap:18px}.section-head p{max-width:155px}.context-grid,.strategy-top,.communication-grid,.experience-layout,.identity{grid-template-columns:1fr}.context-grid{grid-template-rows:320px 230px auto}.context-main{grid-row:auto}.strategy-axis{grid-template-columns:1fr 1fr}.axis-item:nth-child(2){border-right:0}.axis-item:nth-child(n+3){border-top:1px solid rgba(255,255,255,.16)}.photo-card{height:250px}.experience-layout{grid-template-rows:380px 120px 170px auto}.experience-main{grid-row:auto}.identity-art{min-height:290px}.identity-copy{padding:39px 22px}.footer{grid-template-columns:1fr}.footer-title,.footer-copy,.contact{padding-left:22px}.lock-note{display:none}
+}
 </style>
 </head>
 <body>
 <main class="page">
-  <header class="header" data-zone="header">
-    <div class="brand"><a href="https://lathuongthang.github.io/transitlo/" aria-label="Back to homepage">TRANSITLO</a></div>
-    <nav class="nav"><a href="#works">◉&nbsp; WORKS</a><a href="#about">ABOUT</a><a href="#contact">CONTACT</a><div class="langs"><span>中文</span><span>EN</span><span>VI</span></div></nav>
-  </header>
-
-  <section class="hero" id="works" data-zone="hero">
-    <img src="cantonfair-2-banner.png" alt="Exhibition venue">
-    <div class="hero-copy"><h1>CANTON FAIR <strong>PAVILION</strong></h1><h2>EXHIBITION DESIGN</h2><div class="cn">广交会展览空间设计</div></div>
-    <div class="place">GUANGZHOU, CHINA</div>
-  </section>
-
-  <section class="overview" data-zone="project-overview">
-    <div class="overview-left" data-zone="overview-information">
-      <div><h2 class="section-title">PROJECT OVERVIEW<span>项目概况</span></h2><div class="sketch"><img src="cantonfairTL1.png" alt="Project overview diagram"></div></div>
-      <div class="facts"><img class="client-badge" src="agritrade-logo.png" alt="AGRITRADE logo"><div class="fact"><b>Project</b><span>Canton Fair Pavilion<br>AGRITRADE</span></div><div class="fact"><b>Location</b><span>Guangzhou, China</span></div><div class="fact"><b>Client</b><span>AGRITRADE</span></div><div class="fact"><b>Role</b><span>Exhibition Design<br>Spatial Strategy</span></div><div class="fact"><b>Year</b><span>2024</span></div><div class="fact"><b>Scope</b><span>Concept Design, Space Planning,<br>Exhibition Experience Design</span></div></div>
-    </div>
-    <div class="overview-photo" data-zone="overview-photo"><img src="banner2.JPG" alt="Exhibition pavilion"></div>
-  </section>
-
-  <section class="strategy" data-zone="spatial-strategy">
-    <div class="strategy-left" data-zone="strategy-diagram">
-      <div><h2 class="section-title">SPATIAL STRATEGY<span>空间策略</span></h2><div class="legend"><div class="legend-item"><span class="legend-icon">↥</span><span>ENTRANCE<br>入口引导</span></div><div class="legend-item"><span class="legend-icon">♜</span><span>EXHIBITION<br>展示空间</span></div><div class="legend-item"><span class="legend-icon">♧</span><span>COMMUNICATION<br>交流互动</span></div><div class="legend-item"><span class="legend-icon">♨</span><span>EXPERIENCE<br>体验深化</span></div></div></div>
-      <div class="diagram"><img src="cantonfairTR1.png" alt="Spatial strategy diagram"></div>
-    </div>
-    <div class="communication" data-zone="project-communication"><h2 class="section-title">PROJECT COMMUNICATION<span>项目交流与现场沟通</span></h2><div class="communication-images"><img class="zoomable" src="contonfairtalk.JPG" alt="Project team" title="Click to view original image"><img class="zoomable" src="cantonfair all.JPG" alt="Project communication" title="Click to view original image"></div><p>Official communication and project exchange during the exhibition event.<span>展览期间的官方交流与现场沟通。</span></p></div>
-  </section>
-
-  <section class="gallery" data-zone="gallery"><div class="gallery-heading" data-zone="gallery-title"><h2 class="section-title">EXHIBITION EXPERIENCE<span>展览体验</span></h2></div><div class="gallery-main" data-zone="gallery-main"><img class="zoomable" src="workL1.JPG" alt="Exhibition experience" title="Click to view original image"></div><div class="gallery-mosaic" data-zone="gallery-mosaic"><div class="gallery-top"><img class="zoomable" src="cantonfairL.jpg" alt="Exhibition view" title="Click to view original image"><img class="zoomable" src="contonfairF.jpg" alt="Exhibition view" title="Click to view original image"><img class="zoomable" src="cantonfairR.jpg" alt="Exhibition view" title="Click to view original image"></div><div class="gallery-bottom"><img class="zoomable" src="cantonfairFL.png" alt="Panoramic exhibition view" title="Click to view original image"></div></div></section>
-
-  <footer class="footer" id="contact" data-zone="footer"><div class="impact-title" data-zone="impact-title"><h2 class="section-title">PROJECT IMPACT<span>项目价值</span></h2></div><div class="impact-copy" data-zone="impact-copy">The exhibition space connects brand communication, spatial experience and international exchange, creating value for both exhibitors and visitors.<span class="cn">展览空间连接品牌展示、交流体验与国际合作，为参展方与参观者创造价值。</span></div><div class="impact-sketch" data-zone="impact-sketch"><img src="cantonfairlast1.png" alt="Project impact diagram"></div><div class="contact" data-zone="contact"><h3>LET’S WORK TOGETHER</h3><div class="cn">期待与您合作</div><div class="rule"></div><a href="https://lathuongthang.github.io/transitlo/#contact">CONTACT US</a></div></footer>
+<header class="header"><a class="brand" href="index.html" aria-label="Back to homepage">TRANSITLO</a><nav class="nav"><a href="#context">PROJECT</a><a href="#experience">EXPERIENCE</a><a href="#contact">CONTACT</a><div class="langs"><span>中文</span><span>EN</span><span>VI</span></div></nav></header>
+<section class="hero">
+  <div class="hero-copy">
+    <div class="eyebrow">TEMPORARY PAVILION / BRAND & TRADE EXHIBITION</div>
+    <h1>VIETNAM <strong>AGRICULTURE PAVILION</strong></h1>
+    <div class="hero-cn">越南农业主题展馆 · 广交会</div>
+    <div class="hero-vi">GIAN HÀNG NÔNG NGHIỆP VIỆT NAM · HỘI CHỢ CANTON</div>
+    <div class="hero-note"><span>GUANGZHOU · CHINA</span><span>AGRITRADE · 2024</span></div>
+  </div>
+  <div class="hero-visual"><img src="banner2.JPG" alt="Original Canton Fair pavilion photograph"><div class="hero-tag">PROJECT 01</div><div class="hero-accent"></div></div>
+</section>
+<section class="intro">
+  <div class="section-label">PROJECT POSITIONING<span>项目定位</span></div>
+  <div class="intro-main">
+    <div><div class="statement">A compact exhibition environment translating a diverse agricultural portfolio into a <strong>clear spatial identity.</strong></div><div class="statement-cn">通过清晰、克制的空间秩序，将越南多元农业产品转化为统一、开放且易于识别的展示形象。</div></div>
+    <div class="facts"><div class="client-mark"><img src="agritrade-logo.png" alt="AGRITRADE"></div><div class="fact"><b>CLIENT</b><span>AGRITRADE</span></div><div class="fact"><b>YEAR</b><span>2024</span></div><div class="fact"><b>LOCATION</b><span>Guangzhou, China</span></div><div class="fact"><b>TYPE</b><span>Temporary Pavilion</span></div><div class="fact"><b>ROLE</b><span>Exhibition Design<br>Spatial Strategy</span></div><div class="fact"><b>SCOPE</b><span>Concept · Planning · Experience</span></div></div>
+  </div>
+</section>
+<section class="context" id="context">
+  <div class="section-head"><h2>CONTEXT & FIRST IMPRESSION<span>场景与第一印象</span></h2><p>HIGH-DENSITY TRADE ENVIRONMENT · CLEAR VISUAL PRESENCE</p></div>
+  <div class="context-grid">
+    <div class="context-main"><img src="cantonfair-2-banner.png" alt="Original Canton Fair venue photograph"></div>
+    <div class="context-sketch"><img src="cantonfairTL1.png" alt="Original project overview sketch"></div>
+    <div class="context-copy"><b>Visibility without visual overload.</b><p>在信息高度密集的广交会环境中，通过清晰边界与开放入口，让展馆保持辨识度而不陷入符号堆积。</p></div>
+  </div>
+</section>
+<section class="strategy">
+  <div class="section-head"><h2>SPATIAL STRATEGY<span>空间策略</span></h2><p>ONE FRAMEWORK · MULTIPLE CONTENTS · CONTROLLED IDENTITY</p></div>
+  <div class="strategy-top"><div class="strategy-copy"><h3>Spatial clarity <strong>before decoration.</strong></h3><p>以统一的建筑框架组织入口、展示、交流与体验。空间比例、观看距离与动线关系先建立秩序，再承载品牌和产品内容。</p></div><div class="strategy-diagram"><img src="cantonfairTR1.png" alt="Original spatial strategy diagram"></div></div>
+  <div class="strategy-axis"><div class="axis-item"><small>01</small><b>ENTRANCE</b><span>开放入口<br>Open threshold</span></div><div class="axis-item"><small>02</small><b>DISPLAY</b><span>分层展示<br>Layered display</span></div><div class="axis-item"><small>03</small><b>EXCHANGE</b><span>交流场景<br>Trade communication</span></div><div class="axis-item"><small>04</small><b>IDENTITY</b><span>克制识别<br>Controlled identity</span></div></div>
+</section>
+<section class="communication">
+  <div class="section-head"><h2>PROJECT COMMUNICATION<span>项目交流</span></h2><p>OFFICIAL COMMUNICATION · TRADE CONVERSATIONS · INTERNATIONAL EXCHANGE</p></div>
+  <div class="communication-grid"><div class="photo-card"><img src="contonfairtalk.JPG" alt="Original official group photograph"><div class="photo-caption"><b>OFFICIAL COMMUNICATION</b><span>01</span></div></div><div class="photo-card"><img src="cantonfair all.JPG" alt="Original project exchange photograph"><div class="photo-caption"><b>ON-SITE EXCHANGE</b><span>02</span></div></div></div>
+</section>
+<section class="experience" id="experience">
+  <div class="section-head"><h2>EXHIBITION EXPERIENCE<span>展览体验</span></h2><p>OPEN EDGES · LAYERED DEPTH · READABLE PRODUCT SEQUENCES</p></div>
+  <div class="experience-layout">
+    <div class="experience-main"><img src="workL1.JPG" alt="Original pavilion main view"></div>
+    <div class="detail-strip"><div><img src="cantonfairL.jpg" alt="Original pavilion detail one"></div><div><img src="contonfairF.jpg" alt="Original pavilion detail two"></div><div><img src="cantonfairR.jpg" alt="Original pavilion detail three"></div></div>
+    <div class="panorama"><img src="cantonfairFL.png" alt="Original pavilion panoramic view"></div>
+    <div class="experience-quote"><b>Open, layered and easy to read.</b><p>开放边界强化通道可见度，层次化构件建立空间纵深，并让多类产品保持清晰的观看顺序。</p></div>
+  </div>
+</section>
+<section class="identity">
+  <div class="identity-art"><img src="cantonfairlast1.png" alt="Original project impact sketch"></div>
+  <div class="identity-copy"><h3>Identity established through <strong>proportion, material tone and spatial order.</strong></h3><p>越南形象不依赖装饰符号的堆叠，而由比例、材料色调、产品展示与图形节奏共同建立。设计因此保持鲜明，但不落入传统展会页面的宣传感。</p><div class="identity-rule"></div></div>
+</section>
+<footer class="footer" id="contact"><div class="footer-title"><div class="section-label">EXHIBITION PRACTICE<span>展览实践</span></div></div><div class="footer-copy">From complex product information to a coherent spatial experience.<span>从复杂产品信息到完整的空间体验。</span></div><a class="contact" href="index.html#contact"><h3>LET’S WORK TOGETHER</h3><div>期待与您合作</div><i></i><b>CONTACT US</b></a></footer>
 </main>
-<div class="lightbox" id="lightbox" role="dialog" aria-modal="true" aria-label="Original image viewer">
-  <button class="lightbox-close" type="button" aria-label="Close">×</button>
-  <button class="lightbox-prev" type="button" aria-label="Previous image">‹</button>
-  <img class="lightbox-image" id="lightboxImage" alt="Original project image">
-  <button class="lightbox-next" type="button" aria-label="Next image">›</button>
-  <div class="lightbox-count" id="lightboxCount"></div>
-</div>
-<script>
-const zoomImages=[...document.querySelectorAll('img.zoomable')];
-const lightbox=document.querySelector('#lightbox');
-const lightboxImage=document.querySelector('#lightboxImage');
-const lightboxCount=document.querySelector('#lightboxCount');
-let activeImage=0;
 
-function showImage(index){
-  activeImage=(index+zoomImages.length)%zoomImages.length;
-  lightboxImage.src=zoomImages[activeImage].src;
-  lightboxImage.alt=zoomImages[activeImage].alt;
-  lightboxCount.textContent=`${activeImage+1} / ${zoomImages.length}`;
-}
-
-function openLightbox(index){
-  showImage(index);
-  lightbox.classList.add('open');
-  document.body.style.overflow='hidden';
-}
-
-function closeLightbox(){
-  lightbox.classList.remove('open');
-  lightboxImage.removeAttribute('src');
-  document.body.style.overflow='';
-}
-
-zoomImages.forEach((image,index)=>image.addEventListener('click',()=>openLightbox(index)));
-document.querySelector('.lightbox-close').addEventListener('click',closeLightbox);
-document.querySelector('.lightbox-prev').addEventListener('click',event=>{event.stopPropagation();showImage(activeImage-1)});
-document.querySelector('.lightbox-next').addEventListener('click',event=>{event.stopPropagation();showImage(activeImage+1)});
-lightbox.addEventListener('click',event=>{if(event.target===lightbox)closeLightbox()});
-document.addEventListener('keydown',event=>{
-  if(!lightbox.classList.contains('open'))return;
-  if(event.key==='Escape')closeLightbox();
-  if(event.key==='ArrowLeft')showImage(activeImage-1);
-  if(event.key==='ArrowRight')showImage(activeImage+1);
-});
-</script>
 </body>
 </html>
