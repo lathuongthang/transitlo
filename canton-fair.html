@@ -227,6 +227,42 @@ html,body{background:#c9c5be}
   .strategy-diagram img{transform:scale(1.22);}
 }
 
+
+
+/* SOLID PHOTO-MIDTONE BACKPLATES — Gaussian blur removed by request. */
+.hero::after,.context::after,.communication::after,.experience::after,.identity::after{
+  display:none !important;
+  content:none !important;
+  background-image:none !important;
+  filter:none !important;
+  transform:none !important;
+}
+.hero-copy,.context-copy,.context-sketch,.experience-quote,.identity-art,.identity-copy{
+  -webkit-backdrop-filter:none !important;
+  backdrop-filter:none !important;
+}
+
+
+/* Context sketch: enlarge within the existing board; crop only blank margins */
+.context-sketch{
+  overflow:hidden!important;
+  padding:8px!important;
+  display:flex!important;
+  align-items:center!important;
+  justify-content:center!important;
+}
+.context-sketch img{
+  width:100%!important;
+  height:100%!important;
+  object-fit:contain!important;
+  object-position:center 52%!important;
+  transform:scale(1.30)!important;
+  transform-origin:center center!important;
+}
+@media(max-width:700px){
+  .context-sketch{padding:10px!important;}
+  .context-sketch img{transform:scale(1.22)!important;}
+}
 </style>
 </head>
 <body>
