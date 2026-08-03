@@ -263,6 +263,136 @@ html,body{background:#c9c5be}
   .context-sketch{padding:10px!important;}
   .context-sketch img{transform:scale(1.22)!important;}
 }
+
+
+/* FINAL LINE-DRAWING CROP — remove embedded white margins, preserve drawing proportions. */
+.context-sketch,
+.strategy-diagram{
+  padding:0!important;
+  overflow:hidden!important;
+  position:relative!important;
+  background:#f4f1eb!important;
+}
+.context-sketch img,
+.strategy-diagram img{
+  display:block!important;
+  width:100%!important;
+  height:100%!important;
+  max-width:none!important;
+  object-fit:contain!important;
+  transform-origin:center center!important;
+}
+/* The overview sketch has substantially more blank canvas in the source file. */
+.context-sketch img{
+  object-position:center 54%!important;
+  transform:scale(1.86)!important;
+}
+/* The axonometric strategy drawing needs a smaller, controlled crop. */
+.strategy-diagram img{
+  object-position:center 51%!important;
+  transform:scale(1.58)!important;
+}
+@media(max-width:700px){
+  .context-sketch img{transform:scale(1.68)!important;}
+  .strategy-diagram img{transform:scale(1.44)!important;}
+}
+
+
+/* CONTEXT + STRATEGY — EDITORIAL LAYOUT REDESIGN
+   Rebalances photograph, line drawing, copy and white space as one composition. */
+.context-redesign{padding:52px 61px 62px!important;background:#aaa49e!important}
+.context-heading{margin-bottom:26px!important;padding-bottom:17px;border-bottom:1px solid rgba(35,37,32,.18)}
+.context-editorial{display:grid;grid-template-columns:minmax(0,1.46fr) minmax(300px,.74fr);gap:18px;align-items:stretch}
+.context-photo{position:relative;margin:0;min-height:455px;overflow:hidden;background:#837d78}
+.context-photo img{object-position:center center}
+.context-photo:after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,transparent 68%,rgba(22,22,20,.48))}
+.context-photo figcaption{position:absolute;z-index:2;right:19px;bottom:17px;left:19px;display:flex;align-items:center;gap:12px;color:#fff;font-size:7.5px;letter-spacing:.82px}
+.context-photo figcaption span{display:inline-grid;place-items:center;width:26px;height:26px;border:1px solid rgba(255,255,255,.56);font-size:7px}
+.context-insight{display:grid;grid-template-rows:minmax(285px,1fr) auto;gap:0;min-width:0}
+.context-redesign .context-sketch{position:relative!important;display:flex!important;align-items:center!important;justify-content:center!important;overflow:hidden!important;padding:0!important;background:#ebe8e1!important;border-top:1px solid rgba(35,37,32,.24);border-right:1px solid rgba(35,37,32,.14);border-left:1px solid rgba(35,37,32,.14)}
+.context-redesign .context-sketch:before{content:"ORIGINAL PROJECT OVERVIEW SKETCH";position:absolute;z-index:2;top:14px;left:16px;font-size:7px;letter-spacing:.82px;color:#77736c}
+.context-redesign .context-sketch img{width:100%!important;height:100%!important;max-width:none!important;object-fit:contain!important;object-position:center 54%!important;transform:scale(1.56)!important;transform-origin:center center!important;mix-blend-mode:multiply}
+.context-redesign .context-copy{padding:25px 27px 27px!important;background:#56524d!important;color:#fff;border:0!important}
+.context-copy-no{margin-bottom:31px;font-size:7px;letter-spacing:1px;color:rgba(255,255,255,.48)}
+.context-redesign .context-copy b{font-size:17px;line-height:1.22;font-weight:500}
+.context-redesign .context-copy p{margin-top:13px;font-size:8.6px;line-height:1.72;color:rgba(255,255,255,.74)}
+
+.strategy-redesign{padding:54px 61px 61px!important;background:#343731!important}
+.strategy-redesign .section-head{margin-bottom:28px!important;padding-bottom:17px;border-bottom:1px solid rgba(255,255,255,.18)}
+.strategy-manifesto{display:grid;grid-template-columns:.9fr 1.1fr;gap:56px;align-items:end;padding:10px 0 31px}
+.strategy-manifesto h3{margin:0;max-width:390px;font-size:31px;line-height:1.06;font-weight:300;letter-spacing:-.45px}
+.strategy-manifesto h3 strong{font-weight:600}
+.strategy-manifesto p{margin:0;max-width:500px;color:#c8c6bf;font-size:10px;line-height:1.82}
+.strategy-redesign .strategy-diagram{height:410px!important;padding:0!important;overflow:hidden!important;background:#ebe8e1!important;border:1px solid rgba(255,255,255,.15)}
+.strategy-redesign .strategy-diagram img{width:100%!important;height:100%!important;max-width:none!important;object-fit:contain!important;object-position:center 50%!important;transform:scale(1.30)!important;transform-origin:center center!important}
+.strategy-redesign .strategy-axis{margin-top:18px}
+
+@media(max-width:700px){
+  .context-redesign,.strategy-redesign{padding:35px 22px 42px!important}
+  .context-editorial{grid-template-columns:1fr;gap:14px}
+  .context-photo{min-height:330px}
+  .context-insight{grid-template-rows:245px auto}
+  .context-redesign .context-sketch img{transform:scale(1.42)!important}
+  .strategy-manifesto{grid-template-columns:1fr;gap:18px;padding:2px 0 26px}
+  .strategy-manifesto h3{font-size:27px}
+  .strategy-redesign .strategy-diagram{height:300px!important}
+  .strategy-redesign .strategy-diagram img{transform:scale(1.18)!important}
+}
+
+
+/* COMMUNICATION + EXPERIENCE REFINED EDITORIAL LAYOUT */
+.communication{padding:56px 61px 64px!important;background:#9a8f88!important}
+.communication .section-head{margin-bottom:24px!important;padding-bottom:16px;border-bottom:1px solid rgba(42,39,36,.18)}
+.communication-editorial{display:grid;grid-template-columns:minmax(0,1.14fr) minmax(300px,.86fr);gap:20px;align-items:stretch}
+.comm-primary,.comm-secondary{position:relative;overflow:hidden;margin:0;background:#726964}
+.comm-primary{min-height:405px}
+.comm-secondary{min-height:255px}
+.comm-side{display:grid;grid-template-rows:auto 1fr;gap:20px;min-width:0}
+.comm-note{padding:26px 28px 28px;background:rgba(234,229,222,.88);border-top:1px solid rgba(42,39,36,.18);color:#2f2c29;display:flex;flex-direction:column;justify-content:flex-end;min-height:130px}
+.comm-index{margin-bottom:18px;font-size:7px;letter-spacing:1px;color:#7a736d}
+.comm-note b{display:block;font-size:18px;line-height:1.22;font-weight:500}
+.comm-note p{margin:12px 0 0;font-size:8.7px;line-height:1.72;color:#5e5853}
+.communication .photo-card:after{height:34%;background:linear-gradient(transparent,rgba(0,0,0,.64))}
+.communication .photo-card img{width:100%;height:100%;object-fit:cover;display:block}
+.communication .photo-caption{left:18px;right:18px;bottom:15px}
+.communication .photo-caption b{font-size:8.6px;letter-spacing:.7px}
+.communication .photo-caption span{font-size:7px;letter-spacing:.8px}
+
+.experience{padding:56px 61px 64px!important;background:#a0918d!important}
+.experience .section-head{margin-bottom:24px!important;padding-bottom:16px;border-bottom:1px solid rgba(44,40,37,.18)}
+.experience-editorial{display:grid;grid-template-columns:minmax(0,1.06fr) minmax(0,.94fr);gap:20px;align-items:start}
+.experience-left{display:grid;grid-template-rows:minmax(460px,1fr) auto;gap:0}
+.experience-main{position:relative;overflow:hidden;background:#70635f;min-height:460px}
+.experience-main img{width:100%;height:100%;object-fit:cover;display:block;object-position:center center}
+.experience-main:after{content:"PRIMARY VIEW / 主入口视角";position:absolute;left:18px;bottom:16px;color:#fff;font-size:8px;letter-spacing:.8px}
+.experience-copyband{padding:24px 26px 25px;background:#4f4843;color:#fff}
+.experience-copyband b{display:block;font-size:21px;line-height:1.16;font-weight:400}
+.experience-copyband p{margin:12px 0 0;color:#cbc7c0;font-size:8.8px;line-height:1.68}
+.experience-right{display:grid;grid-template-rows:auto 182px auto;gap:14px}
+.experience-top-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:12px}
+.detail-card{position:relative;overflow:hidden;background:#746b66;min-height:192px}
+.detail-card img,.experience-panorama img{width:100%;height:100%;object-fit:cover;display:block}
+.experience-panorama{overflow:hidden;background:#786f69}
+.experience-note{padding:24px 26px;background:rgba(236,231,224,.9);border-top:1px solid rgba(44,40,37,.16);color:#302c29}
+.exp-index{margin-bottom:17px;font-size:7px;letter-spacing:1px;color:#7d756f}
+.experience-note b{display:block;font-size:17px;line-height:1.22;font-weight:500}
+.experience-note p{margin:11px 0 0;font-size:8.6px;line-height:1.74;color:#5f5954}
+
+@media(max-width:700px){
+  .communication,.experience{padding:35px 22px 42px!important}
+  .communication-editorial,.experience-editorial{grid-template-columns:1fr;gap:16px}
+  .comm-primary{min-height:292px}
+  .comm-side{grid-template-rows:auto auto}
+  .comm-secondary{min-height:238px}
+  .experience-left{grid-template-rows:320px auto}
+  .experience-right{grid-template-rows:auto 144px auto}
+  .experience-top-grid{grid-template-columns:repeat(3,1fr);gap:8px}
+  .detail-card{min-height:112px}
+  .experience-copyband,.comm-note,.experience-note{padding:21px 20px 22px}
+  .experience-copyband b{font-size:18px}
+  .comm-note b,.experience-note b{font-size:16px}
+}
+
 </style>
 </head>
 <body>
@@ -285,30 +415,64 @@ html,body{background:#c9c5be}
     <div class="facts"><div class="client-mark"><img src="agritrade-logo.png" alt="AGRITRADE"></div><div class="fact"><b>CLIENT</b><span>AGRITRADE</span></div><div class="fact"><b>YEAR</b><span>2024</span></div><div class="fact"><b>LOCATION</b><span>Guangzhou, China</span></div><div class="fact"><b>TYPE</b><span>Temporary Pavilion</span></div><div class="fact"><b>ROLE</b><span>Exhibition Design<br>Spatial Strategy</span></div><div class="fact"><b>SCOPE</b><span>Concept · Planning · Experience</span></div></div>
   </div>
 </section>
-<section class="context" id="context">
-  <div class="section-head"><h2>CONTEXT & FIRST IMPRESSION<span>场景与第一印象</span></h2><p>HIGH-DENSITY TRADE ENVIRONMENT · CLEAR VISUAL PRESENCE</p></div>
-  <div class="context-grid">
-    <div class="context-main"><img src="banner2.JPG" alt="Original Canton Fair pavilion photograph"></div>
-    <div class="context-sketch"><img src="cantonfairTL1.png" alt="Original project overview sketch"></div>
-    <div class="context-copy"><b>Visibility without visual overload.</b><p>在信息高度密集的广交会环境中，通过清晰边界与开放入口，让展馆保持辨识度而不陷入符号堆积。</p></div>
+<section class="context context-redesign" id="context">
+  <div class="section-head context-heading"><h2>CONTEXT & FIRST IMPRESSION<span>场景与第一印象</span></h2><p>HIGH-DENSITY TRADE ENVIRONMENT · CLEAR VISUAL PRESENCE</p></div>
+  <div class="context-editorial">
+    <figure class="context-photo">
+      <img src="banner2.JPG" alt="Original Canton Fair pavilion photograph">
+      <figcaption><span>01</span> ORIGINAL CANTON FAIR PAVILION PHOTOGRAPH</figcaption>
+    </figure>
+    <div class="context-insight">
+      <div class="context-sketch"><img src="cantonfairTL1.png" alt="Original project overview sketch"></div>
+      <div class="context-copy"><div class="context-copy-no">01 / CONTEXT</div><b>Visibility without visual overload.</b><p>在信息高度密集的广交会环境中，通过清晰边界与开放入口，让展馆保持辨识度而不陷入符号堆积。</p></div>
+    </div>
   </div>
 </section>
-<section class="strategy">
+<section class="strategy strategy-redesign">
   <div class="section-head"><h2>SPATIAL STRATEGY<span>空间策略</span></h2><p>ONE FRAMEWORK · MULTIPLE CONTENTS · CONTROLLED IDENTITY</p></div>
-  <div class="strategy-top"><div class="strategy-copy"><h3>Spatial clarity <strong>before decoration.</strong></h3><p>以统一的建筑框架组织入口、展示、交流与体验。空间比例、观看距离与动线关系先建立秩序，再承载品牌和产品内容。</p></div><div class="strategy-diagram"><img src="cantonfairTR1.png" alt="Original spatial strategy diagram"></div></div>
+  <div class="strategy-manifesto">
+    <h3>Spatial clarity <strong>before decoration.</strong></h3>
+    <p>以统一的建筑框架组织入口、展示、交流与体验。空间比例、观看距离与动线关系先建立秩序，再承载品牌和产品内容。</p>
+  </div>
+  <div class="strategy-diagram"><img src="cantonfairTR1.png" alt="Original spatial strategy diagram"></div>
   <div class="strategy-axis"><div class="axis-item"><small>01</small><b>ENTRANCE</b><span>开放入口<br>Open threshold</span></div><div class="axis-item"><small>02</small><b>DISPLAY</b><span>分层展示<br>Layered display</span></div><div class="axis-item"><small>03</small><b>EXCHANGE</b><span>交流场景<br>Trade communication</span></div><div class="axis-item"><small>04</small><b>IDENTITY</b><span>克制识别<br>Controlled identity</span></div></div>
 </section>
 <section class="communication">
   <div class="section-head"><h2>PROJECT COMMUNICATION<span>项目交流</span></h2><p>OFFICIAL COMMUNICATION · TRADE CONVERSATIONS · INTERNATIONAL EXCHANGE</p></div>
-  <div class="communication-grid"><div class="photo-card"><img class="zoomable" src="contonfairtalk.JPG" alt="Original official group photograph" title="点击查看大图"><div class="photo-caption"><b>OFFICIAL COMMUNICATION</b><span>01</span></div></div><div class="photo-card"><img class="zoomable" src="cantonfair all.JPG" alt="Original project exchange photograph" title="点击查看大图"><div class="photo-caption"><b>ON-SITE EXCHANGE</b><span>02</span></div></div></div>
+  <div class="communication-editorial">
+    <figure class="photo-card comm-primary">
+      <img class="zoomable" src="contonfairtalk.JPG" alt="Original official group photograph" title="点击查看大图">
+      <div class="photo-caption"><b>OFFICIAL COMMUNICATION</b><span>01</span></div>
+    </figure>
+    <div class="comm-side">
+      <div class="comm-note">
+        <div class="comm-index">01 / COMMUNICATION</div>
+        <b>Face-to-face exchange made the pavilion feel credible, open and cooperative.</b>
+        <p>以真实交流场景展示项目的开放性与合作氛围，让展位不仅是展示界面，也成为贸易沟通与国际对接的空间背景。</p>
+      </div>
+      <figure class="photo-card comm-secondary">
+        <img class="zoomable" src="cantonfair all.JPG" alt="Original project exchange photograph" title="点击查看大图">
+        <div class="photo-caption"><b>ON-SITE EXCHANGE</b><span>02</span></div>
+      </figure>
+    </div>
+  </div>
 </section>
 <section class="experience" id="experience">
   <div class="section-head"><h2>EXHIBITION EXPERIENCE<span>展览体验</span></h2><p>OPEN EDGES · LAYERED DEPTH · READABLE PRODUCT SEQUENCES</p></div>
-  <div class="experience-layout">
-    <div class="experience-main"><img class="zoomable" src="workL1.JPG" alt="Original pavilion main view" title="点击查看大图"></div>
-    <div class="detail-strip"><div><img class="zoomable" src="cantonfairL.jpg" alt="Original pavilion detail one" title="点击查看大图"></div><div><img class="zoomable" src="contonfairF.jpg" alt="Original pavilion detail two" title="点击查看大图"></div><div><img class="zoomable" src="cantonfairR.jpg" alt="Original pavilion detail three" title="点击查看大图"></div></div>
-    <div class="panorama"><img class="zoomable" src="cantonfairFL.png" alt="Original pavilion panoramic view" title="点击查看大图"></div>
-    <div class="experience-quote"><b>Open, layered and easy to read.</b><p>开放边界强化通道可见度，层次化构件建立空间纵深，并让多类产品保持清晰的观看顺序。</p></div>
+  <div class="experience-editorial">
+    <div class="experience-left">
+      <div class="experience-main"><img class="zoomable" src="workL1.JPG" alt="Original pavilion main view" title="点击查看大图"></div>
+      <div class="experience-copyband"><b>Open, layered and easy to read.</b><p>开放边界强化通道可见度，层次化构件建立空间纵深，并让多类产品保持清晰的观看顺序。</p></div>
+    </div>
+    <div class="experience-right">
+      <div class="experience-top-grid">
+        <div class="detail-card"><img class="zoomable" src="cantonfairL.jpg" alt="Original pavilion detail one" title="点击查看大图"></div>
+        <div class="detail-card"><img class="zoomable" src="contonfairF.jpg" alt="Original pavilion detail two" title="点击查看大图"></div>
+        <div class="detail-card"><img class="zoomable" src="cantonfairR.jpg" alt="Original pavilion detail three" title="点击查看大图"></div>
+      </div>
+      <div class="experience-panorama"><img class="zoomable" src="cantonfairFL.png" alt="Original pavilion panoramic view" title="点击查看大图"></div>
+      <div class="experience-note"><div class="exp-index">02 / EXPERIENCE</div><b>Readable products, clear layers and a stable visitor perspective.</b><p>主入口视角负责建立整体形象，局部照片补充结构与细节，全景图则把整个展示界面完整交代，层次更清晰，也更有作品集气质。</p></div>
+    </div>
   </div>
 </section>
 <section class="identity">
