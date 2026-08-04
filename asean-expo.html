@@ -2,880 +2,484 @@
 <html lang="zh-CN">
 <head>
 <meta charset="utf-8">
-<meta name="viewport" content="width=device-width,initial-scale=1">
-<title>ASEAN Projects — TRANSITLO</title>
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="theme-color" content="#27302d">
+<meta name="description" content="TRANSITLO — Vietnam Pavilion project series at the China–ASEAN Expo 2024 in Nanning / 中国—东盟博览会越南馆项目系列">
+<title>Vietnam Pavilion · China–ASEAN Expo — TRANSITLO</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
-
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
 <style>
 :root{
   --w:1171px;
-  --ink:#111;
-  --gray:#6c6c6c;
-  --line:#dedede;
-  --gold:#b58a50
+  --ink:#222621;
+  --deep:#27302d;
+  --deep2:#333932;
+  --paper:#f2efe8;
+  --paper2:#e7e3da;
+  --sage:#dbe0d8;
+  --stone:#d4d2cb;
+  --warm:#a48f7e;
+  --muted:#696d67;
+  --line:#d0ccc3;
+  --gold:#ab8b58;
 }
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+html,body{margin:0;background:linear-gradient(135deg,#d3d1cb 0%,#c7cbc5 48%,#d8d1c9 100%);color:var(--ink);font-family:Inter,"Microsoft YaHei",Arial,sans-serif;-webkit-font-smoothing:antialiased;text-rendering:geometricPrecision}
+body{min-width:320px}
+a{color:inherit;text-decoration:none}
+img{display:block;width:100%;height:100%;object-fit:cover}
+button{font:inherit}
+.page{width:min(100%,var(--w));margin:auto;background:var(--paper);overflow:hidden;box-shadow:0 0 72px rgba(38,40,36,.15)}
 
-*{
-  box-sizing:border-box
-}
+/* HEADER */
+.header{height:44px;padding:0 61px;display:flex;align-items:center;justify-content:space-between;background:#fff;font-size:10.2px;font-weight:600;letter-spacing:.45px}
+.brand{font-size:15.6px;letter-spacing:3.1px}
+.brand,.nav a{position:relative}
+.brand:after,.nav a:after{content:"";position:absolute;right:0;bottom:-7px;left:0;height:1px;background:currentColor;transform:scaleX(0);transform-origin:left;transition:transform .25s ease}
+.brand:hover:after,.nav a:hover:after{transform:scaleX(1)}
+.nav{display:flex;align-items:center;gap:24px}
+.langs{display:flex;gap:7px;font-weight:500}
+.langs span+span:before{content:"|";margin-right:7px;color:#aaa}
 
-html,
-body{
-  margin:0;
-  background:#fff;
-  color:var(--ink);
-  font-family:"Inter","Microsoft YaHei",sans-serif;
-  -webkit-font-smoothing:antialiased
-}
+/* HERO */
+.hero{display:grid;grid-template-columns:47% 53%;min-height:530px;background:#24302e;color:#fff;position:relative;isolation:isolate;overflow:hidden}
+.hero:before{content:"";position:absolute;z-index:-1;inset:-52px;background:linear-gradient(rgba(25,39,38,.30),rgba(25,39,38,.54)),url("ASEAN card.png") center/cover no-repeat;filter:blur(42px) saturate(.72) contrast(.95);transform:scale(1.13);opacity:.78}
+.hero-copy{position:relative;padding:71px 45px 42px 61px;background:rgba(30,43,41,.55);backdrop-filter:blur(6px)}
+.hero-kicker{font-size:10.2px;letter-spacing:1.6px;color:rgba(255,255,255,.68);margin-bottom:25px}
+.hero h1{margin:0;font-size:50.4px;line-height:1.02;font-weight:300;letter-spacing:-1.1px}
+.hero h1 strong{display:block;font-weight:600}
+.hero-cn{margin-top:19px;font-size:16.8px;font-weight:500;line-height:1.35}
+.hero-vi{margin-top:6px;font-size:10.2px;line-height:1.55;letter-spacing:.35px;color:rgba(255,255,255,.63)}
+.hero-note{position:absolute;left:61px;right:45px;bottom:38px;padding-top:15px;border-top:1px solid rgba(255,255,255,.25);display:flex;justify-content:space-between;gap:18px;font-size:9.4px;letter-spacing:.75px;color:rgba(255,255,255,.62)}
+.hero-visual{position:relative;overflow:hidden}
+.hero-visual img{object-position:center center;filter:saturate(.70) brightness(.80) contrast(.95)}
+.hero-visual:after{content:"";position:absolute;inset:0;background:linear-gradient(90deg,rgba(29,40,38,.34),transparent 35%),linear-gradient(0deg,rgba(0,0,0,.24),transparent 38%)}
+.hero-tag{position:absolute;z-index:2;right:23px;top:22px;padding:8px 11px;border:1px solid rgba(255,255,255,.52);font-size:8.8px;letter-spacing:1.05px;color:#fff}
+.hero-accent{position:absolute;z-index:2;right:0;bottom:0;width:48%;height:8px;background:linear-gradient(90deg,#6f8580 0%,#918c80 57%,#b29983 100%)}
 
-a{
-  color:inherit;
-  text-decoration:none
-}
+/* SHARED */
+.section-label{font-size:10.8px;line-height:1.45;font-weight:600;letter-spacing:.25px}
+.section-label span{display:block;margin-top:4px;font-weight:500}
+.section-label em{display:block;margin-top:3px;color:#777;font-size:9.2px;font-style:normal;font-weight:400}
+.section-label:after{content:"";display:block;width:31px;margin-top:11px;border-bottom:1.5px solid #111}
+.section-head{display:flex;align-items:flex-end;justify-content:space-between;margin-bottom:27px}
+.section-head h2{margin:0;font-size:14.4px;line-height:1.35;font-weight:600}
+.section-head h2 span{display:block;margin-top:3px;font-size:12px;font-weight:500}
+.section-head p{margin:0;max-width:420px;color:#6f706c;font-size:9.6px;line-height:1.55;text-align:right;letter-spacing:.25px}
 
-img{
-  display:block;
-  width:100%;
-  height:100%;
-  object-fit:cover
-}
+/* INTRO */
+.intro{display:grid;grid-template-columns:220px 1fr;padding:49px 61px 55px;border-bottom:1px solid var(--line);background:radial-gradient(circle at 88% 18%,rgba(172,185,175,.38),transparent 30%),linear-gradient(110deg,#f2eee6 0%,#ece8df 56%,#e4e7e0 100%)}
+.intro-main{display:grid;grid-template-columns:minmax(0,1.15fr) 360px;gap:40px;align-items:start}
+.statement{max-width:660px;font-size:30px;line-height:1.24;font-weight:300;letter-spacing:-.4px}
+.statement strong{font-weight:600}
+.statement-cn{max-width:650px;margin-top:20px;color:#4f514d;font-size:12.6px;line-height:1.82}
+.statement-vi{max-width:650px;margin-top:10px;color:#777872;font-size:10.4px;line-height:1.72}
+.facts{display:grid;grid-template-columns:1fr 1fr;border:1px solid rgba(42,39,35,.10);border-top:1px solid var(--ink);background:rgba(249,246,240,.76);box-shadow:0 18px 38px rgba(61,56,50,.06)}
+.fact{padding:16px 18px 15px;border-bottom:1px solid var(--line);min-height:78px}
+.fact:nth-child(even){border-left:1px solid var(--line)}
+.fact b{display:block;margin-bottom:8px;font-size:8.8px;letter-spacing:.95px;color:#87827b}
+.fact span{font-size:10.8px;line-height:1.48;color:#2f2e2a}
+.fact-wide{grid-column:1/3;border-left:0!important;background:linear-gradient(90deg,rgba(219,226,219,.76),rgba(238,232,222,.72))}
 
-.page{
-  width:min(100%,var(--w));
-  margin:auto;
-  overflow:hidden
-}
-
-.header{
-  height:44px;
-  padding:0 61px;
-  display:flex;
-  align-items:center;
-  justify-content:space-between;
-  font-size:8px;
-  font-weight:600;
-  letter-spacing:.45px
-}
-
-.brand{
-  font-size:13px;
-  letter-spacing:3.1px
-}
-
-.nav{
-  display:flex;
-  align-items:center;
-  gap:28px
-}
-
-.langs{
-  display:flex;
-  gap:7px
-}
-
-.langs span+span:before{
-  content:"|";
-  margin-right:7px;
-  color:#aaa
-}
-
-.hero{
-  height:330px;
-  position:relative;
-  overflow:hidden;
-  color:#fff
-}
-
-.hero img{
-  filter:brightness(.63)
-}
-
-.hero:after{
-  content:"";
-  position:absolute;
-  inset:0;
-  background:linear-gradient(
-    90deg,
-    rgba(0,0,0,.75),
-    rgba(0,0,0,.12) 65%
-  )
-}
-
-.hero-copy{
-  position:absolute;
-  z-index:2;
-  left:61px;
-  top:91px
-}
-
-.hero h1{
-  margin:0;
-  font-size:43px;
-  line-height:1.08;
-  font-weight:600;
-  letter-spacing:.1px
-}
-
-.hero h1 span{
-  display:block;
-  font-weight:400
-}
-
-.hero p{
-  margin:17px 0 0;
-  font-size:13px;
-  line-height:1.55;
-  font-weight:500
-}
-
-.hero .place{
-  position:absolute;
-  z-index:2;
-  left:61px;
-  bottom:38px;
-  font-size:9px;
-  font-weight:600;
-  letter-spacing:.7px
-}
-
-.hero .place:after{
-  content:"";
-  display:block;
-  width:56px;
-  border-bottom:1px solid #fff;
-  margin-top:12px
-}
-
-.separator{
-  height:8px;
-  background:#fff
-}
-
-/* PROJECT SERIES */
-.intro{
-  height:auto;
-  min-height:178px;
-  padding:36px 61px;
-  display:grid;
-  grid-template-columns:230px 1fr;
-  gap:54px;
-  border-bottom:1px solid var(--line)
-}
-
-.eyebrow{
-  font-size:10px;
-  line-height:1.4;
-  font-weight:700
-}
-
-.eyebrow span{
-  display:block;
-  margin-top:2px;
-  font-size:10px;
-  font-weight:600
-}
-
-.eyebrow:after{
-  content:"";
-  display:block;
-  width:30px;
-  border-bottom:1.5px solid #111;
-  margin-top:9px
-}
-
-.intro-copy{
-  max-width:620px;
-  font-size:11px;
-  line-height:1.65;
-  color:#333
-}
-
-.intro-copy .cn{
-  display:block;
-  margin-top:11px;
-  font-weight:500
-}
-
-.intro-copy .vi{
-  display:block;
-  margin-top:8px;
-  color:#666;
-  font-weight:400
-}
+/* SYSTEM */
+.system{position:relative;isolation:isolate;overflow:hidden;padding:50px 61px 58px;background:#918a82}
+.system:before{content:"";position:absolute;z-index:-1;inset:-56px;background:linear-gradient(rgba(235,231,224,.43),rgba(235,231,224,.43)),url("ASEAN card.png") center/cover no-repeat;filter:blur(48px) saturate(.68) contrast(.94);transform:scale(1.14);opacity:.82}
+.system-grid{display:grid;grid-template-columns:1.28fr .72fr;grid-template-rows:355px 166px;gap:16px}
+.system-image{grid-row:1/3;position:relative;overflow:hidden;box-shadow:0 18px 38px rgba(43,39,36,.16)}
+.system-image img{object-position:center center;filter:saturate(.62) brightness(.84) contrast(.94)}
+.system-image:after{content:"01 / VIETNAM PAVILION SYSTEM";position:absolute;left:18px;bottom:16px;color:#fff;font-size:9.5px;letter-spacing:1px}
+.system-copy{background:rgba(48,52,48,.78);backdrop-filter:blur(8px);color:#fff;padding:31px 30px}
+.system-copy h3{margin:0;font-size:28.8px;line-height:1.08;font-weight:300}
+.system-copy h3 strong{display:block;font-weight:600}
+.system-copy p{margin:22px 0 0;color:rgba(255,255,255,.73);font-size:10.8px;line-height:1.75}
+.system-copy .cn{display:block;margin-top:11px;color:rgba(255,255,255,.88)}
+.system-axis{display:grid;grid-template-columns:1fr 1fr;background:rgba(246,243,237,.78);backdrop-filter:blur(7px);border-top:1px solid rgba(34,38,33,.42)}
+.axis{padding:18px 19px;border-right:1px solid rgba(34,38,33,.16);border-bottom:1px solid rgba(34,38,33,.16)}
+.axis:nth-child(even){border-right:0}
+.axis:nth-child(n+3){border-bottom:0}
+.axis small{font-size:8px;color:#7d7b75}
+.axis b{display:block;margin-top:8px;font-size:10.5px;letter-spacing:.35px}
+.axis span{display:block;margin-top:5px;color:#666862;font-size:9px;line-height:1.45}
 
 /* PROJECTS */
-.projects{
-  padding:42px 61px 54px
-}
+.projects{padding:51px 61px 62px;background:radial-gradient(circle at 8% 10%,rgba(206,216,208,.44),transparent 28%),radial-gradient(circle at 92% 90%,rgba(198,179,162,.23),transparent 32%),linear-gradient(145deg,#ece8df 0%,#e3ded4 54%,#dde2dd 100%)}
+.project-list{display:grid;gap:22px}
+.project{display:grid;grid-template-columns:1.17fr .83fr;min-height:370px;border-top:1px solid #252923;background:rgba(249,247,242,.64);box-shadow:0 18px 34px rgba(50,46,42,.06)}
+.project:nth-child(even){grid-template-columns:.83fr 1.17fr}
+.project:nth-child(even) .project-media{order:2}
+.project-media{position:relative;min-height:370px;overflow:hidden;cursor:zoom-in;background:#393b38}
+.project-media:before{content:"";position:absolute;z-index:0;inset:-40px;background-image:var(--photo);background-position:center;background-size:cover;filter:blur(35px) saturate(.70);transform:scale(1.14);opacity:.72}
+.project-media img{position:relative;z-index:1;object-position:center;filter:saturate(.54) brightness(.86) contrast(.95);transition:transform .65s ease,filter .65s ease}
+.project:hover .project-media img{transform:scale(1.018);filter:saturate(.80) brightness(.90) contrast(.97)}
+.project-index{position:absolute;z-index:2;left:18px;top:17px;color:#fff;font-size:9px;letter-spacing:1.05px;text-shadow:0 1px 8px rgba(0,0,0,.38)}
+.project-body{display:flex;flex-direction:column;justify-content:space-between;padding:32px 32px 28px;background:linear-gradient(145deg,rgba(250,248,243,.87),rgba(232,229,221,.82));backdrop-filter:blur(8px)}
+.project-eyebrow{font-size:8.6px;letter-spacing:1.1px;color:#7a7771}
+.project h3{margin:18px 0 0;font-size:25.2px;line-height:1.08;font-weight:300;letter-spacing:-.3px}
+.project h3 strong{display:block;font-weight:600}
+.project-cn{margin-top:13px;font-size:12.6px;font-weight:500}
+.project-vi{margin-top:5px;color:#777973;font-size:9.4px;line-height:1.5}
+.project-desc{margin:24px 0 0;color:#565954;font-size:10.5px;line-height:1.72}
+.project-desc span{display:block;margin-top:9px}
+.project-link{display:flex;align-items:center;justify-content:space-between;margin-top:25px;padding-top:15px;border-top:1px solid rgba(34,38,33,.22);font-size:9px;font-weight:600;letter-spacing:.75px}
+.project-link i{font-style:normal;font-size:18px;font-weight:300;transition:transform .25s ease}
+.project:hover .project-link i{transform:translate(3px,-3px)}
 
-.projects-head{
-  display:flex;
-  align-items:end;
-  justify-content:space-between;
-  margin-bottom:22px
-}
+/* MATRIX */
+.matrix{padding:52px 61px 59px;background:radial-gradient(circle at 90% 8%,rgba(156,141,125,.20),transparent 30%),radial-gradient(circle at 10% 88%,rgba(103,119,109,.18),transparent 34%),linear-gradient(135deg,#2d342f 0%,#383a34 50%,#3e3832 100%);color:#fff}
+.matrix .section-head h2 span,.matrix .section-head p{color:rgba(255,255,255,.58)}
+.matrix-top{display:grid;grid-template-columns:.72fr 1.28fr;gap:18px;margin-bottom:18px}
+.matrix-statement{position:relative;background:linear-gradient(155deg,rgba(70,76,69,.98),rgba(54,58,53,.98));padding:36px 32px 31px;min-height:286px}
+.matrix-statement:before{content:"";position:absolute;left:0;top:0;width:8px;height:100%;background:linear-gradient(180deg,#718b85 0%,#948c80 52%,#b59e88 100%)}
+.matrix-statement h3{margin:0;font-size:31px;line-height:1.08;font-weight:300}
+.matrix-statement h3 strong{display:block;font-weight:600}
+.matrix-statement p{margin:23px 0 0;color:#c9c7c0;font-size:10.8px;line-height:1.75}
+.matrix-diagram{min-height:286px;background:linear-gradient(145deg,#eeebe4 0%,#e1e6e0 100%);padding:28px;display:grid;grid-template-columns:repeat(4,1fr);gap:8px;color:#20231f}
+.matrix-col{display:flex;flex-direction:column;border:1px solid rgba(34,38,33,.16);background:rgba(255,255,255,.42)}
+.matrix-color{height:78px;background:var(--tone)}
+.matrix-col div:last-child{padding:17px 14px 18px}
+.matrix-col small{font-size:8px;color:#7a7b76}
+.matrix-col b{display:block;margin-top:9px;font-size:10.1px;line-height:1.35}
+.matrix-col span{display:block;margin-top:7px;color:#686b65;font-size:8.6px;line-height:1.45}
+.matrix-axis{display:grid;grid-template-columns:repeat(4,1fr);border-top:1px solid rgba(255,255,255,.25);border-bottom:1px solid rgba(255,255,255,.25)}
+.matrix-item{padding:19px 17px 21px;border-right:1px solid rgba(255,255,255,.16)}
+.matrix-item:last-child{border-right:0}
+.matrix-item small{font-size:8.3px;color:#999a93}
+.matrix-item b{display:block;margin-top:11px;font-size:10.6px;letter-spacing:.4px}
+.matrix-item span{display:block;margin-top:7px;color:#b7b7b0;font-size:9.3px;line-height:1.5}
 
-.projects-head h2{
-  margin:0;
-  font-size:12px;
-  line-height:1.35;
-  font-weight:700
-}
-
-.projects-head h2 span{
-  display:block;
-  margin-top:2px;
-  font-size:10.5px;
-  font-weight:600
-}
-
-.projects-head p{
-  margin:0;
-  font-size:8px;
-  color:#777;
-  letter-spacing:.45px
-}
-
-.grid{
-  display:grid;
-  grid-template-columns:1fr 1fr;
-  gap:28px 18px
-}
-
-.card{
-  display:block
-}
-
-.image{
-  height:292px;
-  position:relative;
-  overflow:hidden;
-  background:#ddd
-}
-
-.image:after{
-  content:"";
-  position:absolute;
-  inset:0;
-  z-index:1;
-  pointer-events:none;
-  background:linear-gradient(
-    180deg,
-    rgba(20,22,24,.10),
-    rgba(20,22,24,.27)
-  );
-  transition:opacity .45s ease
-}
-
-.card img{
-  filter:saturate(.50) brightness(.88) contrast(.94);
-  transition:transform .45s ease,filter .45s ease
-}
-
-.card:hover img{
-  transform:scale(1.018);
-  filter:saturate(.80) brightness(.91) contrast(.96)
-}
-
-.card:hover .image:after{
-  opacity:.82
-}
-
-.meta{
-  padding:13px 0 0;
-  display:grid;
-  grid-template-columns:38px 1fr auto;
-  gap:12px;
-  align-items:start;
-  border-top:1px solid #111
-}
-
-.no{
-  font-size:9px;
-  font-weight:600;
-  color:#777
-}
-
-.title h3{
-  margin:0;
-  font-size:13px;
-  line-height:1.28;
-  font-weight:600;
-  letter-spacing:.03px
-}
-
-.title .cn{
-  margin-top:4px;
-  font-size:10px;
-  line-height:1.35;
-  font-weight:500
-}
-
-.title .vi{
-  margin-top:2px;
-  font-size:9px;
-  line-height:1.38;
-  font-weight:400;
-  color:#666
-}
-
-.tag{
-  font-size:8px;
-  line-height:1.3;
-  font-weight:500;
-  letter-spacing:.4px;
-  color:#777;
-  text-align:right
-}
-
-.arrow{
-  display:inline-block;
-  margin-left:7px;
-  font-size:13px;
-  color:var(--gold)
-}
+/* CLOSING */
+.identity{display:grid;grid-template-columns:.84fr 1.16fr;min-height:345px;position:relative;isolation:isolate;overflow:hidden;background:#e9e6df}
+.identity:before{content:"";position:absolute;z-index:-1;inset:-44px;background:linear-gradient(rgba(235,232,226,.44),rgba(235,232,226,.44)),url("aseanline.png") left center/cover no-repeat;filter:blur(33px) saturate(.72) contrast(.96);transform:scale(1.12);opacity:.58}
+.identity-art{position:relative;padding:52px 58px;background:rgba(244,241,235,.62);backdrop-filter:blur(6px)}
+.identity-art img{object-fit:contain;mix-blend-mode:multiply;filter:saturate(.62) contrast(.94)}
+.identity-art:after{content:"04 / REGIONAL NETWORK";position:absolute;left:29px;top:27px;font-size:9.5px;letter-spacing:.9px;color:#777}
+.identity-copy{padding:57px 61px;background:rgba(239,236,229,.55);backdrop-filter:blur(6px)}
+.identity-copy h3{margin:0;font-size:31.8px;line-height:1.18;font-weight:300}
+.identity-copy h3 strong{font-weight:600;color:#6f655c}
+.identity-copy p{margin:24px 0 0;color:#595c57;font-size:11.1px;line-height:1.82}
+.identity-copy p span{display:block;margin-top:10px}
+.identity-rule{width:36px;margin-top:26px;border-bottom:2px solid var(--warm)}
 
 /* FOOTER */
-.footer{
-  height:127px;
-  display:grid;
-  grid-template-columns:230px 333px 290px 318px;
-  border-top:1px solid var(--line)
+.footer{min-height:134px;display:grid;grid-template-columns:220px 1fr 285px;background:linear-gradient(100deg,#ece8e0 0%,#e3e7e2 52%,#ddd4ca 100%);border-top:1px solid var(--line)}
+.footer-title{padding:30px 0 0 61px}
+.footer-copy{padding:29px 35px 25px 0;color:#454641;font-size:10.8px;line-height:1.58}
+.footer-copy span{display:block;margin-top:8px;font-weight:500}
+.footer-copy em{display:block;margin-top:5px;color:#777;font-size:9.4px;font-style:normal}
+.contact{padding:29px 32px;background:linear-gradient(145deg,#303831 0%,#3c3934 100%);color:#fff}
+.contact h3{margin:0;font-size:13.2px}
+.contact div{margin-top:6px;font-size:10.2px;color:#aaa}
+.contact i{display:block;width:31px;margin:11px 0;border-bottom:1px solid #777}
+.contact b{display:inline-block;padding:8px 22px;border:1px solid #777;font-size:9px;font-weight:500;transition:border-color .25s ease,background .25s ease}
+.contact:hover b{border-color:#fff;background:rgba(255,255,255,.08)}
+
+/* REVEAL */
+.reveal{opacity:0;transform:translateY(18px);transition:opacity .7s ease,transform .7s ease}
+.reveal.in{opacity:1;transform:none}
+
+/* LIGHTBOX */
+.zoomable{cursor:zoom-in}
+.zoomable:focus-visible,.brand:focus-visible,.nav a:focus-visible,.contact:focus-visible{outline:2px solid #9b816a;outline-offset:3px}
+.lightbox{position:fixed;z-index:9999;inset:0;display:none;align-items:center;justify-content:center;padding:42px;background:rgba(0,0,0,.94)}
+.lightbox.open{display:flex}
+.lightbox-image{display:block;width:auto;height:auto;max-width:94vw;max-height:90vh;object-fit:contain;cursor:default;box-shadow:0 0 0 1px rgba(255,255,255,.12)}
+.lightbox-close,.lightbox-prev,.lightbox-next{position:fixed;z-index:2;border:0;background:rgba(0,0,0,.28);color:#fff;cursor:pointer}
+.lightbox-close{top:18px;right:24px;width:42px;height:42px;font-size:32px;line-height:42px}
+.lightbox-prev,.lightbox-next{top:50%;width:48px;height:72px;margin-top:-36px;font-size:39px}
+.lightbox-prev{left:18px}.lightbox-next{right:18px}
+.lightbox-count{position:fixed;left:50%;bottom:17px;transform:translateX(-50%);color:#fff;font-size:12px;letter-spacing:1px}
+
+/* RESPONSIVE */
+@media(max-width:900px){
+  .header{padding:0 36px}
+  .hero-copy{padding-left:36px}.hero-note{left:36px}
+  .intro,.system,.projects,.matrix{padding-left:36px;padding-right:36px}
+  .intro{grid-template-columns:190px 1fr}.intro-main{grid-template-columns:1fr 320px}
+  .project h3{font-size:22px}
+  .identity-copy{padding-right:36px}.footer-title{padding-left:36px}
 }
-
-.footer-title{
-  padding:28px 0 0 61px
-}
-
-.footer-copy{
-  padding:27px 20px 0 0;
-  font-size:8.5px;
-  line-height:1.45;
-  color:#444
-}
-
-.footer-copy span{
-  display:block;
-  margin-top:8px;
-  font-weight:600
-}
-
-.map{
-  display:flex;
-  align-items:center;
-  justify-content:center;
-  color:#999;
-  overflow:hidden
-}
-
-.map img{
-  width:100%;
-  height:100%;
-  object-fit:cover
-}
-
-.contact{
-  display:block;
-  background:#181818;
-  color:#fff;
-  padding:27px 33px
-}
-
-.contact h3{
-  margin:0 0 5px;
-  font-size:10.5px;
-  font-weight:600
-}
-
-.contact .cn{
-  font-size:8.5px
-}
-
-.contact i{
-  display:block;
-  width:30px;
-  border-bottom:1px solid #aaa;
-  margin:9px 0
-}
-
-.contact b{
-  display:inline-block;
-  border:1px solid #888;
-  padding:8px 24px;
-  font-size:7.5px;
-  font-weight:500
-}
-
-/* TABLET */
-@media(max-width:1024px){
-  :root{
-    --w:100%
-  }
-
-  .header{
-    padding:0 36px
-  }
-
-  .hero{
-    height:310px
-  }
-
-  .hero-copy,
-  .hero .place{
-    left:36px
-  }
-
-  .hero h1{
-    font-size:38px
-  }
-
-  .intro{
-    height:auto;
-    min-height:165px;
-    padding:34px 36px;
-    grid-template-columns:190px 1fr;
-    gap:38px
-  }
-
-  .projects{
-    padding:38px 36px 48px
-  }
-
-  .image{
-    height:auto;
-    aspect-ratio:16/9
-  }
-
-  .meta{
-    grid-template-columns:30px 1fr
-  }
-
-  .tag{
-    display:none
-  }
-
-  .footer{
-    height:auto;
-    grid-template-columns:1fr 1.45fr 1.1fr 1.2fr
-  }
-
-  .footer-title{
-    padding-left:36px
-  }
-
-  .contact{
-    padding-left:25px;
-    padding-right:25px
-  }
-}
-
-/* MOBILE */
 @media(max-width:700px){
-  .header{
-    height:54px;
-    padding:0 20px
-  }
-
-  .brand{
-    font-size:12px;
-    letter-spacing:2.5px
-  }
-
-  .nav{
-    gap:14px
-  }
-
-  .nav>a{
-    display:none
-  }
-
-  .langs{
-    font-size:8px
-  }
-
-  .hero{
-    height:290px
-  }
-
-  .hero-copy,
-  .hero .place{
-    left:22px
-  }
-
-  .hero-copy{
-    top:67px;
-    right:22px
-  }
-
-  .hero h1{
-    font-size:31px;
-    line-height:1.05
-  }
-
-  .hero p{
-    font-size:10.5px;
-    line-height:1.6
-  }
-
-  .hero .place{
-    bottom:28px
-  }
-
-  .hero img{
-    object-position:center center
-  }
-
-  .intro{
-    min-height:0;
-    padding:28px 22px;
-    grid-template-columns:1fr;
-    gap:22px
-  }
-
-  .intro-copy{
-    font-size:10.5px
-  }
-
-  .projects{
-    padding:32px 22px 42px
-  }
-
-  .projects-head{
-    align-items:start;
-    gap:18px
-  }
-
-  .projects-head p{
-    max-width:115px;
-    text-align:right;
-    line-height:1.4
-  }
-
-  .grid{
-    grid-template-columns:1fr;
-    gap:32px
-  }
-
-  .image{
-    aspect-ratio:16/10
-  }
-
-  .meta{
-    padding-top:12px;
-    grid-template-columns:28px 1fr;
-    gap:8px
-  }
-
-  .title h3{
-    font-size:12.5px
-  }
-
-  .footer{
-    grid-template-columns:1fr
-  }
-
-  .footer>div,
-  .footer>a{
-    min-height:105px
-  }
-
-  .footer-title{
-    padding:27px 22px
-  }
-
-  .footer-copy{
-    padding:25px 22px
-  }
-
-  .map{
-    min-height:140px
-  }
-
-  .map img{
-    object-fit:cover
-  }
-
-  .contact{
-    padding:27px 22px;
-    min-height:128px
-  }
+  .header{height:54px;padding:0 20px}.nav>a{display:none}.nav{gap:13px}.brand{font-size:13px}
+  .hero{grid-template-columns:1fr}.hero-copy{min-height:346px;padding:62px 22px 88px}.hero h1{font-size:37px}.hero-note{left:22px;right:22px}.hero-visual{height:300px}
+  .intro{padding:32px 22px 38px;grid-template-columns:1fr;gap:24px}.intro-main{grid-template-columns:1fr;gap:28px}.statement{font-size:25px}.facts{grid-template-columns:1fr 1fr}
+  .system,.projects,.matrix{padding:36px 22px 43px}.section-head{align-items:flex-start;gap:18px}.section-head p{max-width:145px}
+  .system-grid{grid-template-columns:1fr;grid-template-rows:360px auto auto}.system-image{grid-row:auto}.system-axis{min-height:160px}
+  .project,.project:nth-child(even){grid-template-columns:1fr;min-height:0}.project:nth-child(even) .project-media{order:0}.project-media{min-height:310px}.project-body{min-height:315px;padding:27px 23px 24px}
+  .matrix-top{grid-template-columns:1fr}.matrix-diagram{grid-template-columns:1fr 1fr}.matrix-axis{grid-template-columns:1fr 1fr}.matrix-item:nth-child(2){border-right:0}.matrix-item:nth-child(n+3){border-top:1px solid rgba(255,255,255,.16)}
+  .identity{grid-template-columns:1fr}.identity-art{min-height:260px;padding:50px 28px}.identity-copy{padding:40px 22px}
+  .footer{grid-template-columns:1fr}.footer-title,.footer-copy,.contact{padding-left:22px}.footer-title{padding-bottom:25px}
+  .lightbox{padding:16px}.lightbox-prev{left:4px}.lightbox-next{right:4px}
 }
-
 @media(max-width:390px){
-  .hero h1{
-    font-size:28px
-  }
-
-  .hero p{
-    font-size:9.5px
-  }
-
-  .projects-head p{
-    display:none
-  }
-
-  .image{
-    aspect-ratio:4/3
-  }
+  .hero h1{font-size:33px}.hero-cn{font-size:14px}.statement{font-size:23px}.facts{grid-template-columns:1fr}.fact-wide{grid-column:auto}.fact:nth-child(even){border-left:0}.matrix-diagram{padding:14px}
 }
 </style>
 </head>
-
 <body>
+<main class="page" id="top">
+  <header class="header">
+    <a class="brand" href="index.html" aria-label="返回 TRANSITLO 首页">TRANSITLO</a>
+    <nav class="nav" aria-label="页面导航">
+      <a href="#projects">●&nbsp; WORKS</a>
+      <a href="index.html#about">ABOUT</a>
+      <a href="index.html#contact">CONTACT</a>
+      <div class="langs"><span>中文</span><span>EN</span><span>VI</span></div>
+    </nav>
+  </header>
 
-<main class="page">
-
-<header class="header">
-  <a class="brand" href="index.html" aria-label="Back to homepage">
-    TRANSITLO
-  </a>
-
-  <nav class="nav">
-    <a href="#projects">●&nbsp; WORKS</a>
-    <a href="#projects">ABOUT</a>
-    <a href="#contact">CONTACT</a>
-
-    <div class="langs">
-      <span>中文</span>
-      <span>EN</span>
-      <span>VI</span>
+  <section class="hero">
+    <div class="hero-copy">
+      <div class="hero-kicker">TEMPORARY PAVILION SERIES / NATIONAL EXHIBITION SYSTEM</div>
+      <h1>VIETNAM <strong>PAVILION</strong></h1>
+      <div class="hero-cn">越南馆 · 中国—东盟博览会 2024</div>
+      <div class="hero-vi">KHU GIAN HÀNG VIỆT NAM · CAEXPO 2024</div>
+      <div class="hero-note"><span>NANNING · CHINA</span><span>04 INDEPENDENT SPACES</span><span>PROJECT SERIES 02</span></div>
     </div>
-  </nav>
-</header>
-
-<section class="hero">
-  <img src="ASEAN card.png" alt="ASEAN exhibition projects">
-
-  <div class="hero-copy">
-    <h1>
-      ASEAN
-      <span>PROJECTS</span>
-    </h1>
-
-    <p>
-      PAVILION · EXHIBITION · SPATIAL STRATEGY<br>
-      东盟展馆 · 展览空间 · 空间策略
-    </p>
-  </div>
-
-  <div class="place">
-    CHINA · VIETNAM · ASEAN
-  </div>
-</section>
-
-<div class="separator" aria-hidden="true"></div>
-
-<section class="intro">
-  <div class="eyebrow">
-    PROJECT SERIES
-    <span>项目系列</span>
-  </div>
-
-  <div class="intro-copy">
-    Four independent exhibition spaces were delivered within one
-    coordinated Vietnam Pavilion program at the China–ASEAN Expo
-    2024 in Nanning. Each project served a distinct client, identity
-    and exhibition purpose, while together forming a unified Vietnam
-    Pavilion presentation.
-
-    <span class="cn">
-      四个独立展览空间在2024中国—东盟博览会越南馆综合项目体系中实施。
-      每个项目分别对应不同客户、形象与展示任务，同时共同构成统一的越南馆展示体系。
-    </span>
-
-    <span class="vi">
-      Bốn không gian triển lãm độc lập được triển khai trong chương
-      trình tổng thể Khu gian hàng Việt Nam tại Hội chợ Trung Quốc–ASEAN
-      2024 ở Nam Ninh. Mỗi dự án phục vụ một khách hàng, hình ảnh và
-      mục tiêu trưng bày riêng, đồng thời cùng tạo nên một tổng thể
-      thống nhất của Khu gian hàng Việt Nam.
-    </span>
-  </div>
-</section>
-
-<section class="projects" id="projects">
-
-  <div class="projects-head">
-    <h2>
-      SELECTED ASEAN PROJECTS
-      <span>东盟项目精选</span>
-    </h2>
-
-    <p>
-      04 PROJECTS · CLICK TO VIEW DETAILS
-    </p>
-  </div>
-
-  <div class="grid">
-
-    <a class="card" href="defense.html">
-      <div class="image">
-        <img
-          src="Defense CARD.png"
-          alt="Vietnam Defense Economic Products Exhibition Area"
-        >
-      </div>
-
-      <div class="meta">
-        <div class="no">01</div>
-
-        <div class="title">
-          <h3>
-            VIETNAM DEFENSE ECONOMIC PRODUCTS EXHIBITION AREA
-          </h3>
-
-          <div class="cn">
-            越南国防经济产品展示区
-          </div>
-
-          <div class="vi">
-            Khu trưng bày sản phẩm kinh tế – quốc phòng Việt Nam
-          </div>
-        </div>
-
-        <div class="tag">
-          EXHIBITION DESIGN
-          <span class="arrow">↗</span>
-        </div>
-      </div>
-    </a>
-
-    <a class="card" href="viettrade.html">
-      <div class="image">
-        <img
-          src="viettradecard.png"
-          alt="VIETRADE Exhibition Booth"
-        >
-      </div>
-
-      <div class="meta">
-        <div class="no">02</div>
-
-        <div class="title">
-          <h3>
-            VIETRADE EXHIBITION BOOTH
-          </h3>
-
-          <div class="cn">
-            越南贸易促进局展位
-          </div>
-
-          <div class="vi">
-            Gian hàng Cục Xúc tiến Thương mại Việt Nam (VIETRADE)
-          </div>
-        </div>
-
-        <div class="tag">
-          BOOTH DESIGN
-          <span class="arrow">↗</span>
-        </div>
-      </div>
-    </a>
-
-    <a class="card" href="quangninh.html">
-      <div class="image">
-        <img
-          src="QuangNinhcard.png"
-          alt="Quang Ninh Province Exhibition Booth"
-        >
-      </div>
-
-      <div class="meta">
-        <div class="no">03</div>
-
-        <div class="title">
-          <h3>
-            QUANG NINH PROVINCE EXHIBITION BOOTH
-          </h3>
-
-          <div class="cn">
-            广宁省展位
-          </div>
-
-          <div class="vi">
-            Gian hàng tỉnh Quảng Ninh
-          </div>
-        </div>
-
-        <div class="tag">
-          EXHIBITION SPACE
-          <span class="arrow">↗</span>
-        </div>
-      </div>
-    </a>
-
-    <a class="card" href="thtruemilk.html">
-      <div class="image">
-        <img
-          src="TH truemilk card.png"
-          alt="TH true MILK Exhibition Booth"
-        >
-      </div>
-
-      <div class="meta">
-        <div class="no">04</div>
-
-        <div class="title">
-          <h3>
-            TH TRUE MILK EXHIBITION BOOTH
-          </h3>
-
-          <div class="cn">
-            TH true MILK 品牌展位
-          </div>
-
-          <div class="vi">
-            Gian hàng thương hiệu TH true MILK
-          </div>
-        </div>
-
-        <div class="tag">
-          BOOTH DESIGN
-          <span class="arrow">↗</span>
-        </div>
-      </div>
-    </a>
-
-  </div>
-</section>
-
-<footer class="footer" id="contact">
-
-  <div class="footer-title">
-    <div class="eyebrow">
-      ASEAN PRACTICE
-      <span>东盟实践</span>
+    <div class="hero-visual">
+      <img class="zoomable" src="ASEAN card.png" alt="China–ASEAN Expo Vietnam Pavilion project series" tabindex="0">
+      <div class="hero-tag">CHINA · VIETNAM · ASEAN</div>
+      <div class="hero-accent" aria-hidden="true"></div>
     </div>
-  </div>
+  </section>
 
-  <div class="footer-copy">
-    Connecting exhibition design, spatial experience and
-    cross-border communication.
+  <section class="intro reveal">
+    <div class="section-label">PROJECT POSITIONING<span>项目定位</span><em>ĐỊNH VỊ DỰ ÁN</em></div>
+    <div class="intro-main">
+      <div>
+        <div class="statement">Four independent spaces,<br><strong>one coordinated national presence.</strong></div>
+        <div class="statement-cn">四个独立展览空间，在同一时间、同一场地内共同构成越南馆展示体系。设计既保持整体识别，也让贸易推广、区域形象、国防经济产品与品牌体验拥有各自清晰的空间表达。</div>
+        <div class="statement-vi">Bốn không gian trưng bày độc lập cùng hình thành một hệ thống nhận diện thống nhất cho Khu gian hàng Việt Nam, đồng thời giữ được bản sắc riêng cho xúc tiến thương mại, hình ảnh địa phương, sản phẩm kinh tế–quốc phòng và trải nghiệm thương hiệu.</div>
+      </div>
+      <div class="facts" aria-label="项目基本信息">
+        <div class="fact fact-wide"><b>PROJECT · 项目 · DỰ ÁN</b><span>Vietnam Pavilion Project Series<br>越南馆综合项目体系</span></div>
+        <div class="fact"><b>YEAR · 年份 · NĂM</b><span>2024</span></div>
+        <div class="fact"><b>LOCATION · 地点 · ĐỊA ĐIỂM</b><span>Nanning, China<br>中国南宁</span></div>
+        <div class="fact"><b>TYPE · 类型 · LOẠI HÌNH</b><span>Temporary Exhibition System<br>临时展览体系</span></div>
+        <div class="fact"><b>SCOPE · 范围 · PHẠM VI</b><span>04 Independent Spaces<br>四个独立空间</span></div>
+      </div>
+    </div>
+  </section>
 
-    <span>
-      连接展览设计、空间体验与跨境交流。
-    </span>
-  </div>
+  <section class="system reveal">
+    <div class="section-head">
+      <h2>PAVILION SYSTEM &amp; COORDINATION<span>展馆体系与协同关系</span></h2>
+      <p>ONE VENUE · FOUR IDENTITIES · SHARED SPATIAL ORDER<br>MỘT ĐỊA ĐIỂM · BỐN BẢN SẮC · MỘT TRẬT TỰ CHUNG</p>
+    </div>
+    <div class="system-grid">
+      <div class="system-image">
+        <img class="zoomable" src="ASEAN card.png" alt="Vietnam Pavilion coordinated exhibition system" tabindex="0">
+      </div>
+      <div class="system-copy">
+        <h3>One framework.<strong>Multiple voices.</strong></h3>
+        <p>Rather than treating the four spaces as unrelated booths, the page presents them as one exhibition system: shared navigation, common visual discipline and differentiated institutional identities.<span class="cn">页面不再把四个项目当作互不相关的展位，而是作为一个展览体系来呈现：共享动线逻辑、统一视觉秩序，同时保留机构与品牌差异。</span></p>
+      </div>
+      <div class="system-axis">
+        <div class="axis"><small>01</small><b>SHARED FRAME</b><span>统一观看秩序<br>Khung trật tự chung</span></div>
+        <div class="axis"><small>02</small><b>DISTINCT IDENTITY</b><span>独立机构表达<br>Bản sắc riêng biệt</span></div>
+        <div class="axis"><small>03</small><b>OPEN EDGE</b><span>面向展会通道<br>Ranh giới mở</span></div>
+        <div class="axis"><small>04</small><b>COMMUNICATION</b><span>贸易与公共交流<br>Giao tiếp thương mại</span></div>
+      </div>
+    </div>
+  </section>
 
-  <div class="map">
-    <img
-      src="aseanline.png"
-      alt="ASEAN project line graphic"
-    >
-  </div>
+  <section class="projects" id="projects">
+    <div class="section-head reveal">
+      <h2>FOUR INDEPENDENT EXHIBITION SPACES<span>四个独立展览空间</span></h2>
+      <p>SELECT A PROJECT · CLICK TO VIEW DETAILS<br>CHỌN DỰ ÁN · XEM CHI TIẾT</p>
+    </div>
 
-  <a class="contact" href="index.html#contact">
-    <h3>LET’S WORK TOGETHER</h3>
-    <div class="cn">期待与您合作</div>
-    <i></i>
-    <b>CONTACT US</b>
-  </a>
+    <div class="project-list">
+      <a class="project reveal" href="defense.html">
+        <div class="project-media" style="--photo:url('Defense CARD.png')">
+          <img class="zoomable" src="Defense CARD.png" alt="Vietnam Defense Economic Products Exhibition Area" tabindex="0">
+          <div class="project-index">01 / EXHIBITION DESIGN</div>
+        </div>
+        <div class="project-body">
+          <div>
+            <div class="project-eyebrow">DEFENSE–ECONOMIC PRODUCTS / NATIONAL PRESENTATION</div>
+            <h3>VIETNAM DEFENSE ECONOMIC PRODUCTS<strong>EXHIBITION AREA</strong></h3>
+            <div class="project-cn">越南国防经济产品展示区</div>
+            <div class="project-vi">Khu trưng bày sản phẩm kinh tế – quốc phòng Việt Nam</div>
+            <p class="project-desc">A formal exhibition framework organizes technical display, institutional communication and public viewing within one clear frontage.<span>以克制而清晰的展陈框架，组织技术产品、机构传播与公共观看关系。</span></p>
+          </div>
+          <div class="project-link"><span>VIEW PROJECT · 查看项目 · XEM DỰ ÁN</span><i>↗</i></div>
+        </div>
+      </a>
 
-</footer>
+      <a class="project reveal" href="viettrade.html">
+        <div class="project-media" style="--photo:url('viettradecard.png')">
+          <img class="zoomable" src="viettradecard.png" alt="VIETRADE Pavilion" tabindex="0">
+          <div class="project-index">02 / PAVILION DESIGN</div>
+        </div>
+        <div class="project-body">
+          <div>
+            <div class="project-eyebrow">TRADE PROMOTION / NATIONAL PAVILION INTERFACE</div>
+            <h3>VIETRADE<strong>PAVILION</strong></h3>
+            <div class="project-cn">越南贸易促进局展馆</div>
+            <div class="project-vi">Gian hàng Cục Xúc tiến Thương mại Việt Nam (VIETRADE)</div>
+            <p class="project-desc">A central trade-promotion interface combines ceremony, delegation reception, national communication and business exchange.<span>将开幕仪式、代表团接待、国家形象传播与商务交流整合为核心展示界面。</span></p>
+          </div>
+          <div class="project-link"><span>VIEW PROJECT · 查看项目 · XEM DỰ ÁN</span><i>↗</i></div>
+        </div>
+      </a>
 
+      <a class="project reveal" href="quangninh.html">
+        <div class="project-media" style="--photo:url('QuangNinhcard.png')">
+          <img class="zoomable" src="QuangNinhcard.png" alt="Quang Ninh Province Pavilion" tabindex="0">
+          <div class="project-index">03 / REGIONAL EXHIBITION SPACE</div>
+        </div>
+        <div class="project-body">
+          <div>
+            <div class="project-eyebrow">REGIONAL IDENTITY / PRODUCTS &amp; TOURISM</div>
+            <h3>QUANG NINH PROVINCE<strong>PAVILION</strong></h3>
+            <div class="project-cn">广宁省展馆</div>
+            <div class="project-vi">Gian hàng tỉnh Quảng Ninh</div>
+            <p class="project-desc">A compact provincial pavilion translates regional landscape, local products and business communication into a readable exhibition frontage.<span>在有限尺度内，将地域景观、特色产品与商务洽谈转化为清晰易读的省级展馆形象。</span></p>
+          </div>
+          <div class="project-link"><span>VIEW PROJECT · 查看项目 · XEM DỰ ÁN</span><i>↗</i></div>
+        </div>
+      </a>
+
+      <a class="project reveal" href="thtruemilk.html">
+        <div class="project-media" style="--photo:url('TH truemilk card.png')">
+          <img class="zoomable" src="TH truemilk card.png" alt="TH true MILK Pavilion" tabindex="0">
+          <div class="project-index">04 / BRAND PAVILION</div>
+        </div>
+        <div class="project-body">
+          <div>
+            <div class="project-eyebrow">BRAND EXPERIENCE / PRODUCT SEQUENCE</div>
+            <h3>TH TRUE MILK<strong>PAVILION</strong></h3>
+            <div class="project-cn">TH true MILK 品牌展馆</div>
+            <div class="project-vi">Gian hàng thương hiệu TH true MILK</div>
+            <p class="project-desc">A curved open frame and a controlled product sequence create a distinct brand experience while remaining connected to the wider Vietnam Pavilion system.<span>通过开放曲线框架与清晰产品序列，建立独立品牌体验，同时保持与越南馆整体环境的联系。</span></p>
+          </div>
+          <div class="project-link"><span>VIEW PROJECT · 查看项目 · XEM DỰ ÁN</span><i>↗</i></div>
+        </div>
+      </a>
+    </div>
+  </section>
+
+  <section class="matrix reveal">
+    <div class="section-head">
+      <h2>ONE SYSTEM · FOUR IDENTITIES<span>一个体系 · 四种身份</span></h2>
+      <p>COORDINATED EXPERIENCE WITHOUT UNIFORMITY<br>TRẢI NGHIỆM THỐNG NHẤT, KHÔNG ĐỒNG NHẤT HÓA</p>
+    </div>
+    <div class="matrix-top">
+      <div class="matrix-statement">
+        <h3>Consistency without<strong>visual repetition.</strong></h3>
+        <p>The shared system establishes order through proportion, circulation and presentation logic. Identity is then differentiated through institutional content, regional imagery, brand form and product rhythm.<br><br>统一不等于重复。整体秩序由比例、动线与展示逻辑建立，项目差异则来自机构内容、地域图像、品牌形态与产品节奏。</p>
+      </div>
+      <div class="matrix-diagram" aria-label="四个项目身份矩阵">
+        <div class="matrix-col"><div class="matrix-color" style="--tone:linear-gradient(135deg,#899496,#ced3d0)"></div><div><small>01</small><b>INSTITUTIONAL</b><span>Defense–economic presentation<br>国防经济展示</span></div></div>
+        <div class="matrix-col"><div class="matrix-color" style="--tone:linear-gradient(135deg,#6c827d,#c0a384)"></div><div><small>02</small><b>NATIONAL TRADE</b><span>Trade-promotion interface<br>国家贸易推广</span></div></div>
+        <div class="matrix-col"><div class="matrix-color" style="--tone:linear-gradient(135deg,#6f8297,#d9d7cc)"></div><div><small>03</small><b>REGIONAL</b><span>Landscape &amp; local products<br>地域与特色产品</span></div></div>
+        <div class="matrix-col"><div class="matrix-color" style="--tone:linear-gradient(135deg,#6c89a3,#d9e1dc)"></div><div><small>04</small><b>BRAND</b><span>Product-led experience<br>品牌产品体验</span></div></div>
+      </div>
+    </div>
+    <div class="matrix-axis">
+      <div class="matrix-item"><small>01</small><b>VISIBILITY</b><span>远距离识别<br>Nhận diện từ xa</span></div>
+      <div class="matrix-item"><small>02</small><b>THRESHOLD</b><span>开放入口<br>Ngưỡng vào mở</span></div>
+      <div class="matrix-item"><small>03</small><b>DISPLAY</b><span>分层展示<br>Trưng bày phân lớp</span></div>
+      <div class="matrix-item"><small>04</small><b>EXCHANGE</b><span>交流场景<br>Không gian giao tiếp</span></div>
+    </div>
+  </section>
+
+  <section class="identity reveal">
+    <div class="identity-art">
+      <img src="aseanline.png" alt="TRANSITLO China Vietnam ASEAN project network">
+    </div>
+    <div class="identity-copy">
+      <h3>Cross-border practice built through<strong>spatial coordination.</strong></h3>
+      <p>The project series demonstrates how multiple institutions and brands can share one exhibition environment without losing their individual identities.<span>这一系列体现了不同机构与品牌如何在同一展览环境中协同出现，同时保持各自清晰的身份与沟通目标。</span><span>Nhiều tổ chức và thương hiệu cùng tồn tại trong một môi trường triển lãm thống nhất mà vẫn giữ được bản sắc và mục tiêu giao tiếp riêng.</span></p>
+      <div class="identity-rule" aria-hidden="true"></div>
+    </div>
+  </section>
+
+  <footer class="footer" id="contact">
+    <div class="footer-title">
+      <div class="section-label">ASEAN PRACTICE<span>东盟实践</span><em>THỰC HÀNH ASEAN</em></div>
+    </div>
+    <div class="footer-copy">Connecting exhibition design, spatial experience and cross-border communication.<span>连接展览设计、空间体验与跨境交流。</span><em>Kết nối thiết kế triển lãm, trải nghiệm không gian và giao tiếp xuyên biên giới.</em></div>
+    <a class="contact" href="index.html#contact">
+      <h3>LET’S WORK TOGETHER</h3>
+      <div>期待与您合作 · Mong được hợp tác cùng bạn</div>
+      <i></i><b>CONTACT US · 联系我们 · LIÊN HỆ</b>
+    </a>
+  </footer>
 </main>
 
+<div class="lightbox" id="lightbox" aria-hidden="true" role="dialog" aria-modal="true">
+  <button class="lightbox-close" type="button" aria-label="关闭">×</button>
+  <button class="lightbox-prev" type="button" aria-label="上一张">‹</button>
+  <img class="lightbox-image" alt="项目大图">
+  <button class="lightbox-next" type="button" aria-label="下一张">›</button>
+  <div class="lightbox-count"></div>
+</div>
+
+<script>
+(() => {
+  const revealItems = document.querySelectorAll('.reveal');
+  if ('IntersectionObserver' in window) {
+    const observer = new IntersectionObserver(entries => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('in');
+          observer.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.12 });
+    revealItems.forEach(item => observer.observe(item));
+  } else {
+    revealItems.forEach(item => item.classList.add('in'));
+  }
+
+  const images = [...document.querySelectorAll('img.zoomable')];
+  const box = document.getElementById('lightbox');
+  const view = box.querySelector('.lightbox-image');
+  const count = box.querySelector('.lightbox-count');
+  let current = 0;
+
+  function show(index) {
+    current = (index + images.length) % images.length;
+    view.src = images[current].src;
+    view.alt = images[current].alt || '项目大图';
+    count.textContent = `${current + 1} / ${images.length}`;
+    box.classList.add('open');
+    box.setAttribute('aria-hidden', 'false');
+    document.body.style.overflow = 'hidden';
+  }
+  function close() {
+    box.classList.remove('open');
+    box.setAttribute('aria-hidden', 'true');
+    document.body.style.overflow = '';
+  }
+
+  images.forEach((img, index) => {
+    img.addEventListener('click', event => {
+      event.preventDefault();
+      event.stopPropagation();
+      show(index);
+    });
+    img.addEventListener('keydown', event => {
+      if (event.key === 'Enter' || event.key === ' ') {
+        event.preventDefault();
+        show(index);
+      }
+    });
+  });
+  box.querySelector('.lightbox-close').addEventListener('click', close);
+  box.querySelector('.lightbox-prev').addEventListener('click', () => show(current - 1));
+  box.querySelector('.lightbox-next').addEventListener('click', () => show(current + 1));
+  box.addEventListener('click', event => { if (event.target === box) close(); });
+  document.addEventListener('keydown', event => {
+    if (!box.classList.contains('open')) return;
+    if (event.key === 'Escape') close();
+    if (event.key === 'ArrowLeft') show(current - 1);
+    if (event.key === 'ArrowRight') show(current + 1);
+  });
+})();
+</script>
 </body>
 </html>
