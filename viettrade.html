@@ -1,303 +1,390 @@
 <!doctype html>
 <html lang="zh-CN">
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width,initial-scale=1">
-  <meta name="description" content="VIETRADE Exhibition Booth — trade promotion strategy, exhibition design and project coordination by TRANSITLO.">
-  <title>VIETRADE Exhibition Booth · TRANSITLO</title>
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-  <style>
-    :root{
-      --gold:#c7922f;
-      --ink:#101010;
-      --muted:#666;
-      --line:#dedbd5;
-      --paper:#f7f6f3;
-      --max:1440px;
-    }
-    *{box-sizing:border-box}
-    html{scroll-behavior:smooth}
-    body{margin:0;background:#fff;color:var(--ink);font-family:Inter,"Microsoft YaHei",sans-serif;-webkit-font-smoothing:antialiased}
-    a{color:inherit;text-decoration:none}
-    img{display:block;width:100%;height:100%;object-fit:cover}
-    button{font:inherit}
-    .page{width:min(100%,var(--max));margin:auto;overflow:hidden;background:#fff}
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="theme-color" content="#27302d">
+<meta name="description" content="VIETRADE EXHIBITION BOOTH — China–ASEAN Expo 2024, Vietnam Pavilion · TRANSITLO">
+<title>VIETRADE EXHIBITION BOOTH · TRANSITLO</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
 
-    /* HEADER */
-    .header{height:64px;padding:0 74px;display:flex;align-items:center;border-bottom:1px solid #ececec;background:#fff;position:relative;z-index:5}
-    .brand{font-size:14px;font-weight:800;letter-spacing:7px;white-space:nowrap}
-    .back{margin-left:55px;padding-left:28px;border-left:1px solid #ccc;font-size:11px;font-weight:600;color:#a87520;line-height:64px}
-    .back span{margin-right:8px;font-size:17px}
-    .nav{margin-left:auto;display:flex;align-items:center;gap:38px;font-size:10px;font-weight:600}
-    .langs{display:flex;gap:24px;margin-left:10px}
-    .langs .active{color:#9b6e20;border-bottom:2px solid var(--gold);padding:24px 0 18px}
+:root{
+  --w:1171px;
+  --ink:#222621;
+  --deep:#27302d;
+  --paper:#f2efe8;
+  --paper2:#e7e3da;
+  --muted:#696d67;
+  --line:#d0ccc3;
+  --accent:#83918d;
+  --accent2:#b2a793;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+html,body{margin:0;background:linear-gradient(135deg,#d3d1cb 0%,#c7cbc5 48%,#d8d1c9 100%);color:var(--ink);font-family:Inter,"Microsoft YaHei",Arial,sans-serif;-webkit-font-smoothing:antialiased;text-rendering:geometricPrecision}
+body{min-width:320px}
+a{color:inherit;text-decoration:none}
+img{display:block;width:100%;height:100%;object-fit:cover}
+button{font:inherit}
+.page{width:min(100%,var(--w));margin:auto;background:var(--paper);overflow:hidden;box-shadow:0 0 72px rgba(38,40,36,.15)}
+.header{height:44px;padding:0 61px;display:flex;align-items:center;background:#fff;border-bottom:1px solid rgba(0,0,0,.05);font-size:10px;font-weight:600;letter-spacing:.45px}
+.brand{font-size:15.6px;letter-spacing:3.1px}
+.series-back{margin-left:34px;padding-left:25px;border-left:1px solid #d8d5ce;color:#6c716c}
+.header-nav{margin-left:auto;display:flex;align-items:center;gap:23px}
+.header-nav a,.brand,.series-back{position:relative}
+.header-nav a:after,.brand:after,.series-back:after{content:"";position:absolute;right:0;bottom:-7px;left:0;height:1px;background:currentColor;transform:scaleX(0);transform-origin:left;transition:.25s}
+.header-nav a:hover:after,.brand:hover:after,.series-back:hover:after{transform:scaleX(1)}
+.langs{display:flex;gap:7px;font-weight:500;color:#777}
+.langs span+span:before{content:"|";margin-right:7px;color:#aaa}
 
-    /* HERO */
-    .hero{height:425px;position:relative;background:#111;color:#fff;overflow:hidden}
-    .hero-bg{position:absolute;inset:0;background:
-      linear-gradient(90deg,rgba(0,0,0,.96) 0%,rgba(0,0,0,.83) 26%,rgba(0,0,0,.28) 55%,rgba(0,0,0,.06) 100%),
-      url("viettrade-banner.png") center 50%/cover no-repeat;
-      filter:saturate(.72) contrast(1.04);
-      transform:scale(1.002)
-    }
-    .hero-copy{position:relative;z-index:2;width:52%;padding:58px 0 0 74px}
-    .kicker{font-size:11px;font-weight:700;letter-spacing:.45px;color:#d4a33f;text-transform:uppercase}
-    .hero h1{margin:26px 0 14px;font-size:40px;line-height:1.08;letter-spacing:-1.2px;text-transform:uppercase}
-    .hero-sub{font-size:16px;line-height:1.55}
-    .hero-sub strong{display:block;margin-top:6px;font-size:15px}
-    .hero-sub em{display:block;margin-top:3px;font-size:12px;font-style:normal;color:#d3d3d3}
-    .hero-line{width:54px;border-top:2px solid var(--gold);margin:19px 0 15px}
-    .hero-meta{display:flex;gap:35px;font-size:11px;line-height:1.45}
-    .hero-meta span{display:flex;gap:9px;align-items:center}
-    .hero-meta i{font-style:normal;color:#e1a936;font-size:16px}
-    .services{display:flex;gap:42px;margin-top:28px}
-    .service{display:grid;grid-template-columns:27px 1fr;gap:8px;align-items:center}
-    .service b{color:#d5a13c;font-size:18px;font-weight:500}
-    .service span{font-size:9px;line-height:1.3;font-weight:600;text-transform:uppercase}
-    .service small,.service em{display:block;font-size:8px;color:#bdbdbd;font-weight:500;font-style:normal;text-transform:none}
+.hero{display:grid;grid-template-columns:47% 53%;min-height:560px;background:var(--deep);color:#fff;position:relative;isolation:isolate;overflow:hidden}
+.hero:before{content:"";position:absolute;z-index:-1;inset:-55px;background:linear-gradient(rgba(29,42,40,.36),rgba(29,42,40,.67)),var(--hero) center/cover no-repeat;filter:blur(45px) saturate(.68) contrast(.94);transform:scale(1.13);opacity:.78}
+.hero-copy{position:relative;padding:62px 44px 48px 61px;background:rgba(31,43,41,.58);backdrop-filter:blur(7px)}
+.hero-number{font-size:10px;letter-spacing:1.75px;color:rgba(255,255,255,.64)}
+.hero-kicker{margin-top:17px;font-size:9.5px;letter-spacing:1.3px;color:rgba(255,255,255,.72)}
+.hero h1{margin:31px 0 0;font-size:46px;line-height:1.02;font-weight:300;letter-spacing:-1.15px}
+.hero h1 strong{display:block;font-weight:600}
+.hero-cn{margin-top:20px;font-size:16px;font-weight:500;line-height:1.4}
+.hero-vi{margin-top:5px;font-size:10px;line-height:1.55;letter-spacing:.28px;color:rgba(255,255,255,.61)}
+.hero-meta{margin-top:29px;padding-top:16px;border-top:1px solid rgba(255,255,255,.22);display:grid;gap:8px;font-size:9px;letter-spacing:.58px;color:rgba(255,255,255,.62)}
+.service-row{position:absolute;left:61px;right:44px;bottom:34px;display:grid;grid-template-columns:repeat(3,1fr);gap:15px}
+.service{padding-top:11px;border-top:1px solid rgba(255,255,255,.2)}
+.service b{display:block;font-size:8.3px;letter-spacing:.45px}
+.service span,.service em{display:block;margin-top:4px;font-size:8.2px;font-style:normal;color:rgba(255,255,255,.55);line-height:1.35}
+.hero-visual{position:relative;overflow:hidden}
+.hero-visual img{object-position:var(--hero-pos);filter:saturate(.68) brightness(.84) contrast(.96);transition:transform 1.2s ease,filter .7s ease}
+.hero:hover .hero-visual img{transform:scale(1.018);filter:saturate(.83) brightness(.87) contrast(.98)}
+.hero-visual:after{content:"";position:absolute;inset:0;background:linear-gradient(90deg,rgba(29,40,38,.34),transparent 35%),linear-gradient(0deg,rgba(0,0,0,.25),transparent 42%)}
+.hero-tag{position:absolute;z-index:2;right:22px;top:22px;padding:8px 11px;border:1px solid rgba(255,255,255,.48);font-size:8.6px;letter-spacing:1px}
+.hero-accent{position:absolute;z-index:2;right:0;bottom:0;width:50%;height:8px;background:linear-gradient(90deg,var(--accent),var(--accent2))}
 
-    /* COMMON */
-    .section{padding:38px 74px}
-    .section-title{display:flex;align-items:center;gap:20px;margin:0 0 27px;font-size:14px;text-transform:uppercase;letter-spacing:.1px}
-    .section-title:after{content:"";height:1px;background:var(--line);flex:1}
-    .section-title i{width:18px;border-top:2px solid var(--gold)}
+.section{padding:67px 61px;border-bottom:1px solid var(--line)}
+.section-head{display:flex;align-items:end;justify-content:space-between;gap:30px;margin-bottom:37px}
+.section-label{font-size:10.5px;line-height:1.45;font-weight:600;letter-spacing:.2px}
+.section-label span{display:block;margin-top:4px;font-size:9.5px;color:#6f736e;font-weight:500}
+.section-note{max-width:270px;text-align:right;font-size:8.7px;line-height:1.6;letter-spacing:.5px;color:#777}
+.overview{display:grid;grid-template-columns:1.08fr .92fr;gap:58px;background:linear-gradient(135deg,var(--paper),#eeebe4)}
+.trilingual-copy{display:grid;grid-template-columns:1.15fr .85fr;gap:39px}
+.copy-en p{margin:0 0 17px;font-size:13px;line-height:1.76}
+.copy-secondary p{margin:0 0 15px;font-size:10px;line-height:1.78;color:#555}
+.copy-secondary .vi{color:#777}
+.facts{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));align-content:start;border-top:1px solid var(--line)}
+.fact{padding:18px 18px 18px 0;border-bottom:1px solid var(--line);min-height:91px}
+.fact:nth-child(even){padding-left:18px;border-left:1px solid var(--line)}
+.fact-label{font-size:8.5px;line-height:1.4;letter-spacing:.5px;color:#777}
+.fact-value{margin-top:9px;font-size:10.5px;line-height:1.45;font-weight:500}
+.fact-value span{display:block;margin-top:4px;font-size:8.6px;line-height:1.45;font-weight:400;color:#747872}
 
-    /* OVERVIEW */
-    .overview{display:grid;grid-template-columns:1.2fr .8fr;gap:56px;background:linear-gradient(90deg,#fff,#faf9f6)}
-    .overview-copy h2{margin:0 0 25px;font-size:15px;text-transform:uppercase}
-    .overview-text{display:grid;grid-template-columns:1fr 1fr;gap:52px;font-size:11px;line-height:1.75}
-    .overview-text p{margin:0 0 14px}
-    .overview-text .cn{color:#4d4d4d}.overview-text .vi{color:#666;font-style:normal}
-    .facts{border-left:1px solid var(--line);padding-left:55px;display:grid;gap:13px}
-    .fact{display:grid;grid-template-columns:26px 1fr;gap:12px;align-items:start}
-    .fact-icon{color:var(--gold);font-size:20px;line-height:1}
-    .fact strong{display:block;font-size:9px;color:#a67a2e;text-transform:uppercase}
-    .fact span{display:block;margin-top:2px;font-size:10px;line-height:1.38;color:#444}.fact span small{display:block;margin-top:2px;color:#777;font-size:8.5px}
+.process{background:#fff}
+.process-grid{display:grid;gap:15px}
+.process-grid.count-5{grid-template-columns:repeat(5,1fr)}
+.process-grid.count-3{grid-template-columns:repeat(3,1fr)}
+.process-card{min-width:0;border-top:1px solid #222;padding-top:12px}
+.process-index{font-size:20px;font-weight:300;color:var(--accent)}
+.process-title{margin-top:11px;min-height:57px}
+.process-title b{display:block;font-size:9.5px;line-height:1.35;letter-spacing:.25px}
+.process-title span,.process-title em{display:block;margin-top:4px;font-size:8.5px;line-height:1.35;font-style:normal;color:#777}
+.process-image{position:relative;aspect-ratio:4/3;overflow:hidden;background:#d9d7d1;cursor:zoom-in}
+.process-image:after{content:"+";position:absolute;right:9px;bottom:7px;width:25px;height:25px;display:grid;place-items:center;background:rgba(26,30,28,.72);color:#fff;font-size:16px}
+.process-image img{filter:saturate(.58) brightness(.9) contrast(.94);transition:.55s}
+.process-card:hover img{transform:scale(1.025);filter:saturate(.82) brightness(.92) contrast(.96)}
 
-    /* PROCESS */
-    .process{padding-top:22px}
-    .process-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:44px}
-    .process-card{position:relative}
-    .process-head{display:flex;gap:13px;align-items:flex-start;margin-bottom:13px}
-    .process-no{font-size:23px;line-height:1;color:#d0a14e;font-weight:600}
-    .process-head strong{font-size:10px;display:block;text-transform:uppercase}
-    .process-head small,.process-head em{display:block;margin-top:3px;font-size:8px;color:#777;font-style:normal}
-    .process-image{height:177px;overflow:hidden;background:#ddd;cursor:zoom-in}
-    .process-image img{filter:saturate(.78);transition:.45s ease}
-    .process-card:hover img{transform:scale(1.02);filter:saturate(.92)}
-    .process-card:not(:last-child):after{content:"›";position:absolute;right:-28px;top:125px;color:#9b7129;font-size:30px;font-weight:300}
+.features{background:var(--paper2)}
+.feature-list{display:grid;grid-template-columns:repeat(2,1fr);gap:18px}
+.feature-list.three{grid-template-columns:repeat(3,1fr)}
+.feature{background:rgba(255,255,255,.48);border-top:1px solid #282b28}
+.feature-media{aspect-ratio:16/10;overflow:hidden;cursor:zoom-in}
+.feature-media img{filter:saturate(.60) brightness(.88) contrast(.94);transition:.55s}
+.feature:hover img{transform:scale(1.018);filter:saturate(.79) brightness(.91) contrast(.96)}
+.feature-copy{padding:18px 18px 22px}
+.feature-no{font-size:8.5px;color:#858983;letter-spacing:.7px}
+.feature h3{margin:11px 0 4px;font-size:13px;line-height:1.27;font-weight:500}
+.feature-cn{font-size:10px;font-weight:500}
+.feature-vi{margin-top:3px;font-size:8.5px;color:#777}
+.feature p{margin:17px 0 0;font-size:9.5px;line-height:1.65;color:#555}
+.feature p span,.feature p em{display:block;margin-top:9px;font-style:normal;color:#747872}
 
-    /* STORIES */
-    .stories{padding-top:10px;display:grid;grid-template-columns:1fr 1fr;gap:0}
-    .story{padding:25px 32px 15px 0}
-    .story+ .story{border-left:1px solid var(--line);padding-left:32px}
-    .story h2{margin:0 0 4px;font-size:13px;text-transform:uppercase}
-    .story h3{margin:0 0 22px;font-size:10px}
-    .story-body{display:grid;grid-template-columns:1.35fr .65fr;gap:26px;align-items:start}
-    .story-image{height:178px;cursor:zoom-in;overflow:hidden}
-    .story-image img{filter:saturate(.8)}
-    .story p{margin:5px 0;font-size:9.5px;line-height:1.65;color:#444}
-    .story p.cn{margin-top:16px;color:#666}.story p.vi{margin-top:10px;color:#777;font-style:normal}
+.closing{display:grid;grid-template-columns:1fr 1fr;min-height:330px;background:var(--deep);color:#fff}
+.closing-copy{padding:62px 48px 48px 61px}
+.closing-label{font-size:9px;letter-spacing:1.2px;color:rgba(255,255,255,.58)}
+.closing h2{margin:27px 0 0;font-size:34px;line-height:1.02;font-weight:300}
+.closing h2 strong{display:block;font-weight:600}
+.closing p{margin:24px 0 0;max-width:420px;font-size:11px;line-height:1.72;color:rgba(255,255,255,.72)}
+.closing p span,.closing p em{display:block;margin-top:8px;font-style:normal;color:rgba(255,255,255,.56)}
+.closing-nav{display:grid;grid-template-rows:1fr 1fr}
+.nav-card{position:relative;padding:34px 35px;border-left:1px solid rgba(255,255,255,.16);display:flex;flex-direction:column;justify-content:space-between;transition:.3s}
+.nav-card+.nav-card{border-top:1px solid rgba(255,255,255,.16)}
+.nav-card:hover{background:rgba(255,255,255,.055)}
+.nav-card small{font-size:8.5px;letter-spacing:.9px;color:rgba(255,255,255,.53)}
+.nav-card b{font-size:17px;line-height:1.3;font-weight:500}
+.nav-card i{position:absolute;right:27px;bottom:25px;font-size:22px;font-style:normal;color:rgba(255,255,255,.62)}
 
-    /* CLOSING */
-    .closing{height:285px;position:relative;color:#fff;overflow:hidden;background:#171717}
-    .closing:before{content:"";position:absolute;inset:0;background:
-      linear-gradient(90deg,rgba(0,0,0,.94),rgba(0,0,0,.62) 33%,rgba(0,0,0,.08) 68%),
-      url("viettrade-banner.png") center/cover no-repeat;
-      filter:saturate(.68)
-    }
-    .closing-copy{position:relative;z-index:2;padding:56px 0 0 74px}
-    .closing h2{margin:0;font-size:28px;line-height:1.12;text-transform:uppercase}
-    .closing-line{width:45px;border-top:2px solid var(--gold);margin:18px 0}
-    .closing p{font-size:12px;line-height:1.65;margin:0}
-    .closing p strong,.closing p em{display:block;font-style:normal}.closing p em{font-size:10px;color:#d0d0d0}
+.lightbox{position:fixed;inset:0;z-index:100;background:rgba(16,18,17,.95);display:none;align-items:center;justify-content:center;padding:38px}
+.lightbox.open{display:flex}
+.lightbox img{width:auto;height:auto;max-width:91vw;max-height:88vh;object-fit:contain}
+.lightbox button{position:absolute;border:0;background:transparent;color:#fff;cursor:pointer}
+.lightbox-close{right:25px;top:14px;font-size:38px;font-weight:300}
+.lightbox-prev,.lightbox-next{top:50%;transform:translateY(-50%);font-size:52px;padding:18px}
+.lightbox-prev{left:6px}.lightbox-next{right:6px}
+.lightbox-count{position:absolute;bottom:19px;color:rgba(255,255,255,.58);font-size:9px;letter-spacing:.8px}
+.reveal{opacity:0;transform:translateY(18px);transition:opacity .75s ease,transform .75s ease}
+.reveal.visible{opacity:1;transform:none}
 
-    /* LIGHTBOX */
-    .lightbox{position:fixed;inset:0;z-index:50;background:rgba(0,0,0,.94);display:none;align-items:center;justify-content:center;padding:44px}
-    .lightbox.open{display:flex}
-    .lightbox img{width:auto;height:auto;max-width:92vw;max-height:88vh;object-fit:contain}
-    .lightbox button{position:absolute;border:0;background:transparent;color:#fff;cursor:pointer}
-    .close{right:25px;top:16px;font-size:38px;font-weight:300}
-    .prev,.next{top:50%;transform:translateY(-50%);font-size:54px;font-weight:200;padding:20px}
-    .prev{left:10px}.next{right:10px}
+@media(max-width:1024px){
+  .header{padding:0 36px}
+  .hero-copy{padding-left:36px}
+  .service-row{left:36px}
+  .section{padding-left:36px;padding-right:36px}
+  .closing-copy{padding-left:36px}
+  .process-grid.count-5{grid-template-columns:repeat(3,1fr)}
+  .feature-list.three{grid-template-columns:repeat(2,1fr)}
+}
+@media(max-width:760px){
+  .page{width:100%;box-shadow:none}
+  .header{height:54px;padding:0 20px}
+  .brand{font-size:13px;letter-spacing:2.6px}
+  .series-back{font-size:0;margin-left:19px;padding-left:17px}
+  .series-back:before{content:"←";font-size:17px}
+  .header-nav>a{display:none}
+  .header-nav{gap:12px}
+  .hero{grid-template-columns:1fr;min-height:0}
+  .hero-visual{grid-row:1;height:55vw;min-height:230px;max-height:380px}
+  .hero-copy{grid-row:2;min-height:490px;padding:40px 22px 145px}
+  .hero h1{font-size:36px}
+  .hero-number{font-size:9px}
+  .service-row{left:22px;right:22px;bottom:31px;gap:8px}
+  .service b{font-size:7.8px}
+  .service span,.service em{font-size:7.4px}
+  .hero-accent{width:66%;height:6px}
+  .section{padding:48px 22px}
+  .section-head{align-items:start;margin-bottom:29px}
+  .section-note{max-width:145px;font-size:7.8px}
+  .overview{grid-template-columns:1fr;gap:39px}
+  .trilingual-copy{grid-template-columns:1fr;gap:14px}
+  .copy-en p{font-size:12px}
+  .facts{grid-template-columns:1fr 1fr}
+  .process-grid.count-5,.process-grid.count-3{display:flex;overflow-x:auto;gap:14px;scroll-snap-type:x mandatory;padding-bottom:10px}
+  .process-card{min-width:76vw;scroll-snap-align:start}
+  .feature-list,.feature-list.three{grid-template-columns:1fr}
+  .closing{grid-template-columns:1fr}
+  .closing-copy{padding:52px 22px}
+  .closing h2{font-size:29px}
+  .closing-nav{min-height:260px}
+  .nav-card{border-left:0;border-top:1px solid rgba(255,255,255,.16);padding:28px 22px}
+}
+@media(max-width:420px){
+  .hero h1{font-size:31px}
+  .hero-copy{min-height:500px}
+  .facts{grid-template-columns:1fr}
+  .fact:nth-child(even){padding-left:0;border-left:0}
+  .process-card{min-width:84vw}
+  .langs{font-size:8px}
+}
+@media(prefers-reduced-motion:reduce){
+  html{scroll-behavior:auto}
+  .reveal{opacity:1;transform:none;transition:none}
+  .hero-visual img,.process-image img,.feature-media img{transition:none}
+}
 
-    /* RESPONSIVE */
-    @media(max-width:1024px){
-      .header{padding:0 38px}.back{margin-left:30px}.nav{gap:23px}
-      .hero-copy{padding-left:38px;width:63%}.hero h1{font-size:35px}
-      .section{padding-left:38px;padding-right:38px}
-      .overview{gap:35px}.facts{padding-left:32px}
-      .closing-copy{padding-left:38px}
-    }
-    @media(max-width:760px){
-      .header{height:58px;padding:0 20px}.brand{font-size:12px;letter-spacing:4px}
-      .back{margin-left:18px;padding-left:17px;font-size:9px;line-height:58px}
-      .nav>a{display:none}.nav{gap:10px}.langs{gap:12px;margin:0;font-size:9px}.langs .active{padding:21px 0 16px}
-      .hero{height:560px}.hero-bg{background:
-        linear-gradient(180deg,rgba(0,0,0,.35),rgba(0,0,0,.9) 63%,#050505 100%),
-        url("viettrade-banner.png") 66% center/cover no-repeat}
-      .hero-copy{width:100%;padding:230px 22px 0}.hero h1{font-size:32px;margin-top:17px}.hero-sub{font-size:14px}
-      .hero-meta{gap:20px;flex-wrap:wrap}.services{gap:19px;overflow-x:auto;padding-bottom:8px}.service{min-width:145px}
-      .section{padding:32px 22px}.overview{grid-template-columns:1fr;gap:25px}.overview-text{grid-template-columns:1fr;gap:6px}
-      .facts{border-left:0;border-top:1px solid var(--line);padding:25px 0 0;grid-template-columns:1fr 1fr}
-      .process-grid{display:flex;overflow-x:auto;gap:18px;scroll-snap-type:x mandatory;padding-bottom:15px}
-      .process-card{min-width:82vw;scroll-snap-align:start}.process-card:not(:last-child):after{display:none}.process-image{height:210px}
-      .stories{grid-template-columns:1fr}.story{padding:22px 0}.story+.story{border-left:0;border-top:1px solid var(--line);padding:27px 0}
-      .story-body{grid-template-columns:1fr}.story-image{height:220px}
-      .closing{height:320px}.closing-copy{padding:64px 22px 0}.closing h2{font-size:25px}
-      .lightbox{padding:15px}.prev,.next{font-size:38px;padding:10px}
-    }
-    @media(max-width:420px){
-      .back{font-size:0}.back span{font-size:18px;margin:0}
-      .facts{grid-template-columns:1fr}.process-card{min-width:86vw}
-      .story-image{height:195px}
-    }
-  </style>
+</style>
 </head>
-<body>
+<body style="--accent:#748984;--accent2:#b29477;--hero:url('viettrade-banner.png');--hero-pos:center 50%">
 <main class="page">
   <header class="header">
-    <a class="brand" href="index.html">TRANSITLO</a>
-    <a class="back" href="asean-expo.html"><span>←</span>ASEAN PROJECTS</a>
-    <nav class="nav">
+    <a class="brand" href="index.html" aria-label="TRANSITLO homepage">TRANSITLO</a>
+    <a class="series-back" href="asean-expo.html">← &nbsp; VIETNAM PAVILION SERIES</a>
+    <nav class="header-nav">
       <a href="#overview">ABOUT</a>
+      <a href="#process">PROCESS</a>
       <a href="index.html#contact">CONTACT</a>
-      <div class="langs"><a href="#">中文</a><a class="active" href="#">EN</a><a href="#">VI</a></div>
+      <div class="langs"><span>中文</span><span>EN</span><span>VI</span></div>
     </nav>
   </header>
 
   <section class="hero">
-    <div class="hero-bg" aria-hidden="true"></div>
     <div class="hero-copy">
-      <div class="kicker">ASEAN EXHIBITION PROJECTS · 东盟展览项目 · DỰ ÁN TRIỂN LÃM ASEAN</div>
-      <h1>VIETRADE<br>EXHIBITION BOOTH</h1>
-      <div class="hero-sub">Vietnam Trade Promotion Agency Exhibition Booth<strong>越南贸易促进局展位</strong><em>Gian hàng Cục Xúc tiến Thương mại Việt Nam (VIETRADE)</em></div>
-      <div class="hero-line"></div>
-      <div class="hero-meta">
-        <span><i>▣</i> September 2024 · 2024年9月 · Tháng 9 năm 2024</span>
-        <span><i>⌖</i> Vietnam Pavilion · Nanning, China</span>
-      </div>
-      <div class="services">
-        <div class="service"><b>▦</b><span>TRADE PROMOTION STRATEGY<small>贸易推广空间策略</small><em>Chiến lược xúc tiến thương mại</em></span></div>
-        <div class="service"><b>⌘</b><span>BOOTH DESIGN<small>展位设计</small><em>Thiết kế gian hàng</em></span></div>
-        <div class="service"><b>♙</b><span>PROJECT COORDINATION<small>项目协调</small><em>Điều phối dự án</em></span></div>
-      </div>
+      <div class="hero-number">02 / 04 · TRADE PROMOTION INTERFACE</div>
+      <div class="hero-kicker">CHINA–ASEAN EXPO 2024 · VIETNAM PAVILION</div>
+      <h1>VIETRADE<strong>EXHIBITION BOOTH</strong></h1>
+      <div class="hero-cn">越南贸易促进局展位</div>
+      <div class="hero-vi">Gian hàng Cục Xúc tiến Thương mại Việt Nam (VIETRADE)</div>
+      <div class="hero-meta"><span>SEPTEMBER 2024 · 2024年9月 · THÁNG 9 NĂM 2024</span><span>VIETNAM PAVILION · NANNING, CHINA</span></div>
+      <div class="service-row"><div class="service"><b>TRADE PROMOTION STRATEGY</b><span>贸易推广空间策略</span><em>Chiến lược xúc tiến thương mại</em></div><div class="service"><b>BOOTH DESIGN</b><span>展位设计</span><em>Thiết kế gian hàng</em></div><div class="service"><b>PROJECT COORDINATION</b><span>项目协调</span><em>Điều phối dự án</em></div></div>
+    </div>
+    <div class="hero-visual">
+      <img class="zoomable" src="viettrade-banner.png" alt="VIETRADE EXHIBITION BOOTH">
+      <div class="hero-tag">TRANSITLO / ASEAN PRACTICE</div>
+      <div class="hero-accent"></div>
     </div>
   </section>
 
   <section class="section overview" id="overview">
-    <div class="overview-copy">
-      <h2>PROJECT OVERVIEW · 项目概况 · TỔNG QUAN DỰ ÁN</h2>
-      <div class="overview-text">
-        <div>
-          <p>The VIETRADE Exhibition Booth was delivered within the Vietnam Pavilion program at the China–ASEAN Expo 2024 in Nanning.</p>
-          <p>Through institutional presentation, product display and business communication spaces, the booth supported Vietnamese enterprises in connecting with ASEAN and international markets.</p>
-        </div>
-        <div class="cn">
-          <p>项目于2024中国—东盟博览会越南馆综合项目体系内实施。VIETRADE 展位是为越南贸易促进局设计的贸易推广空间。展位结合机构形象展示、产品陈列与商务交流功能，为越南企业连接东盟及国际市场提供展示与合作平台。</p>
-          <p class="vi">Gian hàng VIETRADE được triển khai trong chương trình tổng thể Khu gian hàng Việt Nam tại Hội chợ Trung Quốc–ASEAN 2024 ở Nam Ninh. Không gian kết hợp giới thiệu hình ảnh tổ chức, trưng bày sản phẩm và giao thương, hỗ trợ doanh nghiệp Việt Nam kết nối với thị trường ASEAN và quốc tế.</p>
+    <div>
+      <div class="section-head reveal">
+        <div class="section-label">PROJECT OVERVIEW<span>项目概况 · TỔNG QUAN DỰ ÁN</span></div>
+        <div class="section-note">ONE OF FOUR INDEPENDENT SPACES WITHIN THE 2024 VIETNAM PAVILION SYSTEM</div>
+      </div>
+      <div class="trilingual-copy reveal">
+        <div class="copy-en"><p>The VIETRADE Exhibition Booth was delivered within the Vietnam Pavilion program at the China–ASEAN Expo 2024 in Nanning.</p><p>Through institutional presentation, product display and business communication spaces, the booth supported Vietnamese enterprises in connecting with ASEAN and international markets.</p></div>
+        <div class="copy-secondary">
+          <div class="cn"><p>项目于2024中国—东盟博览会越南馆综合项目体系内实施。VIETRADE展位是为越南贸易促进局设计的贸易推广空间。</p><p>展位结合机构形象展示、产品陈列与商务交流功能，为越南企业连接东盟及国际市场提供展示与合作平台。</p></div>
+          <div class="vi"><p>Gian hàng VIETRADE được triển khai trong chương trình tổng thể Khu gian hàng Việt Nam tại Hội chợ Trung Quốc–ASEAN 2024 ở Nam Ninh.</p><p>Không gian kết hợp giới thiệu hình ảnh tổ chức, trưng bày sản phẩm và giao thương, hỗ trợ doanh nghiệp Việt Nam kết nối với thị trường ASEAN và quốc tế.</p></div>
         </div>
       </div>
     </div>
-    <div class="facts">
-      <div class="fact"><div class="fact-icon">▧</div><div><strong>PROJECT · 项目 · DỰ ÁN</strong><span>VIETRADE Exhibition Booth<small>越南贸易促进局展位 · Gian hàng VIETRADE</small></span></div></div>
-      <div class="fact"><div class="fact-icon">⌖</div><div><strong>LOCATION · 地点 · ĐỊA ĐIỂM</strong><span>China–ASEAN Expo, Nanning, China<small>中国—东盟博览会，中国南宁 · CAEXPO, Nam Ninh, Trung Quốc</small></span></div></div>
-      <div class="fact"><div class="fact-icon">♙</div><div><strong>CLIENT · 客户 · KHÁCH HÀNG</strong><span>Vietnam Trade Promotion Agency (VIETRADE)<small>越南贸易促进局 · Cục Xúc tiến Thương mại Việt Nam</small></span></div></div>
-      <div class="fact"><div class="fact-icon">▦</div><div><strong>YEAR · 年份 · NĂM</strong><span>2024</span></div></div>
-      <div class="fact"><div class="fact-icon">◇</div><div><strong>SCOPE · 范围 · PHẠM VI</strong><span>Trade Promotion Strategy · Booth Design · Spatial Planning · Project Coordination<small>贸易推广策略 · 展位设计 · 空间规划 · 项目协调<br>Chiến lược xúc tiến · Thiết kế gian hàng · Quy hoạch không gian · Điều phối dự án</small></span></div></div>
-    </div>
+    <div class="facts reveal">
+        <div class="fact">
+          <div class="fact-label">PROJECT · 项目 · DỰ ÁN</div>
+          <div class="fact-value">VIETRADE Exhibition Booth<span>越南贸易促进局展位 · Gian hàng VIETRADE</span></div>
+        </div>
+        <div class="fact">
+          <div class="fact-label">LOCATION · 地点 · ĐỊA ĐIỂM</div>
+          <div class="fact-value">China–ASEAN Expo, Nanning, China<span>中国—东盟博览会，中国南宁 · CAEXPO, Nam Ninh, Trung Quốc</span></div>
+        </div>
+        <div class="fact">
+          <div class="fact-label">CLIENT · 客户 · KHÁCH HÀNG</div>
+          <div class="fact-value">Vietnam Trade Promotion Agency (VIETRADE)<span>越南贸易促进局 · Cục Xúc tiến Thương mại Việt Nam</span></div>
+        </div>
+        <div class="fact">
+          <div class="fact-label">YEAR · 年份 · NĂM</div>
+          <div class="fact-value">2024<span>2024 · 2024</span></div>
+        </div>
+        <div class="fact">
+          <div class="fact-label">SCOPE · 项目范围 · PHẠM VI</div>
+          <div class="fact-value">Trade Promotion Strategy · Booth Design · Spatial Planning · Project Coordination<span>贸易推广策略 · 展位设计 · 空间规划 · 项目协调 · Chiến lược xúc tiến · Thiết kế gian hàng · Quy hoạch không gian · Điều phối dự án</span></div>
+        </div></div>
   </section>
 
   <section class="section process" id="process">
-    <h2 class="section-title">DESIGN &amp; CONSTRUCTION PROCESS · 设计与施工过程 · QUÁ TRÌNH THIẾT KẾ &amp; THI CÔNG <i></i></h2>
-    <div class="process-grid">
-      <article class="process-card">
-        <div class="process-head"><span class="process-no">01</span><div><strong>CONCEPT DEVELOPMENT</strong><small>概念发展</small><em>Phát triển ý tưởng</em></div></div>
-        <div class="process-image"><img class="zoomable" src="asean13-1.png" alt="Temporary concept development image"></div>
-      </article>
-      <article class="process-card">
-        <div class="process-head"><span class="process-no">02</span><div><strong>BOOTH INSTALLATION</strong><small>展位施工</small><em>Thi công gian hàng</em></div></div>
-        <div class="process-image"><img class="zoomable" src="viettraderedy.JPG" alt="Temporary exhibition installation image"></div>
-      </article>
-      <article class="process-card">
-        <div class="process-head"><span class="process-no">03</span><div><strong>COMPLETED BOOTH</strong><small>完工展位</small><em>Gian hàng hoàn thiện</em></div></div>
-        <div class="process-image"><img class="zoomable" src="maocujujungong.png" alt="Temporary completed booth image"></div>
-      </article>
+    <div class="section-head reveal">
+      <div class="section-label">DESIGN &amp; CONSTRUCTION PROCESS<span>设计与施工过程 · QUÁ TRÌNH THIẾT KẾ &amp; THI CÔNG</span></div>
+      <div class="section-note">03 STAGES · CLICK IMAGES TO VIEW</div>
     </div>
+    <div class="process-grid count-3">
+        <article class="process-card reveal">
+          <div class="process-index">01</div>
+          <div class="process-title"><b>CONCEPT DEVELOPMENT</b><span>概念发展</span><em>Phát triển ý tưởng</em></div>
+          <div class="process-image zoomable"><img loading="lazy" src="asean13-1.png" alt="CONCEPT DEVELOPMENT"></div>
+        </article>
+        <article class="process-card reveal">
+          <div class="process-index">02</div>
+          <div class="process-title"><b>BOOTH INSTALLATION</b><span>展位施工</span><em>Thi công gian hàng</em></div>
+          <div class="process-image zoomable"><img loading="lazy" src="viettraderedy.JPG" alt="BOOTH INSTALLATION"></div>
+        </article>
+        <article class="process-card reveal">
+          <div class="process-index">03</div>
+          <div class="process-title"><b>COMPLETED BOOTH</b><span>完工展位</span><em>Gian hàng hoàn thiện</em></div>
+          <div class="process-image zoomable"><img loading="lazy" src="maocujujungong.png" alt="COMPLETED BOOTH"></div>
+        </article></div>
   </section>
 
-  <section class="section stories">
-    <article class="story">
-      <h2>BOOTH OPENING CEREMONY</h2>
-      <h3>展位启用仪式 · Lễ khai trương gian hàng</h3>
-      <div class="story-body">
-        <div class="story-image"><img class="zoomable" src="asen38-1.png" alt="Temporary booth opening ceremony image"></div>
-        <div>
-          <p>The booth opening ceremony brought together Vietnamese trade representatives, enterprises and international visitors.</p>
-          <p class="cn">展位启用活动汇聚越南贸易代表、企业及国际参观者，体现贸易推广与商务交流功能。</p>
-          <p class="vi">Lễ khai trương gian hàng quy tụ đại diện thương mại, doanh nghiệp Việt Nam và khách tham quan quốc tế.</p>
-        </div>
-      </div>
-    </article>
-    <article class="story">
-      <h2>TRADE EXCHANGE &amp; DELEGATION VISIT</h2>
-      <h3>贸易交流与代表团参观 · Giao thương &amp; đón đoàn đại biểu</h3>
-      <div class="story-body">
-        <div class="story-image"><img class="zoomable" src="viettrademeet.png" alt="Temporary trade exchange image"></div>
-        <div>
-          <p>The booth served as a platform for business communication and international cooperation during the exhibition.</p>
-          <p class="cn">展位作为企业交流与合作平台，吸引国际代表团和专业观众参观洽谈。</p>
-          <p class="vi">Gian hàng là không gian giao thương và hợp tác quốc tế, thu hút các đoàn đại biểu và khách chuyên ngành đến tham quan, trao đổi.</p>
-        </div>
-      </div>
-    </article>
+  <section class="section features">
+    <div class="section-head reveal">
+      <div class="section-label">PUBLIC PROGRAM &amp; TRADE EXCHANGE<span>公共活动与贸易交流 · HOẠT ĐỘNG CÔNG CỘNG &amp; GIAO THƯƠNG</span></div>
+      <div class="section-note">SPATIAL IDENTITY · COMMUNICATION · VISITOR EXPERIENCE</div>
+    </div>
+    <div class="feature-list ">
+        <article class="feature reveal">
+          <div class="feature-media zoomable"><img loading="lazy" src="asen38-1.png" alt="BOOTH OPENING CEREMONY"></div>
+          <div class="feature-copy">
+            <div class="feature-no">01 / 02</div>
+            <h3>BOOTH OPENING CEREMONY</h3>
+            <div class="feature-cn">展位启用仪式</div>
+            <div class="feature-vi">Lễ khai trương gian hàng</div>
+            <p>The booth opening ceremony brought together Vietnamese trade representatives, enterprises and international visitors.<span>展位启用活动汇聚越南贸易代表、企业及国际参观者，体现贸易推广与商务交流功能。</span><em>Lễ khai trương gian hàng quy tụ đại diện thương mại, doanh nghiệp Việt Nam và khách tham quan quốc tế.</em></p>
+          </div>
+        </article>
+        <article class="feature reveal">
+          <div class="feature-media zoomable"><img loading="lazy" src="viettrademeet.png" alt="TRADE EXCHANGE &amp; DELEGATION VISIT"></div>
+          <div class="feature-copy">
+            <div class="feature-no">02 / 02</div>
+            <h3>TRADE EXCHANGE &amp; DELEGATION VISIT</h3>
+            <div class="feature-cn">贸易交流与代表团参观</div>
+            <div class="feature-vi">Giao thương &amp; đón đoàn đại biểu</div>
+            <p>The booth served as a platform for business communication and international cooperation during the exhibition.<span>展位作为企业交流与合作平台，吸引国际代表团和专业观众参观洽谈。</span><em>Gian hàng là không gian giao thương và hợp tác quốc tế, thu hút các đoàn đại biểu và khách chuyên ngành đến tham quan, trao đổi.</em></p>
+          </div>
+        </article></div>
   </section>
 
   <section class="closing">
-    <div class="closing-copy">
-      <h2>VIETRADE<br>EXHIBITION BOOTH</h2>
-      <div class="closing-line"></div>
-      <p>A trade-promotion space connecting Vietnam,<br>ASEAN and global markets.<strong>连接越南、东盟与全球市场的贸易推广空间。</strong><em>Không gian xúc tiến thương mại kết nối Việt Nam, ASEAN và thị trường toàn cầu.</em></p>
+    <div class="closing-copy reveal">
+      <div class="closing-label">02 / 04 · VIETNAM PAVILION PROJECT SERIES</div>
+      <h2>VIETRADE<strong>EXHIBITION BOOTH</strong></h2>
+      <p>A trade-promotion space connecting Vietnam, ASEAN and global markets.<span>连接越南、东盟与全球市场的贸易推广空间。</span><em>Không gian xúc tiến thương mại kết nối Việt Nam, ASEAN và thị trường toàn cầu.</em></p>
+    </div>
+    <div class="closing-nav">
+      <a class="nav-card" href="asean-expo.html"><small>RETURN TO PROJECT SERIES</small><b>VIETNAM PAVILION<br>FOUR PROJECTS</b><i>←</i></a>
+      <a class="nav-card" href="quangninh.html"><small>NEXT PROJECT · 下一个项目 · DỰ ÁN TIẾP THEO</small><b>QUANG NINH PROVINCE<br>EXHIBITION BOOTH</b><i>↗</i></a>
     </div>
   </section>
 </main>
 
-<div class="lightbox" role="dialog" aria-modal="true" aria-label="Image preview">
-  <button class="close" aria-label="Close">×</button>
-  <button class="prev" aria-label="Previous image">‹</button>
-  <img alt="Expanded project image">
-  <button class="next" aria-label="Next image">›</button>
+<div class="lightbox" role="dialog" aria-modal="true" aria-label="Image viewer">
+  <button class="lightbox-close" type="button" aria-label="Close">×</button>
+  <button class="lightbox-prev" type="button" aria-label="Previous">‹</button>
+  <img alt="">
+  <button class="lightbox-next" type="button" aria-label="Next">›</button>
+  <div class="lightbox-count"></div>
 </div>
 
 <script>
-  const images=[...document.querySelectorAll(".zoomable")];
-  const box=document.querySelector(".lightbox");
-  const large=box.querySelector("img");
-  let current=0;
-  function show(index){
-    current=(index+images.length)%images.length;
-    large.src=images[current].src;
-    large.alt=images[current].alt;
-    box.classList.add("open");
-    document.body.style.overflow="hidden";
+(() => {
+  const reveal = document.querySelectorAll('.reveal');
+  if ('IntersectionObserver' in window) {
+    const observer = new IntersectionObserver(entries => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+          observer.unobserve(entry.target);
+        }
+      });
+    }, {threshold:.12});
+    reveal.forEach(el => observer.observe(el));
+  } else {
+    reveal.forEach(el => el.classList.add('visible'));
   }
-  function closeBox(){
-    box.classList.remove("open");
-    document.body.style.overflow="";
+
+  const images = [...document.querySelectorAll('.zoomable img, img.zoomable')];
+  const box = document.querySelector('.lightbox');
+  const large = box.querySelector('img');
+  const count = box.querySelector('.lightbox-count');
+  let current = 0;
+
+  function show(index) {
+    current = (index + images.length) % images.length;
+    large.src = images[current].currentSrc || images[current].src;
+    large.alt = images[current].alt || '';
+    count.textContent = `${current + 1} / ${images.length}`;
   }
-  images.forEach((img,index)=>img.addEventListener("click",()=>show(index)));
-  box.querySelector(".close").addEventListener("click",closeBox);
-  box.querySelector(".prev").addEventListener("click",()=>show(current-1));
-  box.querySelector(".next").addEventListener("click",()=>show(current+1));
-  box.addEventListener("click",event=>{if(event.target===box)closeBox()});
-  document.addEventListener("keydown",event=>{
-    if(!box.classList.contains("open"))return;
-    if(event.key==="Escape")closeBox();
-    if(event.key==="ArrowLeft")show(current-1);
-    if(event.key==="ArrowRight")show(current+1);
+  function open(index) {
+    show(index);
+    box.classList.add('open');
+    document.body.style.overflow = 'hidden';
+  }
+  function close() {
+    box.classList.remove('open');
+    document.body.style.overflow = '';
+    large.removeAttribute('src');
+  }
+
+  images.forEach((img,index) => {
+    img.style.cursor = 'zoom-in';
+    img.addEventListener('click', () => open(index));
   });
+  box.querySelector('.lightbox-close').addEventListener('click', close);
+  box.querySelector('.lightbox-prev').addEventListener('click', e => { e.stopPropagation(); show(current - 1); });
+  box.querySelector('.lightbox-next').addEventListener('click', e => { e.stopPropagation(); show(current + 1); });
+  box.addEventListener('click', e => { if (e.target === box) close(); });
+  document.addEventListener('keydown', e => {
+    if (!box.classList.contains('open')) return;
+    if (e.key === 'Escape') close();
+    if (e.key === 'ArrowLeft') show(current - 1);
+    if (e.key === 'ArrowRight') show(current + 1);
+  });
+})();
 </script>
 </body>
 </html>
