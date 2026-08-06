@@ -1,0 +1,450 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="theme-color" content="#171716">
+  <meta name="description" content="TRANSITLO住宅室内案例06：Stone & Stillness / 石材与静谧 / Đá và tĩnh lặng">
+  <title>Stone & Stillness / 石材与静谧 — TRANSITLO</title>
+  <style>
+    :root{
+      --bg:#efeee9;
+      --paper:#f7f6f2;
+      --ink:#171716;
+      --muted:#78756e;
+      --line:rgba(23,23,22,.16);
+      --dark:#1a1a18;
+      --max:1680px;
+      --pad:clamp(20px,4.2vw,72px);
+      --gap:clamp(18px,2.4vw,38px);
+    }
+    *{box-sizing:border-box}
+    html{scroll-behavior:smooth}
+    body{
+      margin:0;
+      color:var(--ink);
+      background:var(--bg);
+      font-family:Arial,"Helvetica Neue","PingFang SC","Microsoft YaHei",sans-serif;
+      font-size:15px;
+      line-height:1.65;
+      -webkit-font-smoothing:antialiased;
+      overflow-x:hidden;
+    }
+    a{color:inherit;text-decoration:none}
+    img{display:block;width:100%;height:100%;object-fit:cover}
+    button{font:inherit}
+    .site-header{
+      position:fixed;inset:0 0 auto;z-index:50;
+      display:grid;grid-template-columns:1fr auto 1fr;
+      align-items:center;gap:24px;
+      padding:22px var(--pad);
+      color:#fff;mix-blend-mode:difference;
+      pointer-events:none
+    }
+    .site-header a{pointer-events:auto}
+    .brand{font-size:clamp(18px,1.8vw,28px);font-weight:700;letter-spacing:-.045em}
+    .header-project{font-size:10px;letter-spacing:.2em;text-transform:uppercase}
+    .site-header nav{justify-self:end;display:flex;gap:26px;font-size:10px;letter-spacing:.18em}
+    .hero{
+      position:relative;min-height:100svh;display:grid;align-items:end;
+      overflow:hidden;background:#4a4945
+    }
+    .hero>picture,.hero>picture img,.hero-shade{position:absolute;inset:0}
+    .hero>picture img{object-position:50% 50%}
+    .hero-shade{background:linear-gradient(180deg,rgba(0,0,0,.08) 30%,rgba(0,0,0,.72) 100%)}
+    .hero-topline{
+      position:absolute;top:105px;left:var(--pad);right:var(--pad);z-index:2;
+      display:flex;justify-content:space-between;
+      color:#fff;font-size:10px;letter-spacing:.2em;text-transform:uppercase
+    }
+    .hero-copy{
+      position:relative;z-index:2;width:min(100%,var(--max));margin:0 auto;
+      padding:0 var(--pad) clamp(42px,7vw,96px);color:#fff;
+      display:grid;grid-template-columns:auto 1fr;gap:clamp(24px,5vw,72px);align-items:end
+    }
+    .project-index{font-size:12px;letter-spacing:.2em;padding-bottom:10px}
+    .hero h1{
+      margin:0;max-width:1250px;
+      font-size:clamp(54px,9.5vw,150px);line-height:.84;
+      letter-spacing:-.07em;font-weight:500
+    }
+    .hero-copy p{
+      margin:24px 0 0;font-size:clamp(17px,1.7vw,25px);
+      line-height:1.35
+    }
+    .hero-copy p span{font-size:.65em;letter-spacing:.03em}
+    .scroll-cue{
+      position:absolute;right:var(--pad);bottom:32px;z-index:3;color:#fff;
+      font-size:10px;letter-spacing:.18em;display:flex;align-items:center;gap:13px
+    }
+    .scroll-cue i{display:block;width:42px;height:1px;background:currentColor}
+    .intro{
+      width:min(100%,var(--max));margin:0 auto;
+      padding:clamp(90px,11vw,170px) var(--pad);
+      display:grid;grid-template-columns:.48fr 1.15fr;gap:clamp(40px,8vw,150px)
+    }
+    .intro-kicker{
+      display:flex;flex-direction:column;gap:7px;
+      font-size:10px;letter-spacing:.17em;text-transform:uppercase;color:var(--muted)
+    }
+    .intro-main{display:grid;grid-template-columns:1fr .75fr;gap:clamp(30px,6vw,100px)}
+    .intro-cn{
+      margin:0;font-size:clamp(24px,3.2vw,52px);
+      line-height:1.23;letter-spacing:-.035em
+    }
+    .intro-translations p{margin:0 0 20px;color:#4d4b46}
+    .project-meta{
+      grid-column:2;display:grid;grid-template-columns:repeat(4,1fr);
+      margin:72px 0 0;border-top:1px solid var(--line)
+    }
+    .project-meta div{padding:17px 18px 0 0}
+    .project-meta div+div{padding-left:18px;border-left:1px solid var(--line)}
+    .project-meta dt{font-size:9px;letter-spacing:.18em;color:var(--muted)}
+    .project-meta dd{margin:6px 0 0;font-size:12px}
+    .chapter{padding:clamp(76px,10vw,150px) var(--pad)}
+    .chapter-dark{background:var(--dark);color:#eee}
+    .chapter-inner{width:min(100%,var(--max));margin:0 auto}
+    .chapter-head{
+      display:grid;grid-template-columns:.5fr 1fr;gap:var(--gap);
+      align-items:end;margin-bottom:36px
+    }
+    .chapter-head span{font-size:10px;letter-spacing:.18em;color:#8e8c86}
+    .chapter-head p{
+      max-width:760px;margin:0;font-size:clamp(18px,2vw,30px);
+      line-height:1.42
+    }
+    figure{margin:0}
+    .image-full{height:min(74vw,1030px);min-height:520px;overflow:hidden;cursor:zoom-in}
+    figcaption{
+      display:flex;justify-content:space-between;gap:20px;padding-top:12px;
+      font-size:9px;letter-spacing:.12em;color:#8d8a84;text-transform:uppercase
+    }
+    .split-gallery{
+      width:min(100%,var(--max));margin:0 auto;
+      padding:clamp(86px,11vw,170px) var(--pad);
+      display:grid;grid-template-columns:1.08fr .92fr;gap:clamp(48px,8vw,140px);
+      align-items:center
+    }
+    .image-tall{aspect-ratio:4/5;overflow:hidden;cursor:zoom-in}
+    .split-copy .section-number,.work-copy .section-number,.bedroom-copy .section-number{
+      display:block;margin-bottom:28px;font-size:10px;letter-spacing:.2em;color:var(--muted)
+    }
+    .split-copy h2,.work-copy h2,.bedroom-copy h2{
+      margin:0 0 32px;font-size:clamp(42px,6.7vw,104px);
+      line-height:.92;letter-spacing:-.06em;font-weight:500
+    }
+    .split-copy p,.work-copy p,.bedroom-copy p{max-width:620px;margin:0 0 18px;font-size:17px}
+    .split-copy .en,.bedroom-copy .en{font-size:13px;color:var(--muted)}
+    .work-section{
+      background:#dedbd4;padding:clamp(86px,11vw,170px) var(--pad);
+      display:grid;grid-template-columns:.68fr 1.32fr;gap:clamp(42px,7vw,110px);align-items:end
+    }
+    .work-copy{max-width:620px;margin-left:auto}
+    .image-wide{aspect-ratio:16/11;overflow:hidden;cursor:zoom-in}
+    .bedroom-section{
+      width:min(100%,var(--max));margin:0 auto;
+      padding:clamp(90px,11vw,170px) var(--pad);
+      display:grid;grid-template-columns:1.28fr .72fr;gap:clamp(44px,8vw,130px);align-items:center
+    }
+    .bedroom-image{aspect-ratio:4/3;overflow:hidden;cursor:zoom-in}
+    .wardrobe-section{
+      background:#191917;color:#eee;padding:clamp(88px,11vw,170px) var(--pad)
+    }
+    .wardrobe-inner{
+      width:min(100%,var(--max));margin:0 auto;
+      display:grid;grid-template-columns:.72fr 1.28fr;gap:clamp(44px,8vw,140px);align-items:center
+    }
+    .wardrobe-copy span{font-size:10px;letter-spacing:.18em;color:#8e8c86}
+    .wardrobe-copy h2{
+      margin:26px 0 30px;font-size:clamp(46px,7vw,110px);
+      line-height:.9;letter-spacing:-.06em;font-weight:500
+    }
+    .wardrobe-copy p{max-width:560px;margin:0;color:#b7b4ad;font-size:16px}
+    .wardrobe-image{aspect-ratio:4/3;overflow:hidden;cursor:zoom-in}
+    .closing{
+      width:min(100%,var(--max));margin:0 auto;
+      padding:clamp(100px,13vw,210px) var(--pad);
+      display:grid;grid-template-columns:1.2fr .8fr;gap:40px;align-items:end
+    }
+    .closing p{
+      margin:0;font-size:clamp(42px,6.5vw,104px);
+      line-height:.96;letter-spacing:-.055em
+    }
+    .closing-cn{font-size:clamp(18px,2vw,30px);color:var(--muted)}
+    .project-switch{
+      display:grid;grid-template-columns:1fr auto 1fr;border-top:1px solid var(--line)
+    }
+    .project-switch a{padding:28px var(--pad);min-height:116px}
+    .project-switch a+ a{border-left:1px solid var(--line)}
+    .project-switch a:last-child{text-align:right}
+    .project-switch small{display:block;margin-bottom:8px;font-size:9px;letter-spacing:.16em;color:var(--muted)}
+    .project-switch strong{font-size:13px;font-weight:500;letter-spacing:.04em}
+    footer{
+      display:flex;justify-content:space-between;gap:24px;
+      padding:22px var(--pad) 34px;font-size:9px;letter-spacing:.14em;color:var(--muted)
+    }
+    .reveal{opacity:0;transform:translateY(28px);transition:opacity .8s ease,transform .8s cubic-bezier(.2,.7,.2,1)}
+    .reveal.visible{opacity:1;transform:none}
+    [data-lightbox] img{transition:transform .7s cubic-bezier(.2,.7,.2,1),filter .5s ease}
+    [data-lightbox]:hover img{transform:scale(1.012);filter:saturate(.92)}
+    .lightbox{
+      position:fixed;inset:0;z-index:100;display:none;place-items:center;
+      background:rgba(10,10,9,.94);padding:clamp(18px,4vw,60px)
+    }
+    .lightbox.open{display:grid}
+    .lightbox img{max-width:94vw;max-height:90vh;width:auto;height:auto;object-fit:contain}
+    .lightbox button{
+      position:absolute;color:#fff;background:none;border:0;cursor:pointer
+    }
+    .lightbox-close{top:22px;right:28px;font-size:32px}
+    .lightbox-prev,.lightbox-next{top:50%;transform:translateY(-50%);font-size:54px}
+    .lightbox-prev{left:20px}.lightbox-next{right:20px}
+    .lightbox-count{position:absolute;bottom:18px;color:#fff;font-size:10px;letter-spacing:.15em}
+    @media(max-width:900px){
+      .site-header{grid-template-columns:1fr auto}.header-project{display:none}
+      .intro,.intro-main,.split-gallery,.work-section,.bedroom-section,.wardrobe-inner,.closing{grid-template-columns:1fr}
+      .project-meta{grid-column:auto;grid-template-columns:1fr 1fr;margin-top:42px}
+      .project-meta div+div{border-left:0;padding-left:0}
+      .project-meta div:nth-child(even){padding-left:16px;border-left:1px solid var(--line)}
+      .chapter-head{grid-template-columns:1fr}
+      .work-copy{margin:0}
+      .project-switch strong{font-size:10px}
+    }
+    @media(max-width:620px){
+      .site-header nav{gap:14px}
+      .hero-copy{grid-template-columns:1fr}
+      .project-index{display:none}
+      .hero h1{font-size:clamp(54px,18vw,88px)}
+      .hero-topline span:last-child{display:none}
+      .intro{grid-template-columns:1fr}
+      .project-meta{grid-template-columns:1fr}
+      .project-meta div:nth-child(even){padding-left:0;border-left:0}
+      .project-switch{grid-template-columns:1fr 1fr}
+      .project-switch .all-projects{display:none}
+      footer{flex-direction:column}
+      .image-full{min-height:420px}
+    }
+    @media(prefers-reduced-motion:reduce){
+      html{scroll-behavior:auto}
+      .reveal{opacity:1;transform:none;transition:none}
+      [data-lightbox] img{transition:none}
+    }
+  </style>
+</head>
+<body>
+  <header class="site-header" id="top">
+    <a class="brand" href="index.html" aria-label="返回 TRANSITLO 首页">TRANSITLO</a>
+    <div class="header-project">06 / RESIDENTIAL INTERIOR</div>
+    <nav aria-label="项目导航">
+      <a href="residential.html">RESIDENCES</a>
+      <a href="index.html#contact">CONTACT</a>
+    </nav>
+  </header>
+
+  <main>
+    <section class="hero" aria-labelledby="project-title">
+      <picture>
+        <source srcset="assets/images/residential/residence-04/01.webp" type="image/webp">
+        <img src="assets/images/residential/residence-04/01.png" alt="黑白石材地面、深色厨房与柔和客厅构成连续开放空间" fetchpriority="high">
+      </picture>
+      <div class="hero-shade"></div>
+      <div class="hero-topline">
+        <span>PRIVATE RESIDENCE · SELECTED WORK</span>
+        <span>06 / STONE &amp; STILLNESS</span>
+      </div>
+      <div class="hero-copy">
+        <span class="project-index">06</span>
+        <div>
+          <h1 id="project-title">STONE &amp;<br>STILLNESS</h1>
+          <p>石材与静谧<br><span>Đá và tĩnh lặng</span></p>
+        </div>
+      </div>
+      <a class="scroll-cue" href="#project-intro" aria-label="向下浏览项目">SCROLL <i></i></a>
+    </section>
+
+    <section class="intro" id="project-intro">
+      <div class="intro-kicker reveal">
+        <span>PRIVATE RESIDENCE</span>
+        <span>私人住宅</span>
+        <span>NHÀ Ở TƯ NHÂN</span>
+      </div>
+      <div class="intro-main reveal">
+        <p class="intro-cn">黑白石材贯穿客厅、厨房与主卫，深色柜体和铜金细节建立稳定骨架；主卧则转向柔和的米白层次。住宅以成熟单身女性的独立生活为线索，在开放社交、私密休息与日常仪式之间保持从容而安静的秩序。</p>
+        <div class="intro-translations">
+          <p>Black-and-white stone flows through the living room, kitchen and primary bathroom, anchored by dark cabinetry and restrained brass details. The bedroom shifts into softer ivory tones, shaping an independent home that balances hosting, privacy and daily ritual.</p>
+          <p>Đá trắng–đen liên tục kết nối phòng khách, bếp và phòng tắm chính, được cân bằng bởi hệ tủ tối màu cùng chi tiết đồng tinh tế. Phòng ngủ chuyển sang gam trắng ngà mềm mại, tạo nên một ngôi nhà độc lập giữa tiếp khách, riêng tư và nghi thức hằng ngày.</p>
+        </div>
+      </div>
+      <dl class="project-meta reveal">
+        <div><dt>TYPE</dt><dd>Residential Interior</dd></div>
+        <div><dt>ROLE</dt><dd>Interior &amp; Spatial Strategy</dd></div>
+        <div><dt>STATUS</dt><dd>Concept Design</dd></div>
+        <div><dt>SOURCE</dt><dd>Selected Residential Work 06</dd></div>
+      </dl>
+    </section>
+
+    <section class="chapter chapter-dark">
+      <div class="chapter-inner">
+        <div class="chapter-head reveal">
+          <span>01 / COMMON GROUND</span>
+          <p>客厅、餐区和厨房共享连续石材地面。灰色织物、棕色皮革与黑色体量围合出适合独居，也能从容待客的公共中心。</p>
+        </div>
+        <figure class="image-full reveal" data-lightbox="assets/images/residential/residence-04/01.webp">
+          <picture>
+            <source srcset="assets/images/residential/residence-04/01.webp" type="image/webp">
+            <img src="assets/images/residential/residence-04/01.png" alt="石材电视墙、灰色沙发、棕色皮沙发与开放厨房" loading="lazy">
+          </picture>
+          <figcaption><span>OPEN LIVING SPACE</span><span>公共空间 / Không gian sinh hoạt chung</span></figcaption>
+        </figure>
+      </div>
+    </section>
+
+    <section class="split-gallery">
+      <figure class="image-tall reveal" data-lightbox="assets/images/residential/residence-04/04.webp">
+        <picture>
+          <source srcset="assets/images/residential/residence-04/04.webp" type="image/webp">
+          <img src="assets/images/residential/residence-04/04.png" alt="黑色大理石岛台、整墙深色橱柜与客厅反向视角" loading="lazy">
+        </picture>
+        <figcaption><span>KITCHEN</span><span>厨房 / Bếp</span></figcaption>
+      </figure>
+      <div class="split-copy reveal">
+        <span class="section-number">02</span>
+        <h2>DARK STONE<br>AT THE CENTRE</h2>
+        <p>厨房从公共空间内部回看客厅，黑色大理石岛台成为明确的生活核心。高柜、酒柜、嵌入设备与连续操作面集中收纳功能，同时保留开阔视线。</p>
+        <p class="en">Seen from within the kitchen, the dark stone island becomes the social and functional centre. Full-height cabinetry, display storage and integrated appliances consolidate daily use without interrupting the open view.</p>
+      </div>
+    </section>
+
+    <section class="work-section">
+      <div class="work-copy reveal">
+        <span class="section-number">03</span>
+        <h2>SOFTENED<br>PRIVATE LIGHT</h2>
+        <p>主卧以两米宽床为中心，左侧衣帽间、右侧临窗休息区和床头两侧的开关插座形成完整日常动线。米白织物与自然光削弱公共区石材的锋利感。</p>
+      </div>
+      <figure class="image-wide reveal" data-lightbox="assets/images/residential/residence-04/02.webp">
+        <picture>
+          <source srcset="assets/images/residential/residence-04/02.webp" type="image/webp">
+          <img src="assets/images/residential/residence-04/02.png" alt="米白主卧、两米宽床、衣帽间与窗边落地沙发" loading="lazy">
+        </picture>
+        <figcaption><span>PRIMARY BEDROOM</span><span>主卧 / Phòng ngủ chính</span></figcaption>
+      </figure>
+    </section>
+
+    <section class="bedroom-section">
+      <figure class="bedroom-image reveal" data-lightbox="assets/images/residential/residence-04/03.webp">
+        <picture>
+          <source srcset="assets/images/residential/residence-04/03.webp" type="image/webp">
+          <img src="assets/images/residential/residence-04/03.png" alt="黑白大理石主卫、浴缸、梳妆台、淋浴区与独立马桶间" loading="lazy">
+        </picture>
+      </figure>
+      <div class="bedroom-copy reveal">
+        <span class="section-number">04</span>
+        <h2>A PRIVATE<br>RITUAL</h2>
+        <p>主卫将浴缸、淋浴、梳妆与独立马桶间组织在一条连续轴线上。透明窄边玻璃保持纵深，黑白石材和铜金复古淋浴系统赋予空间清晰而成熟的仪式感。</p>
+        <p class="en">The primary bathroom aligns bathing, showering, dressing and a separate WC along one continuous axis. Slim transparent glazing preserves depth, while veined stone and aged-brass fixtures bring a composed sense of ritual.</p>
+        <div class="caption-rule"><span>PRIMARY BATHROOM</span><span>主卫 / Phòng tắm chính</span></div>
+      </div>
+    </section>
+
+    <section class="wardrobe-section">
+      <div class="wardrobe-inner">
+        <div class="wardrobe-copy reveal">
+          <span>05 / GREEN THRESHOLD</span>
+          <h2>BATHING<br>INTO<br>DAYLIGHT</h2>
+          <p>从主卫反向望向植物阳台，浴缸、淋浴房和梳妆台共享同一片自然光。真实植物、石材纹理与玻璃反射把私密空间延伸至室外，也为独居生活增加呼吸感。</p>
+        </div>
+        <figure class="wardrobe-image reveal" data-lightbox="assets/images/residential/residence-04/05.webp">
+          <picture>
+            <source srcset="assets/images/residential/residence-04/05.webp" type="image/webp">
+            <img src="assets/images/residential/residence-04/05.png" alt="主卫反向视角、浴缸、玻璃淋浴房和植物阳台" loading="lazy">
+          </picture>
+          <figcaption><span>BATHROOM &amp; PLANTED BALCONY</span><span>主卫与植物阳台 / Phòng tắm và ban công xanh</span></figcaption>
+        </figure>
+      </div>
+    </section>
+
+    <section class="closing">
+      <p class="reveal">Stillness is not emptiness.<br>It is a home shaped precisely<br>around one life.</p>
+      <div class="closing-cn reveal">静谧不是空无，<br>而是住宅准确围绕<br>一个人的生活展开。</div>
+    </section>
+  </main>
+
+  <nav class="project-switch" aria-label="前后项目">
+    <a href="residence-03.html"><small>PREVIOUS / 上一个 / TRƯỚC</small><strong>05 · GREY CONTINUUM</strong></a>
+    <a href="residential.html" class="all-projects"><small>ALL PROJECTS</small><strong>10 PROJECTS</strong></a>
+    <a href="residence-05.html"><small>NEXT / 下一个 / TIẾP THEO</small><strong>07 · LIGHT, WOOD, GREEN</strong></a>
+  </nav>
+
+  <footer>
+    <span>TRANSITLO © 2026</span>
+    <span>ARCHITECTURE · EXHIBITION · SPATIAL STRATEGY</span>
+    <a href="#top">BACK TO TOP ↑</a>
+  </footer>
+
+  <div class="lightbox" aria-hidden="true" role="dialog" aria-modal="true" aria-label="项目大图浏览">
+    <button class="lightbox-close" type="button" aria-label="关闭大图">×</button>
+    <button class="lightbox-prev" type="button" aria-label="上一张">‹</button>
+    <img alt="">
+    <button class="lightbox-next" type="button" aria-label="下一张">›</button>
+    <div class="lightbox-count"></div>
+  </div>
+
+  <script>
+  (() => {
+    "use strict";
+    const revealItems = [...document.querySelectorAll(".reveal")];
+    if ("IntersectionObserver" in window) {
+      const observer = new IntersectionObserver(entries => {
+        entries.forEach(entry => {
+          if (!entry.isIntersecting) return;
+          entry.target.classList.add("visible");
+          observer.unobserve(entry.target);
+        });
+      }, { threshold: .12 });
+      revealItems.forEach(item => observer.observe(item));
+    } else {
+      revealItems.forEach(item => item.classList.add("visible"));
+    }
+
+    const figures = [...document.querySelectorAll("[data-lightbox]")];
+    const box = document.querySelector(".lightbox");
+    const image = box.querySelector("img");
+    const count = box.querySelector(".lightbox-count");
+    let index = 0;
+
+    function show(nextIndex) {
+      index = (nextIndex + figures.length) % figures.length;
+      const src = figures[index].dataset.lightbox;
+      const alt = figures[index].querySelector("img")?.alt || "";
+      image.src = src;
+      image.alt = alt;
+      count.textContent = `${String(index + 1).padStart(2,"0")} / ${String(figures.length).padStart(2,"0")}`;
+    }
+    function openAt(i) {
+      show(i);
+      box.classList.add("open");
+      box.setAttribute("aria-hidden","false");
+      document.body.style.overflow = "hidden";
+    }
+    function close() {
+      box.classList.remove("open");
+      box.setAttribute("aria-hidden","true");
+      image.removeAttribute("src");
+      document.body.style.overflow = "";
+    }
+
+    figures.forEach((figure, i) => figure.addEventListener("click", () => openAt(i)));
+    box.querySelector(".lightbox-close").addEventListener("click", close);
+    box.querySelector(".lightbox-prev").addEventListener("click", () => show(index - 1));
+    box.querySelector(".lightbox-next").addEventListener("click", () => show(index + 1));
+    box.addEventListener("click", event => { if (event.target === box) close(); });
+    document.addEventListener("keydown", event => {
+      if (!box.classList.contains("open")) return;
+      if (event.key === "Escape") close();
+      if (event.key === "ArrowLeft") show(index - 1);
+      if (event.key === "ArrowRight") show(index + 1);
+    });
+  })();
+  </script>
+</body>
+</html>
