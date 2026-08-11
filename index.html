@@ -121,6 +121,8 @@ header a{
   margin:20px 0;
 }
 
+.section-title .works-tools{display:flex;align-items:center;gap:18px}.section-title .view-all-link{color:#111;text-decoration:none}.section-title .view-all-link:hover{opacity:.72}.section-title .miniweb-qr{display:flex;align-items:center;gap:10px;text-decoration:none;color:#666;font-size:10px;letter-spacing:1px}.section-title .miniweb-qr img{width:74px;height:74px;border:1px solid #ddd;padding:4px;background:#fff;border-radius:8px;display:block}.section-title .miniweb-qr span{white-space:nowrap;line-height:1.5}@media(max-width:768px){.section-title{display:block}.section-title .works-tools{margin-top:18px;justify-content:space-between;align-items:flex-start}.section-title .miniweb-qr img{width:60px;height:60px}}
+
 /* SERVICES */
 .services-title{
   padding:0 60px;
@@ -663,7 +665,13 @@ footer{
 <!-- PROJECTS -->
 <div class="section-title" id="works">
   <div>SELECTED PROJECTS / 作品展示 / DỰ ÁN TIÊU BIỂU</div>
-  <div>VIEW ALL → / 查看全部 → / XEM TẤT CẢ →</div>
+  <div class="works-tools">
+    <a class="view-all-link" href="miniweb.html">VIEW ALL → / 查看全部 → / XEM TẤT CẢ →</a>
+    <a class="miniweb-qr" href="miniweb.html" aria-label="Open Mini Web">
+      <img src="miniweb-qr.png" alt="Mini Web QR Code" />
+      <span>MINI WEB<br/>QR CODE</span>
+    </a>
+  </div>
 </div>
 
 <section class="grid projects-grid">
