@@ -5,7 +5,7 @@ let zoom=1,path='',current='';
 const map={}; document.querySelectorAll('.project').forEach(el=>map[el.dataset.id]=el);
 function setZoom(v){zoom=Math.max(1,Math.min(3,v)); img.style.width=(zoom*100)+'%'; zoomTxt.textContent=Math.round(zoom*100)+'%';}
 function openCard(el,push=true){if(!el)return;current=el.dataset.id;path=el.dataset.path;img.src=el.dataset.shot;title.textContent=el.dataset.title;setZoom(1);scroll.scrollTop=0;scroll.scrollLeft=0;V.classList.add('open');document.body.classList.add('no-scroll');if(push)history.replaceState(null,'','#'+current);}
-function close(){V.classList.remove('open');document.body.classList.remove('no-scroll');img.removeAttribute('src');history.replaceState(null,'',location.pathname);}
+function close(){const target=document.body.dataset.viewerClose;if(target){location.replace(target);return;}V.classList.remove('open');document.body.classList.remove('no-scroll');img.removeAttribute('src');history.replaceState(null,'',location.pathname);}
 document.querySelectorAll('.project').forEach(el=>el.addEventListener('click',()=>openCard(el)));
 document.getElementById('closeViewer').onclick=close;document.getElementById('zoomIn').onclick=()=>setZoom(zoom+.25);document.getElementById('zoomOut').onclick=()=>setZoom(zoom-.25);
 document.addEventListener('keydown',e=>{if(e.key==='Escape')close();if(V.classList.contains('open')&&e.key==='+')setZoom(zoom+.25);if(V.classList.contains('open')&&e.key==='-')setZoom(zoom-.25)});
