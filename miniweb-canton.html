@@ -27,12 +27,20 @@ html,body{background:linear-gradient(180deg,#20262b 0%,#252d33 100%)!important;c
 .choice a{color:var(--silver)!important;border-color:rgba(228,230,231,.12)!important;background:linear-gradient(180deg,#46525a 0%,#3d4850 100%)!important;box-shadow:-8px -8px 18px rgba(255,255,255,.055),12px 15px 24px rgba(0,0,0,.38),inset 0 1px 0 rgba(255,255,255,.10),inset 0 -1px 0 rgba(0,0,0,.34)!important}
 .choice a:before{color:var(--stone)!important}.choice a:after{color:var(--ash)!important;border-color:rgba(228,230,231,.12)!important;background:linear-gradient(180deg,#46525a 0%,#3d4850 100%)!important;box-shadow:-4px -4px 9px rgba(255,255,255,.045),6px 7px 11px rgba(0,0,0,.32)!important}.choice a:hover{box-shadow:-9px -9px 20px rgba(255,255,255,.055),15px 18px 28px rgba(0,0,0,.42),0 0 0 3px rgba(184,137,99,.28)!important}.choice span{color:var(--ash)!important}
 </style>
+
+<style id="transitlo-gallery-mask-fix">
+/* MINIWEB gallery mask: restore the low-saturation resting state; preview/viewer remains original. */
+.thumb{position:relative;overflow:hidden}
+.thumb img{filter:saturate(.42) brightness(.88) contrast(.96);transform:scale(1.002);transition:filter .36s ease,transform .5s cubic-bezier(.2,.7,.2,1)}
+.thumb::after{content:"";position:absolute;inset:0;pointer-events:none;background:linear-gradient(180deg,rgba(255,255,255,.03),rgba(0,0,0,.18));opacity:1;transition:opacity .3s ease}
+@media(hover:hover){.project:hover .thumb img,.project:focus-visible .thumb img{filter:none;transform:scale(1.018)}.project:hover .thumb::after,.project:focus-visible .thumb::after{opacity:0}}
+</style>
 </head>
-  <body data-viewer-close="miniweb-exhibition.html">
+  <body data-viewer-close="miniweb.html">
     <main class="wrap">
       <header class="top">
         <a class="brand" href="index.html">TRANSITLO</a
-        ><a class="home" href="miniweb-exhibition.html">← EXHIBITION</a>
+        ><a class="home" href="miniweb.html">← HOME</a>
       </header>
       <section class="hero">
         <div class="eyebrow">01 / CANTON FAIR</div>
