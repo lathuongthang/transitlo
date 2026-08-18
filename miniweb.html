@@ -284,6 +284,58 @@
       .project-button:hover img{transform:none;filter:brightness(.96) saturate(.92)}
     }
   </style>
+
+<style id="transitlo-charcoal-palette">
+/* 2026-08-18 palette-only test: Charcoal 70% / Slate 20% / Ash+Silver 8% / Copper 2% */
+:root{
+  --charcoal:#20262b;
+  --charcoal-2:#262e34;
+  --slate:#3d4850;
+  --slate-2:#46525a;
+  --stone:#777d80;
+  --ash:#c3c7c9;
+  --silver:#e4e6e7;
+  --copper:#b88963;
+  --paper:var(--charcoal);
+  --paper-2:var(--charcoal-2);
+  --panel:var(--slate);
+  --line:rgba(228,230,231,.16);
+  --ink:var(--silver);
+  --muted:var(--ash);
+  --shadowA:rgba(255,255,255,.08);
+  --shadowB:rgba(0,0,0,.45);
+  --shadowC:rgba(0,0,0,.26);
+}
+body{color:var(--silver);background:linear-gradient(180deg,#20262b 0%,#252d33 100%)}
+header{background:rgba(32,38,43,.90);border-bottom-color:rgba(228,230,231,.12)}
+.nav-left a,.nav-right a,.nav-right span{color:var(--ash)}
+.hero{border-bottom-color:rgba(228,230,231,.12)}
+.hero::before{background:linear-gradient(90deg,rgba(32,38,43,.98) 0%,rgba(32,38,43,.92) 32%,rgba(32,38,43,.66) 56%,rgba(32,38,43,.86) 100%),radial-gradient(90% 75% at 84% 25%,rgba(119,125,128,.18) 0%,rgba(32,38,43,0) 70%)}
+.hero-bg{opacity:.30;filter:saturate(.50) contrast(1.02) brightness(.68)}
+.hero-vi,.hero-copy p{color:var(--ash)}
+.soft-pill,.soft-arrow,.section-card,.project-button,.info-button{background:linear-gradient(180deg,#46525a 0%,#3d4850 100%);border-color:rgba(228,230,231,.12);box-shadow:-8px -8px 18px rgba(255,255,255,.055),12px 15px 25px rgba(0,0,0,.38),0 7px 0 rgba(24,29,33,.82),0 17px 24px rgba(0,0,0,.24),inset 0 1px 0 rgba(255,255,255,.10),inset 0 -1px 0 rgba(0,0,0,.34)}
+.soft-pill small,.soft-arrow{color:var(--ash)}
+.workflow{background:linear-gradient(180deg,#3d4850 0%,#364149 100%);border-color:rgba(228,230,231,.12);box-shadow:-8px -8px 18px rgba(255,255,255,.05),12px 16px 28px rgba(0,0,0,.38),inset 0 1px 0 rgba(255,255,255,.09)}
+.workflow-item + .workflow-item{border-left-color:rgba(228,230,231,.12)}
+.workflow-item span,.section-head p,.section-head .side p{color:var(--ash)}
+.section-head .hold-note{color:var(--stone)}
+.project-button::after{border-color:rgba(228,230,231,.11);box-shadow:inset 0 2px 0 rgba(255,255,255,.08),inset 0 -2px 0 rgba(0,0,0,.30)}
+.project-button:hover,.project-button.is-preview{box-shadow:-9px -9px 20px rgba(255,255,255,.055),15px 18px 28px rgba(0,0,0,.42),0 0 0 1px rgba(228,230,231,.14),0 0 0 4px rgba(184,137,99,.28),0 0 28px rgba(184,137,99,.24)}
+.project-button.is-pressed{box-shadow:-4px -4px 10px rgba(255,255,255,.04),6px 8px 12px rgba(0,0,0,.26),inset 0 4px 10px rgba(0,0,0,.38),inset 0 -1px 0 rgba(255,255,255,.06)}
+.project-image{background:#303940;box-shadow:inset 0 1px 4px rgba(0,0,0,.38)}
+.project-loc,.small-copy .project-kicker,.small-copy .project-title-cn,.small-copy .project-title-en,.small-copy .project-loc{color:var(--ash)}
+.small-copy .project-title-cn{color:var(--silver)}
+.card-arrow{color:var(--ash);background:linear-gradient(180deg,#46525a 0%,#3d4850 100%);border-color:rgba(228,230,231,.12);box-shadow:-5px -5px 12px rgba(255,255,255,.05),7px 9px 14px rgba(0,0,0,.32)}
+.partner{background:linear-gradient(180deg,#3d4850 0%,#364149 100%);border-color:rgba(228,230,231,.12);box-shadow:-8px -8px 18px rgba(255,255,255,.05),12px 16px 28px rgba(0,0,0,.38),inset 0 1px 0 rgba(255,255,255,.08)}
+.partner-copy p,.info-button small,.partner-row span{color:var(--ash)}
+.partner-row{border-bottom-color:rgba(228,230,231,.12)}
+.contact p,.contact-info,.contact-info a{color:var(--ash)}
+footer{border-top-color:rgba(228,230,231,.12);color:var(--stone)}
+a:hover,.brand:hover{color:var(--copper)}
+@media (max-width:620px){
+  .hero::before{background:linear-gradient(180deg,rgba(32,38,43,.96) 0%,rgba(32,38,43,.72) 36%,rgba(32,38,43,.82) 70%,rgba(32,38,43,.98) 100%),linear-gradient(90deg,rgba(32,38,43,.96) 0%,rgba(32,38,43,.70) 42%,rgba(32,38,43,.32) 72%,rgba(32,38,43,.54) 100%)}
+}
+</style>
 </head>
 <body>
   <header>
